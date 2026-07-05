@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Content Security Policy (GitHub Pages는 헤더 미지원 → meta로 적용).
+       self-host 스크립트('self')와 mermaid·chart.js(cdn.jsdelivr.net), AdSense 광고
+       도메인을 허용. mermaid가 런타임에 주입하는 인라인 스타일 때문에 style 'unsafe-inline' 필요. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.google.com https://*.googleadservices.com https://*.doubleclick.net; style-src 'self' 'unsafe-inline' https://*.googlesyndication.com; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-src https://*.doubleclick.net https://*.googlesyndication.com https://*.google.com; object-src 'none'; base-uri 'self'" />
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3384172461437695"
      crossorigin="anonymous"></script>
