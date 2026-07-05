@@ -102,5 +102,53 @@
     "tags": ["RAG", "LLM", "검색증강생성", "벡터DB", "임베딩", "환각", "134회"],
     "summary": "외부 지식 검색 결과를 LLM 프롬프트에 결합해 환각을 줄이고 최신·근거 기반 답변을 생성하는 기법과 아키텍처.",
     "updated": "2026-07-05"
+  },
+  {
+    "id": "public-saas-guideline",
+    "title": "공공부문 SaaS 이용 가이드라인",
+    "category": "인프라·클라우드",
+    "tags": ["SaaS", "공공클라우드", "CSAP", "SLA", "보안성검토", "134회"],
+    "summary": "공공기관의 안전한 SaaS 이용을 위한 위험관리 원칙·기준(CSAP 등급), 보안대책·보안성 검토, 서비스 수준 협약(SLA).",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "dark-pattern",
+    "title": "다크패턴(Dark Pattern) 유형 및 대응 방안",
+    "category": "경영·사업전략",
+    "tags": ["다크패턴", "소비자보호", "UX", "전자상거래", "공정거래", "134회"],
+    "summary": "소비자를 기만·오도·방해·압박하는 다크패턴의 세부 유형과 제도·설계·소비자 차원의 대응 방안.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "it-governance",
+    "title": "IT 거버넌스(IT Governance)",
+    "category": "SW공학·관리",
+    "tags": ["IT거버넌스", "COBIT", "ISO38500", "BSC", "성과측정", "134회"],
+    "summary": "IT를 비즈니스 전략에 정렬·통제하는 거버넌스의 구성요소, 효과 측정 지표(BSC·KPI), 측정 방법론(COBIT·ISO38500).",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "ai-datacenter",
+    "title": "대규모 AI 서비스를 위한 데이터센터 구축 기술",
+    "category": "인프라·클라우드",
+    "tags": ["AI데이터센터", "저지연", "InfiniBand", "RDMA", "DCI", "분산학습", "134회"],
+    "summary": "초거대 AI용 데이터센터의 저지연·스케일링 기술(RDMA·InfiniBand·NVLink·분산학습)과 DCI(DWDM·OTN) 기술.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "esg-management",
+    "title": "ESG 경영(Environment·Social·Governance)",
+    "category": "경영·사업전략",
+    "tags": ["ESG", "지속가능경영", "탄소중립", "공시", "그린IT", "134회"],
+    "summary": "환경·사회·지배구조 기반 지속가능경영의 정의·목표, 주요 지표(GRI·K-ESG), 이를 지원하는 IT(IoT·AI·블록체인·공시 플랫폼).",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "transaction-isolation-level",
+    "title": "트랜잭션 격리 수준(Transaction Isolation Level)",
+    "category": "데이터베이스",
+    "tags": ["트랜잭션", "격리수준", "ACID", "MVCC", "동시성제어", "134회"],
+    "summary": "4가지 격리 수준(Read Uncommitted~Serializable)과 Dirty·Non-repeatable·Phantom Read 이상현상을 사례 중심으로 정리.",
+    "updated": "2026-07-05"
   }
 ]
