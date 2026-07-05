@@ -7,58 +7,83 @@
 
   let topics = [];
 
-  // 2026 정보관리기술사 정기 필기시험 일정 (다음 시험 D-day 계산용)
+  // 2026 정보관리기술사 정기 일정 (원서접수: 첫날 10:00 ~ 마지막날 18:00)
   const EXAM_SCHEDULE = [
-    { round: 138, written: '2026-02-07' },
-    { round: 139, written: '2026-05-16' },
-    { round: 140, written: '2026-08-22' }
+    { round: 138, regOpen: '2026-01-06T10:00:00', regClose: '2026-01-09T18:00:00', written: '2026-02-07' },
+    { round: 139, regOpen: '2026-04-13T10:00:00', regClose: '2026-04-16T18:00:00', written: '2026-05-16' },
+    { round: 140, regOpen: '2026-07-13T10:00:00', regClose: '2026-07-16T18:00:00', written: '2026-08-22' }
   ];
+
+  const WD = ['일', '월', '화', '수', '목', '금', '토'];
+  const DAY = 86400000;
+  const pad2 = (n) => ('0' + n).slice(-2);
+  const fmtDate = (d) => (d.getMonth() + 1) + '.' + d.getDate() + '(' + WD[d.getDay()] + ')';
+  const fmtDateTime = (d) => fmtDate(d) + ' ' + pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+  const ddayNum = (ms) => Math.ceil(ms / DAY);
+  function remStr(ms) {
+    if (ms <= 0) return '00:00:00';
+    const days = Math.floor(ms / DAY);
+    const hh = Math.floor((ms % DAY) / 3600000);
+    const mm = Math.floor((ms % 3600000) / 60000);
+    const ss = Math.floor((ms % 60000) / 1000);
+    return (days > 0 ? days + '일 ' : '') + pad2(hh) + ':' + pad2(mm) + ':' + pad2(ss);
+  }
+  function rowHtml(badge, badgeCls, label, sub, timer) {
+    return '<span class="dday-badge ' + (badgeCls || '') + '">' + badge + '</span>' +
+      '<span class="dday-text">' + label + (sub ? ' <em>' + sub + '</em>' : '') + '</span>' +
+      (timer != null ? '<span class="dday-timer">' + timer + '</span>' : '');
+  }
 
   function renderDday() {
     const banner = document.getElementById('dday-banner');
     if (!banner) return;
-    const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
     let next = null;
     for (const e of EXAM_SCHEDULE) {
-      const d = new Date(e.written + 'T00:00:00');
-      if (d >= today) { next = { round: e.round, date: d }; break; }
+      if (new Date(e.written + 'T00:00:00') >= today) { next = e; break; }
     }
     if (!next) {
       banner.innerHTML = '<div class="dday-inner"><span class="dday-text">다음 정기 필기시험 일정이 공개되면 표시됩니다</span></div>';
       banner.hidden = false;
       return;
     }
-    const wd = ['일', '월', '화', '수', '목', '금', '토'][next.date.getDay()];
-    const y = next.date.getFullYear();
-    const m = ('0' + (next.date.getMonth() + 1)).slice(-2);
-    const dd = ('0' + next.date.getDate()).slice(-2);
+    const regOpen = new Date(next.regOpen);
+    const regClose = new Date(next.regClose);
+    const exam = new Date(next.written + 'T00:00:00');
     banner.innerHTML =
       '<div class="dday-inner">' +
-        '<span class="dday-badge" id="dday-badge">D-–</span>' +
-        '<span class="dday-text">제' + next.round + '회 정보관리기술사 <b>필기시험</b>' +
-          '<em>' + y + '.' + m + '.' + dd + ' (' + wd + ')</em></span>' +
-        '<span class="dday-timer" id="dday-timer" aria-live="off"></span>' +
+        '<div class="dday-row" id="dday-reg"></div>' +
+        '<div class="dday-row" id="dday-exam"></div>' +
       '</div>';
     banner.hidden = false;
+    const regEl = document.getElementById('dday-reg');
+    const examEl = document.getElementById('dday-exam');
+    const regRange = fmtDateTime(regOpen) + ' ~ ' + fmtDateTime(regClose);
 
-    const badgeEl = document.getElementById('dday-badge');
-    const timerEl = document.getElementById('dday-timer');
-    const pad = (n) => ('0' + n).slice(-2);
-    const DAY = 86400000;
     function tick() {
-      const rem = next.date.getTime() - Date.now();
-      if (rem <= 0) {
-        badgeEl.textContent = 'D-DAY';
-        timerEl.textContent = '00:00:00';
-        return;
+      const t = Date.now();
+      // 필기 원서접수
+      if (t < regOpen.getTime()) {
+        const ms = regOpen.getTime() - t;
+        regEl.className = 'dday-row';
+        regEl.innerHTML = rowHtml('D-' + ddayNum(ms), '', '필기 <b>원서접수</b> 시작', regRange, remStr(ms));
+      } else if (t <= regClose.getTime()) {
+        const ms = regClose.getTime() - t;
+        regEl.className = 'dday-row';
+        regEl.innerHTML = rowHtml('접수중', 'badge-live', '필기 <b>원서접수</b> 마감', fmtDateTime(regClose) + ' 까지', remStr(ms));
+      } else {
+        regEl.className = 'dday-row is-muted';
+        regEl.innerHTML = rowHtml('마감', 'badge-muted', '필기 <b>원서접수</b> 종료', regRange, null);
       }
-      const days = Math.floor(rem / DAY);
-      const hh = Math.floor((rem % DAY) / 3600000);
-      const mm = Math.floor((rem % 3600000) / 60000);
-      const ss = Math.floor((rem % 60000) / 1000);
-      badgeEl.textContent = 'D-' + Math.ceil(rem / DAY);
-      timerEl.textContent = days + '일 ' + pad(hh) + ':' + pad(mm) + ':' + pad(ss);
+      // 필기시험
+      const ems = exam.getTime() - t;
+      const examSub = exam.getFullYear() + '.' + pad2(exam.getMonth() + 1) + '.' + pad2(exam.getDate()) + ' (' + WD[exam.getDay()] + ')';
+      if (ems <= 0) {
+        examEl.innerHTML = rowHtml('D-DAY', '', '제' + next.round + '회 <b>필기시험</b>', examSub, '00:00:00');
+      } else {
+        examEl.innerHTML = rowHtml('D-' + ddayNum(ems), '', '제' + next.round + '회 <b>필기시험</b>', examSub, remStr(ems));
+      }
     }
     tick();
     setInterval(tick, 1000);

@@ -78,27 +78,37 @@ body {
 .dday-banner { margin: 28px auto 0; }
 .dday-inner {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
   background: linear-gradient(135deg, #eef3fe 0%, #f7f9fc 100%);
   border: 1px solid #d9e4fb;
   border-radius: 14px;
   padding: 14px 22px;
   box-shadow: var(--shadow);
 }
+.dday-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.dday-row.is-muted { opacity: .55; }
 .dday-badge {
   background: var(--primary);
   color: #fff;
   font-weight: 800;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1;
-  padding: 8px 15px;
+  min-width: 66px;
+  text-align: center;
+  padding: 8px 14px;
   border-radius: 10px;
   letter-spacing: .5px;
   flex: 0 0 auto;
 }
+.dday-badge.badge-live { background: var(--accent); }
+.dday-badge.badge-muted { background: var(--text-muted); }
 .dday-text {
   display: inline-flex;
   align-items: baseline;
