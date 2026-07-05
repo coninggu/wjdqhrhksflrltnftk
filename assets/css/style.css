@@ -11,7 +11,8 @@
   --shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 1px 3px rgba(16, 24, 40, .1);
   --shadow-hover: 0 6px 16px rgba(16, 24, 40, .12);
   --radius: 12px;
-  --maxw: 880px;
+  --maxw: 1120px;
+  --maxw-read: 820px;
 }
 
 * { box-sizing: border-box; }
@@ -198,9 +199,12 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 32px 36px 40px;
+  padding: 36px 44px 44px;
   margin-bottom: 48px;
 }
+/* 상세 본문은 가독성을 위해 읽기 폭으로 제한하되 표는 넓게 */
+.back-link,
+.topic-detail { max-width: 960px; margin-left: auto; margin-right: auto; }
 .topic-meta { border-bottom: 1px solid var(--border); padding-bottom: 18px; margin-bottom: 8px; }
 .topic-meta .card-category { display: inline-block; font-size: 12px; font-weight: 700; color: var(--primary); background: var(--primary-soft); padding: 3px 10px; border-radius: 999px; }
 .topic-meta .meta-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
@@ -264,7 +268,10 @@ body {
 
 /* Responsive */
 @media (min-width: 640px) {
-  .topic-list { grid-template-columns: 1fr 1fr; }
+  .topic-list { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 980px) {
+  .topic-list { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 560px) {
   .topic-detail { padding: 22px 20px 28px; }
