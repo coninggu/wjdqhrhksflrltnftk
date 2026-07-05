@@ -55,6 +55,27 @@
     `;
   }
 
+  // 상세 하단 이전/다음 주제 네비게이션 (목록과 동일한 정렬: updated 내림차순)
+  function renderNav(list) {
+    const navEl = document.getElementById('topic-nav');
+    if (!navEl || !Array.isArray(list) || !list.length) return;
+    const sorted = list.slice().sort((a, b) => (b.updated || '').localeCompare(a.updated || ''));
+    const idx = sorted.findIndex((t) => t.id === id);
+    if (idx === -1) return;
+    const prev = sorted[idx - 1]; // 목록에서 한 칸 위(더 최신)
+    const next = sorted[idx + 1]; // 목록에서 한 칸 아래(더 오래됨)
+    const linkHtml = function (topic, dirLabel, cls) {
+      if (!topic) return '<span class="nav-spacer"></span>';
+      return '<a class="topic-nav-link ' + cls + '" href="topic.html?id=' +
+        encodeURIComponent(topic.id) + '" rel="' + cls + '">' +
+        '<span class="nav-dir">' + dirLabel + '</span>' +
+        '<span class="nav-title">' + escapeHtml(topic.title) + '</span></a>';
+    };
+    navEl.innerHTML =
+      linkHtml(prev, '← 이전 주제', 'prev') +
+      linkHtml(next, '다음 주제 →', 'next');
+  }
+
   function renderMarkdown(md) {
     if (window.marked && typeof window.marked.parse === 'function') {
       window.marked.setOptions({ gfm: true, breaks: false });
@@ -130,6 +151,7 @@
     .then((topics) => {
       const topic = Array.isArray(topics) ? topics.find((t) => t.id === id) : null;
       renderMeta(topic);
+      renderNav(topics);
     })
     .catch(() => { /* 메타 없이 진행 */ })
     .finally(() => {
