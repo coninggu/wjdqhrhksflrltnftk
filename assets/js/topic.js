@@ -24,9 +24,27 @@
     return;
   }
 
+  var SITE_BASE = 'https://www.xn--zb0bow85w7idd5f0pc46q.com';
+
+  // 주제별 SEO 메타 태그 갱신 (title/description/canonical/OG)
+  function updateSeoMeta(topic) {
+    var url = SITE_BASE + '/topic.html?id=' + encodeURIComponent(topic.id || id);
+    var desc = topic.summary || '정보관리기술사 시험 대비 주제별 답안형 요약 노트';
+    var set = function (elId, attr, value) {
+      var el = document.getElementById(elId);
+      if (el) el.setAttribute(attr, value);
+    };
+    set('meta-description', 'content', desc);
+    set('meta-canonical', 'href', url);
+    set('meta-og-title', 'content', topic.title || '정보관리기술사 학습 노트');
+    set('meta-og-description', 'content', desc);
+    set('meta-og-url', 'content', url);
+  }
+
   function renderMeta(topic) {
     if (!topic) return;
     document.title = `${topic.title} · 정보관리기술사 학습 노트`;
+    updateSeoMeta(topic);
     const tags = (topic.tags || [])
       .map((tag) => `<span class="tag">#${escapeHtml(tag)}</span>`)
       .join('');
