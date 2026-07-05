@@ -75,7 +75,7 @@ body {
 }
 
 /* Search */
-.search-section { margin: 32px 0 20px; }
+.search-section { margin: 32px auto 24px; max-width: 760px; }
 .search-box {
   position: relative;
   display: flex;
@@ -123,7 +123,8 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 14px;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 .topic-card {
   display: block;
@@ -199,12 +200,20 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 36px 44px 44px;
+  padding: 40px 56px 48px;
   margin-bottom: 48px;
 }
-/* 상세 본문은 가독성을 위해 읽기 폭으로 제한하되 표는 넓게 */
+/* 상세 페이지는 메인과 동일한 넓은 폭 사용 */
 .back-link,
-.topic-detail { max-width: 960px; margin-left: auto; margin-right: auto; }
+.topic-detail { max-width: 100%; }
+/* 긴 문단은 읽기 편한 폭으로, 표/구분선은 전체 폭으로 */
+.markdown-body > p,
+.markdown-body > ul,
+.markdown-body > ol,
+.markdown-body > blockquote,
+.markdown-body > h1,
+.markdown-body > h2,
+.markdown-body > h3 { max-width: 1000px; }
 .topic-meta { border-bottom: 1px solid var(--border); padding-bottom: 18px; margin-bottom: 8px; }
 .topic-meta .card-category { display: inline-block; font-size: 12px; font-weight: 700; color: var(--primary); background: var(--primary-soft); padding: 3px 10px; border-radius: 999px; }
 .topic-meta .meta-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
@@ -267,11 +276,8 @@ body {
 .site-footer p { margin: 0; color: var(--text-muted); font-size: 13px; text-align: center; }
 
 /* Responsive */
-@media (min-width: 640px) {
-  .topic-list { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 980px) {
-  .topic-list { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 560px) {
+  .topic-list { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .topic-detail { padding: 22px 20px 28px; }
