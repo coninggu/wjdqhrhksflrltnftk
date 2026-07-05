@@ -12,18 +12,41 @@
 
 ## 2. 계층 구조 (동심원 도식)
 
+```mermaid
+flowchart TB
+  subgraph TAM["TAM · 전체 시장 (이론상 최대 수요)"]
+    subgraph SAM["SAM · 유효 시장 (도달 가능 범위)"]
+      SOM["SOM · 수익 시장<br/>(단기 확보 가능)"]
+    end
+  end
+  style TAM fill:#eef3fb,stroke:#93b4f0
+  style SAM fill:#dbe7fb,stroke:#5f8ff0
+  style SOM fill:#2f6fed,stroke:#1f4fbf,color:#fff
 ```
-┌─────────────────────────────────────────┐
-│  TAM  전체 시장 (이론상 최대 수요)          │
-│   ┌───────────────────────────────┐      │
-│   │  SAM  유효 시장 (도달 가능 범위)  │      │
-│   │   ┌───────────────────┐        │      │
-│   │   │  SOM  수익 시장     │        │      │
-│   │   │  (단기 확보 가능)    │        │      │
-│   │   └───────────────────┘        │      │
-│   └───────────────────────────────┘      │
-└─────────────────────────────────────────┘
-        TAM ⊇ SAM ⊇ SOM
+
+> 포함 관계: **TAM ⊇ SAM ⊇ SOM**
+
+### 시장 규모 비중 (예시)
+
+```chart
+{
+  "type": "doughnut",
+  "data": {
+    "labels": ["SOM · 수익 시장", "SAM · 유효 시장(SOM 제외)", "TAM · 전체(SAM 제외)"],
+    "datasets": [{
+      "data": [5, 25, 70],
+      "backgroundColor": ["#2f6fed", "#7aa5f3", "#d7e3fb"],
+      "borderColor": "#ffffff",
+      "borderWidth": 2
+    }]
+  },
+  "options": {
+    "plugins": {
+      "legend": { "position": "bottom" },
+      "title": { "display": true, "text": "TAM 대비 SAM · SOM 비중 (단위: %)" }
+    }
+  }
+}
 ```
 
 ## 3. 계층별 정의

@@ -263,6 +263,22 @@ body {
 }
 .markdown-body tbody tr:nth-child(even) { background: #fafbfc; }
 
+/* 차트 / 다이어그램 */
+.chart-wrap {
+  max-width: 660px;
+  margin: 22px auto;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.mermaid {
+  margin: 22px 0;
+  text-align: center;
+  overflow-x: auto;
+}
+.mermaid svg { max-width: 100%; height: auto; }
+
 .loading { color: var(--text-muted); }
 .error-box { color: #b42318; background: #fef3f2; border: 1px solid #fecdca; padding: 16px 18px; border-radius: 8px; }
 

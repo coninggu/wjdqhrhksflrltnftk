@@ -45,6 +45,55 @@
       // 폴백: 마크다운 파서 로드 실패 시 원문 표시
       bodyEl.innerHTML = `<pre>${escapeHtml(md)}</pre>`;
     }
+    enhanceMermaid();
+    enhanceCharts();
+  }
+
+  // ```mermaid 코드블록 → 다이어그램 렌더
+  function enhanceMermaid() {
+    const blocks = bodyEl.querySelectorAll('code.language-mermaid');
+    if (!blocks.length) return;
+    blocks.forEach((code) => {
+      const pre = code.closest('pre') || code;
+      const div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = code.textContent; // 엔티티 디코딩된 원문
+      pre.replaceWith(div);
+    });
+    if (window.mermaid && typeof window.mermaid.run === 'function') {
+      try {
+        window.mermaid.initialize({ startOnLoad: false, securityLevel: 'loose', theme: 'default' });
+        window.mermaid.run({ querySelector: '.mermaid' });
+      } catch (e) { /* 렌더 실패 시 텍스트 유지 */ }
+    }
+  }
+
+  // ```chart 코드블록(JSON) → Chart.js 캔버스 렌더
+  function enhanceCharts() {
+    const blocks = bodyEl.querySelectorAll('code.language-chart');
+    if (!blocks.length) return;
+    blocks.forEach((code) => {
+      const pre = code.closest('pre') || code;
+      let config;
+      try {
+        config = JSON.parse(code.textContent);
+      } catch (e) {
+        const err = document.createElement('div');
+        err.className = 'error-box';
+        err.textContent = '차트 데이터(JSON) 형식 오류: ' + e.message;
+        pre.replaceWith(err);
+        return;
+      }
+      const wrap = document.createElement('div');
+      wrap.className = 'chart-wrap';
+      const canvas = document.createElement('canvas');
+      wrap.appendChild(canvas);
+      pre.replaceWith(wrap);
+      if (window.Chart) {
+        config.options = Object.assign({ responsive: true, maintainAspectRatio: true }, config.options || {});
+        try { new window.Chart(canvas, config); } catch (e) { /* 무시 */ }
+      }
+    });
   }
 
   // 메타데이터 로드 후 본문 로드 (메타 실패해도 본문은 시도)

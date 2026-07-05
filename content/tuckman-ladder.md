@@ -12,15 +12,35 @@
 
 ## 2. 팀 발달 5단계 (사다리 도식)
 
-```
-              [ 성취기 Performing ]  ← 높은 성과
-          [ 규범기 Norming ]
-      [ 혼돈기 Storming ]
-  [ 형성기 Forming ]
-  ────────────────────────────────►  ( 이후 과업 종료 시 → 해산기 Adjourning )
+```mermaid
+flowchart LR
+  A([형성기<br/>Forming]) --> B([혼돈기<br/>Storming]) --> C([규범기<br/>Norming]) --> D([성취기<br/>Performing]) --> E([해산기<br/>Adjourning])
+  D -. 멤버 변경·과업 전환 시 회귀 .-> B
+  style D fill:#e8f0fe,stroke:#2f6fed,stroke-width:2px
 ```
 
 - **순차적 상승**이 기본이나, 신규 멤버 합류·과업 변경·갈등 재발 시 **이전 단계로 회귀(Regression)** 가능
+
+### 단계별 갈등 · 생산성 추이
+
+```chart
+{
+  "type": "line",
+  "data": {
+    "labels": ["형성기", "혼돈기", "규범기", "성취기", "해산기"],
+    "datasets": [
+      { "label": "갈등 수준", "data": [2, 5, 3, 1.5, 1], "borderColor": "#e11d48", "backgroundColor": "rgba(225,29,72,0.12)", "tension": 0.35, "fill": true },
+      { "label": "생산성", "data": [1, 2, 3.5, 5, 3], "borderColor": "#2f6fed", "backgroundColor": "rgba(47,111,237,0.12)", "tension": 0.35, "fill": true }
+    ]
+  },
+  "options": {
+    "plugins": { "legend": { "position": "bottom" } },
+    "scales": { "y": { "min": 0, "max": 6, "title": { "display": true, "text": "상대 수준" } } }
+  }
+}
+```
+
+> 혼돈기에 갈등이 정점에 달하고, 이를 넘어서면 생산성이 성취기에서 최고조에 이른다. (수치는 상대적 경향을 나타내는 예시)
 
 ## 3. 단계별 특징
 
