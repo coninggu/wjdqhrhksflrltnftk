@@ -45,9 +45,12 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-  <script src="assets/js/topic.js?v=2"></script>
+  <!-- 마크다운 파싱·정화는 저장소에 포함(self-host)해 CDN 공급망 위험 제거 -->
+  <script src="assets/js/vendor/marked.umd.js?v=1"></script>
+  <script src="assets/js/vendor/purify.min.js?v=1"></script>
+  <!-- 다이어그램·차트 렌더러는 정확 버전으로 고정(불변 URL) -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.6/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+  <script src="assets/js/topic.js?v=3"></script>
 </body>
 </html>

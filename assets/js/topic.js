@@ -58,7 +58,17 @@
   function renderMarkdown(md) {
     if (window.marked && typeof window.marked.parse === 'function') {
       window.marked.setOptions({ gfm: true, breaks: false });
-      bodyEl.innerHTML = window.marked.parse(md);
+      var html = window.marked.parse(md);
+      // XSS 방어: 파싱된 HTML을 DOMPurify로 정화한 뒤 삽입 (다층 방어)
+      if (window.DOMPurify && typeof window.DOMPurify.sanitize === 'function') {
+        html = window.DOMPurify.sanitize(html, {
+          // mermaid/chart 코드블록 식별용 class(language-*) 유지
+          ADD_ATTR: ['class'],
+          FORBID_TAGS: ['style'],
+          FORBID_ATTR: ['style']
+        });
+      }
+      bodyEl.innerHTML = html;
     } else {
       // 폴백: 마크다운 파서 로드 실패 시 원문 표시
       bodyEl.innerHTML = `<pre>${escapeHtml(md)}</pre>`;
