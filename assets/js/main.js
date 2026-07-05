@@ -59,7 +59,8 @@
     banner.hidden = false;
     const regEl = document.getElementById('dday-reg');
     const examEl = document.getElementById('dday-exam');
-    const regRange = fmtDateTime(regOpen) + ' ~ ' + fmtDateTime(regClose);
+    const short = (d) => (d.getMonth() + 1) + '.' + d.getDate();
+    const regRange = short(regOpen) + '~' + short(regClose);
 
     function tick() {
       const t = Date.now();
@@ -67,18 +68,18 @@
       if (t < regOpen.getTime()) {
         const ms = regOpen.getTime() - t;
         regEl.className = 'dday-row';
-        regEl.innerHTML = rowHtml('D-' + ddayNum(ms), '', '필기 <b>원서접수</b> 시작', regRange, remStr(ms));
+        regEl.innerHTML = rowHtml('D-' + ddayNum(ms), '', '<b>원서접수</b>', regRange, remStr(ms));
       } else if (t <= regClose.getTime()) {
         const ms = regClose.getTime() - t;
         regEl.className = 'dday-row';
-        regEl.innerHTML = rowHtml('접수중', 'badge-live', '필기 <b>원서접수</b> 마감', fmtDateTime(regClose) + ' 까지', remStr(ms));
+        regEl.innerHTML = rowHtml('접수중', 'badge-live', '<b>원서접수</b> 마감', '~' + short(regClose) + ' 18:00', remStr(ms));
       } else {
         regEl.className = 'dday-row is-muted';
-        regEl.innerHTML = rowHtml('마감', 'badge-muted', '필기 <b>원서접수</b> 종료', regRange, null);
+        regEl.innerHTML = rowHtml('마감', 'badge-muted', '<b>원서접수</b> 종료', regRange, null);
       }
       // 필기시험
       const ems = exam.getTime() - t;
-      const examSub = exam.getFullYear() + '.' + pad2(exam.getMonth() + 1) + '.' + pad2(exam.getDate()) + ' (' + WD[exam.getDay()] + ')';
+      const examSub = short(exam) + '(' + WD[exam.getDay()] + ')';
       if (ems <= 0) {
         examEl.innerHTML = rowHtml('D-DAY', '', '제' + next.round + '회 <b>필기시험</b>', examSub, '00:00:00');
       } else {

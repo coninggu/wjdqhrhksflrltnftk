@@ -42,9 +42,17 @@ body {
 .site-header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
-  padding: 22px 0;
+  padding: 20px 0;
 }
 .site-header.compact { padding: 16px 0; }
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 28px;
+  flex-wrap: wrap;
+}
+.header-left { min-width: 0; }
 
 .brand {
   display: inline-flex;
@@ -74,37 +82,35 @@ body {
   font-size: 14px;
 }
 
-/* D-day 배너 */
-.dday-banner { margin: 28px auto 0; }
+/* D-day 배너 (헤더 우측) */
+.dday-banner { flex: 0 0 auto; }
 .dday-inner {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  background: linear-gradient(135deg, #eef3fe 0%, #f7f9fc 100%);
-  border: 1px solid #d9e4fb;
-  border-radius: 14px;
-  padding: 14px 22px;
-  box-shadow: var(--shadow);
+  gap: 6px;
+  background: #f3f7ff;
+  border: 1px solid #dde7fb;
+  border-radius: 12px;
+  padding: 9px 13px;
 }
 .dday-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 9px;
+  flex-wrap: nowrap;
 }
 .dday-row.is-muted { opacity: .55; }
 .dday-badge {
   background: var(--primary);
   color: #fff;
   font-weight: 800;
-  font-size: 18px;
+  font-size: 13px;
   line-height: 1;
-  min-width: 66px;
+  min-width: 52px;
   text-align: center;
-  padding: 8px 14px;
-  border-radius: 10px;
-  letter-spacing: .5px;
+  padding: 5px 9px;
+  border-radius: 7px;
+  letter-spacing: .3px;
   flex: 0 0 auto;
 }
 .dday-badge.badge-live { background: var(--accent); }
@@ -112,24 +118,30 @@ body {
 .dday-text {
   display: inline-flex;
   align-items: baseline;
-  gap: 10px;
+  gap: 7px;
   flex-wrap: wrap;
-  font-size: 15px;
+  font-size: 13px;
   color: var(--text);
+  white-space: nowrap;
 }
 .dday-text b { font-weight: 800; color: var(--primary); }
-.dday-text em { font-style: normal; color: var(--text-muted); font-size: 13px; }
+.dday-text em { font-style: normal; color: var(--text-muted); font-size: 12px; }
 .dday-timer {
   font-variant-numeric: tabular-nums;
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 700;
   color: var(--primary);
   background: #fff;
-  border: 1px solid #d9e4fb;
-  border-radius: 8px;
-  padding: 5px 12px;
+  border: 1px solid #dde7fb;
+  border-radius: 6px;
+  padding: 3px 9px;
+  margin-left: auto;
   flex: 0 0 auto;
   white-space: nowrap;
+}
+@media (max-width: 720px) {
+  .dday-banner { width: 100%; }
+  .dday-timer { margin-left: 0; }
 }
 
 /* Search */
