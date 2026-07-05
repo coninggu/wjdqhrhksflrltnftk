@@ -29,19 +29,39 @@
       banner.hidden = false;
       return;
     }
-    const diff = Math.round((next.date - today) / 86400000);
     const wd = ['일', '월', '화', '수', '목', '금', '토'][next.date.getDay()];
     const y = next.date.getFullYear();
     const m = ('0' + (next.date.getMonth() + 1)).slice(-2);
     const dd = ('0' + next.date.getDate()).slice(-2);
-    const ddayText = diff === 0 ? 'D-DAY' : ('D-' + diff);
     banner.innerHTML =
       '<div class="dday-inner">' +
-        '<span class="dday-badge">' + ddayText + '</span>' +
+        '<span class="dday-badge" id="dday-badge">D-–</span>' +
         '<span class="dday-text">제' + next.round + '회 정보관리기술사 <b>필기시험</b>' +
           '<em>' + y + '.' + m + '.' + dd + ' (' + wd + ')</em></span>' +
+        '<span class="dday-timer" id="dday-timer" aria-live="off"></span>' +
       '</div>';
     banner.hidden = false;
+
+    const badgeEl = document.getElementById('dday-badge');
+    const timerEl = document.getElementById('dday-timer');
+    const pad = (n) => ('0' + n).slice(-2);
+    const DAY = 86400000;
+    function tick() {
+      const rem = next.date.getTime() - Date.now();
+      if (rem <= 0) {
+        badgeEl.textContent = 'D-DAY';
+        timerEl.textContent = '00:00:00';
+        return;
+      }
+      const days = Math.floor(rem / DAY);
+      const hh = Math.floor((rem % DAY) / 3600000);
+      const mm = Math.floor((rem % 3600000) / 60000);
+      const ss = Math.floor((rem % 60000) / 1000);
+      badgeEl.textContent = 'D-' + Math.ceil(rem / DAY);
+      timerEl.textContent = days + '일 ' + pad(hh) + ':' + pad(mm) + ':' + pad(ss);
+    }
+    tick();
+    setInterval(tick, 1000);
   }
 
   function escapeHtml(s) {

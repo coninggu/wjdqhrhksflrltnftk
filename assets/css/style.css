@@ -109,6 +109,18 @@ body {
 }
 .dday-text b { font-weight: 800; color: var(--primary); }
 .dday-text em { font-style: normal; color: var(--text-muted); font-size: 13px; }
+.dday-timer {
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  background: #fff;
+  border: 1px solid #d9e4fb;
+  border-radius: 8px;
+  padding: 5px 12px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
 
 /* Search */
 .search-section { margin: 26px auto 26px; max-width: 100%; }
