@@ -374,6 +374,51 @@ body {
 .loading { color: var(--text-muted); }
 .error-box { color: #b42318; background: #fef3f2; border: 1px solid #fecdca; padding: 16px 18px; border-radius: 8px; }
 
+/* 이전/다음 주제 네비게이션 */
+.topic-nav {
+  display: flex;
+  gap: 16px;
+  margin: 0 0 48px;
+}
+.topic-nav-link,
+.topic-nav .nav-spacer {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.topic-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: transform .12s, box-shadow .15s, border-color .15s;
+}
+.topic-nav-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: #cdd5e0;
+}
+.topic-nav-link.next { align-items: flex-end; text-align: right; }
+.topic-nav-link.prev { align-items: flex-start; }
+.topic-nav .nav-dir { font-size: 12px; font-weight: 700; color: var(--primary); }
+.topic-nav .nav-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 560px) {
+  .topic-nav { gap: 10px; }
+  .topic-nav-link { padding: 12px 14px; }
+  .topic-nav .nav-title { font-size: 13px; }
+}
+
 /* Footer */
 .site-footer {
   margin-top: auto;
