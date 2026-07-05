@@ -19,7 +19,7 @@
     "id": "ml-performance-metrics",
     "title": "머신러닝(Machine Learning) 성능지표",
     "category": "AI·데이터",
-    "tags": ["머신러닝", "AI", "모델평가", "분류", "회귀", "ROC-AUC", "F1"],
+    "tags": ["머신러닝", "AI", "모델평가", "분류", "회귀", "ROC-AUC", "F1", "134회"],
     "summary": "분류(Accuracy·Precision·Recall·F1·ROC-AUC)와 회귀(MAE·RMSE·R²) 성능지표의 정의·공식·선택 기준과 혼동행렬·Precision-Recall Trade-off.",
     "updated": "2026-07-05"
   },
@@ -149,6 +149,102 @@
     "category": "데이터베이스",
     "tags": ["트랜잭션", "격리수준", "ACID", "MVCC", "동시성제어", "134회"],
     "summary": "4가지 격리 수준(Read Uncommitted~Serializable)과 Dirty·Non-repeatable·Phantom Read 이상현상을 사례 중심으로 정리.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "deployment-testing-strategy",
+    "title": "실행 중인 애플리케이션 배포 전략 및 테스트 전략",
+    "category": "SW공학·관리",
+    "tags": ["배포전략", "무중단배포", "블루그린", "카나리", "CICD", "134회"],
+    "summary": "무중단 배포(블루-그린·카나리·롤링·A/B)와 배포 전·중·후(회귀·카나리분석·섀도·기능토글) 테스트 전략.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "software-testing",
+    "title": "소프트웨어 테스트(원리·블랙박스/화이트박스·기법)",
+    "category": "SW공학·관리",
+    "tags": ["소프트웨어테스트", "블랙박스", "화이트박스", "테스트원리", "커버리지", "134회"],
+    "summary": "테스트 7원리, 블랙박스·화이트박스 비교, 명세·구조·경험 기반 테스트 기법 정리.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "sbom",
+    "title": "SBOM(Software Bill of Materials)",
+    "category": "보안·개인정보",
+    "tags": ["SBOM", "공급망보안", "오픈소스", "SCA", "SPDX", "취약점", "134회"],
+    "summary": "SW 구성요소 명세서 SBOM으로 오픈소스 취약점·라이선스 리스크를 가시화하고 SCA·CVE 매핑으로 관리하는 방안.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "algorithm-complexity",
+    "title": "알고리즘 복잡도와 O-Notation",
+    "category": "컴퓨팅·임베디드",
+    "tags": ["알고리즘", "복잡도", "빅오", "O-Notation", "시간복잡도", "134회"],
+    "summary": "시간·공간 복잡도와 O-Notation의 개념·유형(O(1)~O(n!))과 입력 크기별 연산시간 증가율 차이.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "multidimensional-index",
+    "title": "다차원 색인구조(Multidimensional Index Structure)",
+    "category": "데이터베이스",
+    "tags": ["다차원색인", "R-Tree", "KD-Tree", "Quad-Tree", "공간DB", "134회"],
+    "summary": "다차원·공간 데이터 검색을 위한 색인구조(R-Tree·KD-Tree·Quad-Tree·Grid File)의 개념·유형·활용.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "open-source-license-change",
+    "title": "오픈소스 라이선스 정책 변화(개방형→폐쇄형)",
+    "category": "경영·사업전략",
+    "tags": ["오픈소스", "라이선스", "SSPL", "BSL", "라이선스변경", "134회"],
+    "summary": "MIT·BSD 등 개방형에서 SSPL·BSL 폐쇄형으로의 전환 배경(클라우드 무임승차)과 소프트웨어 산업 영향.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "it-project-risk-response",
+    "title": "IT 프로젝트 리스크 대응(Risk Response)",
+    "category": "프로젝트·조직관리",
+    "tags": ["리스크관리", "위협대응", "기회대응", "PMBOK", "프로젝트관리", "134회"],
+    "summary": "리스크 대응 계획 수립 절차와 위협(회피·전가·완화·수용)·기회(활용·공유·증대·수용) 대응 전략.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "multi-gpu",
+    "title": "멀티 GPU 기술(대규모 신경망 훈련)",
+    "category": "AI·데이터",
+    "tags": ["멀티GPU", "분산학습", "데이터병렬", "모델병렬", "NCCL", "딥러닝", "134회"],
+    "summary": "멀티 GPU의 개념·장점과 데이터·모델·파이프라인·텐서 병렬화, 환경 구축 시 통신·메모리·동기화 고려사항.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "ai-system-issues",
+    "title": "AI 시스템의 법적·윤리적·기술적 이슈 및 해결 방안",
+    "category": "AI·데이터",
+    "tags": ["AI윤리", "AI거버넌스", "XAI", "편향", "AI규제", "신뢰AI", "134회"],
+    "summary": "AI 시스템의 법적(책임·저작권)·윤리적(편향·투명성)·기술적(환각·보안) 이슈와 거버넌스·XAI·MLOps 해결 방안.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "open-api",
+    "title": "개방형 API(Open API)",
+    "category": "SW공학·관리",
+    "tags": ["OpenAPI", "REST", "SOAP", "API게이트웨이", "OAuth", "API보안", "134회"],
+    "summary": "개방형 API의 정의·특징, SOAP와 REST 구성요소 비교, OWASP API 취약점과 인증·게이트웨이 대응 방안.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "cloud-migration-audit",
+    "title": "클라우드 전환 사업의 단계별 감리",
+    "category": "인프라·클라우드",
+    "tags": ["클라우드전환", "감리", "마이그레이션", "6R", "CSAP", "134회"],
+    "summary": "클라우드 전환 사업의 계획·설계·전환·운영 단계별 감리 방법과 적합성·보안·데이터 무결성·비용 검토 항목.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "som",
+    "title": "SOM(Self Organizing Map, 자기조직화지도)",
+    "category": "AI·데이터",
+    "tags": ["SOM", "자기조직화지도", "군집분석", "비지도학습", "Kohonen", "134회"],
+    "summary": "경쟁 학습 기반 비지도 신경망 SOM의 정의·특징, 구성요소(BMU·이웃함수), 지도학습 신경망과의 차이점.",
     "updated": "2026-07-05"
   }
 ]
