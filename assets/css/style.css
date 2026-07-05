@@ -74,8 +74,44 @@ body {
   font-size: 14px;
 }
 
+/* D-day 배너 */
+.dday-banner { margin: 28px auto 0; }
+.dday-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, #eef3fe 0%, #f7f9fc 100%);
+  border: 1px solid #d9e4fb;
+  border-radius: 14px;
+  padding: 14px 22px;
+  box-shadow: var(--shadow);
+}
+.dday-badge {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1;
+  padding: 8px 15px;
+  border-radius: 10px;
+  letter-spacing: .5px;
+  flex: 0 0 auto;
+}
+.dday-text {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 15px;
+  color: var(--text);
+}
+.dday-text b { font-weight: 800; color: var(--primary); }
+.dday-text em { font-style: normal; color: var(--text-muted); font-size: 13px; }
+
 /* Search */
-.search-section { margin: 36px auto 26px; max-width: 100%; }
+.search-section { margin: 26px auto 26px; max-width: 100%; }
 .search-box {
   position: relative;
   display: flex;

@@ -7,6 +7,43 @@
 
   let topics = [];
 
+  // 2026 정보관리기술사 정기 필기시험 일정 (다음 시험 D-day 계산용)
+  const EXAM_SCHEDULE = [
+    { round: 138, written: '2026-02-07' },
+    { round: 139, written: '2026-05-16' },
+    { round: 140, written: '2026-08-22' }
+  ];
+
+  function renderDday() {
+    const banner = document.getElementById('dday-banner');
+    if (!banner) return;
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    let next = null;
+    for (const e of EXAM_SCHEDULE) {
+      const d = new Date(e.written + 'T00:00:00');
+      if (d >= today) { next = { round: e.round, date: d }; break; }
+    }
+    if (!next) {
+      banner.innerHTML = '<div class="dday-inner"><span class="dday-text">다음 정기 필기시험 일정이 공개되면 표시됩니다</span></div>';
+      banner.hidden = false;
+      return;
+    }
+    const diff = Math.round((next.date - today) / 86400000);
+    const wd = ['일', '월', '화', '수', '목', '금', '토'][next.date.getDay()];
+    const y = next.date.getFullYear();
+    const m = ('0' + (next.date.getMonth() + 1)).slice(-2);
+    const dd = ('0' + next.date.getDate()).slice(-2);
+    const ddayText = diff === 0 ? 'D-DAY' : ('D-' + diff);
+    banner.innerHTML =
+      '<div class="dday-inner">' +
+        '<span class="dday-badge">' + ddayText + '</span>' +
+        '<span class="dday-text">제' + next.round + '회 정보관리기술사 <b>필기시험</b>' +
+          '<em>' + y + '.' + m + '.' + dd + ' (' + wd + ')</em></span>' +
+      '</div>';
+    banner.hidden = false;
+  }
+
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, (c) => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -62,6 +99,8 @@
   }
 
   searchEl.addEventListener('input', applyFilter);
+
+  renderDday();
 
   fetch('data/topics.json', { cache: 'no-cache' })
     .then((res) => {
