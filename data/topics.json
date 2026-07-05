@@ -14,5 +14,13 @@
     "tags": ["시장분석", "사업전략", "시장규모", "스타트업", "사업타당성"],
     "summary": "시장 규모를 전체(TAM)→유효(SAM)→획득 가능(SOM)의 3단계 동심원으로 좁혀 추정하는 프레임워크와 산정 방법(Top-down·Bottom-up).",
     "updated": "2026-07-05"
+  },
+  {
+    "id": "ml-performance-metrics",
+    "title": "머신러닝(Machine Learning) 성능지표",
+    "category": "AI·데이터",
+    "tags": ["머신러닝", "AI", "모델평가", "분류", "회귀", "ROC-AUC", "F1"],
+    "summary": "분류(Accuracy·Precision·Recall·F1·ROC-AUC)와 회귀(MAE·RMSE·R²) 성능지표의 정의·공식·선택 기준과 혼동행렬·Precision-Recall Trade-off.",
+    "updated": "2026-07-05"
   }
 ]
