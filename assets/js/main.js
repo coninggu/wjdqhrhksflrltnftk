@@ -17,13 +17,11 @@
     const tags = (t.tags || [])
       .map((tag) => `<span class="tag">#${escapeHtml(tag)}</span>`)
       .join('');
-    const updated = t.updated ? `<span class="card-updated">${escapeHtml(t.updated)}</span>` : '';
     return `
       <li>
         <a class="topic-card" href="topic.html?id=${encodeURIComponent(t.id)}">
           <div class="card-top">
             <span class="card-category">${escapeHtml(t.category || '기타')}</span>
-            ${updated}
           </div>
           <h2>${escapeHtml(t.title)}</h2>
           <p class="card-summary">${escapeHtml(t.summary || '')}</p>
