@@ -22,5 +22,85 @@
     "tags": ["머신러닝", "AI", "모델평가", "분류", "회귀", "ROC-AUC", "F1"],
     "summary": "분류(Accuracy·Precision·Recall·F1·ROC-AUC)와 회귀(MAE·RMSE·R²) 성능지표의 정의·공식·선택 기준과 혼동행렬·Precision-Recall Trade-off.",
     "updated": "2026-07-05"
+  },
+  {
+    "id": "configuration-management",
+    "title": "형상관리(Configuration Management)와 기준선(Baseline)",
+    "category": "SW공학·관리",
+    "tags": ["형상관리", "SCM", "기준선", "Baseline", "변경관리", "134회"],
+    "summary": "산출물 변경을 식별·통제·상태기록·감사로 관리하는 형상관리와 기능·할당·제품 기준선의 개념.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "information-hiding",
+    "title": "정보은닉(Information Hiding)",
+    "category": "SW공학·관리",
+    "tags": ["정보은닉", "캡슐화", "모듈화", "결합도", "객체지향", "134회"],
+    "summary": "모듈 내부 구현을 감추고 인터페이스만 공개해 결합도를 낮추는 설계 원리와 캡슐화와의 관계·효과.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "image-data-annotation",
+    "title": "이미지 데이터 어노테이션(Image Data Annotation)",
+    "category": "AI·데이터",
+    "tags": ["어노테이션", "라벨링", "컴퓨터비전", "데이터", "AI학습", "134회"],
+    "summary": "바운딩박스·폴리곤·세그멘테이션·키포인트·3D 등 이미지 라벨링 유형과 수동·반자동·능동학습 기법.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "static-vs-dynamic-sql",
+    "title": "정적 SQL과 동적 SQL 비교",
+    "category": "데이터베이스",
+    "tags": ["SQL", "정적SQL", "동적SQL", "실행계획", "SQL인젝션", "134회"],
+    "summary": "컴파일 시 확정되는 정적 SQL과 런타임 생성되는 동적 SQL의 성능·유연성·보안(Injection) 비교.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "rip-vs-ospf",
+    "title": "RIP와 OSPF 비교 (라우팅 프로토콜)",
+    "category": "네트워크",
+    "tags": ["라우팅", "RIP", "OSPF", "거리벡터", "링크상태", "IGP", "134회"],
+    "summary": "거리벡터(RIP)와 링크상태(OSPF) 라우팅 프로토콜의 알고리즘·메트릭·수렴속도·확장성 비교.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "intermittent-computing",
+    "title": "인터미턴트 컴퓨팅(Intermittent Computing)",
+    "category": "컴퓨팅·임베디드",
+    "tags": ["인터미턴트컴퓨팅", "에너지하베스팅", "배터리리스", "체크포인팅", "IoT", "134회"],
+    "summary": "에너지 하베스팅 기반 간헐 전력 환경에서 체크포인팅·비휘발성 메모리로 상태를 보존·복구하는 초저전력 컴퓨팅.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "storage-virtualization",
+    "title": "스토리지 가상화(Storage Virtualization)",
+    "category": "인프라·클라우드",
+    "tags": ["스토리지가상화", "SDS", "씬프로비저닝", "SAN", "NAS", "134회"],
+    "summary": "분산 저장자원을 논리적 단일 풀로 추상화하는 기술 — 호스트·네트워크·어레이 기반 유형과 블록/파일 레벨.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "privacy-enhancing-technologies",
+    "title": "개인정보 보호 강화기술(PET)",
+    "category": "보안·개인정보",
+    "tags": ["PET", "개인정보", "차분프라이버시", "동형암호", "연합학습", "익명화", "134회"],
+    "summary": "데이터 활용과 프라이버시를 동시에 달성하는 기술군 — 가명·익명화, 차분프라이버시, 동형암호, ZKP, MPC, 연합학습.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "high-bandwidth-memory",
+    "title": "고대역 초고속 메모리(HBM)",
+    "category": "하드웨어·반도체",
+    "tags": ["HBM", "TSV", "3D적층", "AI반도체", "메모리", "GPU", "134회"],
+    "summary": "DRAM을 TSV로 3D 적층해 초고대역폭·저전력을 실현한 메모리 — AI·HPC 메모리 병목(Memory Wall) 해소.",
+    "updated": "2026-07-05"
+  },
+  {
+    "id": "rag",
+    "title": "RAG(Retrieval Augmented Generation, 검색증강생성)",
+    "category": "AI·데이터",
+    "tags": ["RAG", "LLM", "검색증강생성", "벡터DB", "임베딩", "환각", "134회"],
+    "summary": "외부 지식 검색 결과를 LLM 프롬프트에 결합해 환각을 줄이고 최신·근거 기반 답변을 생성하는 기법과 아키텍처.",
+    "updated": "2026-07-05"
   }
 ]
