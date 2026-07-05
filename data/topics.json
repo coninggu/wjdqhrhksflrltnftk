@@ -6,5 +6,13 @@
     "tags": ["팀빌딩", "조직행동", "PMBOK", "팀개발", "리더십"],
     "summary": "팀이 형성에서 성과에 이르기까지 거치는 5단계(Forming·Storming·Norming·Performing·Adjourning)와 단계별 특징·리더십 전략.",
     "updated": "2026-07-05"
+  },
+  {
+    "id": "tam-sam-som",
+    "title": "TAM-SAM-SOM — 시장 규모 추정 프레임워크",
+    "category": "경영·사업전략",
+    "tags": ["시장분석", "사업전략", "시장규모", "스타트업", "사업타당성"],
+    "summary": "시장 규모를 전체(TAM)→유효(SAM)→획득 가능(SOM)의 3단계 동심원으로 좁혀 추정하는 프레임워크와 산정 방법(Top-down·Bottom-up).",
+    "updated": "2026-07-05"
   }
 ]
