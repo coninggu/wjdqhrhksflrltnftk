@@ -1,5 +1,13 @@
 [
   {
+    "id": "fine-tuning",
+    "title": "AI 파인튜닝(Fine-tuning)",
+    "category": "AI·데이터",
+    "tags": ["파인튜닝", "LLM", "PEFT", "LoRA", "RLHF", "전이학습"],
+    "summary": "사전학습 모델을 특정 과업 데이터로 추가 학습하는 전이학습 기법 — Full/PEFT(LoRA·QLoRA), SFT·RLHF/DPO 정렬, RAG와의 비교.",
+    "updated": "2026-07-06"
+  },
+  {
     "id": "tuckman-ladder",
     "title": "터크만(Tuckman) 사다리 모델 — 팀 발달 및 단계별 특징",
     "category": "프로젝트·조직관리",
