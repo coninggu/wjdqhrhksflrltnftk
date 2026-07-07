@@ -146,7 +146,8 @@
   }
 
   // 메타데이터 로드 후 본문 로드 (메타 실패해도 본문은 시도)
-  fetch('data/topics.json', { cache: 'no-cache' })
+  // 캐시 허용(no-cache 제거): 목록↔상세 이동 시 topics.json 재다운로드 방지
+  fetch('data/topics.json')
     .then((res) => (res.ok ? res.json() : []))
     .then((topics) => {
       const topic = Array.isArray(topics) ? topics.find((t) => t.id === id) : null;
@@ -155,7 +156,7 @@
     })
     .catch(() => { /* 메타 없이 진행 */ })
     .finally(() => {
-      fetch(`content/${id}.md`, { cache: 'no-cache' })
+      fetch(`content/${id}.md`)
         .then((res) => {
           if (!res.ok) throw new Error('해당 주제 내용을 찾을 수 없습니다 (' + res.status + ')');
           return res.text();

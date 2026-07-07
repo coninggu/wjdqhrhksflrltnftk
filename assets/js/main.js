@@ -144,11 +144,17 @@
     render(topics.filter((t) => matches(t, q)));
   }
 
-  searchEl.addEventListener('input', applyFilter);
+  // 검색 입력 디바운스: 매 키 입력마다 전체 재렌더하지 않고 입력이 멎은 뒤 필터
+  let searchTimer;
+  searchEl.addEventListener('input', () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(applyFilter, 150);
+  });
 
   renderDday();
 
-  fetch('data/topics.json', { cache: 'no-cache' })
+  // 캐시 허용(no-cache 제거): 재방문·상세 이동 시 재다운로드 최소화
+  fetch('data/topics.json')
     .then((res) => {
       if (!res.ok) throw new Error('topics.json 로드 실패 (' + res.status + ')');
       return res.json();
