@@ -1,9 +1,481 @@
 [
   {
+    "id": "rest-api",
+    "title": "REST API(Representational State Transfer)",
+    "category": "SW공학·관리",
+    "tags": [
+      "RESTAPI",
+      "HTTP",
+      "무상태",
+      "웹서비스",
+      "아키텍처",
+      "133회"
+    ],
+    "summary": "자원을 URI로 식별하고 HTTP 메서드로 행위를 표현하는 무상태·균일 인터페이스 기반 아키텍처 스타일 API — 6대 원칙·성숙도 모델.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "mutation-testing",
+    "title": "뮤테이션 테스트(Mutation Test)",
+    "category": "SW공학·관리",
+    "tags": [
+      "뮤테이션테스트",
+      "테스트품질",
+      "화이트박스",
+      "결함주입",
+      "커버리지",
+      "133회"
+    ],
+    "summary": "코드에 인위적 결함(뮤턴트)을 주입해 테스트가 이를 검출하는지로 테스트 케이스의 결함 검출력을 평가하는 기법.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "nosql",
+    "title": "NoSQL 유형과 데이터 모델링 절차",
+    "category": "데이터베이스",
+    "tags": [
+      "NoSQL",
+      "KeyValue",
+      "Document",
+      "분산DB",
+      "비정규화",
+      "133회"
+    ],
+    "summary": "비정형·대용량·분산에 최적화된 저장 기술 — Key-Value·Document·Column·Graph 유형과 쿼리 우선 비정규화 모델링 절차.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "digital-envelope",
+    "title": "전자봉투(Digital Envelope) 생성·개봉 절차",
+    "category": "보안·개인정보",
+    "tags": [
+      "전자봉투",
+      "하이브리드암호",
+      "세션키",
+      "공개키",
+      "기밀성",
+      "133회"
+    ],
+    "summary": "평문을 세션키로 대칭 암호화하고 세션키를 수신자 공개키로 암호화해 함께 보내는 하이브리드 기법의 생성·개봉 절차.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "homomorphic-encryption",
+    "title": "동형암호(Homomorphic Encryption)",
+    "category": "보안·개인정보",
+    "tags": [
+      "동형암호",
+      "FHE",
+      "프라이버시",
+      "암호연산",
+      "CKKS",
+      "133회"
+    ],
+    "summary": "복호화 없이 암호문 상태에서 연산이 가능한 암호 기술 — PHE·SWHE·FHE 유형과 동작원리·활용.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "technology-acceptance-model",
+    "title": "기술수용모델(TAM)",
+    "category": "경영·사업전략",
+    "tags": [
+      "TAM",
+      "기술수용",
+      "사용용이성",
+      "유용성",
+      "UTAUT",
+      "133회"
+    ],
+    "summary": "지각된 유용성(PU)·사용용이성(PEOU)이 태도·사용의도를 거쳐 실제 기술 사용으로 이어진다고 설명하는 기술 수용 예측 모델.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "crud-matrix",
+    "title": "CRUD 매트릭스(CRUD Matrix)",
+    "category": "데이터베이스",
+    "tags": [
+      "CRUD",
+      "데이터모델링",
+      "상관분석",
+      "정합성검증",
+      "프로세스",
+      "133회"
+    ],
+    "summary": "프로세스와 엔터티의 생성·조회·수정·삭제 관계를 행렬로 표현해 데이터-기능 정합성을 검증하는 분석 도구.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "ai-trustworthiness",
+    "title": "인공지능 신뢰성(AI Trustworthiness)",
+    "category": "AI·데이터",
+    "tags": [
+      "AI신뢰성",
+      "공정성",
+      "XAI",
+      "견고성",
+      "책임성",
+      "133회"
+    ],
+    "summary": "공정성·투명성·견고성·안전성·책임성·프라이버시를 핵심 속성으로, 전 생애주기 거버넌스로 확보하는 AI의 신뢰 가능 성질.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "bcp-drs",
+    "title": "BCP 주요 지표와 DRS 구축 고려사항",
+    "category": "인프라·클라우드",
+    "tags": [
+      "BCP",
+      "DRS",
+      "RTO",
+      "RPO",
+      "재해복구",
+      "133회"
+    ],
+    "summary": "BCP의 RTO·RPO·RSO·BIA 지표와 DRS 복구 수준(Mirror~Cold)·거리·복제방식·모의훈련 등 핵심 고려사항.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "deepfake",
+    "title": "딥페이크(Deepfake)",
+    "category": "AI·데이터",
+    "tags": [
+      "딥페이크",
+      "GAN",
+      "생성AI",
+      "탐지",
+      "워터마킹",
+      "133회"
+    ],
+    "summary": "GAN 등 생성 AI로 실제 같은 가짜 미디어를 합성하는 기술과 탐지 AI·워터마킹·출처인증·법제 대응.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "software-3r",
+    "title": "소프트웨어 유지보수 3R (역공학·재구조화·재공학)",
+    "category": "SW공학·관리",
+    "tags": [
+      "3R",
+      "역공학",
+      "재공학",
+      "재구조화",
+      "레거시",
+      "133회"
+    ],
+    "summary": "역공학(설계 추출)·재구조화(구조 개선)·재공학(재구축)으로 레거시 SW의 유지보수성을 높이고 비용을 절감하는 기법.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "kubernetes",
+    "title": "쿠버네티스(Kubernetes)",
+    "category": "인프라·클라우드",
+    "tags": [
+      "쿠버네티스",
+      "컨테이너",
+      "오케스트레이션",
+      "Pod",
+      "MSA",
+      "133회"
+    ],
+    "summary": "컨테이너 배포·확장·운영을 선언적으로 자동화하는 오케스트레이션 플랫폼 — Control Plane·Node·핵심 오브젝트.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "tcp-handshake",
+    "title": "TCP 3-way / 4-way Handshake",
+    "category": "네트워크",
+    "tags": [
+      "TCP",
+      "3wayHandshake",
+      "4wayHandshake",
+      "연결관리",
+      "TIME_WAIT",
+      "133회"
+    ],
+    "summary": "SYN→SYN+ACK→ACK의 3-way로 연결을 수립하고 FIN→ACK→FIN→ACK의 4-way로 해제하는 TCP 연결·해제 절차.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "hw-sizing",
+    "title": "정보시스템 하드웨어 규모산정 지침(TTAK.KO-10.0292/R3)",
+    "category": "인프라·클라우드",
+    "tags": [
+      "규모산정",
+      "HW용량",
+      "TTA표준",
+      "tpmC",
+      "사이징",
+      "133회"
+    ],
+    "summary": "업무량 분석→방식 선정→보정 적용→산출·검증 절차로 서버·스토리지 등 HW 용량을 성능지표 기반으로 산정하는 표준 지침.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "gov-ui-ux-guideline",
+    "title": "디지털 정부서비스 UI/UX 가이드라인(2024.2)",
+    "category": "SW공학·관리",
+    "tags": [
+      "UIUX",
+      "전자정부",
+      "접근성",
+      "디자인시스템",
+      "공공서비스",
+      "133회"
+    ],
+    "summary": "원칙·요소·패턴·스타일 구조로 공공 디지털 서비스의 UI/UX 품질과 접근성을 일관되게 확보하는 행안부 가이드라인.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "itsm",
+    "title": "IT 서비스 관리체계(ITSM)와 ISO/IEC 20000",
+    "category": "SW공학·관리",
+    "tags": [
+      "ITSM",
+      "ISO20000",
+      "ITIL",
+      "SLA",
+      "서비스관리",
+      "133회"
+    ],
+    "summary": "IT를 서비스 관점으로 관리하는 체계 — 설계(SLA·용량)→전환(변경·릴리스·구성)→운영(인시던트·문제)→개선 프로세스.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "plm-llm",
+    "title": "PLM에서 LLM으로의 발전 과정",
+    "category": "AI·데이터",
+    "tags": [
+      "PLM",
+      "LLM",
+      "사전학습",
+      "SFT",
+      "RLHF",
+      "133회"
+    ],
+    "summary": "사전학습+미세조정의 전이학습 모델 PLM이 사전학습→SFT→RLHF/DPO 정렬을 거쳐 창발적 능력의 LLM으로 발전하는 과정.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "privacy-by-design",
+    "title": "PbD(Privacy by Design)",
+    "category": "보안·개인정보",
+    "tags": [
+      "PbD",
+      "프라이버시",
+      "7대원칙",
+      "8대전략",
+      "개인정보보호법",
+      "133회"
+    ],
+    "summary": "설계 단계부터 프라이버시를 선제·기본값으로 내재화하는 방법론 — 7대 원칙·8대 전략과 개인정보보호법 제3조 비교.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "data-safe-zone",
+    "title": "데이터 안심구역(Data Safe Zone)",
+    "category": "보안·개인정보",
+    "tags": [
+      "데이터안심구역",
+      "가명정보",
+      "데이터활용",
+      "반출심의",
+      "접근통제",
+      "133회"
+    ],
+    "summary": "민감 데이터를 유출 없이 분석·활용하도록 통제하는 지정 환경 — 정의·기능·지정요건.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "anti-forensic",
+    "title": "안티포렌식(Anti-Forensic)과 대응",
+    "category": "보안·개인정보",
+    "tags": [
+      "안티포렌식",
+      "디지털포렌식",
+      "증거보존",
+      "컴플라이언스",
+      "무결성",
+      "133회"
+    ],
+    "summary": "증거를 은닉·훼손·변조해 포렌식을 방해하는 기술과, 로그·증거 수집·무결성 보존(CoC)·모니터링 기반 컴플라이언스 대응.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "genai-security",
+    "title": "생성형 AI 보안 가이드라인",
+    "category": "보안·개인정보",
+    "tags": [
+      "생성형AI",
+      "보안위협",
+      "프롬프트인젝션",
+      "정보유출",
+      "챗GPT",
+      "133회"
+    ],
+    "summary": "정보유출·프롬프트 인젝션·환각·악용 위협에 대해 입력 차단·모델 보안·출력 검증·거버넌스로 안전한 활용을 제시하는 지침.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "super-app",
+    "title": "슈퍼앱(Super App)",
+    "category": "경영·사업전략",
+    "tags": [
+      "슈퍼앱",
+      "미니앱",
+      "플랫폼",
+      "간편결제",
+      "멀티앱",
+      "133회"
+    ],
+    "summary": "단일 앱에 미니앱 생태계로 다양한 서비스를 통합한 플랫폼 — 슈퍼앱과 멀티앱 비교·미니앱·사례·이슈.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "swot-3c-pest",
+    "title": "경영환경 분석: SWOT · 3C · PEST",
+    "category": "경영·사업전략",
+    "tags": [
+      "SWOT",
+      "3C분석",
+      "PEST",
+      "경영환경분석",
+      "전략수립",
+      "133회"
+    ],
+    "summary": "PEST(거시환경)·3C(고객·경쟁사·자사)로 외부·시장을 분석하고 SWOT로 종합해 SO·ST·WO·WT 전략을 도출하는 분석 기법 비교.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "requirements-engineering",
+    "title": "소프트웨어 요구공학(Requirement Engineering)",
+    "category": "SW공학·관리",
+    "tags": [
+      "요구공학",
+      "요구사항",
+      "SRS",
+      "추적성",
+      "도출",
+      "133회"
+    ],
+    "summary": "도출→분석→명세→검증→관리 절차로 이해관계자 요구를 체계화하며 완전·일관·추적 가능한 SRS로 실패를 예방하는 활동.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "neural-network",
+    "title": "인공신경망(Artificial Neural Network)",
+    "category": "AI·데이터",
+    "tags": [
+      "인공신경망",
+      "FFNN",
+      "역전파",
+      "활성화함수",
+      "딥러닝",
+      "133회"
+    ],
+    "summary": "가중합+활성화 뉴런의 계층 구조 — FFNN 순방향 예측, 역전파 학습, Sigmoid·ReLU·Softmax 등 활성화 함수.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "multi-party-computation",
+    "title": "다자간 계산(MPC, Multi-Party Computation)",
+    "category": "보안·개인정보",
+    "tags": [
+      "MPC",
+      "비밀분산",
+      "문턱서명",
+      "PET",
+      "프라이버시",
+      "133회"
+    ],
+    "summary": "여러 참여자가 입력을 비공개로 둔 채 결과만 공동 계산하는 기술 — 비밀분산·가블드회로 등 종류와 분산 인증 활용.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "reliability-portability-test",
+    "title": "소프트웨어 테스트 종류와 신뢰성·이식성 테스트",
+    "category": "SW공학·관리",
+    "tags": [
+      "소프트웨어테스트",
+      "신뢰성테스트",
+      "이식성테스트",
+      "품질특성",
+      "ISO25010",
+      "133회"
+    ],
+    "summary": "테스트 종류(수준·기법·목적별)와 신뢰성 테스트(성숙성·결함허용성·복구성)·이식성 테스트(적응성·설치성·대체성)의 세부 활동.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "access-control",
+    "title": "접근제어(Access Control)",
+    "category": "보안·개인정보",
+    "tags": [
+      "접근제어",
+      "DAC",
+      "MAC",
+      "RBAC",
+      "참조모니터",
+      "133회"
+    ],
+    "summary": "식별·인증→인가→감사 절차로 주체의 객체 접근을 통제 — DAC·MAC·RBAC·ABAC 정책과 ACL·Capability·참조모니터 구현.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "data-modeling",
+    "title": "RDBMS 데이터 모델링(식별·비식별 관계)",
+    "category": "데이터베이스",
+    "tags": [
+      "데이터모델링",
+      "식별관계",
+      "비식별관계",
+      "정규화",
+      "ERD",
+      "133회"
+    ],
+    "summary": "개념→논리→물리 단계 모델링과 식별관계(부모 PK가 자식 PK 포함)·비식별관계(일반 FK) 비교, 정규화·무결성 고려사항.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "private-5g",
+    "title": "5G 특화망(Private 5G) 구축 고려사항",
+    "category": "네트워크",
+    "tags": [
+      "5G특화망",
+      "이음5G",
+      "URLLC",
+      "네트워크슬라이싱",
+      "간섭회피",
+      "133회"
+    ],
+    "summary": "전용 5G로 초저지연·고신뢰를 제공 — 이중화·MEC·슬라이싱의 안정성 확보와 주파수 계획·빔포밍·간섭조정의 간섭 회피 방안.",
+    "updated": "2026-07-07"
+  },
+  {
+    "id": "vpn",
+    "title": "VPN(Virtual Private Network)",
+    "category": "네트워크",
+    "tags": [
+      "VPN",
+      "IPSec",
+      "SSLVPN",
+      "터널링",
+      "ZTNA",
+      "133회"
+    ],
+    "summary": "공용망 위에 암호화 터널로 가상 전용망을 구성 — IPSec(지사간)·SSL(원격) 비교와 터널링·암호화·인증·무결성 기술 요소.",
+    "updated": "2026-07-07"
+  },
+  {
     "id": "fine-tuning",
     "title": "AI 파인튜닝(Fine-tuning)",
     "category": "AI·데이터",
-    "tags": ["파인튜닝", "LLM", "PEFT", "LoRA", "RLHF", "전이학습"],
+    "tags": [
+      "파인튜닝",
+      "LLM",
+      "PEFT",
+      "LoRA",
+      "RLHF",
+      "전이학습"
+    ],
     "summary": "사전학습 모델을 특정 과업 데이터로 추가 학습하는 전이학습 기법 — Full/PEFT(LoRA·QLoRA), SFT·RLHF/DPO 정렬, RAG와의 비교.",
     "updated": "2026-07-06"
   },
@@ -11,7 +483,14 @@
     "id": "tuckman-ladder",
     "title": "터크만(Tuckman) 사다리 모델 — 팀 발달 및 단계별 특징",
     "category": "프로젝트·조직관리",
-    "tags": ["팀빌딩", "조직행동", "PMBOK", "팀개발", "리더십", "134회"],
+    "tags": [
+      "팀빌딩",
+      "조직행동",
+      "PMBOK",
+      "팀개발",
+      "리더십",
+      "134회"
+    ],
     "summary": "팀이 형성에서 성과에 이르기까지 거치는 5단계(Forming·Storming·Norming·Performing·Adjourning)와 단계별 특징·리더십 전략.",
     "updated": "2026-07-05"
   },
@@ -19,7 +498,14 @@
     "id": "tam-sam-som",
     "title": "TAM-SAM-SOM — 시장 규모 추정 프레임워크",
     "category": "경영·사업전략",
-    "tags": ["시장분석", "사업전략", "시장규모", "스타트업", "사업타당성", "134회"],
+    "tags": [
+      "시장분석",
+      "사업전략",
+      "시장규모",
+      "스타트업",
+      "사업타당성",
+      "134회"
+    ],
     "summary": "시장 규모를 전체(TAM)→유효(SAM)→획득 가능(SOM)의 3단계 동심원으로 좁혀 추정하는 프레임워크와 산정 방법(Top-down·Bottom-up).",
     "updated": "2026-07-05"
   },
@@ -27,7 +513,16 @@
     "id": "ml-performance-metrics",
     "title": "머신러닝(Machine Learning) 성능지표",
     "category": "AI·데이터",
-    "tags": ["머신러닝", "AI", "모델평가", "분류", "회귀", "ROC-AUC", "F1", "134회"],
+    "tags": [
+      "머신러닝",
+      "AI",
+      "모델평가",
+      "분류",
+      "회귀",
+      "ROC-AUC",
+      "F1",
+      "134회"
+    ],
     "summary": "분류(Accuracy·Precision·Recall·F1·ROC-AUC)와 회귀(MAE·RMSE·R²) 성능지표의 정의·공식·선택 기준과 혼동행렬·Precision-Recall Trade-off.",
     "updated": "2026-07-05"
   },
@@ -35,7 +530,14 @@
     "id": "configuration-management",
     "title": "형상관리(Configuration Management)와 기준선(Baseline)",
     "category": "SW공학·관리",
-    "tags": ["형상관리", "SCM", "기준선", "Baseline", "변경관리", "134회"],
+    "tags": [
+      "형상관리",
+      "SCM",
+      "기준선",
+      "Baseline",
+      "변경관리",
+      "134회"
+    ],
     "summary": "산출물 변경을 식별·통제·상태기록·감사로 관리하는 형상관리와 기능·할당·제품 기준선의 개념.",
     "updated": "2026-07-05"
   },
@@ -43,7 +545,14 @@
     "id": "information-hiding",
     "title": "정보은닉(Information Hiding)",
     "category": "SW공학·관리",
-    "tags": ["정보은닉", "캡슐화", "모듈화", "결합도", "객체지향", "134회"],
+    "tags": [
+      "정보은닉",
+      "캡슐화",
+      "모듈화",
+      "결합도",
+      "객체지향",
+      "134회"
+    ],
     "summary": "모듈 내부 구현을 감추고 인터페이스만 공개해 결합도를 낮추는 설계 원리와 캡슐화와의 관계·효과.",
     "updated": "2026-07-05"
   },
@@ -51,7 +560,14 @@
     "id": "image-data-annotation",
     "title": "이미지 데이터 어노테이션(Image Data Annotation)",
     "category": "AI·데이터",
-    "tags": ["어노테이션", "라벨링", "컴퓨터비전", "데이터", "AI학습", "134회"],
+    "tags": [
+      "어노테이션",
+      "라벨링",
+      "컴퓨터비전",
+      "데이터",
+      "AI학습",
+      "134회"
+    ],
     "summary": "바운딩박스·폴리곤·세그멘테이션·키포인트·3D 등 이미지 라벨링 유형과 수동·반자동·능동학습 기법.",
     "updated": "2026-07-05"
   },
@@ -59,7 +575,14 @@
     "id": "static-vs-dynamic-sql",
     "title": "정적 SQL과 동적 SQL 비교",
     "category": "데이터베이스",
-    "tags": ["SQL", "정적SQL", "동적SQL", "실행계획", "SQL인젝션", "134회"],
+    "tags": [
+      "SQL",
+      "정적SQL",
+      "동적SQL",
+      "실행계획",
+      "SQL인젝션",
+      "134회"
+    ],
     "summary": "컴파일 시 확정되는 정적 SQL과 런타임 생성되는 동적 SQL의 성능·유연성·보안(Injection) 비교.",
     "updated": "2026-07-05"
   },
@@ -67,7 +590,15 @@
     "id": "rip-vs-ospf",
     "title": "RIP와 OSPF 비교 (라우팅 프로토콜)",
     "category": "네트워크",
-    "tags": ["라우팅", "RIP", "OSPF", "거리벡터", "링크상태", "IGP", "134회"],
+    "tags": [
+      "라우팅",
+      "RIP",
+      "OSPF",
+      "거리벡터",
+      "링크상태",
+      "IGP",
+      "134회"
+    ],
     "summary": "거리벡터(RIP)와 링크상태(OSPF) 라우팅 프로토콜의 알고리즘·메트릭·수렴속도·확장성 비교.",
     "updated": "2026-07-05"
   },
@@ -75,7 +606,14 @@
     "id": "intermittent-computing",
     "title": "인터미턴트 컴퓨팅(Intermittent Computing)",
     "category": "컴퓨팅·임베디드",
-    "tags": ["인터미턴트컴퓨팅", "에너지하베스팅", "배터리리스", "체크포인팅", "IoT", "134회"],
+    "tags": [
+      "인터미턴트컴퓨팅",
+      "에너지하베스팅",
+      "배터리리스",
+      "체크포인팅",
+      "IoT",
+      "134회"
+    ],
     "summary": "에너지 하베스팅 기반 간헐 전력 환경에서 체크포인팅·비휘발성 메모리로 상태를 보존·복구하는 초저전력 컴퓨팅.",
     "updated": "2026-07-05"
   },
@@ -83,7 +621,14 @@
     "id": "storage-virtualization",
     "title": "스토리지 가상화(Storage Virtualization)",
     "category": "인프라·클라우드",
-    "tags": ["스토리지가상화", "SDS", "씬프로비저닝", "SAN", "NAS", "134회"],
+    "tags": [
+      "스토리지가상화",
+      "SDS",
+      "씬프로비저닝",
+      "SAN",
+      "NAS",
+      "134회"
+    ],
     "summary": "분산 저장자원을 논리적 단일 풀로 추상화하는 기술 — 호스트·네트워크·어레이 기반 유형과 블록/파일 레벨.",
     "updated": "2026-07-05"
   },
@@ -91,7 +636,15 @@
     "id": "privacy-enhancing-technologies",
     "title": "개인정보 보호 강화기술(PET)",
     "category": "보안·개인정보",
-    "tags": ["PET", "개인정보", "차분프라이버시", "동형암호", "연합학습", "익명화", "134회"],
+    "tags": [
+      "PET",
+      "개인정보",
+      "차분프라이버시",
+      "동형암호",
+      "연합학습",
+      "익명화",
+      "134회"
+    ],
     "summary": "데이터 활용과 프라이버시를 동시에 달성하는 기술군 — 가명·익명화, 차분프라이버시, 동형암호, ZKP, MPC, 연합학습.",
     "updated": "2026-07-05"
   },
@@ -99,7 +652,15 @@
     "id": "high-bandwidth-memory",
     "title": "고대역 초고속 메모리(HBM)",
     "category": "하드웨어·반도체",
-    "tags": ["HBM", "TSV", "3D적층", "AI반도체", "메모리", "GPU", "134회"],
+    "tags": [
+      "HBM",
+      "TSV",
+      "3D적층",
+      "AI반도체",
+      "메모리",
+      "GPU",
+      "134회"
+    ],
     "summary": "DRAM을 TSV로 3D 적층해 초고대역폭·저전력을 실현한 메모리 — AI·HPC 메모리 병목(Memory Wall) 해소.",
     "updated": "2026-07-05"
   },
@@ -107,7 +668,15 @@
     "id": "rag",
     "title": "RAG(Retrieval Augmented Generation, 검색증강생성)",
     "category": "AI·데이터",
-    "tags": ["RAG", "LLM", "검색증강생성", "벡터DB", "임베딩", "환각", "134회"],
+    "tags": [
+      "RAG",
+      "LLM",
+      "검색증강생성",
+      "벡터DB",
+      "임베딩",
+      "환각",
+      "134회"
+    ],
     "summary": "외부 지식 검색 결과를 LLM 프롬프트에 결합해 환각을 줄이고 최신·근거 기반 답변을 생성하는 기법과 아키텍처.",
     "updated": "2026-07-05"
   },
@@ -115,7 +684,14 @@
     "id": "public-saas-guideline",
     "title": "공공부문 SaaS 이용 가이드라인",
     "category": "인프라·클라우드",
-    "tags": ["SaaS", "공공클라우드", "CSAP", "SLA", "보안성검토", "134회"],
+    "tags": [
+      "SaaS",
+      "공공클라우드",
+      "CSAP",
+      "SLA",
+      "보안성검토",
+      "134회"
+    ],
     "summary": "공공기관의 안전한 SaaS 이용을 위한 위험관리 원칙·기준(CSAP 등급), 보안대책·보안성 검토, 서비스 수준 협약(SLA).",
     "updated": "2026-07-05"
   },
@@ -123,7 +699,14 @@
     "id": "dark-pattern",
     "title": "다크패턴(Dark Pattern) 유형 및 대응 방안",
     "category": "경영·사업전략",
-    "tags": ["다크패턴", "소비자보호", "UX", "전자상거래", "공정거래", "134회"],
+    "tags": [
+      "다크패턴",
+      "소비자보호",
+      "UX",
+      "전자상거래",
+      "공정거래",
+      "134회"
+    ],
     "summary": "소비자를 기만·오도·방해·압박하는 다크패턴의 세부 유형과 제도·설계·소비자 차원의 대응 방안.",
     "updated": "2026-07-05"
   },
@@ -131,7 +714,14 @@
     "id": "it-governance",
     "title": "IT 거버넌스(IT Governance)",
     "category": "SW공학·관리",
-    "tags": ["IT거버넌스", "COBIT", "ISO38500", "BSC", "성과측정", "134회"],
+    "tags": [
+      "IT거버넌스",
+      "COBIT",
+      "ISO38500",
+      "BSC",
+      "성과측정",
+      "134회"
+    ],
     "summary": "IT를 비즈니스 전략에 정렬·통제하는 거버넌스의 구성요소, 효과 측정 지표(BSC·KPI), 측정 방법론(COBIT·ISO38500).",
     "updated": "2026-07-05"
   },
@@ -139,7 +729,15 @@
     "id": "ai-datacenter",
     "title": "대규모 AI 서비스를 위한 데이터센터 구축 기술",
     "category": "인프라·클라우드",
-    "tags": ["AI데이터센터", "저지연", "InfiniBand", "RDMA", "DCI", "분산학습", "134회"],
+    "tags": [
+      "AI데이터센터",
+      "저지연",
+      "InfiniBand",
+      "RDMA",
+      "DCI",
+      "분산학습",
+      "134회"
+    ],
     "summary": "초거대 AI용 데이터센터의 저지연·스케일링 기술(RDMA·InfiniBand·NVLink·분산학습)과 DCI(DWDM·OTN) 기술.",
     "updated": "2026-07-05"
   },
@@ -147,7 +745,14 @@
     "id": "esg-management",
     "title": "ESG 경영(Environment·Social·Governance)",
     "category": "경영·사업전략",
-    "tags": ["ESG", "지속가능경영", "탄소중립", "공시", "그린IT", "134회"],
+    "tags": [
+      "ESG",
+      "지속가능경영",
+      "탄소중립",
+      "공시",
+      "그린IT",
+      "134회"
+    ],
     "summary": "환경·사회·지배구조 기반 지속가능경영의 정의·목표, 주요 지표(GRI·K-ESG), 이를 지원하는 IT(IoT·AI·블록체인·공시 플랫폼).",
     "updated": "2026-07-05"
   },
@@ -155,7 +760,14 @@
     "id": "transaction-isolation-level",
     "title": "트랜잭션 격리 수준(Transaction Isolation Level)",
     "category": "데이터베이스",
-    "tags": ["트랜잭션", "격리수준", "ACID", "MVCC", "동시성제어", "134회"],
+    "tags": [
+      "트랜잭션",
+      "격리수준",
+      "ACID",
+      "MVCC",
+      "동시성제어",
+      "134회"
+    ],
     "summary": "4가지 격리 수준(Read Uncommitted~Serializable)과 Dirty·Non-repeatable·Phantom Read 이상현상을 사례 중심으로 정리.",
     "updated": "2026-07-05"
   },
@@ -163,7 +775,14 @@
     "id": "deployment-testing-strategy",
     "title": "실행 중인 애플리케이션 배포 전략 및 테스트 전략",
     "category": "SW공학·관리",
-    "tags": ["배포전략", "무중단배포", "블루그린", "카나리", "CICD", "134회"],
+    "tags": [
+      "배포전략",
+      "무중단배포",
+      "블루그린",
+      "카나리",
+      "CICD",
+      "134회"
+    ],
     "summary": "무중단 배포(블루-그린·카나리·롤링·A/B)와 배포 전·중·후(회귀·카나리분석·섀도·기능토글) 테스트 전략.",
     "updated": "2026-07-05"
   },
@@ -171,7 +790,14 @@
     "id": "software-testing",
     "title": "소프트웨어 테스트(원리·블랙박스/화이트박스·기법)",
     "category": "SW공학·관리",
-    "tags": ["소프트웨어테스트", "블랙박스", "화이트박스", "테스트원리", "커버리지", "134회"],
+    "tags": [
+      "소프트웨어테스트",
+      "블랙박스",
+      "화이트박스",
+      "테스트원리",
+      "커버리지",
+      "134회"
+    ],
     "summary": "테스트 7원리, 블랙박스·화이트박스 비교, 명세·구조·경험 기반 테스트 기법 정리.",
     "updated": "2026-07-05"
   },
@@ -179,7 +805,15 @@
     "id": "sbom",
     "title": "SBOM(Software Bill of Materials)",
     "category": "보안·개인정보",
-    "tags": ["SBOM", "공급망보안", "오픈소스", "SCA", "SPDX", "취약점", "134회"],
+    "tags": [
+      "SBOM",
+      "공급망보안",
+      "오픈소스",
+      "SCA",
+      "SPDX",
+      "취약점",
+      "134회"
+    ],
     "summary": "SW 구성요소 명세서 SBOM으로 오픈소스 취약점·라이선스 리스크를 가시화하고 SCA·CVE 매핑으로 관리하는 방안.",
     "updated": "2026-07-05"
   },
@@ -187,7 +821,14 @@
     "id": "algorithm-complexity",
     "title": "알고리즘 복잡도와 O-Notation",
     "category": "컴퓨팅·임베디드",
-    "tags": ["알고리즘", "복잡도", "빅오", "O-Notation", "시간복잡도", "134회"],
+    "tags": [
+      "알고리즘",
+      "복잡도",
+      "빅오",
+      "O-Notation",
+      "시간복잡도",
+      "134회"
+    ],
     "summary": "시간·공간 복잡도와 O-Notation의 개념·유형(O(1)~O(n!))과 입력 크기별 연산시간 증가율 차이.",
     "updated": "2026-07-05"
   },
@@ -195,7 +836,14 @@
     "id": "multidimensional-index",
     "title": "다차원 색인구조(Multidimensional Index Structure)",
     "category": "데이터베이스",
-    "tags": ["다차원색인", "R-Tree", "KD-Tree", "Quad-Tree", "공간DB", "134회"],
+    "tags": [
+      "다차원색인",
+      "R-Tree",
+      "KD-Tree",
+      "Quad-Tree",
+      "공간DB",
+      "134회"
+    ],
     "summary": "다차원·공간 데이터 검색을 위한 색인구조(R-Tree·KD-Tree·Quad-Tree·Grid File)의 개념·유형·활용.",
     "updated": "2026-07-05"
   },
@@ -203,7 +851,14 @@
     "id": "open-source-license-change",
     "title": "오픈소스 라이선스 정책 변화(개방형→폐쇄형)",
     "category": "경영·사업전략",
-    "tags": ["오픈소스", "라이선스", "SSPL", "BSL", "라이선스변경", "134회"],
+    "tags": [
+      "오픈소스",
+      "라이선스",
+      "SSPL",
+      "BSL",
+      "라이선스변경",
+      "134회"
+    ],
     "summary": "MIT·BSD 등 개방형에서 SSPL·BSL 폐쇄형으로의 전환 배경(클라우드 무임승차)과 소프트웨어 산업 영향.",
     "updated": "2026-07-05"
   },
@@ -211,7 +866,14 @@
     "id": "it-project-risk-response",
     "title": "IT 프로젝트 리스크 대응(Risk Response)",
     "category": "프로젝트·조직관리",
-    "tags": ["리스크관리", "위협대응", "기회대응", "PMBOK", "프로젝트관리", "134회"],
+    "tags": [
+      "리스크관리",
+      "위협대응",
+      "기회대응",
+      "PMBOK",
+      "프로젝트관리",
+      "134회"
+    ],
     "summary": "리스크 대응 계획 수립 절차와 위협(회피·전가·완화·수용)·기회(활용·공유·증대·수용) 대응 전략.",
     "updated": "2026-07-05"
   },
@@ -219,7 +881,15 @@
     "id": "multi-gpu",
     "title": "멀티 GPU 기술(대규모 신경망 훈련)",
     "category": "AI·데이터",
-    "tags": ["멀티GPU", "분산학습", "데이터병렬", "모델병렬", "NCCL", "딥러닝", "134회"],
+    "tags": [
+      "멀티GPU",
+      "분산학습",
+      "데이터병렬",
+      "모델병렬",
+      "NCCL",
+      "딥러닝",
+      "134회"
+    ],
     "summary": "멀티 GPU의 개념·장점과 데이터·모델·파이프라인·텐서 병렬화, 환경 구축 시 통신·메모리·동기화 고려사항.",
     "updated": "2026-07-05"
   },
@@ -227,7 +897,15 @@
     "id": "ai-system-issues",
     "title": "AI 시스템의 법적·윤리적·기술적 이슈 및 해결 방안",
     "category": "AI·데이터",
-    "tags": ["AI윤리", "AI거버넌스", "XAI", "편향", "AI규제", "신뢰AI", "134회"],
+    "tags": [
+      "AI윤리",
+      "AI거버넌스",
+      "XAI",
+      "편향",
+      "AI규제",
+      "신뢰AI",
+      "134회"
+    ],
     "summary": "AI 시스템의 법적(책임·저작권)·윤리적(편향·투명성)·기술적(환각·보안) 이슈와 거버넌스·XAI·MLOps 해결 방안.",
     "updated": "2026-07-05"
   },
@@ -235,7 +913,15 @@
     "id": "open-api",
     "title": "개방형 API(Open API)",
     "category": "SW공학·관리",
-    "tags": ["OpenAPI", "REST", "SOAP", "API게이트웨이", "OAuth", "API보안", "134회"],
+    "tags": [
+      "OpenAPI",
+      "REST",
+      "SOAP",
+      "API게이트웨이",
+      "OAuth",
+      "API보안",
+      "134회"
+    ],
     "summary": "개방형 API의 정의·특징, SOAP와 REST 구성요소 비교, OWASP API 취약점과 인증·게이트웨이 대응 방안.",
     "updated": "2026-07-05"
   },
@@ -243,7 +929,14 @@
     "id": "cloud-migration-audit",
     "title": "클라우드 전환 사업의 단계별 감리",
     "category": "인프라·클라우드",
-    "tags": ["클라우드전환", "감리", "마이그레이션", "6R", "CSAP", "134회"],
+    "tags": [
+      "클라우드전환",
+      "감리",
+      "마이그레이션",
+      "6R",
+      "CSAP",
+      "134회"
+    ],
     "summary": "클라우드 전환 사업의 계획·설계·전환·운영 단계별 감리 방법과 적합성·보안·데이터 무결성·비용 검토 항목.",
     "updated": "2026-07-05"
   },
@@ -251,7 +944,14 @@
     "id": "som",
     "title": "SOM(Self Organizing Map, 자기조직화지도)",
     "category": "AI·데이터",
-    "tags": ["SOM", "자기조직화지도", "군집분석", "비지도학습", "Kohonen", "134회"],
+    "tags": [
+      "SOM",
+      "자기조직화지도",
+      "군집분석",
+      "비지도학습",
+      "Kohonen",
+      "134회"
+    ],
     "summary": "경쟁 학습 기반 비지도 신경망 SOM의 정의·특징, 구성요소(BMU·이웃함수), 지도학습 신경망과의 차이점.",
     "updated": "2026-07-05"
   }
