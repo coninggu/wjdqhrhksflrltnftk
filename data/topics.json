@@ -1419,5 +1419,21 @@
     ],
     "summary": "경쟁 학습 기반 비지도 신경망 SOM의 정의·특징, 구성요소(BMU·이웃함수), 지도학습 신경망과의 차이점.",
     "updated": "2026-07-05"
+  },
+  {
+    "id": "ai-transformation",
+    "title": "AX(AI Transformation, AI 전환)",
+    "category": "경영·사업전략",
+    "tags": [
+      "AX",
+      "AITransformation",
+      "AI전환",
+      "DX",
+      "생성형AI",
+      "LLMOps",
+      "책임있는AI"
+    ],
+    "summary": "전략·데이터/인프라·인재·책임있는AI 4축으로 AI를 전사 운영에 내재화하는 전환 — 프로세스 디지털화(DX)를 넘어 AI가 판단·생성을 수행하는 지능화(AI-Native)를 지향.",
+    "updated": "2026-07-08"
   }
 ]
