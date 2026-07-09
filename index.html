@@ -39,7 +39,7 @@
   <meta property="og:url" content="https://www.xn--zb0bow85w7idd5f0pc46q.com/" />
   <meta property="og:locale" content="ko_KR" />
   <meta name="twitter:card" content="summary" />
-  <link rel="stylesheet" href="assets/css/style.css?v=9" />
+  <link rel="stylesheet" href="assets/css/style.css?v=11" />
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -70,7 +70,24 @@
           aria-label="주제 검색"
         />
       </div>
-      <p class="result-count" id="result-count"></p>
+      <div class="list-toolbar">
+        <div class="toolbar-left">
+          <p class="result-count" id="result-count"></p>
+          <span class="viewed-stat" id="viewed-stat" hidden></span>
+        </div>
+        <label class="filter-chip" id="filter-unviewed-label" hidden>
+          <input type="checkbox" id="filter-unviewed" />
+          <span>안 본 주제만</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="recent-section" id="recent-section" hidden>
+      <div class="recent-head">
+        <h2 class="recent-title">최근 본 주제</h2>
+        <button type="button" class="clear-viewed" id="clear-viewed">열람 기록 지우기</button>
+      </div>
+      <ul class="recent-list" id="recent-list"></ul>
     </section>
 
     <section class="topic-section">
@@ -85,6 +102,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=10"></script>
+  <script src="assets/js/viewed.js?v=1"></script>
+  <script src="assets/js/main.js?v=11"></script>
 </body>
 </html>
