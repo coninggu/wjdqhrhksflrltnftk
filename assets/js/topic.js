@@ -145,6 +145,59 @@
     });
   }
 
+  // 상세 본문을 얼마나 읽어 내려갔는지(스크롤 진행률)를 상단 바 + 배지로 표시.
+  // 기사(#topic-detail) 상단이 화면 상단에 닿는 지점부터, 기사 하단이 화면 하단에
+  // 닿는 지점까지를 0~100%로 환산한다. 한 번만 설치하고 scroll/resize에 반응한다.
+  let progressReady = false;
+  function setupReadingProgress() {
+    if (progressReady) return;
+    progressReady = true;
+
+    const bar = document.createElement('div');
+    bar.className = 'read-progress';
+    bar.setAttribute('aria-hidden', 'true');
+    const fill = document.createElement('div');
+    fill.className = 'read-progress-fill';
+    bar.appendChild(fill);
+
+    const pill = document.createElement('div');
+    pill.className = 'read-pill';
+    pill.setAttribute('aria-live', 'off');
+    pill.textContent = '0% 읽음';
+
+    document.body.appendChild(bar);
+    document.body.appendChild(pill);
+
+    function calc() {
+      const art = document.getElementById('topic-detail');
+      if (!art) return 0;
+      const denom = art.offsetHeight - window.innerHeight;
+      if (denom <= 0) return 100; // 본문이 한 화면에 다 들어오면 100%
+      let p = (window.scrollY - art.offsetTop) / denom;
+      if (p < 0) p = 0; else if (p > 1) p = 1;
+      return Math.round(p * 100);
+    }
+
+    let ticking = false;
+    function update() {
+      const pct = calc();
+      fill.style.width = pct + '%';
+      pill.textContent = pct + '% 읽음';
+      pill.classList.toggle('is-done', pct >= 100);
+      ticking = false;
+    }
+    function onScroll() {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+    // mermaid·chart가 비동기로 렌더되며 본문 높이가 바뀌므로 잠시 뒤 재계산
+    setTimeout(update, 600);
+    setTimeout(update, 1500);
+  }
+
   // 메타데이터 로드 후 본문 로드 (메타 실패해도 본문은 시도)
   // 캐시 허용(no-cache 제거): 목록↔상세 이동 시 topics.json 재다운로드 방지
   fetch('data/topics.json')
@@ -165,6 +218,7 @@
           renderMarkdown(md);
           // 본문이 정상 렌더된 주제만 열람 기록에 남긴다 (로드 실패는 제외)
           if (window.ViewedStore) window.ViewedStore.markViewed(id);
+          setupReadingProgress();
         })
         .catch((err) => showError(err.message));
     });
