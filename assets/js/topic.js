@@ -161,7 +161,11 @@
           if (!res.ok) throw new Error('해당 주제 내용을 찾을 수 없습니다 (' + res.status + ')');
           return res.text();
         })
-        .then(renderMarkdown)
+        .then((md) => {
+          renderMarkdown(md);
+          // 본문이 정상 렌더된 주제만 열람 기록에 남긴다 (로드 실패는 제외)
+          if (window.ViewedStore) window.ViewedStore.markViewed(id);
+        })
         .catch((err) => showError(err.message));
     });
 })();

@@ -4,6 +4,12 @@
   const emptyEl = document.getElementById('empty-state');
   const searchEl = document.getElementById('search');
   const countEl = document.getElementById('result-count');
+  const statEl = document.getElementById('viewed-stat');
+  const filterChip = document.getElementById('filter-unviewed-label');
+  const filterInput = document.getElementById('filter-unviewed');
+  const recentSection = document.getElementById('recent-section');
+  const recentListEl = document.getElementById('recent-list');
+  const clearBtn = document.getElementById('clear-viewed');
 
   let topics = [];
 
@@ -96,15 +102,20 @@
     }[c]));
   }
 
+  const isViewed = (id) => !!(window.ViewedStore && window.ViewedStore.isViewed(id));
+
   function cardHtml(t) {
     const tags = (t.tags || [])
       .map((tag) => `<span class="tag">#${escapeHtml(tag)}</span>`)
       .join('');
+    const viewed = isViewed(t.id);
+    const badge = viewed ? '<span class="viewed-badge">✓ 읽음</span>' : '';
     return `
       <li>
-        <a class="topic-card" href="topic.html?id=${encodeURIComponent(t.id)}">
+        <a class="topic-card${viewed ? ' is-viewed' : ''}" href="topic.html?id=${encodeURIComponent(t.id)}">
           <div class="card-top">
             <span class="card-category">${escapeHtml(t.category || '기타')}</span>
+            ${badge}
           </div>
           <h2>${escapeHtml(t.title)}</h2>
           <p class="card-summary">${escapeHtml(t.summary || '')}</p>
@@ -120,8 +131,52 @@
     listEl.hidden = !hasItems;
     if (searchEl.value.trim()) {
       countEl.textContent = `검색 결과 ${items.length}개`;
+    } else if (filterInput && filterInput.checked) {
+      countEl.textContent = `안 본 주제 ${items.length}개`;
     } else {
       countEl.textContent = `전체 ${items.length}개 주제`;
+    }
+  }
+
+  // 열람 진행률·최근 본 주제·필터칩 노출을 현재 저장소 기준으로 갱신
+  function refreshViewedUI() {
+    if (!window.ViewedStore) return;
+    const total = topics.length;
+    const viewedCount = topics.reduce((n, t) => n + (isViewed(t.id) ? 1 : 0), 0);
+
+    if (statEl) {
+      if (viewedCount > 0 && total > 0) {
+        const pct = Math.round((viewedCount / total) * 100);
+        statEl.textContent = `열람 ${viewedCount}/${total} · ${pct}%`;
+        statEl.hidden = false;
+      } else {
+        statEl.textContent = '';
+        statEl.hidden = true;
+      }
+    }
+
+    // 최근 본 주제 스트립 (메타가 있는 주제만, 최대 8개)
+    if (recentSection && recentListEl) {
+      const byId = new Map(topics.map((t) => [t.id, t]));
+      const recent = window.ViewedStore.recentIds(8)
+        .map((id) => byId.get(id))
+        .filter(Boolean);
+      if (recent.length) {
+        recentListEl.innerHTML = recent.map((t) =>
+          `<li><a class="recent-chip" href="topic.html?id=${encodeURIComponent(t.id)}">${escapeHtml(t.title)}</a></li>`
+        ).join('');
+        recentSection.hidden = false;
+      } else {
+        recentListEl.innerHTML = '';
+        recentSection.hidden = true;
+      }
+    }
+
+    // 볼 게 있어야 "안 본 주제만" 필터가 의미 있음
+    if (filterChip) {
+      const useful = viewedCount > 0 && viewedCount < total;
+      filterChip.hidden = !useful;
+      if (!useful && filterInput) filterInput.checked = false;
     }
   }
 
@@ -137,11 +192,11 @@
 
   function applyFilter() {
     const q = searchEl.value.trim().toLowerCase();
-    if (!q) {
-      render(topics);
-      return;
-    }
-    render(topics.filter((t) => matches(t, q)));
+    const onlyUnviewed = !!(filterInput && filterInput.checked);
+    let items = topics;
+    if (onlyUnviewed) items = items.filter((t) => !isViewed(t.id));
+    if (q) items = items.filter((t) => matches(t, q));
+    render(items);
   }
 
   // 검색 입력 디바운스: 매 키 입력마다 전체 재렌더하지 않고 입력이 멎은 뒤 필터
@@ -149,6 +204,27 @@
   searchEl.addEventListener('input', () => {
     clearTimeout(searchTimer);
     searchTimer = setTimeout(applyFilter, 150);
+  });
+
+  if (filterInput) {
+    filterInput.addEventListener('change', applyFilter);
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (!window.ViewedStore) return;
+      if (!window.confirm('열람 기록을 모두 지울까요? 이 브라우저에 저장된 기록만 삭제됩니다.')) return;
+      window.ViewedStore.clear();
+      refreshViewedUI();
+      applyFilter();
+    });
+  }
+
+  // 뒤로가기(bfcache 복원) 시에도 최신 열람 상태를 반영
+  window.addEventListener('pageshow', () => {
+    if (!topics.length) return;
+    refreshViewedUI();
+    applyFilter();
   });
 
   renderDday();
@@ -162,7 +238,8 @@
     .then((data) => {
       // 최신 업데이트 순 정렬 (updated 내림차순, 없으면 뒤로)
       topics = data.slice().sort((a, b) => (b.updated || '').localeCompare(a.updated || ''));
-      render(topics);
+      refreshViewedUI();
+      applyFilter();
     })
     .catch((err) => {
       listEl.hidden = true;
