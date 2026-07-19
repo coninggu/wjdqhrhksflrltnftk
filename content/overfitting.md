@@ -14,7 +14,7 @@ flowchart TB
   O[과적합 발생 이유] --> C[모델이 너무 복잡]
   O --> D[학습 데이터 부족]
   O --> N[노이즈·이상치 많음]
-  O --> T[과도한 학습(에폭)]
+  O --> T["과도한 학습(에폭)"]
   style O fill:#fef3f2,stroke:#e11d48,stroke-width:2px
 ```
 
