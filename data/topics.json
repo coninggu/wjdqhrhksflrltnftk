@@ -3999,5 +3999,22 @@
     ],
     "summary": "ICS를 물리공정(L0)부터 기업IT(L4~5)까지 계층으로 나눈 참조 아키텍처. IT/OT DMZ로 격리해 위협 전파 차단.",
     "updated": "2026-07-19"
+  },
+  {
+    "id": "oauth2-oidc",
+    "title": "OAuth 2.0과 OpenID Connect(OIDC)",
+    "category": "보안·개인정보",
+    "tags": [
+      "OAuth2",
+      "OIDC",
+      "인증",
+      "인가",
+      "SSO",
+      "PKCE",
+      "FAPI",
+      "OAuth2.1"
+    ],
+    "summary": "OAuth 2.0은 비밀번호 노출 없이 제한된 권한을 위임하는 인가 프레임워크, OIDC는 그 위에 서명된 ID 토큰으로 신원을 증명하는 인증 계층 — PKCE·FAPI·OAuth 2.1 등 최신 보안 강화 표준까지 포함.",
+    "updated": "2026-08-17"
   }
 ]
