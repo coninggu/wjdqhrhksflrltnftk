@@ -4046,5 +4046,20 @@
     ],
     "summary": "클라우드와 기술 지출의 가시성·배부·최적화·운영을 통해 비용과 비즈니스 가치를 연결하는 FinOps 프레임워크를 학습한다.",
     "updated": "2026-08-18"
+  },
+  {
+    "id": "cqrs-event-sourcing",
+    "title": "CQRS와 이벤트 소싱(Command Query Responsibility Segregation·Event Sourcing)",
+    "category": "SW공학·관리",
+    "tags": [
+      "CQRS",
+      "이벤트 소싱",
+      "DDD",
+      "이벤트 기반 아키텍처",
+      "마이크로서비스",
+      "분산시스템"
+    ],
+    "summary": "읽기와 쓰기의 책임을 분리하는 CQRS와 변경 이력을 이벤트로 보존하는 이벤트 소싱의 원리, 결합 구조, 일관성·재처리·스키마 진화와 도입 전략을 정리한다.",
+    "updated": "2026-08-18"
   }
 ]
