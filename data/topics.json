@@ -4291,5 +4291,19 @@
     ],
     "summary": "SD-WAN(연결)과 SWG·CASB·ZTNA·FWaaS(보안=SSE)를 클라우드 엣지에서 신원 중심·단일 패스로 융합한 아키텍처 — 백홀 제거로 성능을, 제로 트러스트로 경계 없는 환경 보안을 확보.",
     "updated": "2026-08-26"
+  },
+  {
+    "id": "quic-http3",
+    "title": "QUIC와 HTTP/3",
+    "category": "네트워크",
+    "tags": [
+      "QUIC",
+      "HTTP3",
+      "UDP",
+      "0-RTT",
+      "멀티플렉싱"
+    ],
+    "summary": "UDP 위에 TLS 1.3·스트림 다중화·신뢰성을 통합해 전송 계층 HOL Blocking을 없애고 0-RTT 연결·연결 이주를 실현한 QUIC와, 이를 사용하는 차세대 웹 프로토콜 HTTP/3.",
+    "updated": "2026-08-26"
   }
 ]
