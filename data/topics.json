@@ -4305,5 +4305,19 @@
     ],
     "summary": "UDP 위에 TLS 1.3·스트림 다중화·신뢰성을 통합해 전송 계층 HOL Blocking을 없애고 0-RTT 연결·연결 이주를 실현한 QUIC와, 이를 사용하는 차세대 웹 프로토콜 HTTP/3.",
     "updated": "2026-08-26"
+  },
+  {
+    "id": "confidential-computing",
+    "title": "기밀 컴퓨팅(Confidential Computing)",
+    "category": "보안·개인정보",
+    "tags": [
+      "기밀컴퓨팅",
+      "TEE",
+      "원격증명",
+      "SGX",
+      "SEV-SNP"
+    ],
+    "summary": "CPU 하드웨어 기반 신뢰실행환경(TEE)과 원격 증명으로 데이터가 연산되는 '사용 중(in-use)' 상태까지 보호하여, 하이퍼바이저·클라우드 운영자마저 신뢰경계 밖으로 배제하는 하드웨어 격리형 데이터 보호 패러다임.",
+    "updated": "2026-08-26"
   }
 ]
