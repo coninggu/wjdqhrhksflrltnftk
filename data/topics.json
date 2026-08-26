@@ -4277,5 +4277,19 @@
     ],
     "summary": "클라이언트가 강타입 스키마 안에서 필요한 필드만 골라 단일 엔드포인트로 질의하는 API 규격 — 과다/과소 인출 해소, 리졸버·N+1·DataLoader, REST 비교와 캐싱·보안·페더레이션.",
     "updated": "2026-08-25"
+  },
+  {
+    "id": "sase",
+    "title": "SASE(Secure Access Service Edge, 보안 접근 서비스 엣지)",
+    "category": "네트워크",
+    "tags": [
+      "SASE",
+      "SSE",
+      "ZTNA",
+      "SD-WAN",
+      "제로트러스트"
+    ],
+    "summary": "SD-WAN(연결)과 SWG·CASB·ZTNA·FWaaS(보안=SSE)를 클라우드 엣지에서 신원 중심·단일 패스로 융합한 아키텍처 — 백홀 제거로 성능을, 제로 트러스트로 경계 없는 환경 보안을 확보.",
+    "updated": "2026-08-26"
   }
 ]
