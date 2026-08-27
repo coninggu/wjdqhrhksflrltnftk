@@ -4333,5 +4333,19 @@
     ],
     "summary": "보안을 SDLC 전 과정에 자동화(Security as Code)로 내재화하고 앞단으로 이동(Shift-Left)시켜, 빠른 배포와 안전을 동시에 달성하는 개발·보안·운영 통합 방법론 — SAST·DAST·IAST·SCA와 파이프라인 게이트.",
     "updated": "2026-08-27"
+  },
+  {
+    "id": "grpc",
+    "title": "gRPC(구글 RPC 프레임워크)",
+    "category": "SW공학·관리",
+    "tags": [
+      "gRPC",
+      "ProtocolBuffers",
+      "HTTP2",
+      "마이크로서비스",
+      "RPC"
+    ],
+    "summary": "Protocol Buffers 강타입 계약과 코드 생성, 이진 직렬화, HTTP/2 멀티플렉싱·스트리밍을 결합해 마이크로서비스 간 저지연·고처리량 통신을 실현하는 RPC 프레임워크 — 내부는 gRPC, 외부는 REST/GraphQL로 역할을 나누는 계층적 API 전략의 축.",
+    "updated": "2026-08-27"
   }
 ]
