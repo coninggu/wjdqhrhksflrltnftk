@@ -4319,5 +4319,19 @@
     ],
     "summary": "CPU 하드웨어 기반 신뢰실행환경(TEE)과 원격 증명으로 데이터가 연산되는 '사용 중(in-use)' 상태까지 보호하여, 하이퍼바이저·클라우드 운영자마저 신뢰경계 밖으로 배제하는 하드웨어 격리형 데이터 보호 패러다임.",
     "updated": "2026-08-26"
+  },
+  {
+    "id": "devsecops",
+    "title": "DevSecOps(데브섹옵스)",
+    "category": "보안·개인정보",
+    "tags": [
+      "DevSecOps",
+      "ShiftLeft",
+      "SAST",
+      "DAST",
+      "보안자동화"
+    ],
+    "summary": "보안을 SDLC 전 과정에 자동화(Security as Code)로 내재화하고 앞단으로 이동(Shift-Left)시켜, 빠른 배포와 안전을 동시에 달성하는 개발·보안·운영 통합 방법론 — SAST·DAST·IAST·SCA와 파이프라인 게이트.",
+    "updated": "2026-08-27"
   }
 ]
