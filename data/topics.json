@@ -4685,5 +4685,19 @@
     ],
     "summary": "플러그인 없이 브라우저 표준 API(getUserMedia·RTCPeerConnection·RTCDataChannel)만으로 오디오·비디오·데이터를 P2P 초저지연 전송하는 개방형 기술로, SDP Offer/Answer 시그널링과 ICE(STUN/TURN) 기반 NAT 통과, SRTP/DTLS 강제 암호화, Mesh·SFU·MCU 확장 구조와 HLS/WebSocket 대비 트레이드오프, 인프라 사이징·보안 고려사항을 다룬다.",
     "updated": "2026-09-04"
+  },
+  {
+    "id": "togaf-ea",
+    "title": "TOGAF와 엔터프라이즈 아키텍처(EA)",
+    "category": "경영·사업전략",
+    "tags": [
+      "EA",
+      "TOGAF",
+      "ADM",
+      "BDAT",
+      "IT거버넌스"
+    ],
+    "summary": "조직의 비즈니스 전략과 IT를 정합시키기 위해 업무·데이터·응용·기술(BDAT) 계층으로 전사 청사진을 그려 중복 제거와 표준화·상호운용성을 달성하는 EA 체계와, 이를 반복 절차(ADM)·참조모델·거버넌스로 구현하는 개방형 표준 TOGAF를 다룬다. Zachman·FEAF 비교, ADM 8단계와 요구사항 관리, EA 성숙도, 클라우드·MSA 시대의 경량 거버넌스 재해석과 문서가 아닌 의사결정 활용의 중요성까지 논술형으로 정리한다.",
+    "updated": "2026-09-04"
   }
 ]
