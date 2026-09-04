@@ -4671,5 +4671,19 @@
     ],
     "summary": "m비트 배열과 k개 해시 함수만으로 집합 소속을 판정하는 확률적 자료구조로, '없음'은 100% 정확하고 '있음'만 거짓 양성을 허용해 극소량의 메모리로 대규모 멤버십 질의를 값싸게 거른다 — 동작 원리와 거짓 양성 확률 설계식(m/n·ln2), LSM DB·안전 브라우징 등 활용 사례, 카운팅·쿠쿠 필터와의 트레이드오프를 다룬다.",
     "updated": "2026-09-04"
+  },
+  {
+    "id": "webrtc",
+    "title": "WebRTC(Web Real-Time Communication)",
+    "category": "네트워크",
+    "tags": [
+      "WebRTC",
+      "실시간통신",
+      "P2P",
+      "ICE",
+      "STUN-TURN"
+    ],
+    "summary": "플러그인 없이 브라우저 표준 API(getUserMedia·RTCPeerConnection·RTCDataChannel)만으로 오디오·비디오·데이터를 P2P 초저지연 전송하는 개방형 기술로, SDP Offer/Answer 시그널링과 ICE(STUN/TURN) 기반 NAT 통과, SRTP/DTLS 강제 암호화, Mesh·SFU·MCU 확장 구조와 HLS/WebSocket 대비 트레이드오프, 인프라 사이징·보안 고려사항을 다룬다.",
+    "updated": "2026-09-04"
   }
 ]
