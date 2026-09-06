@@ -102,15 +102,10 @@
     setInterval(tick, 1000);
   }
 
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, (c) => ({
-      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-    }[c]));
-  }
-
-  const isViewed = (id) => !!(window.ViewedStore && window.ViewedStore.isViewed(id));
-  const isBookmarked = (id) => !!(window.StudyStore && window.StudyStore.isBookmarked(id));
-  const isDone = (id) => !!(window.StudyStore && window.StudyStore.isDone(id));
+  const escapeHtml = window.IMN.escapeHtml;
+  const isViewed = window.IMN.isViewed;
+  const isBookmarked = window.IMN.isBookmarked;
+  const isDone = window.IMN.isDone;
 
   function cardHtml(t) {
     const tags = (t.tags || [])

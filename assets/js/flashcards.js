@@ -16,20 +16,10 @@
   // 퀴즈 상태
   var qList = [], qIdx = 0, qScore = 0, qAnswered = false;
 
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-    });
-  }
-  function shuffle(a) {
-    for (var i = a.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
-    }
-    return a;
-  }
-  var isBookmarked = function (id) { return !!(window.StudyStore && window.StudyStore.isBookmarked(id)); };
-  var isDone = function (id) { return !!(window.StudyStore && window.StudyStore.isDone(id)); };
+  var escapeHtml = window.IMN.escapeHtml;
+  var shuffle = window.IMN.shuffle;
+  var isBookmarked = window.IMN.isBookmarked;
+  var isDone = window.IMN.isDone;
 
   function pool() {
     var cat = catSel.value, scope = scopeSel.value;

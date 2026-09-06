@@ -2,14 +2,10 @@
 (function () {
   var root = document.getElementById('db-content');
 
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-    });
-  }
-  var isViewed = function (id) { return !!(window.ViewedStore && window.ViewedStore.isViewed(id)); };
-  var isBookmarked = function (id) { return !!(window.StudyStore && window.StudyStore.isBookmarked(id)); };
-  var isDone = function (id) { return !!(window.StudyStore && window.StudyStore.isDone(id)); };
+  var escapeHtml = window.IMN.escapeHtml;
+  var isViewed = window.IMN.isViewed;
+  var isBookmarked = window.IMN.isBookmarked;
+  var isDone = window.IMN.isDone;
   var pct = function (n, d) { return d > 0 ? Math.round(n / d * 100) : 0; };
 
   function bar(p) {

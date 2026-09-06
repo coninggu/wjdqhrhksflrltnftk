@@ -3,11 +3,7 @@
   const metaEl = document.getElementById('topic-meta');
   const bodyEl = document.getElementById('markdown-body');
 
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, (c) => ({
-      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-    }[c]));
-  }
+  const escapeHtml = window.IMN.escapeHtml;
 
   function showError(msg) {
     bodyEl.innerHTML = `<div class="error-box">${escapeHtml(msg)}</div>`;
