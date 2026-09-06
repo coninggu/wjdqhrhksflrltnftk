@@ -28,6 +28,21 @@
   var allTopics = [];      // topics.json 전체(관련 주제 계산용)
   var currentTopic = null; // 현재 주제 메타
 
+  // GA4 page_view 수동 전송: topic.html은 send_page_view:false라, 실제 주제 제목이
+  // 확정된 뒤 정확한 page_title·page_location(?id 포함)으로 1회만 전송한다.
+  // → 주제마다 개별 집계되어 "어떤 주제가 유입·참여되는지" 볼 수 있다.
+  var pvSent = false;
+  function sendPageView() {
+    if (pvSent) return;
+    pvSent = true;
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    }
+  }
+
   // 회차 태그(예: "133회")는 주제 관련성 신호에서 제외 — 주제(subject) 태그만 사용
   var CADENCE = /^\d+회$/;
   function subjectTags(t) {
@@ -328,6 +343,9 @@
     })
     .catch(() => { /* 메타 없이 진행 */ })
     .finally(() => {
+      // 제목이 확정된 뒤(메타 성공 시 실제 주제 제목) page_view 1회 전송.
+      // 메타 실패해도 폴백으로 최소 1회는 집계되도록 여기서 호출.
+      sendPageView();
       fetch(`content/${id}.md`)
         .then((res) => {
           if (!res.ok) throw new Error('해당 주제 내용을 찾을 수 없습니다 (' + res.status + ')');

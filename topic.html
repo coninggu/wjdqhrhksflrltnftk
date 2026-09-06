@@ -15,7 +15,9 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-H598YDJTDJ');
+    // 자동 page_view는 끈다: 로드 시점엔 제목이 정적("주제 · …")이라 모든 주제가
+    // 한 제목으로 뭉친다. topic.js가 실제 주제 제목을 확정한 뒤 page_view를 수동 전송한다.
+    gtag('config', 'G-H598YDJTDJ', { send_page_view: false });
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -94,6 +96,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
   <script src="assets/js/viewed.js?v=1"></script>
   <script src="assets/js/study.js?v=1"></script>
-  <script src="assets/js/topic.js?v=9"></script>
+  <script src="assets/js/topic.js?v=10"></script>
 </body>
 </html>
