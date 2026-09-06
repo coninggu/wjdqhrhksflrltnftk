@@ -16,17 +16,11 @@
 
   let topics = [];
 
-  // 정보관리기술사 정기 일정 (원서접수: 첫날 10:00 ~ 마지막날 18:00)
-  // 2026(138·139·140회): 큐넷 공식 일정.
-  // 2027(141·142·143회): 공식 미발표(2026-09 기준) → 2026 패턴 기반 '잠정' 예상치.
-  //   공식 발표되면 provisional 제거 후 정확한 날짜로 교체할 것.
+  // 2026 정보관리기술사 정기 일정 (원서접수: 첫날 10:00 ~ 마지막날 18:00)
   const EXAM_SCHEDULE = [
     { round: 138, regOpen: '2026-01-06T10:00:00', regClose: '2026-01-09T18:00:00', written: '2026-02-07' },
     { round: 139, regOpen: '2026-04-13T10:00:00', regClose: '2026-04-16T18:00:00', written: '2026-05-16' },
-    { round: 140, regOpen: '2026-07-13T10:00:00', regClose: '2026-07-16T18:00:00', written: '2026-08-22' },
-    { round: 141, regOpen: '2027-01-05T10:00:00', regClose: '2027-01-08T18:00:00', written: '2027-02-06', provisional: true },
-    { round: 142, regOpen: '2027-04-12T10:00:00', regClose: '2027-04-15T18:00:00', written: '2027-05-15', provisional: true },
-    { round: 143, regOpen: '2027-07-12T10:00:00', regClose: '2027-07-15T18:00:00', written: '2027-08-21', provisional: true }
+    { round: 140, regOpen: '2026-07-13T10:00:00', regClose: '2026-07-16T18:00:00', written: '2026-08-22' }
   ];
 
   const WD = ['일', '월', '화', '수', '목', '금', '토'];
@@ -68,9 +62,6 @@
     const exam = new Date(next.written + 'T00:00:00');
     banner.innerHTML =
       '<div class="dday-inner">' +
-        (next.provisional
-          ? '<span class="dday-provisional" title="공식 발표 전 · 2026년 일정 기준 예상치입니다">잠정</span>'
-          : '') +
         '<div class="dday-row" id="dday-reg"></div>' +
         '<div class="dday-row" id="dday-exam"></div>' +
       '</div>';

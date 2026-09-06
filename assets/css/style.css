@@ -679,18 +679,3 @@ body {
 .study-btn .study-ico { font-size: 14px; line-height: 1; }
 .study-btn.is-on[data-act="bookmark"] { color: #b7791f; border-color: #fcd9a2; background: #fff7e8; }
 .study-btn.is-on[data-act="done"] { color: #fff; background: var(--accent); border-color: var(--accent); }
-
-/* D-day 잠정(공식 발표 전) 배지 */
-.dday-provisional {
-  align-self: flex-end;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: .3px;
-  color: #b7791f;
-  background: #fff7e8;
-  border: 1px solid #fcd9a2;
-  border-radius: 5px;
-  padding: 1px 6px;
-  margin: -1px 0 -3px;
-  cursor: help;
-}
