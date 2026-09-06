@@ -679,3 +679,55 @@ body {
 .study-btn .study-ico { font-size: 14px; line-height: 1; }
 .study-btn.is-on[data-act="bookmark"] { color: #b7791f; border-color: #fcd9a2; background: #fff7e8; }
 .study-btn.is-on[data-act="done"] { color: #fff; background: var(--accent); border-color: var(--accent); }
+
+/* ===== 관련 주제 추천 ===== */
+.related-section { margin: 4px 0 44px; }
+.related-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-soft);
+  margin: 0 0 12px;
+}
+.related-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.related-card {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  transition: transform .12s, box-shadow .15s, border-color .15s;
+  overflow-wrap: anywhere;
+}
+.related-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: #cdd5e0;
+}
+.related-cat {
+  align-self: flex-start;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-soft);
+  padding: 2px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.related-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.45;
+}

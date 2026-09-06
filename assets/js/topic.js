@@ -25,6 +25,90 @@
   }
 
   var SITE_BASE = 'https://www.xn--zb0bow85w7idd5f0pc46q.com';
+  var allTopics = [];      // topics.json 전체(관련 주제 계산용)
+  var currentTopic = null; // 현재 주제 메타
+
+  // 회차 태그(예: "133회")는 주제 관련성 신호에서 제외 — 주제(subject) 태그만 사용
+  var CADENCE = /^\d+회$/;
+  function subjectTags(t) {
+    return (t.tags || []).filter((x) => !CADENCE.test(x)).map((x) => String(x).toLowerCase());
+  }
+
+  // 본문 마크다운의 [[slug]] 위키링크 → 저자가 명시한 관련 주제(가장 강한 신호)
+  function wikilinkIds(md) {
+    var ids = new Set();
+    var re = /\[\[([a-z0-9][a-z0-9-]*)\]\]/gi;
+    var m;
+    while ((m = re.exec(md || ''))) ids.add(m[1].toLowerCase());
+    return ids;
+  }
+
+  // 관련도 점수: 명시 링크(+10) > 공유 주제태그(각 +3) > 같은 카테고리(+2)
+  function computeRelated(current, topics, linkedIds) {
+    if (!current || !Array.isArray(topics)) return [];
+    var curTags = new Set(subjectTags(current));
+    var scored = [];
+    for (var i = 0; i < topics.length; i++) {
+      var t = topics[i];
+      if (!t || t.id === current.id) continue;
+      var score = 0;
+      if (linkedIds.has(String(t.id).toLowerCase())) score += 10;
+      var shared = subjectTags(t).filter((x) => curTags.has(x)).length;
+      score += shared * 3;
+      if (t.category && current.category && t.category === current.category) score += 2;
+      if (score > 0) scored.push({ t: t, score: score });
+    }
+    scored.sort((a, b) => (b.score - a.score) || ((b.t.updated || '').localeCompare(a.t.updated || '')));
+    return scored.slice(0, 6).map((x) => x.t);
+  }
+
+  function renderRelated(md) {
+    var sec = document.getElementById('related-section');
+    var list = document.getElementById('related-list');
+    if (!sec || !list) return;
+    var rel = computeRelated(currentTopic, allTopics, wikilinkIds(md));
+    if (!rel.length) { sec.hidden = true; return; }
+    list.innerHTML = rel.map((t) =>
+      '<li><a class="related-card" href="topic.html?id=' + encodeURIComponent(t.id) + '">' +
+        '<span class="related-cat">' + escapeHtml(t.category || '기타') + '</span>' +
+        '<span class="related-title">' + escapeHtml(t.title) + '</span>' +
+      '</a></li>'
+    ).join('');
+    sec.hidden = false;
+  }
+
+  // 구조화 데이터(JSON-LD): Article + BreadcrumbList → 검색 리치 스니펫
+  function addLd(obj) {
+    var s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.textContent = JSON.stringify(obj);
+    document.head.appendChild(s);
+  }
+  function injectJsonLd(topic) {
+    if (!topic) return;
+    var url = SITE_BASE + '/topic.html?id=' + encodeURIComponent(topic.id || id);
+    var article = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: topic.title || '',
+      description: topic.summary || '',
+      inLanguage: 'ko-KR',
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+      author: { '@type': 'Organization', name: '정보관리기술사 학습 노트' },
+      publisher: { '@type': 'Organization', name: '정보관리기술사 학습 노트' },
+      url: url
+    };
+    if (topic.updated) { article.datePublished = topic.updated; article.dateModified = topic.updated; }
+    addLd(article);
+    addLd({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: '홈', item: SITE_BASE + '/' },
+        { '@type': 'ListItem', position: 2, name: topic.title || '주제', item: url }
+      ]
+    });
+  }
 
   // 주제별 SEO 메타 태그 갱신 (title/description/canonical/OG)
   function updateSeoMeta(topic) {
@@ -236,9 +320,11 @@
   fetch('data/topics.json')
     .then((res) => (res.ok ? res.json() : []))
     .then((topics) => {
-      const topic = Array.isArray(topics) ? topics.find((t) => t.id === id) : null;
-      renderMeta(topic);
-      renderNav(topics);
+      allTopics = Array.isArray(topics) ? topics : [];
+      currentTopic = allTopics.find((t) => t.id === id) || null;
+      renderMeta(currentTopic);
+      renderNav(allTopics);
+      injectJsonLd(currentTopic);
     })
     .catch(() => { /* 메타 없이 진행 */ })
     .finally(() => {
@@ -252,6 +338,8 @@
           // 본문이 정상 렌더된 주제만 열람 기록에 남긴다 (로드 실패는 제외)
           if (window.ViewedStore) window.ViewedStore.markViewed(id);
           setupReadingProgress();
+          // 관련 주제 추천 (본문의 [[링크]] + 카테고리·태그 기반)
+          renderRelated(md);
         })
         .catch((err) => showError(err.message));
     });
