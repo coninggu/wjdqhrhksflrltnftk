@@ -315,7 +315,10 @@
     });
     if (window.mermaid && typeof window.mermaid.run === 'function') {
       try {
-        window.mermaid.initialize({ startOnLoad: false, securityLevel: 'loose', theme: 'default' });
+        var attr = document.documentElement.getAttribute('data-theme');
+        var dark = attr === 'dark' ||
+          (!attr && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        window.mermaid.initialize({ startOnLoad: false, securityLevel: 'loose', theme: dark ? 'dark' : 'default' });
         window.mermaid.run({ querySelector: '.mermaid' });
       } catch (e) { /* 렌더 실패 시 텍스트 유지 */ }
     }
