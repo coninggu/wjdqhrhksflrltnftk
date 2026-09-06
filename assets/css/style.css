@@ -606,3 +606,76 @@ body {
   .topic-detail { padding: 22px 20px 28px; }
   .brand-text { font-size: 17px; }
 }
+
+/* ===== 학습 도구: 즐겨찾기(★)·학습완료(✓) ===== */
+/* 목록 카드의 상태 토글 버튼 (카드 <a> 밖에 위치해 이동을 막지 않음) */
+.filter-group { display: flex; gap: 8px; flex-wrap: wrap; }
+.study-stat {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+.topic-item { position: relative; }
+.card-actions {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  gap: 6px;
+  z-index: 3;
+}
+.card-act {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  transition: color .15s, background .15s, border-color .15s, transform .12s;
+}
+.card-act:hover { border-color: #cdd5e0; color: var(--text-soft); transform: translateY(-1px); }
+.act-bookmark.is-on { color: #f59e0b; border-color: #fcd9a2; background: #fff7e8; }
+.act-done.is-on { color: #fff; background: var(--accent); border-color: var(--accent); }
+/* 버튼 자리 확보: 카드 상단 우측 여백 */
+.topic-item .card-top { padding-right: 66px; }
+.topic-card.is-done { border-color: #bfe6d5; }
+
+/* 상세 페이지 상단 액션 바 */
+.detail-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 28px 0 8px;
+}
+.detail-topbar .back-link { margin: 0; }
+.topic-actions { display: flex; gap: 8px; }
+.study-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-soft);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 7px 15px;
+  cursor: pointer;
+  transition: color .15s, background .15s, border-color .15s;
+}
+.study-btn:hover { border-color: #cdd5e0; }
+.study-btn .study-ico { font-size: 14px; line-height: 1; }
+.study-btn.is-on[data-act="bookmark"] { color: #b7791f; border-color: #fcd9a2; background: #fff7e8; }
+.study-btn.is-on[data-act="done"] { color: #fff; background: var(--accent); border-color: var(--accent); }

@@ -41,6 +41,36 @@
     set('meta-og-url', 'content', url);
   }
 
+  // 상단 즐겨찾기(★)·학습완료(✓) 버튼: localStorage 상태를 반영하고 클릭 시 토글
+  function setupStudyActions() {
+    const bar = document.getElementById('topic-actions');
+    if (!bar || !window.StudyStore) return;
+    const btnBm = document.getElementById('btn-bookmark');
+    const btnDn = document.getElementById('btn-done');
+
+    const sync = () => {
+      if (btnBm) {
+        const on = window.StudyStore.isBookmarked(id);
+        btnBm.classList.toggle('is-on', on);
+        btnBm.setAttribute('aria-pressed', String(on));
+        const lbl = btnBm.querySelector('.study-label');
+        if (lbl) lbl.textContent = on ? '즐겨찾기됨' : '즐겨찾기';
+      }
+      if (btnDn) {
+        const on = window.StudyStore.isDone(id);
+        btnDn.classList.toggle('is-on', on);
+        btnDn.setAttribute('aria-pressed', String(on));
+        const lbl = btnDn.querySelector('.study-label');
+        if (lbl) lbl.textContent = on ? '학습완료됨' : '학습완료';
+      }
+    };
+
+    if (btnBm) btnBm.addEventListener('click', () => { window.StudyStore.toggleBookmark(id); sync(); });
+    if (btnDn) btnDn.addEventListener('click', () => { window.StudyStore.toggleDone(id); sync(); });
+    sync();
+    bar.hidden = false;
+  }
+
   function renderMeta(topic) {
     if (!topic) return;
     document.title = `${topic.title} · 정보관리기술사 학습 노트`;
@@ -197,6 +227,9 @@
     setTimeout(update, 600);
     setTimeout(update, 1500);
   }
+
+  // 학습 상태 버튼은 id만 있으면 동작하므로 메타/본문 로드와 무관하게 먼저 설치
+  setupStudyActions();
 
   // 메타데이터 로드 후 본문 로드 (메타 실패해도 본문은 시도)
   // 캐시 허용(no-cache 제거): 목록↔상세 이동 시 topics.json 재다운로드 방지

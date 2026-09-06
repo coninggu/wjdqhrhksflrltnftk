@@ -10,6 +10,9 @@
   const recentSection = document.getElementById('recent-section');
   const recentListEl = document.getElementById('recent-list');
   const clearBtn = document.getElementById('clear-viewed');
+  const studyStatEl = document.getElementById('study-stat');
+  const filterBookmark = document.getElementById('filter-bookmark');
+  const filterUndone = document.getElementById('filter-undone');
 
   let topics = [];
 
@@ -103,16 +106,27 @@
   }
 
   const isViewed = (id) => !!(window.ViewedStore && window.ViewedStore.isViewed(id));
+  const isBookmarked = (id) => !!(window.StudyStore && window.StudyStore.isBookmarked(id));
+  const isDone = (id) => !!(window.StudyStore && window.StudyStore.isDone(id));
 
   function cardHtml(t) {
     const tags = (t.tags || [])
       .map((tag) => `<span class="tag">#${escapeHtml(tag)}</span>`)
       .join('');
     const viewed = isViewed(t.id);
+    const bookmarked = isBookmarked(t.id);
+    const done = isDone(t.id);
     const badge = viewed ? '<span class="viewed-badge">✓ 읽음</span>' : '';
+    const id = encodeURIComponent(t.id);
+    const cls = ['topic-card', viewed ? 'is-viewed' : '', done ? 'is-done' : '', bookmarked ? 'is-bookmarked' : '']
+      .filter(Boolean).join(' ');
     return `
-      <li>
-        <a class="topic-card${viewed ? ' is-viewed' : ''}" href="topic.html?id=${encodeURIComponent(t.id)}">
+      <li class="topic-item">
+        <div class="card-actions">
+          <button type="button" class="card-act act-bookmark${bookmarked ? ' is-on' : ''}" data-act="bookmark" data-id="${id}" aria-pressed="${bookmarked}" title="즐겨찾기" aria-label="즐겨찾기">★</button>
+          <button type="button" class="card-act act-done${done ? ' is-on' : ''}" data-act="done" data-id="${id}" aria-pressed="${done}" title="학습완료" aria-label="학습완료">✓</button>
+        </div>
+        <a class="${cls}" href="topic.html?id=${id}">
           <div class="card-top">
             <span class="card-category">${escapeHtml(t.category || '기타')}</span>
             ${badge}
@@ -131,6 +145,10 @@
     listEl.hidden = !hasItems;
     if (searchEl.value.trim()) {
       countEl.textContent = `검색 결과 ${items.length}개`;
+    } else if (filterBookmark && filterBookmark.checked) {
+      countEl.textContent = `★ 즐겨찾기 ${items.length}개`;
+    } else if (filterUndone && filterUndone.checked) {
+      countEl.textContent = `학습 전 ${items.length}개`;
     } else if (filterInput && filterInput.checked) {
       countEl.textContent = `안 본 주제 ${items.length}개`;
     } else {
@@ -180,6 +198,44 @@
     }
   }
 
+  // 학습 진도(완료 N/총·%) + 즐겨찾기 개수 표시, 필터칩 노출 제어
+  function refreshStudyUI() {
+    if (!window.StudyStore) return;
+    const total = topics.length;
+    const doneCount = topics.reduce((n, t) => n + (isDone(t.id) ? 1 : 0), 0);
+    const bmCount = topics.reduce((n, t) => n + (isBookmarked(t.id) ? 1 : 0), 0);
+
+    if (studyStatEl) {
+      const parts = [];
+      if (doneCount > 0 && total > 0) {
+        parts.push(`학습완료 ${doneCount}/${total} · ${Math.round((doneCount / total) * 100)}%`);
+      }
+      if (bmCount > 0) parts.push(`★ ${bmCount}`);
+      if (parts.length) {
+        studyStatEl.textContent = parts.join('  ·  ');
+        studyStatEl.hidden = false;
+      } else {
+        studyStatEl.textContent = '';
+        studyStatEl.hidden = true;
+      }
+    }
+
+    // 즐겨찾기가 하나도 없으면 즐겨찾기 필터는 숨긴다
+    const bmLabel = document.getElementById('filter-bookmark-label');
+    if (bmLabel) {
+      const useful = bmCount > 0;
+      bmLabel.hidden = !useful;
+      if (!useful && filterBookmark) filterBookmark.checked = false;
+    }
+    // 완료한 게 하나도 없으면 "학습 전만" 필터는 의미 없음
+    const undoneLabel = document.getElementById('filter-undone-label');
+    if (undoneLabel) {
+      const useful = doneCount > 0 && doneCount < total;
+      undoneLabel.hidden = !useful;
+      if (!useful && filterUndone) filterUndone.checked = false;
+    }
+  }
+
   function matches(topic, query) {
     const haystack = [
       topic.title,
@@ -193,7 +249,11 @@
   function applyFilter() {
     const q = searchEl.value.trim().toLowerCase();
     const onlyUnviewed = !!(filterInput && filterInput.checked);
+    const onlyBookmark = !!(filterBookmark && filterBookmark.checked);
+    const onlyUndone = !!(filterUndone && filterUndone.checked);
     let items = topics;
+    if (onlyBookmark) items = items.filter((t) => isBookmarked(t.id));
+    if (onlyUndone) items = items.filter((t) => !isDone(t.id));
     if (onlyUnviewed) items = items.filter((t) => !isViewed(t.id));
     if (q) items = items.filter((t) => matches(t, q));
     render(items);
@@ -209,6 +269,37 @@
   if (filterInput) {
     filterInput.addEventListener('change', applyFilter);
   }
+  if (filterBookmark) {
+    filterBookmark.addEventListener('change', applyFilter);
+  }
+  if (filterUndone) {
+    filterUndone.addEventListener('change', applyFilter);
+  }
+
+  // 카드의 ★/✓ 버튼: 카드 이동(<a>) 밖의 버튼이므로 클릭이 이동을 막지 않는다.
+  // 위임으로 처리하고, 상태 저장 후 해당 카드/통계만 즉시 갱신한다.
+  listEl.addEventListener('click', (e) => {
+    const btn = e.target.closest('.card-act');
+    if (!btn || !window.StudyStore) return;
+    e.preventDefault();
+    const id = decodeURIComponent(btn.getAttribute('data-id') || '');
+    const act = btn.getAttribute('data-act');
+    if (!id) return;
+    let on;
+    if (act === 'bookmark') on = window.StudyStore.toggleBookmark(id);
+    else if (act === 'done') on = window.StudyStore.toggleDone(id);
+    else return;
+
+    btn.classList.toggle('is-on', on);
+    btn.setAttribute('aria-pressed', String(on));
+    const card = btn.closest('.topic-item').querySelector('.topic-card');
+    if (card) card.classList.toggle(act === 'bookmark' ? 'is-bookmarked' : 'is-done', on);
+
+    refreshStudyUI();
+    // 필터가 걸려 있으면 목록 구성이 달라질 수 있으니 다시 적용
+    const filtering = (filterBookmark && filterBookmark.checked) || (filterUndone && filterUndone.checked);
+    if (filtering) applyFilter();
+  });
 
   if (clearBtn) {
     clearBtn.addEventListener('click', () => {
@@ -224,6 +315,7 @@
   window.addEventListener('pageshow', () => {
     if (!topics.length) return;
     refreshViewedUI();
+    refreshStudyUI();
     applyFilter();
   });
 
@@ -239,6 +331,7 @@
       // 최신 업데이트 순 정렬 (updated 내림차순, 없으면 뒤로)
       topics = data.slice().sort((a, b) => (b.updated || '').localeCompare(a.updated || ''));
       refreshViewedUI();
+      refreshStudyUI();
       applyFilter();
     })
     .catch((err) => {

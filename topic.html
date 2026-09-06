@@ -37,7 +37,7 @@
   <meta property="og:url" id="meta-og-url" content="https://www.xn--zb0bow85w7idd5f0pc46q.com/topic.html" />
   <meta property="og:locale" content="ko_KR" />
   <meta name="twitter:card" content="summary" />
-  <link rel="stylesheet" href="assets/css/style.css?v=12" />
+  <link rel="stylesheet" href="assets/css/style.css?v=13" />
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -53,7 +53,17 @@
   </header>
 
   <main class="wrap">
-    <a href="index.html" class="back-link">← 목록으로</a>
+    <div class="detail-topbar">
+      <a href="index.html" class="back-link">← 목록으로</a>
+      <div class="topic-actions" id="topic-actions" hidden>
+        <button type="button" class="study-btn" id="btn-bookmark" data-act="bookmark" aria-pressed="false">
+          <span class="study-ico">★</span><span class="study-label">즐겨찾기</span>
+        </button>
+        <button type="button" class="study-btn" id="btn-done" data-act="done" aria-pressed="false">
+          <span class="study-ico">✓</span><span class="study-label">학습완료</span>
+        </button>
+      </div>
+    </div>
 
     <article class="topic-detail" id="topic-detail">
       <div class="topic-meta" id="topic-meta"></div>
@@ -78,6 +88,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.6/dist/mermaid.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
   <script src="assets/js/viewed.js?v=1"></script>
-  <script src="assets/js/topic.js?v=7"></script>
+  <script src="assets/js/study.js?v=1"></script>
+  <script src="assets/js/topic.js?v=8"></script>
 </body>
 </html>
