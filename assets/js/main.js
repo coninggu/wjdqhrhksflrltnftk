@@ -234,6 +234,31 @@
     }
   }
 
+  // 검색 플레이스홀더 예시: 태그 풀에서 날짜 시드로 매일 3개 선정(자정에 자동 변경).
+  // 크론이 주제를 추가하면 그 태그도 자동으로 후보에 포함된다.
+  function dateSeed() {
+    const d = new Date();
+    const key = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+    let h = 2166136261 >>> 0;
+    for (let i = 0; i < key.length; i++) { h ^= key.charCodeAt(i); h = Math.imul(h, 16777619); }
+    return h >>> 0;
+  }
+  function setSearchPlaceholder() {
+    if (!searchEl || !topics.length) return;
+    const CAD = /^\d+회$/;
+    const seen = {};
+    topics.forEach((t) => (t.tags || []).forEach((tag) => {
+      if (!CAD.test(tag) && tag.length <= 12) seen[tag] = 1;
+    }));
+    const tags = Object.keys(seen);
+    if (tags.length < 3) return; // 후보 부족 시 정적 예시 유지
+    let s = dateSeed();
+    const rand = () => { s = (Math.imul(s, 1664525) + 1013904223) >>> 0; return s / 4294967296; };
+    const a = tags.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; }
+    searchEl.setAttribute('placeholder', '주제·태그·카테고리 검색  (예: ' + a.slice(0, 3).join(', ') + ')');
+  }
+
   // 오늘의 주제: 날짜를 시드로 해시 → 모두에게 하루 동안 같은 주제(자정에 자동 변경)
   function todayIndex(n) {
     const d = new Date();
@@ -355,6 +380,7 @@
     .then((data) => {
       // 최신 업데이트 순 정렬 (updated 내림차순, 없으면 뒤로)
       topics = data.slice().sort((a, b) => (b.updated || '').localeCompare(a.updated || ''));
+      setSearchPlaceholder();
       renderToday();
       refreshViewedUI();
       refreshStudyUI();
