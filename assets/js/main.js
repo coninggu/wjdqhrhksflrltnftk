@@ -246,15 +246,20 @@
   function setSearchPlaceholder() {
     if (!searchEl || !topics.length) return;
     const CAD = /^\d+회$/;
-    const seen = {};
+    // 태그 빈도 집계(회차·과도한 길이 제외)
+    const freq = {};
     topics.forEach((t) => (t.tags || []).forEach((tag) => {
-      if (!CAD.test(tag) && tag.length <= 12) seen[tag] = 1;
+      if (!CAD.test(tag) && tag.length <= 12) freq[tag] = (freq[tag] || 0) + 1;
     }));
-    const tags = Object.keys(seen);
+    let tags = Object.keys(freq);
     if (tags.length < 3) return; // 후보 부족 시 정적 예시 유지
+    // 빈도 desc·동률 사전순으로 정렬 → 캐시·주제 추가에 흔들리지 않는 안정적 순서.
+    // 상위 빈출 태그만 후보로 써서 예시가 대표성 있고 하루 단위로만 회전하게 한다.
+    tags.sort((a, b) => (freq[b] - freq[a]) || (a < b ? -1 : a > b ? 1 : 0));
+    const pool = tags.slice(0, Math.min(24, tags.length));
     let s = dateSeed();
     const rand = () => { s = (Math.imul(s, 1664525) + 1013904223) >>> 0; return s / 4294967296; };
-    const a = tags.slice();
+    const a = pool.slice();
     for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; }
     searchEl.setAttribute('placeholder', '주제·태그·카테고리 검색  (예: ' + a.slice(0, 3).join(', ') + ')');
   }
