@@ -24,9 +24,9 @@
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3384172461437695"
      crossorigin="anonymous"></script>
-  <title>플래시카드 · 정보관리기술사 학습 노트</title>
-  <meta name="description" content="정보관리기술사 주제를 플래시카드와 4지선다 퀴즈로 암기·복습" />
-  <link rel="canonical" href="https://www.xn--zb0bow85w7idd5f0pc46q.com/flashcards.html" />
+  <title>내 학습 현황 · 정보관리기술사 학습 노트</title>
+  <meta name="description" content="정보관리기술사 학습 노트의 내 학습 진도·즐겨찾기·이어서 학습 대시보드" />
+  <link rel="canonical" href="https://www.xn--zb0bow85w7idd5f0pc46q.com/dashboard.html" />
   <link rel="stylesheet" href="assets/css/style.css?v=17" />
 </head>
 <body>
@@ -45,31 +45,9 @@
 
   <main class="wrap">
     <a href="index.html" class="back-link">← 목록으로</a>
-    <h1 class="fc-title">플래시카드 &amp; 퀴즈</h1>
-
-    <div class="fc-controls">
-      <div class="fc-modes" role="tablist" aria-label="모드">
-        <button type="button" class="fc-mode is-active" data-mode="flash" role="tab">🃏 플래시카드</button>
-        <button type="button" class="fc-mode" data-mode="quiz" role="tab">📝 퀴즈</button>
-      </div>
-      <div class="fc-filters">
-        <label class="fc-select">카테고리
-          <select id="fc-category"><option value="">전체</option></select>
-        </label>
-        <label class="fc-select">범위
-          <select id="fc-scope">
-            <option value="all">전체</option>
-            <option value="bookmark">★ 즐겨찾기</option>
-            <option value="undone">학습 전</option>
-          </select>
-        </label>
-        <button type="button" class="fc-restart" id="fc-restart">다시 섞기 ↻</button>
-      </div>
-    </div>
-
-    <p class="fc-status" id="fc-status"></p>
-
-    <section class="fc-stage" id="fc-stage"></section>
+    <h1 class="db-title">내 학습 현황</h1>
+    <p class="db-note">이 기기(브라우저)에 저장된 기록입니다.</p>
+    <div id="db-content"><p class="loading">불러오는 중…</p></div>
   </main>
 
   <footer class="site-footer">
@@ -81,6 +59,6 @@
   <script src="assets/js/theme.js?v=1"></script>
   <script src="assets/js/viewed.js?v=1"></script>
   <script src="assets/js/study.js?v=1"></script>
-  <script src="assets/js/flashcards.js?v=1"></script>
+  <script src="assets/js/dashboard.js?v=1"></script>
 </body>
 </html>
