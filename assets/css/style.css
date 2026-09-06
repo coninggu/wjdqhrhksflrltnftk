@@ -838,3 +838,73 @@ body {
   .markdown-body table, .markdown-body pre, .mermaid, .chart-wrap { break-inside: avoid; page-break-inside: avoid; }
   .markdown-body h1, .markdown-body h2, .markdown-body h3 { break-after: avoid; page-break-after: avoid; }
 }
+
+/* ===== 플래시카드 & 퀴즈 ===== */
+.fc-title { font-size: 24px; font-weight: 800; margin: 14px 0 18px; }
+.fc-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.fc-modes { display: inline-flex; gap: 4px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 3px; }
+.fc-mode { font-family: inherit; font-size: 14px; font-weight: 700; border: none; background: none; color: var(--text-soft); border-radius: 999px; padding: 8px 16px; cursor: pointer; transition: background .15s, color .15s; }
+.fc-mode.is-active { background: var(--primary); color: #fff; }
+.fc-filters { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.fc-select { font-size: 12.5px; color: var(--text-muted); display: inline-flex; align-items: center; gap: 6px; }
+.fc-select select { font-family: inherit; font-size: 13px; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 7px 10px; cursor: pointer; }
+.fc-restart { font-family: inherit; font-size: 13px; font-weight: 600; color: var(--text-soft); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 7px 14px; cursor: pointer; }
+.fc-restart:hover { border-color: var(--primary); color: var(--primary); }
+.fc-status { font-size: 13px; font-weight: 600; color: var(--text-soft); margin: 0 2px 14px; font-variant-numeric: tabular-nums; min-height: 16px; }
+
+.fc-stage { margin-bottom: 48px; }
+.fc-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 36px 32px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+.fc-cat { font-size: 12px; font-weight: 700; color: var(--primary); background: var(--primary-soft); padding: 4px 12px; border-radius: 999px; }
+.fc-q { font-size: 26px; font-weight: 800; line-height: 1.4; max-width: 720px; overflow-wrap: anywhere; }
+.fc-reveal, .fc-primary { font-family: inherit; font-size: 15px; font-weight: 700; color: #fff; background: var(--primary); border: none; border-radius: 10px; padding: 12px 26px; cursor: pointer; transition: filter .15s; }
+.fc-reveal:hover, .fc-primary:hover { filter: brightness(1.05); }
+.fc-hint { font-size: 13px; color: var(--text-muted); margin: 0; }
+.fc-a { font-size: 17px; line-height: 1.6; color: var(--text-soft); max-width: 760px; overflow-wrap: anywhere; border-top: 1px dashed var(--border); padding-top: 18px; }
+.fc-grade { display: flex; gap: 12px; }
+.fc-again-btn, .fc-know-btn { font-family: inherit; font-size: 15px; font-weight: 700; border-radius: 10px; padding: 11px 24px; cursor: pointer; border: 1px solid var(--border); }
+.fc-again-btn { background: var(--surface); color: var(--text-soft); }
+.fc-again-btn:hover { border-color: var(--text-muted); }
+.fc-know-btn { background: var(--accent); color: #fff; border-color: var(--accent); }
+.fc-open { font-size: 13px; color: var(--primary); text-decoration: none; }
+.fc-open:hover { text-decoration: underline; }
+
+/* 퀴즈 */
+.fc-quiz { align-items: stretch; text-align: left; }
+.fc-qlabel { font-size: 13px; font-weight: 700; color: var(--text-muted); margin: 0; text-align: center; }
+.fc-desc { font-size: 17px; line-height: 1.6; font-weight: 600; text-align: center; max-width: 760px; margin: 0 auto; overflow-wrap: anywhere; }
+.fc-options { display: grid; gap: 10px; max-width: 640px; width: 100%; margin: 6px auto 0; }
+.fc-opt { font-family: inherit; font-size: 15px; text-align: left; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; cursor: pointer; transition: border-color .12s, background .12s; overflow-wrap: anywhere; }
+.fc-opt:hover:not(:disabled) { border-color: var(--primary); background: var(--primary-soft); }
+.fc-opt:disabled { cursor: default; }
+.fc-opt.is-correct { border-color: var(--accent); background: #e4f4ee; color: #0a6b4a; font-weight: 700; }
+.fc-opt.is-wrong { border-color: #f0b4ad; background: #fdecea; color: #b42318; }
+.fc-next-wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: 640px; width: 100%; margin: 4px auto 0; flex-wrap: wrap; }
+
+.fc-done { text-align: center; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.fc-done-big { font-size: 30px; font-weight: 800; }
+.fc-done-sub { color: var(--text-soft); margin: 0; }
+.fc-empty { text-align: center; color: var(--text-muted); padding: 48px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+
+/* 홈: 플래시카드 진입 버튼 */
+.fc-entry { display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; font-weight: 700; color: var(--primary); background: var(--primary-soft); border: 1px solid transparent; border-radius: 999px; padding: 8px 16px; text-decoration: none; transition: filter .15s; white-space: nowrap; }
+.fc-entry:hover { filter: brightness(.97); }
+
+@media (max-width: 560px) {
+  .fc-card { padding: 28px 20px; }
+  .fc-q { font-size: 22px; }
+}
+
+/* 홈: 검색 아래 플래시카드 진입 줄 */
+.search-extra { display: flex; justify-content: flex-end; margin: 10px 4px 0; }

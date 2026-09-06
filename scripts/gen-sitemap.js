@@ -25,6 +25,8 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const urls = [];
 // 홈
 urls.push({ loc: `${BASE}/`, lastmod: latest, changefreq: 'weekly', priority: '1.0' });
+// 플래시카드/퀴즈
+urls.push({ loc: `${BASE}/flashcards.html`, lastmod: latest, changefreq: 'weekly', priority: '0.6' });
 // 주제 상세
 for (const t of topics) {
   if (!/^[a-z0-9][a-z0-9-]*$/.test(t.id)) {
