@@ -170,6 +170,81 @@
     bar.hidden = false;
   }
 
+  // ── 읽기 편의: 글자 크기 조절(브라우저별 저장) ──
+  var FS_KEY = 'imn:fontsize:v1';
+  var FS_STEPS = [14, 15.5, 17, 18.5, 20];
+  var FS_DEFAULT = 1;
+  function getFsLevel() {
+    try { var v = parseInt(localStorage.getItem(FS_KEY), 10); return (v >= 0 && v < FS_STEPS.length) ? v : FS_DEFAULT; }
+    catch (e) { return FS_DEFAULT; }
+  }
+  function applyFs(level) {
+    var b = document.getElementById('markdown-body');
+    if (b) b.style.fontSize = FS_STEPS[level] + 'px';
+  }
+  function setupReadingTools() {
+    var box = document.getElementById('reading-tools');
+    var level = getFsLevel();
+    applyFs(level);
+    if (!box) return;
+    box.addEventListener('click', function (e) {
+      var btn = e.target.closest('.rt-btn');
+      if (!btn) return;
+      var act = btn.getAttribute('data-fs');
+      if (act === 'inc') level = Math.min(FS_STEPS.length - 1, level + 1);
+      else if (act === 'dec') level = Math.max(0, level - 1);
+      else level = FS_DEFAULT;
+      applyFs(level);
+      try { localStorage.setItem(FS_KEY, String(level)); } catch (e2) {}
+    });
+  }
+
+  // ── 본문 목차(TOC): 긴 답안글의 섹션 이동 + 스크롤 하이라이트 ──
+  function buildToc() {
+    var body = document.getElementById('markdown-body');
+    var fab = document.getElementById('toc-fab');
+    var panel = document.getElementById('toc-panel');
+    var list = document.getElementById('toc-list');
+    if (!body || !fab || !panel || !list) return;
+    var heads = body.querySelectorAll('h2, h3');
+    if (heads.length < 3) { fab.hidden = true; panel.hidden = true; return; } // 짧으면 생략
+    var items = [];
+    heads.forEach(function (h, i) {
+      if (!h.id) h.id = 'sec-' + i;
+      items.push('<li class="toc-' + h.tagName.toLowerCase() + '">' +
+        '<a href="#' + h.id + '" data-target="' + h.id + '">' + escapeHtml(h.textContent) + '</a></li>');
+    });
+    list.innerHTML = items.join('');
+    fab.hidden = false;
+
+    function openPanel(open) { panel.hidden = !open; fab.setAttribute('aria-expanded', String(open)); }
+    fab.addEventListener('click', function () { openPanel(panel.hidden); });
+    document.getElementById('toc-close').addEventListener('click', function () { openPanel(false); });
+    list.addEventListener('click', function (e) {
+      var a = e.target.closest('a[data-target]');
+      if (!a) return;
+      e.preventDefault();
+      var el = document.getElementById(a.getAttribute('data-target'));
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (window.innerWidth < 900) openPanel(false);
+    });
+
+    // 스크롤스파이
+    var links = [].slice.call(list.querySelectorAll('a[data-target]'));
+    var headArr = [].slice.call(heads);
+    var ticking = false;
+    function spy() {
+      var y = window.scrollY + 130;
+      var cur = headArr[0];
+      for (var i = 0; i < headArr.length; i++) { if (headArr[i].offsetTop <= y) cur = headArr[i]; else break; }
+      links.forEach(function (l) { l.classList.toggle('is-active', !!cur && l.getAttribute('data-target') === cur.id); });
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(spy); } }, { passive: true });
+    setTimeout(spy, 700); // mermaid·chart 렌더로 위치 바뀐 뒤 재계산
+    spy();
+  }
+
   function renderMeta(topic) {
     if (!topic) return;
     document.title = `${topic.title} · 정보관리기술사 학습 노트`;
@@ -327,8 +402,9 @@
     setTimeout(update, 1500);
   }
 
-  // 학습 상태 버튼은 id만 있으면 동작하므로 메타/본문 로드와 무관하게 먼저 설치
+  // 학습 상태 버튼·글자 크기 도구는 id만 있으면 동작하므로 먼저 설치
   setupStudyActions();
+  setupReadingTools();
 
   // 메타데이터 로드 후 본문 로드 (메타 실패해도 본문은 시도)
   // 캐시 허용(no-cache 제거): 목록↔상세 이동 시 topics.json 재다운로드 방지
@@ -353,6 +429,8 @@
         })
         .then((md) => {
           renderMarkdown(md);
+          applyFs(getFsLevel()); // 렌더 후 저장된 글자 크기 재적용
+          buildToc();            // 본문 헤딩으로 목차 생성
           // 본문이 정상 렌더된 주제만 열람 기록에 남긴다 (로드 실패는 제외)
           if (window.ViewedStore) window.ViewedStore.markViewed(id);
           setupReadingProgress();

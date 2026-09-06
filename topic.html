@@ -39,7 +39,7 @@
   <meta property="og:url" id="meta-og-url" content="https://www.xn--zb0bow85w7idd5f0pc46q.com/topic.html" />
   <meta property="og:locale" content="ko_KR" />
   <meta name="twitter:card" content="summary" />
-  <link rel="stylesheet" href="assets/css/style.css?v=14" />
+  <link rel="stylesheet" href="assets/css/style.css?v=15" />
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -57,13 +57,20 @@
   <main class="wrap">
     <div class="detail-topbar">
       <a href="index.html" class="back-link">← 목록으로</a>
-      <div class="topic-actions" id="topic-actions" hidden>
-        <button type="button" class="study-btn" id="btn-bookmark" data-act="bookmark" aria-pressed="false">
-          <span class="study-ico">★</span><span class="study-label">즐겨찾기</span>
-        </button>
-        <button type="button" class="study-btn" id="btn-done" data-act="done" aria-pressed="false">
-          <span class="study-ico">✓</span><span class="study-label">학습완료</span>
-        </button>
+      <div class="topbar-tools">
+        <div class="reading-tools" id="reading-tools" role="group" aria-label="글자 크기 조절">
+          <button type="button" class="rt-btn" data-fs="dec" title="글자 작게" aria-label="글자 작게">A−</button>
+          <button type="button" class="rt-btn" data-fs="reset" title="기본 크기" aria-label="기본 글자 크기">A</button>
+          <button type="button" class="rt-btn" data-fs="inc" title="글자 크게" aria-label="글자 크게">A+</button>
+        </div>
+        <div class="topic-actions" id="topic-actions" hidden>
+          <button type="button" class="study-btn" id="btn-bookmark" data-act="bookmark" aria-pressed="false">
+            <span class="study-ico">★</span><span class="study-label">즐겨찾기</span>
+          </button>
+          <button type="button" class="study-btn" id="btn-done" data-act="done" aria-pressed="false">
+            <span class="study-ico">✓</span><span class="study-label">학습완료</span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -82,6 +89,15 @@
     <nav class="topic-nav" id="topic-nav" aria-label="주제 이동"></nav>
   </main>
 
+  <!-- 목차(TOC): 긴 답안글의 섹션 이동. 본문 로드 후 JS가 채우고 노출 -->
+  <button type="button" class="toc-fab" id="toc-fab" hidden aria-expanded="false" aria-controls="toc-panel" title="목차">
+    <span class="toc-fab-ico" aria-hidden="true">≡</span><span class="toc-fab-label">목차</span>
+  </button>
+  <nav class="toc-panel" id="toc-panel" hidden aria-label="목차">
+    <div class="toc-head"><span>목차</span><button type="button" class="toc-close" id="toc-close" aria-label="목차 닫기">×</button></div>
+    <ul class="toc-list" id="toc-list"></ul>
+  </nav>
+
   <footer class="site-footer">
     <div class="wrap footer-inner">
       <a class="feedback-link" href="mailto:woo880110-@naver.com?subject=%5B%EC%A0%95%EB%B3%B4%EA%B4%80%EB%A6%AC%EA%B8%B0%EC%88%A0%EC%82%AC%20%ED%95%99%EC%8A%B5%20%EB%85%B8%ED%8A%B8%5D%20%EC%9D%98%EA%B2%AC">의견 보내기</a>
@@ -96,6 +112,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
   <script src="assets/js/viewed.js?v=1"></script>
   <script src="assets/js/study.js?v=1"></script>
-  <script src="assets/js/topic.js?v=10"></script>
+  <script src="assets/js/topic.js?v=11"></script>
 </body>
 </html>
