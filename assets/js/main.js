@@ -13,6 +13,9 @@
   const studyStatEl = document.getElementById('study-stat');
   const filterBookmark = document.getElementById('filter-bookmark');
   const filterUndone = document.getElementById('filter-undone');
+  const todaySection = document.getElementById('today-section');
+  const todayCard = document.getElementById('today-card');
+  const todayRandom = document.getElementById('today-random');
 
   let topics = [];
 
@@ -236,6 +239,28 @@
     }
   }
 
+  // 오늘의 주제: 날짜를 시드로 해시 → 모두에게 하루 동안 같은 주제(자정에 자동 변경)
+  function todayIndex(n) {
+    const d = new Date();
+    const key = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+    let h = 0;
+    for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) >>> 0;
+    return h % n;
+  }
+  function gotoTopic(t) {
+    if (t) window.location.href = 'topic.html?id=' + encodeURIComponent(t.id);
+  }
+  function renderToday() {
+    if (!todaySection || !todayCard || !topics.length) return;
+    const t = topics[todayIndex(topics.length)];
+    todayCard.href = 'topic.html?id=' + encodeURIComponent(t.id);
+    todayCard.innerHTML =
+      '<span class="today-cat">' + escapeHtml(t.category || '기타') + '</span>' +
+      '<span class="today-title">' + escapeHtml(t.title) + '</span>' +
+      '<span class="today-summary">' + escapeHtml(t.summary || '') + '</span>';
+    todaySection.hidden = false;
+  }
+
   function matches(topic, query) {
     const haystack = [
       topic.title,
@@ -274,6 +299,11 @@
   }
   if (filterUndone) {
     filterUndone.addEventListener('change', applyFilter);
+  }
+  if (todayRandom) {
+    todayRandom.addEventListener('click', () => {
+      if (topics.length) gotoTopic(topics[Math.floor(Math.random() * topics.length)]);
+    });
   }
 
   // 카드의 ★/✓ 버튼: 카드 이동(<a>) 밖의 버튼이므로 클릭이 이동을 막지 않는다.
@@ -330,6 +360,7 @@
     .then((data) => {
       // 최신 업데이트 순 정렬 (updated 내림차순, 없으면 뒤로)
       topics = data.slice().sort((a, b) => (b.updated || '').localeCompare(a.updated || ''));
+      renderToday();
       refreshViewedUI();
       refreshStudyUI();
       applyFilter();

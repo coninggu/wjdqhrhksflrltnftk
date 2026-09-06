@@ -1019,3 +1019,29 @@ body {
   .db-stat-num { font-size: 24px; }
   .db-stat { padding: 14px 10px; }
 }
+
+/* ===== 오늘의 주제 / 랜덤 ===== */
+.today-section { margin: 6px 0 22px; }
+.today-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.today-label { margin: 0; font-size: 14px; font-weight: 700; color: var(--text-soft); }
+.today-random { font-family: inherit; font-size: 13px; font-weight: 700; color: var(--primary); background: var(--primary-soft); border: 1px solid transparent; border-radius: 999px; padding: 8px 15px; cursor: pointer; white-space: nowrap; transition: filter .15s, transform .12s; }
+.today-random:hover { filter: brightness(.97); transform: translateY(-1px); }
+.today-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--primary-soft), var(--surface));
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+  padding: 20px 22px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  transition: transform .12s, box-shadow .15s;
+  overflow-wrap: anywhere;
+}
+.today-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.today-cat { align-self: flex-start; font-size: 12px; font-weight: 700; color: var(--primary); background: var(--surface); padding: 3px 11px; border-radius: 999px; }
+.today-title { font-size: 20px; font-weight: 800; line-height: 1.4; }
+.today-summary { font-size: 14px; color: var(--text-soft); line-height: 1.6; }
