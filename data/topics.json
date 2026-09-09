@@ -4995,5 +4995,19 @@
     ],
     "summary": "공유 자원을 독립적인 풀로 분할하여 한 의존성의 지연·고갈이 다른 기능으로 전파되지 않게 하는 벌크헤드 패턴의 원리, 구현 수준, 운영 전략",
     "updated": "2026-09-09"
+  },
+  {
+    "id": "model-context-protocol",
+    "title": "MCP(Model Context Protocol)",
+    "category": "AI·데이터",
+    "tags": [
+      "MCP",
+      "LLM",
+      "AI에이전트",
+      "JSON-RPC",
+      "도구연동"
+    ],
+    "summary": "LLM 애플리케이션과 외부 도구·데이터·프롬프트를 Host–Client–Server 구조와 JSON-RPC 2.0로 표준 연결해 M×N 통합 문제를 M+N으로 줄이는 개방형 프로토콜의 구조·프리미티브·전송·보안 위협과 기술사 관점 시사점.",
+    "updated": "2026-09-09"
   }
 ]
