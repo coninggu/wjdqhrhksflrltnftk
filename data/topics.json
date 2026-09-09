@@ -4933,5 +4933,22 @@
     ],
     "summary": "128비트 주소·고정 헤더·SLAAC/NDP·IPsec 통합으로 IPv4 고갈과 확장성·보안 한계를 해소한 차세대 인터넷 프로토콜을 정리하고, 이중 스택·터널링·NAT64 등 IPv4→IPv6 전환 기술과 RA 스푸핑 등 IPv6 고유 보안 위협 및 대응을 심화 관점에서 다룬다.",
     "updated": "2026-09-09"
+  },
+  {
+    "id": "site-reliability-engineering",
+    "title": "SRE(Site Reliability Engineering)와 서비스 신뢰성 관리",
+    "category": "SW공학·관리",
+    "tags": [
+      "SRE",
+      "Site Reliability Engineering",
+      "SLI",
+      "SLO",
+      "SLA",
+      "에러 버짓",
+      "인시던트 대응",
+      "DevOps"
+    ],
+    "summary": "소프트웨어를 운영 관점에서 설계하고 SLI·SLO·에러 버짓·인시던트 대응을 통해 서비스 신뢰성과 개발 속도의 균형을 관리하는 엔지니어링 체계",
+    "updated": "2026-09-09"
   }
 ]
