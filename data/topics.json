@@ -4964,5 +4964,21 @@
     ],
     "summary": "SDLC 전 단계에 보안을 통합해 설계·구현 단계의 취약점을 사전 제거하는 개발보안 활동 — 입력 검증·출력 인코딩 등 시큐어 코딩 규칙, 7대 취약점 유형, 위협 모델링과 SAST/DAST/IAST/SCA 진단의 CI/CD 내재화, AI·공급망·DevSecOps 확장까지 심화 정리.",
     "updated": "2026-09-09"
+  },
+  {
+    "id": "architecture-tradeoff-analysis-method",
+    "title": "ATAM(Architecture Tradeoff Analysis Method) 기반 소프트웨어 아키텍처 평가",
+    "category": "SW공학·관리",
+    "tags": [
+      "ATAM",
+      "소프트웨어 아키텍처",
+      "품질속성",
+      "아키텍처 평가",
+      "Utility Tree",
+      "위험·민감점·트레이드오프",
+      "ADR"
+    ],
+    "summary": "비즈니스 드라이버와 품질속성 시나리오를 바탕으로 아키텍처의 위험·민감점·트레이드오프를 식별하고 이해관계자 합의와 의사결정 기록으로 연결하는 ATAM 평가 방법을 기술사 논술형으로 정리한다.",
+    "updated": "2026-09-09"
   }
 ]
