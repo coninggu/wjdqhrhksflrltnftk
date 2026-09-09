@@ -5009,5 +5009,21 @@
     ],
     "summary": "LLM 애플리케이션과 외부 도구·데이터·프롬프트를 Host–Client–Server 구조와 JSON-RPC 2.0로 표준 연결해 M×N 통합 문제를 M+N으로 줄이는 개방형 프로토콜의 구조·프리미티브·전송·보안 위협과 기술사 관점 시사점.",
     "updated": "2026-09-09"
+  },
+  {
+    "id": "opentelemetry-observability",
+    "title": "OpenTelemetry 기반 분산 추적과 통합 관측성",
+    "category": "SW공학·관리",
+    "tags": [
+      "OpenTelemetry",
+      "OTel",
+      "분산추적",
+      "관측성",
+      "OTLP",
+      "Collector",
+      "시맨틱규칙"
+    ],
+    "summary": "벤더 중립 계측 표준인 OpenTelemetry로 traces·metrics·logs를 수집·상관분석하고, Collector·OTLP·시맨틱 규칙을 활용해 분산 시스템의 관측성을 설계하는 방법.",
+    "updated": "2026-09-10"
   }
 ]
