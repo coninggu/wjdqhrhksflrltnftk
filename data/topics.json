@@ -5117,5 +5117,19 @@
     ],
     "summary": "AS 간에 AS_PATH와 경로 속성(LOCAL_PREF·MED·Community)으로 정책 기반 도달성을 교환하는 인터넷 근간 프로토콜 — eBGP/iBGP, 최적 경로 선택, IGP 비교, RPKI 기반 보안.",
     "updated": "2026-09-10"
+  },
+  {
+    "id": "iso-42001-ai-management-system",
+    "title": "ISO/IEC 42001:2023 인공지능 경영시스템(AIMS)",
+    "category": "AI·데이터",
+    "tags": [
+      "ISO/IEC 42001",
+      "AIMS",
+      "AI 거버넌스",
+      "AI 리스크 관리",
+      "책임있는 AI"
+    ],
+    "summary": "AI를 책임 있게 개발·제공·사용하기 위한 인공지능 경영시스템(AIMS)의 요구사항, 위험·영향평가, 생명주기 통제와 구축 로드맵을 정리한다.",
+    "updated": "2026-09-11"
   }
 ]
