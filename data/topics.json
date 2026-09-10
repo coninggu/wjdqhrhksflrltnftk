@@ -3231,7 +3231,7 @@
       "127회"
     ],
     "summary": "단말에서 직접 AI 추론을 수행하는 온디바이스 AI의 개념·HW/SW 기술(NPU·경량화)과 클라우드 AI 비교.",
-    "updated": "2026-07-09"
+    "updated": "2026-09-10"
   },
   {
     "id": "access-control-model",
@@ -3645,7 +3645,7 @@
       "126회"
     ],
     "summary": "UI/UX 설계기준과 웹접근성·호환성·개방성·최적화로 모든 국민의 차별 없는 이용 보장. KWCAG 기반 접근성은 법적 의무.",
-    "updated": "2026-07-19"
+    "updated": "2026-09-10"
   },
   {
     "id": "software-safety-diagnosis",
