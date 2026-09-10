@@ -5103,5 +5103,19 @@
     ],
     "summary": "Shor·HNDL 위협에 대응해 ML-KEM·ML-DSA·SLH-DSA를 활용하고, 암호자산 인벤토리·위험 우선순위화·하이브리드 시험·암호 민첩성으로 PKI와 공급망을 단계 전환하는 전략.",
     "updated": "2026-09-10"
+  },
+  {
+    "id": "bgp",
+    "title": "BGP(Border Gateway Protocol, 경계 경로 프로토콜)",
+    "category": "네트워크",
+    "tags": [
+      "BGP",
+      "AS",
+      "경로벡터",
+      "eBGP",
+      "RPKI"
+    ],
+    "summary": "AS 간에 AS_PATH와 경로 속성(LOCAL_PREF·MED·Community)으로 정책 기반 도달성을 교환하는 인터넷 근간 프로토콜 — eBGP/iBGP, 최적 경로 선택, IGP 비교, RPKI 기반 보안.",
+    "updated": "2026-09-10"
   }
 ]
