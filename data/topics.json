@@ -5087,5 +5087,21 @@
     ],
     "summary": "비정형 문서에서 엔터티·관계·커뮤니티를 추출하고 계층적 요약과 그래프 탐색을 결합하여 일반 RAG의 국소 검색 한계를 보완하는 GraphRAG의 구조, 검색 방식, 구축 절차, 평가와 운영 전략",
     "updated": "2026-09-10"
+  },
+  {
+    "id": "quantum-safe-cryptography",
+    "title": "양자내성암호(PQC, Post-Quantum Cryptography)와 암호 전환 전략",
+    "category": "보안·개인정보",
+    "tags": [
+      "PQC",
+      "양자내성암호",
+      "ML-KEM",
+      "ML-DSA",
+      "SLH-DSA",
+      "암호민첩성",
+      "NIST"
+    ],
+    "summary": "Shor·HNDL 위협에 대응해 ML-KEM·ML-DSA·SLH-DSA를 활용하고, 암호자산 인벤토리·위험 우선순위화·하이브리드 시험·암호 민첩성으로 PKI와 공급망을 단계 전환하는 전략.",
+    "updated": "2026-09-10"
   }
 ]
