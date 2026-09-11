@@ -5174,5 +5174,20 @@
     ],
     "summary": "시간을 일급 축으로 삼아 append-only 대량 수집·시간축 압축(델타/Gorilla)·범위 집계·다운샘플링과 보존정책을 최적화한 시계열 데이터베이스의 데이터 모델, LSM 기반 저장 엔진, 제품 유형 비교와 관측성·IoT 실무 적용을 심화 정리한다.",
     "updated": "2026-09-11"
+  },
+  {
+    "id": "data-lineage-impact-analysis",
+    "title": "데이터 리니지(Data Lineage)와 영향 분석",
+    "category": "AI·데이터",
+    "tags": [
+      "데이터 리니지",
+      "Data Lineage",
+      "영향 분석",
+      "데이터 거버넌스",
+      "OpenLineage",
+      "W3C PROV"
+    ],
+    "summary": "데이터가 원천에서 변환·저장·분석·서비스로 이어지는 경로를 Dataset·Job·Run 그래프로 추적하고, 변경 영향·장애 원인·개인정보 전파를 분석하는 데이터 거버넌스 체계를 정리한다.",
+    "updated": "2026-09-11"
   }
 ]
