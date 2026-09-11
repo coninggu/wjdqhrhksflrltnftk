@@ -5189,5 +5189,23 @@
     ],
     "summary": "데이터가 원천에서 변환·저장·분석·서비스로 이어지는 경로를 Dataset·Job·Run 그래프로 추적하고, 변경 영향·장애 원인·개인정보 전파를 분석하는 데이터 거버넌스 체계를 정리한다.",
     "updated": "2026-09-11"
+  },
+  {
+    "id": "api-management",
+    "title": "API 관리(API Management)와 API 수명주기 거버넌스",
+    "category": "SW공학·관리",
+    "tags": [
+      "API관리",
+      "APIManagement",
+      "API Gateway",
+      "OpenAPI",
+      "OAuth2",
+      "API보안",
+      "수명주기",
+      "NIST",
+      "OWASP"
+    ],
+    "summary": "API를 계약·포털·게이트웨이·보안·관측·변경·폐기까지 하나의 수명주기로 관리하여 재사용성과 안정성, 소비자 경험을 높이는 거버넌스 체계.",
+    "updated": "2026-09-11"
   }
 ]
