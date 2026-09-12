@@ -5312,5 +5312,19 @@
     ],
     "summary": "도메인 경계에 따른 서비스 분해, API·이벤트 통신, 분산 데이터 일관성, 장애 격리와 점진적 전환 전략을 논술형으로 정리한다.",
     "updated": "2026-09-12"
+  },
+  {
+    "id": "threat-modeling",
+    "title": "위협 모델링(Threat Modeling)",
+    "category": "보안·개인정보",
+    "tags": [
+      "위협 모델링",
+      "STRIDE",
+      "DREAD",
+      "DevSecOps",
+      "Secure SDLC"
+    ],
+    "summary": "DFD로 시스템을 구조화하고 STRIDE로 위협을 망라 도출한 뒤 DREAD·CVSS로 우선순위화하여 설계 단계에서 위험을 선제 완화하는 Shift-Left 보안 활동을 논술형으로 정리한다.",
+    "updated": "2026-09-12"
   }
 ]
