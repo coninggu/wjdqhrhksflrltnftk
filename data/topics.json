@@ -5475,5 +5475,20 @@
     ],
     "summary": "서비스 가치 시스템(SVS), 4차원, 7대 지도 원칙, 가치사슬과 관리 프랙티스를 통해 디지털 서비스의 운영·개선 체계를 설계하는 ITIL 4 심화 노트",
     "updated": "2026-09-14"
+  },
+  {
+    "id": "mqtt",
+    "title": "MQTT(Message Queuing Telemetry Transport)",
+    "category": "네트워크",
+    "tags": [
+      "MQTT",
+      "IoT",
+      "발행구독",
+      "QoS",
+      "경량프로토콜",
+      "브로커"
+    ],
+    "summary": "발행/구독 기반 경량 IoT 메시징 프로토콜 — 브로커·토픽·QoS 0/1/2·LWT·Retain·Keep Alive와 MQTT 5.0(공유구독·User Property)까지 정리한 심화 노트.",
+    "updated": "2026-09-14"
   }
 ]
