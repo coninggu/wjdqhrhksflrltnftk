@@ -5641,5 +5641,21 @@
     ],
     "summary": "정보보호 제품의 보안기능(SFR)과 보증수준(SAR/EAL)을 제3자가 표준 절차로 평가·인증하는 국제표준 — PP·ST·TOE 개념과 평가·인증 프로세스, CCRA 상호인정·cPP·CC:2022 동향.",
     "updated": "2026-09-15"
+  },
+  {
+    "id": "hexagonal-architecture",
+    "title": "헥사고날 아키텍처(Hexagonal Architecture, Ports and Adapters)",
+    "category": "SW공학·관리",
+    "tags": [
+      "헥사고날아키텍처",
+      "PortsandAdapters",
+      "포트",
+      "어댑터",
+      "의존성역전",
+      "DDD",
+      "아키텍처패턴"
+    ],
+    "summary": "업무 핵심을 포트로 추상화하고 REST·DB·메시지·외부 API를 어댑터로 격리하는 Ports and Adapters 구조 — driving/driven 포트, 의존성 역전, 테스트·운영 전략과 계층형·클린 아키텍처 비교.",
+    "updated": "2026-09-16"
   }
 ]
