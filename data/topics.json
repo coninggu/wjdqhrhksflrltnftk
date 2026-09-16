@@ -2196,7 +2196,7 @@
       "130회"
     ],
     "summary": "파일(앱관리)·DBMS(중앙 ACID)·블록체인(분산 원장 불변성)의 신뢰 주체·무결성·성능 비교.",
-    "updated": "2026-07-08"
+    "updated": "2026-09-16"
   },
   {
     "id": "tcp-congestion-control",
@@ -3800,7 +3800,7 @@
       "125회"
     ],
     "summary": "OS 네이티브 의존 중량 GUI(AWT)와 자바 직접 렌더링 경량 GUI(SWING) 비교. 플랫폼 독립성·룩앤필, JavaFX로 진화.",
-    "updated": "2026-07-19"
+    "updated": "2026-09-16"
   },
   {
     "id": "mece",
