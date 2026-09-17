@@ -5810,5 +5810,21 @@
     ],
     "summary": "배치·속도·서빙 3계층으로 정확성과 실시간성을 병합하는 람다와, 불변 로그의 단일 스트림으로 실시간·재처리를 통합하는 카파를 비교하고 정합성 원리·재처리 전략·레이크하우스 연계를 정리한다.",
     "updated": "2026-09-17"
+  },
+  {
+    "id": "kubernetes-operator-pattern",
+    "title": "쿠버네티스 오퍼레이터 패턴(Kubernetes Operator Pattern)",
+    "category": "인프라·클라우드",
+    "tags": [
+      "Kubernetes",
+      "Operator",
+      "CRD",
+      "Custom Controller",
+      "Reconciliation",
+      "GitOps",
+      "Stateful Application"
+    ],
+    "summary": "쿠버네티스 API를 CRD와 컨트롤러로 확장해 애플리케이션 도메인 지식을 선언적 관리와 조정 루프로 자동화하는 오퍼레이터 패턴의 구조·구현·운영 전략을 정리한다.",
+    "updated": "2026-09-17"
   }
 ]
