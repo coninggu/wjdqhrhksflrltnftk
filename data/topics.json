@@ -5856,5 +5856,20 @@
     ],
     "summary": "CSPM·CWPP·CIEM·KSPM·DSPM 등 파편화된 클라우드 보안 기능을 통합·상관분석해, 코드부터 런타임까지 실제 악용 가능한 공격 경로 중심으로 위험 우선순위를 매겨 대응하는 클라우드 네이티브 통합 보안 플랫폼.",
     "updated": "2026-09-17"
+  },
+  {
+    "id": "c4-adr-architecture-documentation",
+    "title": "C4 모델과 ADR 기반 소프트웨어 아키텍처 문서화",
+    "category": "SW공학·관리",
+    "tags": [
+      "C4모델",
+      "ADR",
+      "아키텍처문서화",
+      "품질속성",
+      "Docs-as-Code",
+      "Architecture Decision Records"
+    ],
+    "summary": "C4의 Context·Container·Component·Code 계층으로 구조를 독자별로 표현하고, ADR로 아키텍처 결정의 맥락·대안·트레이드오프를 기록하는 통합 문서화 전략.",
+    "updated": "2026-09-18"
   }
 ]
