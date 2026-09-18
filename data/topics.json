@@ -5900,5 +5900,19 @@
     ],
     "summary": "저카디널리티·읽기 중심 환경에서 값별 행 집합을 비트열로 표현하고 AND·OR 연산으로 다중 조건 분석 질의를 가속하는 인덱스 구조와, B-Tree·해시 비교·비트맵 조인·DML 트레이드오프·데이터웨어하우스 적용 전략.",
     "updated": "2026-09-18"
+  },
+  {
+    "id": "kerberos",
+    "title": "Kerberos 인증 프로토콜",
+    "category": "보안·개인정보",
+    "tags": [
+      "Kerberos",
+      "KDC",
+      "TGT",
+      "SSO",
+      "인증"
+    ],
+    "summary": "KDC(AS·TGS)와 대칭키·티켓(TGT)·타임스탬프로 패스워드를 노출하지 않고 상호 인증과 SSO를 실현하는 내부망 인증 프로토콜 — 3단계 6메시지 절차, 교차 Realm·위임, Golden/Silver Ticket·Kerberoasting 공격과 방어, 하이브리드 SSO 연계.",
+    "updated": "2026-09-18"
   }
 ]
