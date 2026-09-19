@@ -6021,5 +6021,20 @@
     ],
     "summary": "'데이터보다 로그를 먼저'라는 WAL 프로토콜로 원자성·지속성을 보장하는 원리와 로그 구조(LSN·물리논리 로깅), 체크포인트, ARIES의 분석·재실행·취소 3단계와 DPT·CLR·반복 이력을 LSN 기반 시나리오로 설명하고 steal/no-force 정책 트레이드오프와 복제·CDC·클라우드 DB로의 확장을 정리한다.",
     "updated": "2026-09-19"
+  },
+  {
+    "id": "eap-tls",
+    "title": "EAP-TLS(Extensible Authentication Protocol-Transport Layer Security) 기반 네트워크 접근 인증",
+    "category": "보안·개인정보",
+    "tags": [
+      "EAP-TLS",
+      "802.1X",
+      "RADIUS",
+      "TLS 1.3",
+      "PKI",
+      "네트워크 접근제어"
+    ],
+    "summary": "X.509 인증서와 TLS 핸드셰이크로 단말·인증 서버를 상호 인증하고, 802.1X·RADIUS 정책과 PKI 수명주기를 결합해 네트워크 접근을 통제하는 방식의 원리·절차·비교·운영 전략.",
+    "updated": "2026-09-19"
   }
 ]
