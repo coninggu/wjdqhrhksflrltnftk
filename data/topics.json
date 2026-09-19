@@ -5977,5 +5977,19 @@
     ],
     "summary": "도메인 이벤트를 시간축에 펼쳐 업무 전문가와 개발자가 복잡한 업무의 용어·규칙·예외·책임·경계를 공동 탐색하는 워크숍 — Big Picture·Process·Software Design 단계와 DDD·EDA·CQRS 연계, 핫스팟 관리, 레거시 현대화 및 퍼실리테이션 전략.",
     "updated": "2026-09-19"
+  },
+  {
+    "id": "numa",
+    "title": "불균일 메모리 접근(NUMA, Non-Uniform Memory Access)",
+    "category": "컴퓨팅·임베디드",
+    "tags": [
+      "NUMA",
+      "ccNUMA",
+      "메모리지역성",
+      "캐시일관성",
+      "CXL"
+    ],
+    "summary": "프로세서마다 로컬 메모리를 직결해 확장성을 얻는 대신 로컬·원격 접근 지연이 달라지는 ccNUMA 구조 — 노드·상호연결·통합 메모리 컨트롤러의 구성, first-touch·affinity·interleave 등 OS·애플리케이션·가상화(vNUMA) 전 계층의 지역성 정합, 거짓 공유·캐시 일관성 트래픽, UMA·분산 메모리 비교와 CXL·계층형 메모리로의 확장을 심화 정리.",
+    "updated": "2026-09-19"
   }
 ]
