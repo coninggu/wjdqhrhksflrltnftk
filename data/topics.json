@@ -2914,7 +2914,7 @@
       "128회"
     ],
     "summary": "부품 고장 중심 FMEA·HAZOP의 한계와 제어·상호작용 오류를 분석하는 시스템 이론 기반 STPA의 개념·방법.",
-    "updated": "2026-07-09"
+    "updated": "2026-09-19"
   },
   {
     "id": "public-sw-planning",
@@ -3942,7 +3942,7 @@
       "125회"
     ],
     "summary": "인증 정보를 담아 서명한 무상태 토큰. Header·Payload·Signature 구성, MSA·API 인증 적합, 페이로드 노출·무효화 한계 보완.",
-    "updated": "2026-07-19"
+    "updated": "2026-09-19"
   },
   {
     "id": "shannon-theory",
