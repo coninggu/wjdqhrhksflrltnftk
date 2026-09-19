@@ -6065,5 +6065,22 @@
     ],
     "summary": "객체 스토리지 위 파일 뭉치에 스냅샷 기반 ACID·숨은 파티셔닝·스키마/파티션 진화·타임 트래블을 부여하는 엔진 중립적 오픈 테이블 포맷 Apache Iceberg의 메타데이터 계층 구조, 동작 원리, CoW/MoR·컴팩션, Delta·Hudi·Hive 비교와 표준화 동향을 심화 정리한다.",
     "updated": "2026-09-19"
+  },
+  {
+    "id": "policy-as-code",
+    "title": "정책 코드화(Policy as Code)와 실행형 거버넌스",
+    "category": "보안·개인정보",
+    "tags": [
+      "Policy as Code",
+      "OPA",
+      "Rego",
+      "Kubernetes",
+      "CEL",
+      "Admission Control",
+      "DevSecOps",
+      "거버넌스"
+    ],
+    "summary": "보안·준법·운영 규칙을 선언형 코드로 버전 관리하고 PDP·PEP를 통해 CI/CD·IaC·API·Kubernetes 런타임에 반복 집행하는 실행형 거버넌스 접근.",
+    "updated": "2026-09-20"
   }
 ]
