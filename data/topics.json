@@ -6158,5 +6158,19 @@
     ],
     "summary": "클라이언트 경험별 전용 백엔드를 두어 API를 조합·변환·보호하는 BFF 패턴을 아키텍처, 조직 소유권, API 게이트웨이·GraphQL 비교, 장애·성능·운영 트레이드오프와 함께 정리하고 RFC 10017의 브라우저 OAuth 보안 권고까지 연결한다.",
     "updated": "2026-09-20"
+  },
+  {
+    "id": "prompt-engineering",
+    "title": "프롬프트 엔지니어링(Prompt Engineering)",
+    "category": "AI·데이터",
+    "tags": [
+      "프롬프트엔지니어링",
+      "LLM",
+      "사고사슬",
+      "ReAct",
+      "프롬프트인젝션"
+    ],
+    "summary": "모델 재학습 없이 입력(역할·맥락·예시·형식)을 설계해 LLM 출력을 제어하는 저비용 기법 — Zero/Few-shot·CoT·ReAct 등 주요 기법, RAG·파인튜닝 비교, 프롬프트 인젝션 보안과 운영 거버넌스.",
+    "updated": "2026-09-20"
   }
 ]
