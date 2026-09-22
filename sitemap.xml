@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.xn--zb0bow85w7idd5f0pc46q.com/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.xn--zb0bow85w7idd5f0pc46q.com/flashcards.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2552,6 +2552,12 @@
   </url>
   <url>
     <loc>https://www.xn--zb0bow85w7idd5f0pc46q.com/topic.html?id=ai-red-teaming</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.xn--zb0bow85w7idd5f0pc46q.com/topic.html?id=green-software</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
