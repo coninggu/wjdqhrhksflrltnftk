@@ -6353,5 +6353,20 @@
     ],
     "summary": "원천의 느린 데이터를 빠른 계층에 사본으로 두는 캐시의 계층 구조와 읽기·쓰기 경로(Cache-Aside·Write-Through/Back), LRU 축출·TTL/이벤트 무효화, 스탬피드·관통·눈사태 등 분산 캐시 장애 대응까지 정합성 관점에서 설계하는 전략.",
     "updated": "2026-09-22"
+  },
+  {
+    "id": "nist-csf-2",
+    "title": "NIST Cybersecurity Framework 2.0 기반 사이버보안 위험관리",
+    "category": "보안·개인정보",
+    "tags": [
+      "NIST CSF 2.0",
+      "사이버보안 위험관리",
+      "GOVERN",
+      "Organizational Profile",
+      "Implementation Tier",
+      "6대 기능"
+    ],
+    "summary": "NIST CSF 2.0의 GOVERN·IDENTIFY·PROTECT·DETECT·RESPOND·RECOVER 6대 기능, Core·Organizational Profile·Implementation Tier 구조와 현재·목표 상태 갭 분석, 클라우드·AI·공급망 적용 전략을 논술형으로 정리한다.",
+    "updated": "2026-09-22"
   }
 ]
