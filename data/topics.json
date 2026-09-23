@@ -6457,5 +6457,21 @@
     ],
     "summary": "전용 하드웨어에 갇힌 네트워크 기능을 범용 서버 위 소프트웨어(VNF)로 분리하고 ETSI MANO(NFVO·VNFM·VIM)로 수명주기를 자동화하는 네트워크의 클라우드화 기술 — CNF·5G·엣지로 진화.",
     "updated": "2026-09-23"
+  },
+  {
+    "id": "digital-product-passport",
+    "title": "디지털 제품 여권(DPP, Digital Product Passport)",
+    "category": "경영·사업전략",
+    "tags": [
+      "DPP",
+      "Digital Product Passport",
+      "ESPR",
+      "순환경제",
+      "제품데이터",
+      "공급망투명성",
+      "지속가능성"
+    ],
+    "summary": "제품·부품·소재의 고유식별자, 데이터 캐리어, EU Registry, 분산형 상세 데이터, 권한·증빙·생애주기 거버넌스를 결합하여 지속가능성·순환성·규제 준수를 지원하는 제품 데이터 아키텍처.",
+    "updated": "2026-09-23"
   }
 ]
