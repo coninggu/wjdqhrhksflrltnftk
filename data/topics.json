@@ -2106,8 +2106,8 @@
       "기계학습운영",
       "130회"
     ],
-    "summary": "DSML 프로젝트 수명주기(비즈니스→데이터→모델링→운영)와 학습-배포-모니터링을 자동화하는 MLOps.",
-    "updated": "2026-07-08"
+    "summary": "DSML 프로젝트 순환 수명주기(비즈니스→데이터→모델링→운영)와 데이터·모델·코드를 버전관리하며 파이프라인 자동화·모니터링·지속학습(CT)으로 모델 부패를 다스리는 MLOps.",
+    "updated": "2026-09-24"
   },
   {
     "id": "subnetting",
@@ -3246,8 +3246,8 @@
       "무결성",
       "127회"
     ],
-    "summary": "기밀성의 BLP(No Read Up·No Write Down), 무결성의 Biba(No Write Up·No Read Down), 상업 무결성의 Clark-Wilson 비교.",
-    "updated": "2026-07-09"
+    "summary": "기밀성의 BLP(No Read-Up·No Write-Down), 무결성의 Biba(No Write-Up·No Read-Down), 상업 무결성의 Clark-Wilson(트랜잭션·직무분리)을 위협 방향의 대칭으로 비교.",
+    "updated": "2026-09-24"
   },
   {
     "id": "master-data-management",
