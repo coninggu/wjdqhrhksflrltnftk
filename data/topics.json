@@ -6587,5 +6587,22 @@
     ],
     "summary": "RU·DU·CU 기능 분리와 개방형 인터페이스, 가상화, SMO·Non-RT RIC·Near-RT RIC 기반 지능형 제어를 결합한 Open RAN의 구조·인터페이스·구축·성능·보안·다중 공급자 운영 전략을 정리한다.",
     "updated": "2026-09-24"
+  },
+  {
+    "id": "data-space-architecture",
+    "title": "데이터 스페이스(Data Space)와 데이터 주권 기반 신뢰 데이터 공유",
+    "category": "AI·데이터",
+    "tags": [
+      "데이터스페이스",
+      "Data Space",
+      "데이터주권",
+      "IDS",
+      "IDS-RAM",
+      "Dataspace Protocol",
+      "데이터거버넌스",
+      "상호운용성"
+    ],
+    "summary": "데이터 제공자가 통제권을 유지하면서 신뢰 서비스·카탈로그·의미체계·계약·사용정책을 결합해 조직 간 데이터를 공유하는 연합형 데이터 아키텍처와 거버넌스·보안·확산 전략을 정리한다.",
+    "updated": "2026-09-24"
   }
 ]
