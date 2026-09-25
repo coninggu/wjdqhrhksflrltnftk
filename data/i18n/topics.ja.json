@@ -1,0 +1,1806 @@
+{
+ "iso-31000": {
+  "title": "ISO 31000（リスクマネジメント）",
+  "summary": "原則・フレームワーク・プロセスから成る汎用的なリスクマネジメントの国際規格 — 状況の確定→リスクアセスメント（特定・分析・評価）→対応→モニタリング。"
+ },
+ "data-exchange": {
+  "title": "データ取引所（Data Exchange）",
+  "summary": "データを商品として登録・検索・取引・精算する仲介プラットフォーム — カタログ・価値評価・セキュリティ統制と、プライバシー・品質の課題。"
+ },
+ "bayesian-optimization": {
+  "title": "ベイズ最適化（Bayesian Optimization）",
+  "summary": "代理モデル（GP）と獲得関数（EI・UCB）で探索と活用をバランスよく調整し、少ない試行でブラックボックス関数の最適点を見つける手法。"
+ },
+ "symmetric-asymmetric-encryption": {
+  "title": "対称暗号と非対称暗号",
+  "summary": "同一の秘密鍵を用いる対称暗号（高速・鍵配送が課題）と、公開鍵／秘密鍵を用いる非対称暗号（鍵配送・電子署名・低速）の比較と、ハイブリッド（電子封筒）。"
+ },
+ "isa-iec-62443": {
+  "title": "ISA/IEC 62443（産業制御システムセキュリティ）",
+  "summary": "産業制御システム（OT）セキュリティの国際規格 — General・ポリシー・システム・コンポーネントの4階層と、Zone/Conduit・SL・7つの基本要件。"
+ },
+ "qshing": {
+  "title": "キッシング（Qshing、QRフィッシング）",
+  "summary": "QRコードを餌に悪性サイト・アプリへ誘導して情報を窃取するフィッシング — 攻撃の流れ・手口と、URL検証・QR完全性による対策。"
+ },
+ "elk-stack": {
+  "title": "ELKスタック（Elasticsearch・Logstash・Kibana）",
+  "summary": "Beats/Logstash（収集・変換）→Elasticsearch（インデックス・検索）→Kibana（可視化）で大量ログをリアルタイムに分析するオープンソーススタック。"
+ },
+ "tpm": {
+  "title": "TPM（Trusted Platform Module）",
+  "summary": "鍵の保管・完全性測定（PCR）・封印・リモート認証を行うハードウェアセキュリティチップ — セキュアブート・ディスク暗号化・デバイス認証の信頼の起点。"
+ },
+ "good-software-characteristics": {
+  "title": "良いソフトウェアの4つの特性",
+  "summary": "良いSWの4大特性（保守性・信頼性・効率性・使用性）とその確保方策、ISO/IEC 25010品質モデルとの連携。"
+ },
+ "point-interval-estimation": {
+  "title": "点推定と区間推定の比較",
+  "summary": "母数を単一の値で推定する点推定（不偏・効率）と、信頼水準とともに区間で推定する区間推定の概念・比較。"
+ },
+ "multicollinearity": {
+  "title": "多重共線性（Multicollinearity）",
+  "summary": "独立変数間の強い相関により回帰係数の推定が不安定になる現象 — VIF・条件指数による診断と、変数除去・PCA・正則化による解決。"
+ },
+ "storage-access-methods": {
+  "title": "ブロック・ファイル・オブジェクトストレージのアクセス方式",
+  "summary": "ブロック（SAN・高性能）・ファイル（NAS・共有）・オブジェクト（HTTP・大規模アーカイブ）のアクセス単位・インターフェース・拡張性の比較。"
+ },
+ "distributed-db-transparency": {
+  "title": "分散データベースの5つの透過性",
+  "summary": "分散DBの位置・分割・重複・並行・障害の透過性 — 分散・複製・同時実行・障害を隠蔽し、単一DBのように見せる概念。"
+ },
+ "clt-t-z-test": {
+  "title": "中心極限定理・t検定・z検定",
+  "summary": "CLT（標本平均の正規近似）と、母分散の既知／未知・標本サイズに応じたz検定・t検定の概念・違い・検定統計量。"
+ },
+ "svm-margin": {
+  "title": "線形SVMのマージン分類（ハード／ソフトマージン）",
+  "summary": "線形SVMのマージン最大化と、ハードマージン（誤分類を許さない）・ソフトマージン（スラック変数ξで誤分類を許容し、Cで制御）の2つの分類手法。"
+ },
+ "sw-engineer-classification": {
+  "title": "ソフトウェア技術者の区分（等級制→IT職務制）",
+  "summary": "経歴ベースの等級制から職務・能力ベースのIT職務制への転換の概念・特徴と、現行IT職務制の問題点・改善方向。"
+ },
+ "mydata-transfer-security": {
+  "title": "マイデータ伝送のセキュリティ（2023年9月ガイド）",
+  "summary": "マイデータ伝送時における保護責任者（CPO）の指定、処理システムのアクセス管理、個人情報の管理・災害対策など、安全な処理の要求事項。"
+ },
+ "iso-14000": {
+  "title": "ISO 14000（環境マネジメントシステム）",
+  "summary": "環境マネジメントシステム（EMS）の国際規格 — ISO 14001を中心とした概念・必要性・認証規格・構築／認証手順（PDCA・第1・2段階）・認証効果。"
+ },
+ "stack-queue-list": {
+  "title": "線形データ構造：スタック・キュー・リスト",
+  "summary": "線形データ構造であるスタック（LIFO）・キュー（FIFO）・リスト（任意アクセス）の入出力原理・演算・活用と比較。"
+ },
+ "sw-operation-cost": {
+  "title": "ソフトウェア運用段階の対価算定",
+  "summary": "SW事業対価算定ガイド（2023）に基づく、応用SWの料率制保守費・投入工数運用費の算定と、固定費／変動費の算定方式。"
+ },
+ "cloud-management-platform": {
+  "title": "クラウド管理プラットフォーム（CMP）",
+  "summary": "マルチ・ハイブリッドクラウドを単一コンソールで統合管理するプラットフォームの定義・必要性・必須機能・選定基準・期待効果。"
+ },
+ "tf-idf": {
+  "title": "TF-IDF（単語重要度の重み付け）",
+  "summary": "TF（文書内の頻度）×IDF（log N/df）で単語の重要度を計算する手法の計算過程・例・特徴と限界。"
+ },
+ "sctp": {
+  "title": "SCTP（Stream Control Transmission Protocol）",
+  "summary": "信頼性＋メッセージ指向＋マルチストリーミング・マルチホーミングを提供する伝送プロトコルの概要・特徴と、4-way（クッキー）構造・動作。"
+ },
+ "apec-cbpr": {
+  "title": "APEC CBPR（越境プライバシールール）",
+  "summary": "APECによる越境個人情報移転の認証体系 — APECプライバシー9原則と、CBPRの主要認証基準。"
+ },
+ "performance-requirements": {
+  "title": "情報システム性能要求事項の性能指標",
+  "summary": "応答時間・スループット（TPS）・同時利用者・資源使用率・可用性などの性能指標と、作成時の考慮事項（ピーク・定量・SLA）・検証方法。"
+ },
+ "fips-140-2": {
+  "title": "FIPS 140-2（暗号モジュールのセキュリティ要件）",
+  "summary": "暗号モジュールのセキュリティ要件規格 — Level 1〜4の分類と、暗号システム設計上の考慮事項・セキュリティ要素・脅威対応戦略。"
+ },
+ "public-db-standardization": {
+  "title": "公共データベース標準化管理（2023年4月）",
+  "summary": "公共DB標準化管理マニュアルにおける構築段階別の予防的品質管理活動と、4つの診断領域・9つの診断項目。"
+ },
+ "langchain-predictive-maintenance": {
+  "title": "LangChainを活用した設備予知保全",
+  "summary": "設備予知保全の概念・必要性と、LangChain・LLMの概念、RAG・エージェントで異常原因の分析・保全指針を支援する方策。"
+ },
+ "software-promotion-act": {
+  "title": "ソフトウェア振興法（2023年10月19日施行）",
+  "summary": "SW産業の振興・安全の法的根拠 — 第5条の基本計画の記載事項と、第30条のSW安全確保指針の記載事項。"
+ },
+ "sw-sizing-methods": {
+  "title": "ソフトウェア規模算定方式と公共SWの改善",
+  "summary": "LoC・ファンクションポイント（FP）・ユースケース・ストーリーポイント方式の比較と、公共SW規模算定の現実的な改善策。"
+ },
+ "information-security-policy": {
+  "title": "情報保護ポリシーとセキュリティ活動・専門家",
+  "summary": "情報保護ポリシーの概念（ポリシー→指針→手順）と、セキュリティの時点別活動（抑止・予防・検知・対応・復旧）、セキュリティ専門家の役割・能力。"
+ },
+ "rest-api": {
+  "title": "REST API（Representational State Transfer）",
+  "summary": "資源をURIで識別しHTTPメソッドで行為を表現する、ステートレス・統一インターフェースに基づくアーキテクチャスタイルのAPI — 6大原則・成熟度モデル。"
+ },
+ "mutation-testing": {
+  "title": "ミューテーションテスト（Mutation Test）",
+  "summary": "コードに人為的な欠陥（ミュータント）を注入し、テストがそれを検出できるかで、テストケースの欠陥検出力を評価する手法。"
+ },
+ "nosql": {
+  "title": "NoSQLの種類とデータモデリング手順",
+  "summary": "非定型・大容量・分散に最適化された格納技術 — Key-Value・Document・Column・Graphの種類と、クエリ優先の非正規化モデリング手順。"
+ },
+ "digital-envelope": {
+  "title": "電子封筒（Digital Envelope）の生成・開封手順",
+  "summary": "平文をセッション鍵で対称暗号化し、そのセッション鍵を受信者の公開鍵で暗号化して一緒に送るハイブリッド手法の生成・開封手順。"
+ },
+ "homomorphic-encryption": {
+  "title": "準同型暗号（Homomorphic Encryption）",
+  "summary": "復号せずに暗号文の状態で演算が可能な暗号技術 — PHE・SWHE・FHEの種類と動作原理・活用。"
+ },
+ "technology-acceptance-model": {
+  "title": "技術受容モデル（TAM）",
+  "summary": "知覚された有用性（PU）・使いやすさ（PEOU）が、態度・利用意図を経て実際の技術利用につながると説明する技術受容の予測モデル。"
+ },
+ "crud-matrix": {
+  "title": "CRUDマトリクス（CRUD Matrix）",
+  "summary": "プロセスとエンティティの生成・参照・更新・削除の関係を行列で表現し、データと機能の整合性を検証する分析ツール。"
+ },
+ "ai-trustworthiness": {
+  "title": "人工知能の信頼性（AI Trustworthiness）",
+  "summary": "公平性・透明性・堅牢性・安全性・説明責任・プライバシーを中核属性とし、全ライフサイクルのガバナンスで確保するAIの信頼可能な性質。"
+ },
+ "bcp-drs": {
+  "title": "BCPの主要指標とDRS構築の考慮事項",
+  "summary": "BCPのRTO・RPO・RSO・BIA指標と、DRSの復旧水準（Mirror〜Cold）・距離・複製方式・模擬訓練など主要な考慮事項。"
+ },
+ "deepfake": {
+  "title": "ディープフェイク（Deepfake）",
+  "summary": "GANなどの生成AIで本物のような偽メディアを合成する技術と、検知AI・ウォーターマーク・出所認証・法制度による対応。"
+ },
+ "software-3r": {
+  "title": "ソフトウェア保守の3R（リバースエンジニアリング・リストラクチャリング・リエンジニアリング）",
+  "summary": "リバースエンジニアリング（設計抽出）・リストラクチャリング（構造改善）・リエンジニアリング（再構築）でレガシーSWの保守性を高め、コストを削減する手法。"
+ },
+ "kubernetes": {
+  "title": "Kubernetes（クバネティス）",
+  "summary": "コンテナの配備・拡張・運用を宣言的に自動化するオーケストレーションプラットフォーム — Control Plane・Node・主要オブジェクト。"
+ },
+ "tcp-handshake": {
+  "title": "TCP 3-way／4-wayハンドシェイク",
+  "summary": "SYN→SYN+ACK→ACKの3-wayで接続を確立し、FIN→ACK→FIN→ACKの4-wayで解放するTCPの接続・切断手順。"
+ },
+ "hw-sizing": {
+  "title": "情報システムハードウェア規模算定指針（TTAK.KO-10.0292/R3）",
+  "summary": "業務量分析→方式選定→補正適用→算出・検証の手順で、サーバー・ストレージなどのHW容量を性能指標に基づき算定する標準指針。"
+ },
+ "gov-ui-ux-guideline": {
+  "title": "デジタル政府サービスUI/UXガイドライン（2024年2月）",
+  "summary": "原則・要素・パターン・スタイルの構造で、公共デジタルサービスのUI/UX品質とアクセシビリティを一貫して確保する行政安全部のガイドライン。"
+ },
+ "itsm": {
+  "title": "ITサービスマネジメント（ITSM）とISO/IEC 20000",
+  "summary": "ITをサービスの観点で管理する体系——設計（SLA・キャパシティ）→移行（変更・リリース・構成）→運用（インシデント・問題）→改善のプロセス。"
+ },
+ "plm-llm": {
+  "title": "PLMからLLMへの発展過程",
+  "summary": "事前学習＋ファインチューニングの転移学習モデルPLMが、事前学習→SFT→RLHF/DPOのアライメントを経て、創発的能力を持つLLMへと発展する過程。"
+ },
+ "privacy-by-design": {
+  "title": "PbD（Privacy by Design）",
+  "summary": "設計段階からプライバシーを先制的・デフォルトで組み込む方法論——7つの基本原則・8つの戦略と、韓国・個人情報保護法第3条との比較。"
+ },
+ "data-safe-zone": {
+  "title": "データ安心区域（Data Safe Zone）",
+  "summary": "機微データを漏えいさせずに分析・活用できるよう統制する指定環境——定義・機能・指定要件。"
+ },
+ "anti-forensic": {
+  "title": "アンチフォレンジック（Anti-Forensic）と対応",
+  "summary": "証拠を隠蔽・毀損・改ざんしてフォレンジックを妨害する技術と、ログ・証拠収集・完全性保全（CoC）・監視に基づくコンプライアンス対応。"
+ },
+ "genai-security": {
+  "title": "生成AIセキュリティガイドライン",
+  "summary": "情報漏えい・プロンプトインジェクション・ハルシネーション・悪用の脅威に対し、入力遮断・モデルセキュリティ・出力検証・ガバナンスにより安全な活用を示す指針。"
+ },
+ "super-app": {
+  "title": "スーパーアプリ（Super App）",
+  "summary": "単一アプリにミニアプリのエコシステムで多様なサービスを統合したプラットフォーム——スーパーアプリとマルチアプリの比較・ミニアプリ・事例・課題。"
+ },
+ "swot-3c-pest": {
+  "title": "経営環境分析：SWOT・3C・PEST",
+  "summary": "PEST（マクロ環境）・3C（顧客・競合・自社）で外部・市場を分析し、SWOTで統合してSO・ST・WO・WT戦略を導く分析手法の比較。"
+ },
+ "requirements-engineering": {
+  "title": "ソフトウェア要求工学（Requirement Engineering）",
+  "summary": "抽出→分析→仕様化→検証→管理の手順でステークホルダーの要求を体系化し、完全・一貫・追跡可能なSRSにより失敗を予防する活動。"
+ },
+ "neural-network": {
+  "title": "人工ニューラルネットワーク（Artificial Neural Network）",
+  "summary": "加重和＋活性化ニューロンの階層構造——FFNNの順方向予測、誤差逆伝播による学習、Sigmoid・ReLU・Softmaxなどの活性化関数。"
+ },
+ "multi-party-computation": {
+  "title": "秘密計算（MPC, Multi-Party Computation）",
+  "summary": "複数の参加者が入力を非公開にしたまま結果のみを共同計算する技術——秘密分散・ガーブルド回路などの種類と分散認証への活用。"
+ },
+ "reliability-portability-test": {
+  "title": "ソフトウェアテストの種類と信頼性・移植性テスト",
+  "summary": "テストの種類（レベル・技法・目的別）と、信頼性テスト（成熟性・障害許容性・回復性）・移植性テスト（適応性・設置性・置換性）の詳細な活動。"
+ },
+ "access-control": {
+  "title": "アクセス制御（Access Control）",
+  "summary": "識別・認証→認可→監査の手順で主体の客体へのアクセスを統制——DAC・MAC・RBAC・ABACポリシーと、ACL・ケイパビリティ・参照モニタの実装。"
+ },
+ "data-modeling": {
+  "title": "RDBMSデータモデリング（識別・非識別リレーションシップ）",
+  "summary": "概念→論理→物理の段階的モデリングと、識別リレーションシップ（親のPKが子のPKに含まれる）・非識別リレーションシップ（一般のFK）の比較、正規化・完全性の考慮事項。"
+ },
+ "private-5g": {
+  "title": "5G特化網（Private 5G）構築時の考慮事項",
+  "summary": "専用5Gで超低遅延・高信頼を提供——冗長化・MEC・スライシングによる安定性確保と、周波数計画・ビームフォーミング・干渉調整による干渉回避策。"
+ },
+ "vpn": {
+  "title": "VPN（Virtual Private Network）",
+  "summary": "公衆網上に暗号化トンネルで仮想専用網を構成——IPSec（拠点間）・SSL（リモート）の比較と、トンネリング・暗号化・認証・完全性の技術要素。"
+ },
+ "fine-tuning": {
+  "title": "AIファインチューニング（Fine-tuning）",
+  "summary": "事前学習モデルを特定タスクのデータで追加学習する転移学習手法——Full/PEFT（LoRA・QLoRA）、SFT・RLHF/DPOのアライメント、RAGとの比較。"
+ },
+ "tuckman-ladder": {
+  "title": "タックマン（Tuckman）のはしごモデル——チーム発達と段階別の特徴",
+  "summary": "チームが形成から成果に至るまでに経る5段階（Forming・Storming・Norming・Performing・Adjourning）と、段階別の特徴・リーダーシップ戦略。"
+ },
+ "tam-sam-som": {
+  "title": "TAM-SAM-SOM——市場規模推定フレームワーク",
+  "summary": "市場規模を全体（TAM）→有効（SAM）→獲得可能（SOM）の3段階の同心円で絞り込んで推定するフレームワークと、算定方法（トップダウン・ボトムアップ）。"
+ },
+ "ml-performance-metrics": {
+  "title": "機械学習（Machine Learning）の性能指標",
+  "summary": "分類（Accuracy・Precision・Recall・F1・ROC-AUC）と回帰（MAE・RMSE・R²）の性能指標の定義・数式・選択基準と、混同行列・Precision-Recallトレードオフ。"
+ },
+ "configuration-management": {
+  "title": "構成管理（Configuration Management）とベースライン（Baseline）",
+  "summary": "成果物の変更を識別・統制・状態記録・監査で管理する構成管理と、機能・割当・製品ベースラインの概念。"
+ },
+ "information-hiding": {
+  "title": "情報隠蔽（Information Hiding）",
+  "summary": "モジュール内部の実装を隠しインターフェースのみを公開して結合度を下げる設計原理と、カプセル化との関係・効果。"
+ },
+ "image-data-annotation": {
+  "title": "画像データアノテーション（Image Data Annotation）",
+  "summary": "バウンディングボックス・ポリゴン・セグメンテーション・キーポイント・3Dなどの画像ラベリングの種類と、手動・半自動・能動学習の手法。"
+ },
+ "static-vs-dynamic-sql": {
+  "title": "静的SQLと動的SQLの比較",
+  "summary": "コンパイル時に確定する静的SQLと、実行時に生成される動的SQLの、性能・柔軟性・セキュリティ（インジェクション）の比較。"
+ },
+ "rip-vs-ospf": {
+  "title": "RIPとOSPFの比較（ルーティングプロトコル）",
+  "summary": "距離ベクトル型（RIP）とリンクステート型（OSPF）ルーティングプロトコルの、アルゴリズム・メトリック・収束速度・拡張性の比較。"
+ },
+ "intermittent-computing": {
+  "title": "間欠コンピューティング（Intermittent Computing）",
+  "summary": "エネルギーハーベスティングに基づく間欠的な電力環境で、チェックポインティング・不揮発性メモリにより状態を保存・復旧する超低電力コンピューティング。"
+ },
+ "storage-virtualization": {
+  "title": "ストレージ仮想化（Storage Virtualization）",
+  "summary": "分散したストレージ資源を論理的な単一プールに抽象化する技術——ホスト・ネットワーク・アレイベースの種類と、ブロック/ファイルレベル。"
+ },
+ "privacy-enhancing-technologies": {
+  "title": "プライバシー強化技術（PET）",
+  "summary": "データ活用とプライバシーを同時に実現する技術群——仮名化・匿名化、差分プライバシー、準同型暗号、ZKP、MPC、連合学習。"
+ },
+ "high-bandwidth-memory": {
+  "title": "広帯域超高速メモリ（HBM）",
+  "summary": "DRAMをTSVで3D積層し超広帯域・低電力を実現したメモリ——AI・HPCのメモリボトルネック（Memory Wall）を解消。"
+ },
+ "rag": {
+  "title": "RAG（Retrieval-Augmented Generation、検索拡張生成）",
+  "summary": "外部知識の検索結果をLLMのプロンプトに結合し、ハルシネーションを減らして最新かつ根拠に基づく回答を生成する手法とアーキテクチャ。"
+ },
+ "public-saas-guideline": {
+  "title": "公共部門SaaS利用ガイドライン",
+  "summary": "公共機関が安全にSaaSを利用するためのリスク管理の原則・基準（CSAP等級）、セキュリティ対策・セキュリティ性審査、サービスレベル合意（SLA）。"
+ },
+ "dark-pattern": {
+  "title": "ダークパターン（Dark Pattern）の類型と対応策",
+  "summary": "消費者を欺く・誤導・妨害・圧迫するダークパターンの詳細な類型と、制度・設計・消費者の各次元における対応策。"
+ },
+ "it-governance": {
+  "title": "ITガバナンス（IT Governance）",
+  "summary": "ITをビジネス戦略に整合・統制するガバナンスの構成要素、効果測定指標（BSC・KPI）、測定方法論（COBIT・ISO 38500）。"
+ },
+ "ai-datacenter": {
+  "title": "大規模AIサービスのためのデータセンター構築技術",
+  "summary": "超巨大AI向けデータセンターの低遅延・スケーリング技術（RDMA・InfiniBand・NVLink・分散学習）と、DCI（DWDM・OTN）技術。"
+ },
+ "esg-management": {
+  "title": "ESG経営（Environment・Social・Governance）",
+  "summary": "環境・社会・ガバナンスに基づく持続可能経営の定義・目標、主要指標（GRI・K-ESG）、それを支えるIT（IoT・AI・ブロックチェーン・開示プラットフォーム）。"
+ },
+ "transaction-isolation-level": {
+  "title": "トランザクション分離レベル（Transaction Isolation Level）",
+  "summary": "4つの分離レベル（Read Uncommitted〜Serializable）と、Dirty・Non-repeatable・Phantom Readの異常現象を事例中心に整理。"
+ },
+ "deployment-testing-strategy": {
+  "title": "稼働中アプリケーションのデプロイ戦略・テスト戦略",
+  "summary": "無停止デプロイ（ブルーグリーン・カナリア・ローリング・A/B）と、デプロイ前・中・後（回帰・カナリア分析・シャドー・フィーチャートグル）のテスト戦略。"
+ },
+ "software-testing": {
+  "title": "ソフトウェアテスト（原則・ブラックボックス/ホワイトボックス・技法）",
+  "summary": "テストの7原則、ブラックボックス・ホワイトボックスの比較、仕様・構造・経験に基づくテスト技法の整理。"
+ },
+ "sbom": {
+  "title": "SBOM（Software Bill of Materials）",
+  "summary": "ソフトウェア構成要素の明細書であるSBOMにより、オープンソースの脆弱性・ライセンスリスクを可視化し、SCA・CVEマッピングで管理する方策。"
+ },
+ "algorithm-complexity": {
+  "title": "アルゴリズムの計算量とオーダー記法（O-Notation）",
+  "summary": "時間・空間計算量とオーダー記法（O-Notation）の概念・種類（O(1)〜O(n!)）と、入力サイズに応じた計算時間の増加率の違い。"
+ },
+ "multidimensional-index": {
+  "title": "多次元索引構造（Multidimensional Index Structure）",
+  "summary": "多次元・空間データ検索のための索引構造（R-Tree・KD-Tree・Quad-Tree・Grid File）の概念・種類・活用。"
+ },
+ "open-source-license-change": {
+  "title": "オープンソースライセンス方針の変化（オープン型→クローズド型）",
+  "summary": "MIT・BSDなどのオープン型からSSPL・BSLのクローズド型への転換の背景（クラウドのフリーライド）と、ソフトウェア産業への影響。"
+ },
+ "it-project-risk-response": {
+  "title": "ITプロジェクトのリスク対応（Risk Response）",
+  "summary": "リスク対応計画の策定手順と、脅威（回避・転嫁・軽減・受容）・好機（活用・共有・増大・受容）への対応戦略。"
+ },
+ "multi-gpu": {
+  "title": "マルチGPU技術（大規模ニューラルネットワークの学習）",
+  "summary": "マルチGPUの概念・利点と、データ・モデル・パイプライン・テンソル並列化、環境構築時の通信・メモリ・同期の考慮事項。"
+ },
+ "ai-system-issues": {
+  "title": "AIシステムの法的・倫理的・技術的課題と解決策",
+  "summary": "AIシステムの法的（責任・著作権）・倫理的（バイアス・透明性）・技術的（ハルシネーション・セキュリティ）課題と、ガバナンス・XAI・MLOpsによる解決策。"
+ },
+ "open-api": {
+  "title": "オープンAPI（Open API）",
+  "summary": "オープンAPIの定義・特徴、SOAPとRESTの構成要素の比較、OWASP APIの脆弱性と認証・ゲートウェイによる対応策。"
+ },
+ "cloud-migration-audit": {
+  "title": "クラウド移行事業の段階別監理",
+  "summary": "クラウド移行事業の計画・設計・移行・運用の各段階における監理手法と、適合性・セキュリティ・データ完全性・コストの検討項目。"
+ },
+ "som": {
+  "title": "SOM(Self Organizing Map、自己組織化マップ)",
+  "summary": "競合学習に基づく教師なしニューラルネットワークSOMの定義・特徴、構成要素(BMU・近傍関数)、教師ありニューラルネットワークとの相違点。"
+ },
+ "ai-transformation": {
+  "title": "AX(AI Transformation、AI変革)",
+  "summary": "戦略・データ/インフラ・人材・責任あるAIの4軸でAIを全社運営に内在化する変革——プロセスのデジタル化(DX)を超え、AIが判断・生成を担う知能化(AI-Native)を志向する。"
+ },
+ "leveling-framework": {
+  "title": "レベリングフレームワーク(Leveling Framework、職務レベル体系)",
+  "summary": "職務の責任・影響範囲を等級化し、採用・評価・報酬・成長の共通基準を提供する人事体系——IC・管理のデュアルラダーとキャリブレーション、SFIA/NCS連携により公平性・客観性を確保する。"
+ },
+ "digital-transformation": {
+  "title": "デジタルトランスフォーメーション(Digital Transformation)",
+  "summary": "電算化→デジタル化→デジタル変革という進化を通じて、ビジネスモデル・プロセス・顧客体験・組織文化を根本的に革新する戦略的変革。"
+ },
+ "nfc": {
+  "title": "NFC(Near Field Communication)",
+  "summary": "13.56MHz・10cm以内の非接触近距離通信——リーダー・P2P・カードエミュレーションの各モードとモバイル決済・タグの活用。"
+ },
+ "waterfall-vs-agile": {
+  "title": "ウォーターフォールとアジャイル開発方法論の比較",
+  "summary": "逐次・計画中心のウォーターフォールと、反復・変化対応中心のアジャイルの特徴・長短所の比較と選択基準。"
+ },
+ "cloud-service-deployment-model": {
+  "title": "クラウドのService ModelとDeployment Model",
+  "summary": "サービスモデル(IaaS・PaaS・SaaS)の抽象化・責任範囲と、デプロイメントモデル(パブリック・プライベート・ハイブリッド・コミュニティ)の所有・統制形態を、NIST SP 800-145と責任共有モデルの観点から比較し、ワークロード・規制に適した組合せ選択を整理する。"
+ },
+ "dimensionality-reduction": {
+  "title": "データの次元削減(Dimensionality Reduction)",
+  "summary": "次元の呪いを緩和する次元削減の概念と、特徴選択・抽出(PCA・LDA・t-SNE・オートエンコーダ)の手法、目的別の選択戦略とトレードオフ。"
+ },
+ "audit-vs-pmo": {
+  "title": "情報システム監理とPMOの比較",
+  "summary": "外部の第三者として独立的に検証する監理と、内部から支援・統制するPMOの役割・立場の比較と相互補完。"
+ },
+ "ml-vs-dl": {
+  "title": "機械学習とディープラーニングの違い",
+  "summary": "AI⊃機械学習⊃ディープラーニングの関係と、特徴抽出・データ量・リソース・解釈性の違いの比較。"
+ },
+ "auto-scaling": {
+  "title": "オートスケーリング(Auto Scaling)",
+  "summary": "負荷に応じてリソースを自動的に増減(水平・垂直)し、性能・コストを最適化するクラウドの弾力性技術。"
+ },
+ "t-test-independent-paired": {
+  "title": "独立標本t検定と対応標本t検定の比較",
+  "summary": "互いに異なる2集団(独立標本)と、同一対象の対にした差分値(対応標本)の平均差の検定。対応標本は個人差を相殺して検定力が高く、標本構造・仮定・効果量を考慮して選択する。"
+ },
+ "credential-stuffing": {
+  "title": "クレデンシャルスタッフィング(Credential Stuffing)",
+  "summary": "流出したアカウントを自動的に入力し、パスワードの使い回しを悪用する攻撃——正常なログインのように見えて検知が難しく、MFA・パスキー・ボット管理・リスクベース認証(RBA)による多層防御が要となる。"
+ },
+ "data-standardization": {
+  "title": "データ標準化の必要性と期待効果",
+  "summary": "用語・ドメイン・コードを一貫した基準に統一し、一貫性・相互運用性・効率性を確保するデータガバナンスの基盤。"
+ },
+ "isp-vs-bpr": {
+  "title": "ISPとBPRの比較および相互補完",
+  "summary": "業務プロセスを根本的に再設計するBPRと、全社的な情報化戦略を策定するISPの観点・手順・成果物の比較、BPR→ISPの逐次連携やEAに基づく整合など相互補完的な活用方策。"
+ },
+ "data-visualization": {
+  "title": "データ可視化(Data Visualization)",
+  "summary": "正確・明確・効率・審美の原理に従ってデータを知覚精度の高い視覚符号にマッピングし、目的別のチャート(比較・傾向・構成・関係・分布・空間)を選択して洞察を伝える手法——チャートジャンクの除去・インタラクティブ性・アクセシビリティ・可視化倫理・NL2Chartの動向。"
+ },
+ "ai-ethics-governance": {
+  "title": "AI倫理とガバナンスモデル",
+  "summary": "公平性・透明性・説明責任などのAI倫理原則と、原則→組織→影響評価→モニタリング→規制遵守のガバナンスモデル。"
+ },
+ "zero-trust": {
+  "title": "ゼロトラストセキュリティモデル",
+  "summary": "境界ベースの信頼を廃し、すべてのアクセスをアイデンティティ・コンテキストに基づいて継続的に検証するゼロトラスト。4大原則(明示的検証・最小権限・侵害前提・マイクロセグメンテーション)とNIST SP 800-207(PDP/PEP)アーキテクチャ、成熟度モデルに基づく段階的導入。"
+ },
+ "socket-communication": {
+  "title": "ソケット(Socket)通信",
+  "summary": "IP・ポートで識別される通信の両端点——TCP・UDP・WebSocketの各タイプとHTTP通信方式との比較。"
+ },
+ "architecture-style-design-pattern": {
+  "title": "アーキテクチャスタイルとデザインパターン(GoF)",
+  "summary": "マクロなアーキテクチャスタイル(階層・MSA・イベント駆動)と、ミクロなGoFデザインパターン(生成・構造・振る舞い)の違い。"
+ },
+ "ai-training-data-quality": {
+  "title": "AI学習用データセットの品質管理",
+  "summary": "AI学習用データセットの収集→加工・ラベリング→検収→活用というライフサイクル段階別の品質確保活動と手順。"
+ },
+ "data-structure-linear-nonlinear": {
+  "title": "データ構造:線形と非線形",
+  "summary": "線形構造(スタック・キュー・リスト)と非線形構造(木・グラフ)の概念・種類と、連結形態に応じた比較。"
+ },
+ "integration-test": {
+  "title": "統合テスト(Integration Test)",
+  "summary": "モジュール結合時にインターフェースを検証する統合テスト——非漸進的/漸進的、トップダウン・ボトムアップ、ドライバ・スタブ。"
+ },
+ "software-safety-analysis": {
+  "title": "ソフトウェア安全性分析(FTA・FMEA・HAZOP)",
+  "summary": "安全必須システムのリスクを予防するFTA(トップダウン)・FMEA(ボトムアップ・RPN)・HAZOP(ガイドワード)の分析手法。"
+ },
+ "paging-vs-segmentation": {
+  "title": "ページングとセグメンテーション",
+  "summary": "固定サイズのページング(内部断片化)と論理単位のセグメンテーション(外部断片化)の概念・アドレス変換・比較、ページドセグメンテーションによる結合とTLBによる高速化。"
+ },
+ "isms-p": {
+  "title": "ISMSとISMS-P",
+  "summary": "情報保護管理体系ISMSと、個人情報保護を加えたISMS-Pの相違点、およびISMSの義務対象基準。"
+ },
+ "strategic-enterprise-management": {
+  "title": "戦略的企業経営(SEM)",
+  "summary": "戦略策定から成果測定・フィードバックまでを統合的に支援するSEMの定義・構成要素(BSC・VBM・ABC)・構築手順。"
+ },
+ "personal-data-safety-measures": {
+  "title": "個人情報の安全性確保措置基準",
+  "summary": "個人情報保護法告示に基づく管理的・技術的・物理的措置——内部管理計画の策定と暗号化の適用方策。"
+ },
+ "data-quality-management": {
+  "title": "データ品質管理(Data Quality Management)",
+  "summary": "データ品質管理のアーキテクチャ・成熟度、構造化/非構造化データの品質基準、標準化・予防・測定・責任の戦略。"
+ },
+ "foundation-model": {
+  "title": "基盤モデル(Foundation Model)",
+  "summary": "大規模に事前学習された汎用AIモデルの概念・特徴・基盤技術(Transformer・自己教師あり学習・アラインメント)と、法・環境・社会的な考慮事項。"
+ },
+ "sorting-algorithms": {
+  "title": "ソートアルゴリズム(バブル・挿入・クイック)",
+  "summary": "バブルソート・挿入ソート(O(n²))とクイックソート(平均O(n log n)の分割統治)の動作・計算量・安定性の比較。"
+ },
+ "no-code": {
+  "title": "ノーコード(No-Code)",
+  "summary": "コーディングなしに視覚的な編集でアプリを開発し、現場の市民開発者の参加を可能にする方式と、その長短所。"
+ },
+ "db-concurrency-control": {
+  "title": "データベースの並行制御(Concurrency Control)",
+  "summary": "同時トランザクションの異常現象を防ぐ並行制御技法(ロッキング2PL・タイムスタンプ・楽観的・MVCC)と、分離レベル・デッドロック管理。"
+ },
+ "requirements-specification": {
+  "title": "要求仕様書(SRS)の記述項目",
+  "summary": "要求仕様書に記述する項目(概要・機能・非機能・インターフェース・制約・データ)と、良い要求の品質属性。"
+ },
+ "data-governance": {
+  "title": "データガバナンス(Data Governance)",
+  "summary": "ポリシー・組織・プロセス・技術によってデータの標準・品質・メタデータ・セキュリティ・ライフサイクルを統合的に管理する統制体系。データスチュワードシップと標準化が要であり、データメッシュ・DataOps・AIガバナンスへと進化する。"
+ },
+ "drone-security": {
+  "title": "ドローンのセキュリティ脅威と対応方策",
+  "summary": "ドローンのGPSスプーフィング・通信ハイジャック・ファームウェア改ざんの脅威と、通信・GPS・ファームウェアのセキュリティ・アンチドローン・制度による対応。"
+ },
+ "block-cipher": {
+  "title": "ブロック暗号アルゴリズム(Block Cipher)",
+  "summary": "平文を固定ブロック単位で撹乱・拡散を繰り返し適用するブロック暗号(AES・DES)と、ECB・CBC・CTR・GCMの運用モード。"
+ },
+ "6g": {
+  "title": "6G移動通信",
+  "summary": "ITU-R IMT-2030に基づく6G(Tbps・0.1ms・地上衛星統合NTN・AIネイティブ・通信センシング融合ISAC)の目標・中核技術・5Gとの比較と標準化動向。"
+ },
+ "vxlan": {
+  "title": "VXLAN(Virtual eXtensible LAN)",
+  "summary": "L3の上に24ビットVNIベースのL2オーバーレイを構築するMAC-in-UDPトンネリングにより、VLANの限界を克服する技術。"
+ },
+ "ml-optimization": {
+  "title": "機械学習の最適化アルゴリズム(Optimization)",
+  "summary": "損失を最小化する勾配降下法系(SGD・Momentum・AdaGrad・RMSProp・Adam)の種類と長短所。"
+ },
+ "ismp": {
+  "title": "情報システムマスタープラン(ISMP)",
+  "summary": "個別の情報システム事業の要求事項を発注前に詳細に企画するISMPの段階別活動・詳細内容・成果物。"
+ },
+ "ahp": {
+  "title": "AHP(Analytic Hierarchy Process)",
+  "summary": "目標-基準-代替案の階層に分解し、一対比較により重みを算出して最適な代替案を選択する多基準意思決定手法。"
+ },
+ "bernoulli-geometric": {
+  "title": "ベルヌーイ分布と幾何分布",
+  "summary": "1回の試行の成功/失敗(ベルヌーイ)と、初めて成功するまでの試行回数(幾何)の分布の定義・期待値・分散・無記憶性、および二項・負の二項分布への拡張。"
+ },
+ "iso-21500": {
+  "title": "ISO 21500(プロジェクトマネジメントの手引き)",
+  "summary": "立ち上げ・計画・実行・管理・終結のプロセス群と対象群で構成される、プロジェクトマネジメントの国際標準ガイド。"
+ },
+ "data-mining-clustering": {
+  "title": "データマイニング:K-means・DBSCAN・SVM",
+  "summary": "K-means(中心・距離)・DBSCAN(密度)による教師なしクラスタリングと、SVM(マージン最大の超平面)による教師あり分類の原理・パラメータ・比較と、実務上の選択基準。"
+ },
+ "dsml-mlops": {
+  "title": "DSMLプロジェクトとMLOps",
+  "summary": "DSMLプロジェクトの循環型ライフサイクル(ビジネス→データ→モデリング→運用)と、データ・モデル・コードをバージョン管理し、パイプラインの自動化・監視・継続的学習(CT)でモデルの劣化を制御するMLOps。"
+ },
+ "subnetting": {
+  "title": "ネットワークのサブネッティングとスーパーネッティング",
+  "summary": "サブネッティング・スーパーネッティングの概念と、192.168.100.0/24を4分割した場合のマスク(255.255.255.192)・割り当て可能IP(62個)の計算。"
+ },
+ "privacy-law-amendment": {
+  "title": "個人情報保護法改正案(2023)",
+  "summary": "2023年改正個人情報保護法の規制一元化、伝送要求権(マイデータの根拠)、自動化された決定に対する拒否・説明要求権、総売上高に基づく課徴金の強化と、個人情報の処理主体・流れ、GDPRとの比較および企業の対応策。"
+ },
+ "metaverse-ethics": {
+  "title": "メタバース倫理原則",
+  "summary": "メタバース倫理原則の3大志向価値(健全な自我・安全な経験・持続可能な繁栄)と8大実践原則、適用手順と共同責任、インターネット・AI倫理との比較および没入型データのプライバシー。"
+ },
+ "digital-dysfunction": {
+  "title": "デジタル逆機能(Digital Dysfunction)",
+  "summary": "デジタル逆機能の概念・事例と3大課題(過依存・デジタル犯罪・デジタル格差)、生成AI時代における深刻化、制度・技術・教育・社会的セーフティネットによる対応。"
+ },
+ "decision-tree": {
+  "title": "決定木(Decision Tree)",
+  "summary": "属性基準による反復分割でif-thenルールの木を作る解釈可能なモデルと、情報利得・ジニ・過学習・アンサンブル。"
+ },
+ "file-db-blockchain": {
+  "title": "データ保存:ファイル・DB・ブロックチェーンの比較",
+  "summary": "ファイル(アプリ管理)・DBMS(中央集権的ACID)・ブロックチェーン(分散台帳の不変性)における信頼主体・整合性・性能の比較。"
+ },
+ "tcp-congestion-control": {
+  "title": "TCP輻輳制御(Congestion Control)",
+  "summary": "スロースタート・輻輳回避・高速再送・高速回復により輻輳ウィンドウ(cwnd)を調整するTCP輻輳制御メカニズム。"
+ },
+ "ai-security-threats": {
+  "title": "AIセキュリティ脅威:敵対的攻撃・生成AIの脆弱性",
+  "summary": "機械学習に対する4つの敵対的攻撃(ポイズニング・回避・反転・抽出)と防御、生成LLMのセキュリティ脆弱性および対応。"
+ },
+ "bigdata-audit": {
+  "title": "ビッグデータ情報化事業の監理点検項目",
+  "summary": "知能情報技術監理ガイドにおける、ビッグデータ事業の分析・設計の段階別・領域別(データ・分析モデル・アーキテクチャ・セキュリティ)点検項目。"
+ },
+ "financial-cloud-sla": {
+  "title": "金融クラウドSLA",
+  "summary": "SLAの概念・主要指標(可用性・RTO/RPO)と、一般クラウドと金融クラウドのSLAの違い — 国内保管・ネットワーク分離・監督規定の遵守、責任共有モデル・BCP・Exit戦略。"
+ },
+ "voice-data-mining": {
+  "title": "音声データマイニング(Voice Data Mining)",
+  "summary": "STT・話者/感情認識・NLP・パターン分析のパイプラインで、非構造化された音声から情報・パターンを網羅的に抽出する手法。処理方式・活用分野・生成AIによる発展方向と、音声の個人情報に関する課題まで。"
+ },
+ "digital-forensics": {
+  "title": "デジタルフォレンジック(Digital Forensics)",
+  "summary": "デジタル証拠を完全性・連鎖的保管性(Chain of Custody)を保ちながら収集・分析・保存する科学捜査の概念・種類・手順・技術・活用。"
+ },
+ "cloud-security-considerations": {
+  "title": "クラウド導入時のセキュリティ考慮要素",
+  "summary": "責任共有モデルを前提に、データ暗号化・鍵管理、IAM/CIEM、構成セキュリティ(CSPM)、ネットワーク・可視性、規制(CSAP)・主権、継続性・Exit、サプライチェーン(SBOM)を検討する。設定ミス・アカウント管理が最大のリスクであり、CNAPP・ゼロトラストで統合する。"
+ },
+ "web3": {
+  "title": "Web3.0(Web 3.0)",
+  "summary": "ブロックチェーンに基づく分散化によりデータ・資産の所有権を利用者に取り戻すWeb3.0の概念・技術要素(スマートコントラクト・トークン・DID)・活用と、拡張性・規制などの限界。"
+ },
+ "dataops-devops": {
+  "title": "DataOpsとDevOps",
+  "summary": "コードのデプロイを自動化するDevOpsと、データパイプライン・分析を自動化するDataOpsの比較、およびDataOpsのアーキテクチャ・技術。"
+ },
+ "digital-platform-gov": {
+  "title": "デジタルプラットフォーム政府(Digital Platform Government)",
+  "summary": "政府のデータ・サービスを単一のプラットフォームに統合・開放し、先制的で個別最適化された行政と官民共同の価値創出を実現するパラダイム — 4層構造、電子政府との比較、標準・ガバナンスと個人情報保護のバランス。"
+ },
+ "ai-ethics-standard": {
+  "title": "AI倫理基準の3大原則と10大要件",
+  "summary": "国家AI倫理基準(2020.12)における人間性の大原則の下、3大基本原則(人間の尊厳・公共善・合目的性)と10大中核要件。自律規範からAI基本法(2026.1施行)への流れと、設計段階での内在化。"
+ },
+ "aop": {
+  "title": "AOP(アスペクト指向プログラミング)",
+  "summary": "ロギング・セキュリティ・トランザクションのような横断的関心事をアスペクトとして分離し、ウィービングで織り込むパラダイム。構成要素・Advice/Weavingの種類・Springへの適用・サービスメッシュへの拡張まで掘り下げる。"
+ },
+ "transaction-acid": {
+  "title": "データベーストランザクションの特性(ACID)",
+  "summary": "トランザクションの原子性・一貫性・分離性・持続性(ACID)と実装技法(ロッキング・MVCC・WAL)、分離レベル、分散環境におけるCAP・BASE・2PC・Sagaへの拡張。"
+ },
+ "coupling": {
+  "title": "ソフトウェア結合度(Coupling)の種類",
+  "summary": "内容>共通>外部>制御>スタンプ>データの順に弱くなる結合度の種類と、低結合・高凝集の設計原理。"
+ },
+ "iac": {
+  "title": "コード型インフラ(IaC)",
+  "summary": "インフラの望ましい状態をコードで宣言し、自動でプロビジョニング・管理する方式。宣言型・命令型、冪等性・状態管理・セキュリティ(シークレット・Policy as Code)を備え、DevOps・GitOpsへ拡張するクラウドネイティブ運用の基盤。"
+ },
+ "security-product-fast-cert": {
+  "title": "情報保護製品の迅速確認制度",
+  "summary": "評価基準がなく導入が阻まれていた新技術・融合型セキュリティ製品のセキュリティ性を迅速に確認し、公共部門への導入を支援する制度。"
+ },
+ "noma": {
+  "title": "非直交多元接続(NOMA)",
+  "summary": "同一の時間・周波数を電力差で重畳して共有し、SICで分離する非直交多元接続の原理・中核技術(電力割り当て・重畳符号化・SIC)、OMAとの比較と5G/6G超接続への適用。"
+ },
+ "tree-sort": {
+  "title": "木ソート(Tree Sort)",
+  "summary": "二分探索木に挿入した後、中間順(in-order)走査で整列するアルゴリズム。原理・計算量(平均O(n log n)、偏り時O(n²))と、AVL・赤黒木などの平衡木による最悪ケース回避・動的データへの応用。"
+ },
+ "virtualization": {
+  "title": "仮想化(Virtualization)",
+  "summary": "物理資源を論理的に抽象化する仮想化 — サーバー仮想化(ハイパーバイザー)・アプリケーション仮想化・VDI・コンテナと、VM/コンテナのトレードオフ、クラウド・クラウドネイティブの基盤。"
+ },
+ "agile-scrum-kanban": {
+  "title": "構造化方法論とAgile(Scrum・Kanban)",
+  "summary": "構造化方法論とAgileの比較、Agileの実装であるScrum(タイムボックス)・Kanban(フロー最適化)と、効率的な遂行方策。"
+ },
+ "refactoring": {
+  "title": "リファクタリングとデザインパターン",
+  "summary": "機能を維持しつつ構造を改善するリファクタリングと、実証された設計解決策であるデザインパターンの定義・技法・コードスメル・共通点と相違点。"
+ },
+ "deepview": {
+  "title": "ディープビュー(DeepView)",
+  "summary": "ディープラーニングに基づく知能型映像分析(VCA)技術ディープビューの概念・処理パイプライン(物体検出・追跡/再識別・行動分析・知能型検索)と活用事例、エッジAI・プライバシー・バイアスなどの深化課題。"
+ },
+ "large-scale-system-failure": {
+  "title": "大規模公共次世代システムのオープン後の問題と対策",
+  "summary": "大規模公共システムのオープン後に発生する障害の原因、再発防止対策・法制度の補完、オープン可否を判断するための指標管理。"
+ },
+ "wbs": {
+  "title": "作業分解構成(WBS)",
+  "summary": "プロジェクトの範囲を成果物中心にワークパッケージまで階層分解するWBSの構成要素・作成原則(100%ルール・MECE・8/80)・他の計画(EVM・RAM)との連携・アジャイル変形・スケジュール遅延の挽回策。"
+ },
+ "text-opinion-mining": {
+  "title": "データマイニング:統計との違い・構造化/非構造化・オピニオン/テキスト",
+  "summary": "データマイニングと統計の違い、構造化・非構造化マイニングの比較、オピニオンマイニングの手順とテキストマイニングの比較。"
+ },
+ "event-driven-architecture": {
+  "title": "イベント駆動アーキテクチャ(EDA)のトポロジー",
+  "summary": "イベントの発行・購読で疎結合するEDAのメディエーター・ブローカートポロジーの比較、構成要素、Saga・結果整合性・イベントソーシング・CQRSまで。"
+ },
+ "infostealer": {
+  "title": "インフォスティーラー(InfoStealer)",
+  "summary": "アカウント・セッションクッキー・暗号資産ウォレットなどの機密情報を密かに窃取する情報窃取型マルウェア。攻撃手順(キルチェーン)とMaaS犯罪エコシステム、セッションクッキーによるMFA回避、予防・認証強化・EDR検知・ダークウェブ監視の多層的対応策。"
+ },
+ "db-normalization": {
+  "title": "データベース正規化(Normalization)",
+  "summary": "重複の排除と異常現象(挿入・削除・更新)の防止のための正規化 — 異常現象の発生原理、関数従属に基づく無損失分解、1NF〜BCNFの段階、非正規化とのトレードオフ。"
+ },
+ "semiconductor-industry": {
+  "title": "半導体産業(メモリ・非メモリ・バリューチェーン)",
+  "summary": "メモリ・非メモリ半導体の比較、設計-製造-後工程のバリューチェーン、非メモリ成長のためのファブレス育成などの戦略。"
+ },
+ "it-investment-analysis": {
+  "title": "IT投資分析(プロセス・フレームワーク・方法論)",
+  "summary": "IT投資のビジネス価値を評価するプロセス・フレームワーク(BSC・ポートフォリオ)・方法論(NPV・ROI・AHP)と、定性・定量のバランス。"
+ },
+ "it-roi": {
+  "title": "IT-ROI投資成果評価モデル",
+  "summary": "IT投資コスト(TCO)に対する効果を定量評価するIT-ROIモデルと、有形・無形の効果、情報経済学・BSCとの連携。"
+ },
+ "pop": {
+  "title": "POP(生産時点管理)",
+  "summary": "生産現場の情報を発生時点・場所でリアルタイムに収集するPOPの構成・収集情報とMES・ERPとの連携、POS・MESとの比較、OPC-UA・予知保全などのスマートファクトリーへの進化。"
+ },
+ "model-ops": {
+  "title": "機械学習モデリングとModelOps",
+  "summary": "モデルを開発するモデリングと、デプロイ・監視・再学習(CT)・ガバナンスによりモデルを信頼できる資産として継続管理するModelOpsの違い・アーキテクチャ・成熟度と、LLMOpsへの拡張。"
+ },
+ "quality-cost": {
+  "title": "ソフトウェア品質コスト(Cost of Quality)",
+  "summary": "適合コスト(予防・評価)と不適合コスト(内部・外部失敗)の4大品質コスト項目と、その相殺関係。欠陥修正コストの増幅の法則、最適投資点、Shift-Left/Rightの深化まで。"
+ },
+ "cbam": {
+  "title": "CBAM(Cost Benefit Analysis Method)",
+  "summary": "アーキテクチャ戦略のコストと便益を分析し、ROIに基づく投資優先順位を定めるアーキテクチャ評価手法(ATAMの拡張)。"
+ },
+ "correlation-causation": {
+  "title": "相関関係と因果関係",
+  "summary": "共に変化する相関関係と、原因-結果の因果関係の比較、相関≠因果の落とし穴と、実験・因果推論による検証。"
+ },
+ "neuromorphic": {
+  "title": "ニューロモルフィックチップ(Neuromorphic Chip)",
+  "summary": "脳のニューロン・シナプスを模倣して演算・メモリを統合し、スパイクで動作する神経模倣半導体と、低電力エッジAI。"
+ },
+ "memory-interleaving": {
+  "title": "メモリインターリーブ(Memory Interleaving)",
+  "summary": "メモリを複数のバンク・チャネルに分割し、連続するアドレスを分散配置して並列・重畳アクセスで帯域幅を高める手法。下位/上位インターリーブ、バンク競合、キャッシュとの関係、HBM・NUMAへの拡張まで。"
+ },
+ "ransomware-raas": {
+  "title": "ランサムウェアとRaaS",
+  "summary": "データを暗号化・窃取して身代金を要求するランサムウェアと、開発者・提携者・IABの分業によるサービス型RaaS。二重・三重恐喝への進化に対し、不変バックアップ(3-2-1)・EDR/XDR・最小権限・IRで対応する。"
+ },
+ "qubit": {
+  "title": "量子ビット（Qubit）",
+  "summary": "0と1の重ね合わせ・もつれによって2^n個の状態を同時に表現する量子情報の単位である量子ビットの原理・実装と、デコヒーレンス・暗号への脅威。"
+ },
+ "public-private-cloud": {
+  "title": "公共部門における民間クラウドの活用",
+  "summary": "公共部門による民間クラウド活用の手順・基本設計、活用構造・CSAP認証、SaaS/PaaS/IaaSの類型別評価基準。"
+ },
+ "scm": {
+  "title": "サプライチェーンマネジメント（SCM）",
+  "summary": "調達・生産・流通・消費のサプライチェーンにおける資材・情報・資金の流れを統合的に最適化するSCMの概念・背景、ブルウィップ効果の原因・緩和（VMI・CPFR）、需要予測・安全在庫の算定、デジタルSCMとレジリエンス。"
+ },
+ "digital-transformation-coe": {
+  "title": "デジタル変革とCoE（Center of Excellence）",
+  "summary": "デジタル変革の成功に向けた考慮事項（ビジョン・データ・文化・人材）と、能力を結集・展開するCoEの役割。"
+ },
+ "inductive-ml": {
+  "title": "帰納的思考と機械学習",
+  "summary": "個別の事例から規則を一般化する帰納的思考と、それを自動化した機械学習との対応関係、仮説空間・帰納バイアス、一般化誤差・データバイアスの限界と、ニューロシンボリック・RAG・XAIによる補完。"
+ },
+ "data3law-mydata": {
+  "title": "データ3法とマイデータ",
+  "summary": "仮名情報の導入・監督の一元化により保護と活用の均衡を図ったデータ3法改正と、伝送要求権・標準APIに基づくマイデータの概念・産業別提供情報・全分野への拡大・活性化策。"
+ },
+ "module-cohesion-coupling": {
+  "title": "ソフトウェアモジュール — 凝集度・結合度・Fan-in/out",
+  "summary": "モジュール設計の尺度である凝集度・結合度（高凝集・低結合）と、Fan-in（再利用）・Fan-out（依存）の指標。"
+ },
+ "web-performance": {
+  "title": "Webパフォーマンス管理とフロントエンド最適化",
+  "summary": "Webパフォーマンス低下の要因と、リソース圧縮・画像最適化・リクエスト削減・キャッシング・レンダリング最適化などのフロントエンド最適化策。"
+ },
+ "stpa": {
+  "title": "STPA（System Theoretic Process Analysis）",
+  "summary": "部品故障中心のFMEA・HAZOPの限界と、制御・相互作用の誤りを分析するシステム理論に基づくSTPAの概念・手法。"
+ },
+ "public-sw-planning": {
+  "title": "公共SW事業の計画段階レビューと課題変更の適正性",
+  "summary": "公共SW事業の確定・期間の適正性レビュー項目と、事業遂行中の課題変更の適正性を判断する基準。"
+ },
+ "data-migration": {
+  "title": "データ統合・マイグレーション — 完全性・整合性",
+  "summary": "データマイグレーションにおける完全性・整合性の違い、プロファイリング分析の観点、多層検証の手法と、リハーサル・ロールバック・CDC移行戦略。"
+ },
+ "federated-learning": {
+  "title": "連合学習（Federated Learning）",
+  "summary": "データを集約せずにローカル学習モデルのみを集約する連合学習の動作原理・アルゴリズム（FedAvg）と、セキュリティ・プライバシー技術。"
+ },
+ "nft-security": {
+  "title": "NFTマーケットプレイスの特性とセキュリティ脆弱性",
+  "summary": "NFTの特性（非可逆性・オフチェーン）と、NFTマーケットプレイスのセキュリティ脆弱性（フィッシングによる署名窃取・コントラクトの欠陥）および対策。"
+ },
+ "reverse-proxy-ddos": {
+  "title": "Webサーバセキュリティ — リバースプロキシとDDoSサイバー避難所",
+  "summary": "Webサーバ前段を保護するリバースプロキシ（隠蔽・負荷分散・SSL・WAF）と、大規模DDoS対応のサイバー避難所（迂回・浄化）、CDN統合の多層防御。"
+ },
+ "satin": {
+  "title": "SATIN（衛星・上空・地上統合無線ネットワーク）",
+  "summary": "衛星（広域）・上空（ドローン・HAPS）・地上（大容量）を単一の制御プレーンに統合した6G志向の3次元無線網SATIN — 階層別の役割・ハンドオーバー・統合技術と、災害・UAV・僻地での活用、周波数・セキュリティの課題。"
+ },
+ "quantum-crypto": {
+  "title": "量子暗号通信（Quantum Cryptography）",
+  "summary": "測定時の擾乱・複製不可という量子力学の原理により盗聴を検知して鍵を配送する量子暗号通信（QKD）の方式・技術・脆弱性。"
+ },
+ "identification-authentication": {
+  "title": "識別（Identification）と認証（Authentication）",
+  "summary": "身元を主張する識別と真正性を検証する認証の違い（識別→認証→認可→監査）、セキュリティ要件、知識・所有・生体・行為の4つの認証タイプと、MFA・パスキー（FIDO2）・アダプティブ認証。"
+ },
+ "nft": {
+  "title": "非代替性トークン（NFT）",
+  "summary": "ブロックチェーンのスマートコントラクトによりデジタル・実物資産の固有性・所有権を証明するNFTの構造・標準（ERC-721/1155）・発行/取引とRWA活用、オフチェーンの持続性・著作権・投機・規制の課題。"
+ },
+ "bsc": {
+  "title": "バランスト・スコアカード（BSC）",
+  "summary": "財務・顧客・内部プロセス・学習と成長の4つの視点からバランスよく業績を測定するBSCの構成要素と戦略マップ。"
+ },
+ "mac": {
+  "title": "メッセージ認証コード（MAC）",
+  "summary": "メッセージと共有秘密鍵からkeyed認証タグを生成し、再計算して比較することで完全性・出所認証を検証する対称鍵方式。HMAC・CMAC・GMACの類型、電子署名との否認防止の違い、AEADへの進化まで。"
+ },
+ "spring-boot": {
+  "title": "Spring Boot",
+  "summary": "自動設定・スターター・組込みサーバにより最小限の設定で独立実行可能なアプリケーションを迅速に開発するSpring Bootの特徴。"
+ },
+ "test-code-coverage": {
+  "title": "テストカバレッジとコードカバレッジ",
+  "summary": "要求・機能・リスクを検証するテストカバレッジと、コード実行を計測するコードカバレッジ（命令・分岐・条件・MC/DC）の関係・比較。100%カバレッジの限界と、ミューテーションテスト・CI品質ゲート・リスクベースの目標設定。"
+ },
+ "mongodb": {
+  "title": "MongoDB",
+  "summary": "データをJSONライクなドキュメント（BSON）で格納するドキュメント指向NoSQL MongoDBのデータモデル・レプリカセット・シャーディング・インデックス・集計と、リレーショナルDBとの比較、トランザクション・ベクトル検索などの最新動向。"
+ },
+ "modification-fabrication": {
+  "title": "改ざん（Modification）と偽造（Fabrication）",
+  "summary": "改ざんは原本を不正に修正する行為（完全性の侵害）、偽造は存在しなかったものを虚偽に生成・なりすます行為（完全性＋認証の侵害）であり、ハッシュ・MAC（改ざん検知）・電子署名・PKI（偽造防止・認証・否認防止）で対応し、AI時代のディープフェイク・C2PAによる出所証明まで拡張する。"
+ },
+ "overfitting": {
+  "title": "過学習（Overfitting）",
+  "summary": "過学習の発生原因（複雑度・データ不足・ノイズ・学習過多）と、正則化・ドロップアウト・早期終了・交差検証などの解決策、バイアス-バリアンスのトレードオフの深掘り。"
+ },
+ "digital-twin-metaverse": {
+  "title": "デジタルツインとメタバース",
+  "summary": "現実を複製・予測するデジタルツインと、仮想体験・コミュニケーションのメタバースの比較、および産業メタバースへの融合。"
+ },
+ "daas": {
+  "title": "DaaS（Desktop as a Service）",
+  "summary": "デスクトップ環境をクラウドから仮想的に提供するDaaSの構造・VDIとの比較と、モビリティ・セキュリティ・集中管理の強み。"
+ },
+ "egov-evaluation": {
+  "title": "国連電子政府調査",
+  "summary": "国連電子政府調査の概念・評価指数（発展指数EGDI・参加指数）と、EGDIのオンラインサービス・通信インフラ・人的資本による算出。"
+ },
+ "db-tuning": {
+  "title": "データベースチューニング（DB Tuning）",
+  "summary": "DBの性能低下を実行計画に基づいて診断・最適化するチューニングの概念・目的と、設計（非正規化・インデックス・パーティショニング）・DBMS・SQL（オプティマイザ・ヒント）の階層別技法。"
+ },
+ "on-device-ai": {
+  "title": "オンデバイスAI（On-Device AI）",
+  "summary": "端末上で直接AI推論を行うオンデバイスAIの概念・HW/SW技術（NPU・軽量化）とクラウドAIとの比較。"
+ },
+ "access-control-model": {
+  "title": "アクセス制御セキュリティモデル（BLP・Biba・Clark-Wilson）",
+  "summary": "機密性のBLP（No Read-Up・No Write-Down）、完全性のBiba（No Write-Up・No Read-Down）、商用完全性のClark-Wilson（トランザクション・職務分離）を、脅威の方向における対称性として比較。"
+ },
+ "master-data-management": {
+  "title": "マスターデータ管理（MDM）",
+  "summary": "顧客・商品のような中核的な基準データを一元管理するMDMの概念・必要性、構成要素と構築時の考慮事項。"
+ },
+ "db-optimizer": {
+  "title": "データベースオプティマイザ（RBO・CBO）",
+  "summary": "SQLの最適な実行計画を選択するオプティマイザの概念と、規則ベースのRBO（廃止）・コストベースのCBO（標準）の比較、統計・ヒストグラム・ヒントなどのチューニング要素と適応型最適化まで。"
+ },
+ "sdn": {
+  "title": "ソフトウェア定義ネットワーク（SDN）",
+  "summary": "制御プレーンとデータプレーンを分離し、中央コントローラが全体を制御するSDNの3階層構造・制御プレーンの特徴、OpenFlowの動作手順とNFV・インテントベースへの進化。"
+ },
+ "soar": {
+  "title": "SOAR（セキュリティのオーケストレーション・自動化・対応）",
+  "summary": "セキュリティ運用をオーケストレーション・自動化・対応として統合するSOAR — プレイブックの自動化で対応時間（MTTR）を短縮し、SIEM（検知）と相互補完し、AI結合の自律型SOCへ進化。"
+ },
+ "msa": {
+  "title": "マイクロサービスアーキテクチャ（MSA）",
+  "summary": "アプリケーションを独立してデプロイ・拡張可能な小さなサービスに分解するアーキテクチャ。モノリシックとの比較、サーガ・サーキットブレーカー、サービスメッシュ（Istio）、DDDに基づく分解とKubernetes・段階的移行。"
+ },
+ "data-commerce": {
+  "title": "データコマース（Data Commerce）",
+  "summary": "顧客データをAIで分析し、個人化された商品・サービスを適時に推薦・販売するデータ基盤の商取引。"
+ },
+ "db-sharding": {
+  "title": "データベースシャーディング（Sharding）",
+  "summary": "大容量データを複数のDBサーバに水平分割して負荷分散・拡張性を確保する技法。パーティショニングとの比較、シャードキー。"
+ },
+ "data-industry-act": {
+  "title": "データ産業法（データ産業振興法）",
+  "summary": "データの生産・取引・活用を促進してデータ産業を振興する基本法。データ資産の保護・価値評価・取引の活性化。"
+ },
+ "uml-sequence": {
+  "title": "UMLシーケンス図（Sequence Diagram）",
+  "summary": "オブジェクト間のメッセージを時間順に表現するUMLの動的図。ライフライン・活性化ボックス・メッセージ・フレーム・ガード。"
+ },
+ "normal-distribution": {
+  "title": "正規分布（Normal Distribution）の特徴",
+  "summary": "平均を中心に左右対称の釣鐘型連続分布。68-95-99.7の法則、標準化（Z）、中心極限定理により統計的推論の基盤であり、ファットテール・リスクや正規性の検証も併せて扱う。"
+ },
+ "metaheuristics": {
+  "title": "メタヒューリスティクス（Metaheuristics）",
+  "summary": "大規模最適化において優れた近似解を実用的な時間で見つける汎用探索戦略。遺伝的・焼きなまし・蟻コロニー・粒子群。"
+ },
+ "race-condition": {
+  "title": "競合状態（Race Condition）",
+  "summary": "共有資源への保護されていない同時アクセスにより、実行順序によって結果が変わる非決定的な誤り。クリティカルセクション・相互排除（ミューテックス・セマフォ・CAS）と、デッドロック・TOCTOUの制御。"
+ },
+ "snn": {
+  "title": "スパイキングニューラルネットワーク（SNN）",
+  "summary": "ニューロンのスパイク発火・発火タイミング（時間情報）を模倣した第3世代のイベント駆動型ニューラルネットワーク。スパイクがあるときのみ計算し超低消費電力・低遅延であり、誤差逆伝播が使いにくいため代理勾配・STDP・ANN変換などの専用学習技法とニューロモルフィックハードウェアとともに発展する。"
+ },
+ "bigdata-analysis-tools": {
+  "title": "ビッグデータ分析ツール選定の原則",
+  "summary": "分析目的→データ特性→拡張性・性能→TCO・人材の力量・ガバナンスを総合し、状況に合ったツールの組み合わせを選ぶ原則。クラウドマネージド・レイクハウスへの移行も反映。"
+ },
+ "software-quality-certification": {
+  "title": "ソフトウェア品質認証（GS認証）",
+  "summary": "ISO/IEC 25000基準でSW製品の品質を第三者が試験・認証する制度。情報の非対称性の解消、公共調達での優遇。"
+ },
+ "pacelc": {
+  "title": "CAP定理の限界とPACELC",
+  "summary": "CAPは分断時のC・A択一しか説明できない限界を持つ。PACELCは正常時の遅延(L)対一貫性(C)のトレードオフを追加し、分散DBの選択を導く。"
+ },
+ "embedded-software-test": {
+  "title": "組込みソフトウェアテスト",
+  "summary": "ハードウェア・リアルタイム性・資源制約・安全性まで閉ループで検証する。MIL→SIL→PIL→HILの各段階、ISO 26262・DO-178CのMC/DCカバレッジ準拠。"
+ },
+ "thrashing": {
+  "title": "スラッシング(Thrashing)",
+  "summary": "過度なマルチプログラミングでページフォールトが急増し、CPUがスワッピングばかり繰り返して性能が急落する現象。ワーキングセット・PFF。"
+ },
+ "endianness": {
+  "title": "ビッグエンディアンとリトルエンディアン",
+  "summary": "マルチバイトデータの格納順序。ビッグ(MSB先頭・ネットワーク標準)とリトル(LSB先頭・x86)、異機種間通信での変換。"
+ },
+ "network-scanning": {
+  "title": "ネットワークスキャニング(Network Scanning)",
+  "summary": "ホスト・ポート・サービス・脆弱性を能動的に探索する技術で、攻撃の偵察であり防御の点検でもある。SYN・FIN・UDPなど3-way handshakeを逆用する手法、攻撃対象領域の最小化・IDS/IPS・SIEM/SOAR連携。"
+ },
+ "file-slack": {
+  "title": "ファイルスラック(File Slack)",
+  "summary": "ファイルがクラスタを埋め切れずに残る領域。RAM/ドライブスラックには削除データが残存し、フォレンジックの証拠や隠蔽に悪用される。"
+ },
+ "sw-cost-estimation": {
+  "title": "ソフトウェアコスト見積り手法",
+  "summary": "着手前に工数・期間・コストを予測するリスク管理型の活動。トップダウン(専門家・デルファイ)・ボトムアップ(WBS)・数理モデル(COCOMO・ファンクションポイント)のトレードオフと、韓国のファンクションポイント標準(2024年FP単価605,784ウォン)、アジャイル・AI見積り。"
+ },
+ "digital-tax": {
+  "title": "デジタル課税(Digital Tax)",
+  "summary": "物理的な拠点なしに越境収益を得る巨大IT企業に対し、市場国も課税するOECD/G20の国際課税枠組み。課税権の配分(第1の柱)・グローバル・ミニマム課税15%(第2の柱)と、BEPSへの対応・米国の離脱・Side-by-Sideの最近の動向。"
+ },
+ "uml-class-diagram": {
+  "title": "UMLクラス図とオブジェクトモデリング",
+  "summary": "クラスと属性・操作・関係(関連・集約・コンポジション・汎化)を表現する静的モデル。概念オブジェクト→シーケンス(メッセージ→メソッド)→クラスへと至る設計の収束点であり、コードと双方向に連携する。"
+ },
+ "blockchain-types": {
+  "title": "ブロックチェーンの種類(パブリック・プライベート・ハイブリッド)",
+  "summary": "ブロックチェーンを開放性に応じてパブリック(開放・非中央集権)・プライベート(許可制・統制)・コンソーシアム・ハイブリッドに分類する。合意形成とトリレンマの観点でのトレードオフ、規制・相互運用性の考慮。"
+ },
+ "bigdata-platform-architecture": {
+  "title": "ビッグデータプラットフォームアーキテクチャ設計",
+  "summary": "収集→格納→処理→分析を支える拡張可能な階層構造。分散インフラ・データレイク/ウェアハウス/レイクハウス・バッチとリアルタイム(ラムダ/カッパ)・MLOpsへの進化。"
+ },
+ "db-standardization-guideline": {
+  "title": "公共機関DB標準化指針 — テーブル定義書",
+  "summary": "標準化指針に従いテーブルの構造・意味・制約を標準様式で文書化した成果物。記録項目・作成指針・品質診断・データガバナンス連携まで掘り下げる。"
+ },
+ "web-quality-standard": {
+  "title": "電子政府ウェブサイト品質(アクセシビリティ・互換性・開放性・最適化)",
+  "summary": "UI/UX設計基準とウェブアクセシビリティ・互換性・開放性・最適化により、すべての国民の差別のない利用を保証する。KWCAGに基づくアクセシビリティは法的義務。"
+ },
+ "software-safety-diagnosis": {
+  "title": "SW安全性診断 — 機能動作の正確性診断",
+  "summary": "要求→設計→実装→試験の各段階の正確性をトレーサビリティに基づき検証する。正常・異常・境界条件を含め、ISO 26262・IEC 61508などの機能安全標準と連携。"
+ },
+ "ensemble-learning": {
+  "title": "アンサンブル学習 — バギングとブースティング",
+  "summary": "複数の弱学習器を結合して強いモデルを作る手法。バギング(並列・分散↓)とブースティング(逐次・バイアス↓)が相補的。"
+ },
+ "software-architecture-analysis": {
+  "title": "ソフトウェアアーキテクチャ分析とATAM",
+  "summary": "構造が品質特性の要求を満たすかを評価する。ATAMは品質シナリオで感度点・トレードオフ・リスクを導出する。"
+ },
+ "metaverse-security": {
+  "title": "メタバースのセキュリティ脅威と社会的問題",
+  "summary": "没入・アバター・仮想経済の特性から生じる生体情報の漏洩・アカウント/資産の窃取・なりすましの脅威と、アイデンティティの混乱・仮想暴力・依存の問題、技術・制度・倫理面の方策。"
+ },
+ "priority-inversion": {
+  "title": "優先度逆転(Priority Inversion)",
+  "summary": "高優先度のタスクが、低優先度タスクの資源占有と中優先度タスクのプリエンプションにより遅れて実行される現象。優先度継承・優先度上限で解決する。"
+ },
+ "mirai-botnet": {
+  "title": "Miraiボットネット(Mirai Botnet)",
+  "summary": "Telnetの初期パスワードが放置されたIoT機器を辞書攻撃で大量感染させ、大規模DDoSに悪用したボットネット。感染チェーン・ライフサイクル別のセキュリティ・共通セキュリティ7大原則、ソースコード公開以降の亜種・規制動向。"
+ },
+ "tor": {
+  "title": "TorとVPNの比較",
+  "summary": "多段ノードのオニオンルーティングで身元を秘匿する匿名ネットワーク。単一サーバを信頼するVPNと、信頼モデル・速度・目的の違いを比較する。"
+ },
+ "rsa-dsa": {
+  "title": "RSAとDSAの比較",
+  "summary": "素因数分解に基づく汎用(暗号化+署名)のRSAと、離散対数に基づく署名専用のDSAを比較する。署名の生成/検証速度、ECDSA・PQCへの進化。"
+ },
+ "file-carving": {
+  "title": "ファイルカービング(File Carving)",
+  "summary": "ファイルシステムのメタデータなしに、生データのシグネチャ・構造からファイルを復元する。ヘッダ/フッタ・構造・コンテンツ・断片再構成の4手法と、完全性・SSD TRIMへの対応。"
+ },
+ "secaas": {
+  "title": "SECaaS(Security as a Service)",
+  "summary": "セキュリティ機能をクラウドのサブスクリプションサービスとして提供するモデル。初期投資なしに最新の専門的セキュリティと集団防御を利用しつつ、責任共有・SLA・データ主権・ロックインを管理し、ゼロトラスト基盤のSASE/SSEへ進化する。"
+ },
+ "java-awt-swing": {
+  "title": "JavaのAWTとSwing",
+  "summary": "OSネイティブ依存の重量級GUI(AWT)と、Javaが直接レンダリングする軽量GUI(Swing)を比較する。プラットフォーム非依存性・ルックアンドフィール、JavaFXへの進化。"
+ },
+ "mece": {
+  "title": "MECE(相互排他・全体網羅)",
+  "summary": "項目が互いに重複なく(ME)、全体を漏れなく網羅する(CE)分類原則。重複・漏れを排して正確に分析し、ロジックツリーを活用する。"
+ },
+ "post-quantum-crypto": {
+  "title": "耐量子計算機暗号(PQC)",
+  "summary": "量子コンピュータ(ショアのアルゴリズム)でも解読が困難な、格子・ハッシュ・符号ベースの耐量子公開鍵暗号。先収集後復号(HNDL)・モスカの不等式から見た移行の緊急性、NIST標準(ML-KEM・ML-DSA・SLH-DSA)とハイブリッド・暗号アジリティ。"
+ },
+ "wfq": {
+  "title": "WFQ(Weighted Fair Queuing)",
+  "summary": "GPSをパケット単位で近似(PGPS)し、トラフィックフローに重みを付与して仮想完了時刻の順にバイト単位で公平に帯域を配分するキューイング。FIFOの独占・PQの飢餓・WRRのサイズ不公平を解決し、CBWFQ・LLQ・DRRへ拡張。"
+ },
+ "sdr": {
+  "title": "SDR(Software Defined Radio)",
+  "summary": "無線信号処理(変復調・フィルタ・プロトコル)をソフトウェアで実装し、1台の装置で複数規格・周波数に対応する。早期のデジタル化・ソフトウェア処理で柔軟性・拡張性を確保し、認知無線・Open RAN・衛星(NTN)など5G/6Gのソフトウェア定義インフラの基盤となる。"
+ },
+ "earned-value-management": {
+  "title": "アーンドバリューマネジメント(EVM)",
+  "summary": "PV・EV・ACで進捗・コストの実績を統合的に測定する。SV/CV/SPI/CPI分析、事例計算と、遅延の脅威に対するクラッシング・ファストトラッキングの対応。"
+ },
+ "interconnection-network": {
+  "title": "並列処理の相互結合網とトーラス",
+  "summary": "プロセッサ・メモリを結ぶ通信構造で、並列性能を左右する。バス・クロスバ・メッシュ・ハイパーキューブ、トーラスはメッシュの両端を結んで距離短縮・対称分散を実現する。"
+ },
+ "emp-attack": {
+  "title": "EMP攻撃(ElectroMagnetic Pulse)",
+  "summary": "強力な電磁パルスで電子・電力・通信ハードウェアを物理的に破壊する脅威。高高度核爆発HEMPのE1・E2・E3成分の原理と、遮蔽・接地・フィルタリングによる多層防御、予備装備の隔離・二重化によるレジリエンス戦略。"
+ },
+ "qos-diffserv-intserv": {
+  "title": "QoS — DiffServとIntServ",
+  "summary": "ネットワークのサービス品質を保証するアーキテクチャ。IntServ(RSVPによるフローごとの予約・強保証・低拡張性)とDiffServ(DSCP・PHBのクラス差別化・ステートレス・高拡張性)の比較と、WFQ・WREDキューイング連携、SDN・5Gスライシングの動向。"
+ },
+ "ai-privacy-checklist": {
+  "title": "AI個人情報保護 自主点検表",
+  "summary": "AIのライフサイクル全過程で個人情報を適法かつ安全に取り扱えるよう、事業者が自ら点検する自主規範。適法・安全・透明・権利保障の原則。"
+ },
+ "jwt": {
+  "title": "JWT(JSON Web Token)",
+  "summary": "認証情報を格納して署名したステートレスなトークン。Header・Payload・Signatureの構成、MSA・API認証への適合、ペイロード露出・無効化の限界の補完。"
+ },
+ "shannon-theory": {
+  "title": "情報理論とシャノンの定理",
+  "summary": "情報をエントロピーで定量化する。第1定理(圧縮限界=エントロピー)・第2定理(容量内で誤り0)・シャノン-ハートレー(C=Blog2(1+S/N))、AIへの拡張。"
+ },
+ "dag-topological-sort": {
+  "title": "有向非巡回グラフ(DAG)とトポロジカルソート",
+  "summary": "方向があり巡回のないグラフで前後・依存関係を表現する。トポロジカルソート(Kahn:入次数0から除去)でビルド・スケジューリングの順序を決定する。"
+ },
+ "procedural-vs-oop": {
+  "title": "手続き型とオブジェクト指向プログラミング",
+  "summary": "関数の流れを中心とする手続き型と、データ・振る舞いをオブジェクトにカプセル化するオブジェクト指向を比較する。継承・多態性により大規模システムに適する。"
+ },
+ "purdue-model": {
+  "title": "産業制御システム(ICS)パーデューモデル",
+  "summary": "ICSを物理プロセス(L0)から企業IT(L4~5)まで階層に分けた参照アーキテクチャ。IT/OT DMZで隔離して脅威の伝播を遮断する。"
+ },
+ "oauth2-oidc": {
+  "title": "OAuth 2.0とOpenID Connect(OIDC)",
+  "summary": "OAuth 2.0はパスワードを露出せずに限定された権限を委任する認可フレームワーク、OIDCはその上で署名されたIDトークンにより身元を証明する認証レイヤ — PKCE・FAPI・OAuth 2.1など最新のセキュリティ強化標準まで含む。"
+ },
+ "service-mesh": {
+  "title": "サービスメッシュ(Service Mesh)",
+  "summary": "マイクロサービス間の通信をデータプレーンと制御プレーンに分離し、トラフィック管理・信頼性・mTLSセキュリティ・可観測性を一貫して提供するサービスメッシュの構造と導入戦略を整理する。"
+ },
+ "finops": {
+  "title": "FinOps(クラウドコスト・価値の最適化)",
+  "summary": "クラウドと技術支出の可視化・配賦・最適化・運用を通じて、コストとビジネス価値を結び付けるFinOpsフレームワークを学ぶ。"
+ },
+ "cqrs-event-sourcing": {
+  "title": "CQRSとイベントソーシング(Command Query Responsibility Segregation・Event Sourcing)",
+  "summary": "読み取りと書き込みの責務を分離するCQRSと、変更履歴をイベントとして保存するイベントソーシングの原理、結合構造、一貫性・再処理・スキーマ進化と導入戦略を整理する。"
+ },
+ "slo-error-budget": {
+  "title": "SLO・SLI・エラーバジェット(Error Budget)に基づくサービス信頼性管理",
+  "summary": "ユーザ視点のサービス水準をSLIとSLOで測定し、エラーバジェットをデプロイ・障害対応・信頼性投資の意思決定に結び付ける方法を整理する。"
+ },
+ "chaos-engineering": {
+  "title": "カオスエンジニアリング(Chaos Engineering)に基づく耐障害性検証",
+  "summary": "制御された障害注入と定常状態の仮説を通じて、分散システムの耐障害性・復旧自動化・可観測性を検証し改善する実験体系を整理する。"
+ },
+ "circuit-breaker": {
+  "title": "サーキットブレーカー(Circuit Breaker)パターンと障害隔離",
+  "summary": "リモート依存の失敗・遅延を検知して呼び出しを遮断し、限定的な試行呼び出しで復旧を確認するサーキットブレーカーの状態モデル、リトライ・タイムアウトの組み合わせ、フォールバックと運用設計を説明する。"
+ },
+ "data-lakehouse": {
+  "title": "データレイクハウス(Data Lakehouse)アーキテクチャとガバナンス",
+  "summary": "データレイクの拡張性・開放性と、データウェアハウスの整合性・管理性を結合し、Bronze・Silver・GoldのデータプロダクトとACID・スキーマ・品質・系譜・個人情報ガバナンスを統合するアーキテクチャを整理する。"
+ },
+ "api-gateway": {
+  "title": "APIゲートウェイのアーキテクチャと運用",
+  "summary": "クライアントとバックエンドサービスの間でルーティング・認証認可・トラフィック制御・可観測性を統合するAPIゲートウェイの構造と、設計・運用戦略を論述形式で整理する。"
+ },
+ "domain-driven-design": {
+  "title": "ドメイン駆動設計（DDD, Domain-Driven Design）",
+  "summary": "複雑な業務ドメインの中核となる概念とルールをソフトウェアモデルに反映し、境界づけられたコンテキストと戦術的パターンによって変化に強いシステムを設計する手法。"
+ },
+ "observability": {
+  "title": "オブザーバビリティ（Observability）とOpenTelemetry",
+  "summary": "メトリクス・ログ・トレースの三つのシグナルをトレースIDで相互に連携させ、未知の障害まで事後探索で解明するシステム特性と、OpenTelemetry標準の計装・サンプリング・カーディナリティガバナンス戦略。"
+ },
+ "serverless-computing": {
+  "title": "サーバーレスコンピューティング（Serverless / FaaS）",
+  "summary": "インフラ運用を事業者に委ね、イベント駆動のステートレス関数（FaaS）とマネージドバックエンド（BaaS）を従量課金・スケールトゥゼロで実行するモデル。コールドスタート・実行制約・ベンダーロックインのトレードオフをワークロード特性に合わせて判断する。"
+ },
+ "vector-database": {
+  "title": "ベクトルデータベース（Vector Database）",
+  "summary": "非構造化データを埋め込んだ高次元ベクトルをANNインデックスで高速に類似度検索するデータベース。HNSW・IVF・PQインデックスとハイブリッド検索・再ランキングにより、RAG・レコメンド・異常検知の意味ベースの知識ストアとして機能し、精度・性能・コストのトレードオフ調整が鍵となる。"
+ },
+ "saga-pattern": {
+  "title": "サーガパターン（Saga Pattern）と分散トランザクション",
+  "summary": "複数サービスにまたがるトランザクションをローカルトランザクションの連鎖に分割し、失敗時には補償トランザクションで逆順に取り消してアトミック性をアプリケーションレベルで実現する分散トランザクション手法。2PCの強い一貫性の代わりに可用性・拡張性を得る結果整合性戦略であり、コレオグラフィ・オーケストレーションの選択と冪等性・アウトボックス・補償の設計が成否を左右する。"
+ },
+ "passkey-fido2": {
+  "title": "パスキー（Passkey）とFIDO2/WebAuthn",
+  "summary": "FIDO2（WebAuthn+CTAP）ベースのパスワードレス認証。秘密鍵を端末のセキュア領域に置き、ドメインにバインドされた公開鍵署名でログインすることで、フィッシング・クレデンシャルスタッフィング・サーバー漏洩を根本的に遮断する。共有秘密を排除しoriginバインディングでフィッシングを防ぎ、同期型・端末固定型の選択とアカウント復旧経路の設計がセキュリティと利便性のトレードオフを左右する。"
+ },
+ "distributed-consensus": {
+  "title": "分散合意アルゴリズム（Distributed Consensus）——PaxosとRaft",
+  "summary": "部分故障環境において過半数のクォーラムとログ複製により複数ノードが同一の命令順序に合意する技術。Paxos・Raftの原理・リーダー選出・安全性と、etcdなどの実務適用を扱う。"
+ },
+ "data-mesh": {
+  "title": "データメッシュ（Data Mesh）と分散データアーキテクチャ",
+  "summary": "分析データの所有権を中央データチームから業務ドメインへ分権し、データを発見可能で信頼できるプロダクト（Data as a Product）として扱い、セルフサービスプラットフォームとポリシー・アズ・コードによる連合ガバナンスで相互運用性を維持する社会技術的な分散データアーキテクチャ。4大原則、レイクハウス・データファブリックとの違い、段階的な導入戦略まで掘り下げる。"
+ },
+ "change-data-capture": {
+  "title": "変更データキャプチャ（CDC, Change Data Capture）",
+  "summary": "ソースDBのトランザクションログなどから変更分（INSERT・UPDATE・DELETE）のみをリアルタイムに抽出し下流へ伝播するデータ統合手法。ログ・トリガー・クエリ方式と、オフセット・順序・冪等・アウトボックスパターンを扱う。"
+ },
+ "graphql": {
+  "title": "GraphQL（API問い合わせ言語）",
+  "summary": "クライアントが強い型付けのスキーマの中から必要なフィールドだけを選び、単一エンドポイントで問い合わせるAPI仕様。過剰・過少取得の解消、リゾルバ・N+1問題・DataLoader、RESTとの比較、キャッシング・セキュリティ・フェデレーションを扱う。"
+ },
+ "sase": {
+  "title": "SASE（Secure Access Service Edge）",
+  "summary": "SD-WAN（接続）とSWG・CASB・ZTNA・FWaaS（セキュリティ=SSE）を、クラウドエッジでアイデンティティ中心・シングルパスに融合したアーキテクチャ。バックホール排除で性能を、ゼロトラストで境界のない環境のセキュリティを確保する。"
+ },
+ "quic-http3": {
+  "title": "QUICとHTTP/3",
+  "summary": "UDP上にTLS 1.3・ストリーム多重化・信頼性を統合し、トランスポート層のHOLブロッキングを解消して0-RTT接続・コネクションマイグレーションを実現したQUICと、それを用いる次世代WebプロトコルHTTP/3。"
+ },
+ "confidential-computing": {
+  "title": "コンフィデンシャルコンピューティング（Confidential Computing）",
+  "summary": "CPUハードウェアベースの信頼実行環境（TEE）とリモート認証により、データが演算される「使用中（in-use）」の状態まで保護し、ハイパーバイザーやクラウド運用者さえ信頼境界の外に排除するハードウェア隔離型のデータ保護パラダイム。"
+ },
+ "devsecops": {
+  "title": "DevSecOps（デブセックオプス）",
+  "summary": "セキュリティをSDLCの全工程に自動化（Security as Code）で組み込み、前段へ移動（シフトレフト）させることで、迅速なデプロイと安全性を同時に達成する開発・セキュリティ・運用の統合方法論。SAST・DAST・IAST・SCAとパイプラインゲートを扱う。"
+ },
+ "grpc": {
+  "title": "gRPC（Google RPCフレームワーク）",
+  "summary": "Protocol Buffersの強い型付け契約とコード生成、バイナリシリアライゼーション、HTTP/2の多重化・ストリーミングを組み合わせ、マイクロサービス間の低遅延・高スループット通信を実現するRPCフレームワーク。内部はgRPC、外部はREST/GraphQLと役割を分ける階層的API戦略の軸となる。"
+ },
+ "aiops": {
+  "title": "AIOps（インテリジェントIT運用）",
+  "summary": "ビッグデータ・機械学習をIT運用に適用し、異常検知・アラート相関・根本原因分析（RCA）・予測・自動対応を高度化するアプローチ。事後対応型の運用を予測・自律型へ転換しMTTRを短縮するが、データ品質と段階的な自動化・セーフガードの設計が成否を分ける。"
+ },
+ "transformer-attention": {
+  "title": "トランスフォーマー（Transformer）とアテンション（Attention）機構",
+  "summary": "再帰・畳み込みを用いず、Query・Key・Valueベースのセルフアテンションのみでシーケンス全体の関係を並列計算し、長距離依存・拡張性を確保したアーキテクチャ。マルチヘッド・位置エンコーディング・エンコーダ/デコーダ構造とO(n²)の効率化を扱う。"
+ },
+ "cxl-compute-express-link": {
+  "title": "CXL（Compute Express Link）超高速インターコネクト",
+  "summary": "PCIe物理層の上にキャッシュコヒーレンシとメモリセマンティクスを載せ、CPU・アクセラレータ・メモリを低遅延で接続するオープン標準。CXL.io/cache/memの3層、Type1/2/3デバイス、メモリの拡張・プーリング・共有により、AI・データセンターのメモリウォールと遊休の無駄を解消する。"
+ },
+ "risc-v": {
+  "title": "RISC-V（オープン命令セットアーキテクチャ）",
+  "summary": "UCバークレー発のオープンかつ無償の命令セットアーキテクチャ。小さく固定された基本整数ISA（RV32I/RV64I）に標準・カスタム拡張をモジュールのように載せることで、ライセンス依存からの脱却とドメイン特化コンピューティングを可能にし、組み込みからAI・サーバーまで広がっている。"
+ },
+ "platform-engineering": {
+  "title": "プラットフォームエンジニアリング（Platform Engineering）",
+  "summary": "インフラ・ツール・標準をセルフサービス型の内部開発者プラットフォーム（IDP）としてプロダクト化し、ゴールデンパスを提供することで、開発者の認知負荷を下げソフトウェアデリバリーの速度・安定性を高めるアプローチ。DevOps・SREを組織規模で実現するプロダクト・手段として理解する。"
+ },
+ "zero-knowledge-proof": {
+  "title": "ゼロ知識証明（Zero-Knowledge Proof, ZKP）",
+  "summary": "秘密を明かすことなく、その秘密を知っているという事実、または命題が真であることを証明する暗号プロトコル。完全性・健全性・ゼロ知識性を満たし、対話型/非対話型（Fiat-Shamir）方式やzk-SNARK・zk-STARKで実装され、zk-Rollupによるブロックチェーンのスケーリングやプライバシー保護型の本人証明（選択的開示）の中核として台頭している。"
+ },
+ "ebpf": {
+  "title": "eBPF（extended Berkeley Packet Filter）",
+  "summary": "カーネルを再コンパイル・再起動することなく、検証済みのサンドボックスプログラムをカーネルイベントに付加し、ネットワーキング・可観測性・セキュリティを高性能に統合処理するプログラマブルなカーネル技術。"
+ },
+ "reinforcement-learning": {
+  "title": "強化学習（Reinforcement Learning）",
+  "summary": "エージェントが環境との試行錯誤を通じて、遅延した評価的報酬の累積を最大化する最適な方策を学習するパラダイム。価値ベース・方策ベース・アクタークリティック系、探索と活用のバランス、RLHFによるLLMアラインメントへの拡張を扱う。"
+ },
+ "ai-agent": {
+  "title": "AIエージェント（AI Agent）とエージェンティックAI",
+  "summary": "LLMという頭脳に計画・記憶・ツール・行動を組み合わせ、目標達成まで観察-思考-行動を自律的に反復するシステム。ReAct・マルチエージェント・MCP標準を軸に広がっており、自律性と統制・安全のバランス設計が鍵となる。"
+ },
+ "knowledge-graph": {
+  "title": "ナレッジグラフ（Knowledge Graph）",
+  "summary": "エンティティをノード、関係をエッジとしてトリプル単位で表現し、意味とつながりを一級市民として扱う知識基盤。RDFとプロパティグラフモデル・オントロジー推論・グラフ埋め込みを軸に検索・レコメンド・不正検知に活用され、GraphRAGによってLLMのハルシネーションを抑制する説明可能な知識源として再び注目されている。"
+ },
+ "mitre-attack": {
+  "title": "MITRE ATT&CK（サイバー攻撃の戦術・技法ナレッジベース）",
+  "summary": "実際の侵害事案で観測された攻撃行為を戦術・技法・手順（TTP）として体系化したオープンなナレッジベース。IoCの代わりに攻撃者の行為に焦点を当て、検知ギャップ分析・脅威ハンティング・敵対的エミュレーションの共通言語として活用される。"
+ },
+ "decentralized-identity": {
+  "title": "分散型アイデンティティ（DID, Decentralized Identity）",
+  "summary": "アイデンティティ情報の管理権を機関から利用者に取り戻す自己主権型アイデンティティモデル。発行者・保有者・検証者の信頼のトライアングルと、VC/VP・選択的開示により、過剰収集なく偽造・改ざんを暗号学的に検証する。"
+ },
+ "consistent-hashing": {
+  "title": "コンシステントハッシュ法（Consistent Hashing）",
+  "summary": "キーとノードを一つのハッシュリング上に配置し、時計回りで最初のノードにキーを割り当てることで、ノードの増減時の再配置を平均K/Nに最小化する分配手法。仮想ノードにより負荷の均等性と重み付けを確保し、分散ストア・キャッシュ・ロードバランサの標準的なルーティング基盤として活用される。"
+ },
+ "cdn": {
+  "title": "コンテンツ配信ネットワーク（CDN, Content Delivery Network）",
+  "summary": "地理的に分散したエッジサーバーのキャッシュにコンテンツを複製し、ユーザーを最適なエッジへ誘導することで遅延を下げオリジンの負荷を分散するインフラ。Pull/Pushキャッシング・無効化戦略とDDoS・WAFセキュリティ、エッジコンピューティングへと進化した分散配信プラットフォーム。"
+ },
+ "mixture-of-experts": {
+  "title": "混合エキスパートモデル（MoE, Mixture of Experts）",
+  "summary": "ゲーティングネットワークがトークンごとに少数のエキスパートのみを選択的に活性化する条件付き計算により、総パラメータ（知識容量）と活性パラメータ（演算量）を分離し、同じ演算予算ではるかに大きなモデルを実現する大規模AI拡張アーキテクチャ。ルーティング・負荷分散・エキスパート並列化とDenseモデルとの比較を扱う。"
+ },
+ "webassembly": {
+  "title": "WebAssembly（Wasm）",
+  "summary": "多様な言語をコンパイルし、ブラウザ・サーバー・エッジでネイティブに近い速度で安全に実行する移植可能なバイナリ命令フォーマット。スタックVM・線形メモリ・ケイパビリティベースの隔離を基盤とし、WASI・コンポーネントモデルへと拡張される軽量な隔離実行レイヤー。"
+ },
+ "chiplet": {
+  "title": "チップレット（Chiplet）アーキテクチャと異種集積",
+  "summary": "巨大な単一ダイの代わりに、機能・プロセスごとに分割した小さなダイを、UCIe標準のD2Dインターコネクトと2.5D/3Dパッケージングで一つのパッケージに異種集積する方式。微細プロセスのコスト・歩留まり・レチクルの限界を克服し、AI半導体・HBM統合の基盤をなす半導体設計・パッケージングアーキテクチャ。"
+ },
+ "explainable-ai": {
+  "title": "説明可能AI（XAI, eXplainable AI）",
+  "summary": "ディープラーニングなどブラックボックスモデルの予測根拠・寄与要因・意思決定過程を人間が理解できる形で提示（LIME・SHAP・Grad-CAM）し、透明性・信頼性・説明責任を確保する技術。精度-解釈性-コストのトレードオフを目的・リスクベースで調整し、AIの信頼性やEU AI Actなどの規制対応の中核をなす。"
+ },
+ "multimodal-ai": {
+  "title": "マルチモーダルAI（Multimodal AI）",
+  "summary": "テキスト・画像・音声・映像など異質なモダリティを共通の意味空間に整列（CLIPの対照学習）し、初期・後期・クロスアテンションで融合することで、相互補完的な理解・生成を実現する技術。モダリティ間の異質性の克服とハルシネーション・バイアスの制御が課題であり、基盤モデルの標準形態かつVLA・身体化知能へ向かう中核的な経路である。"
+ },
+ "gitops": {
+  "title": "GitOps（ギットオプス）——Gitベースの宣言的運用モデル",
+  "summary": "システムのあるべき状態をGitに宣言的に保存し、クラスタ内のエージェントが実際の状態を継続的に調整（pull・自己修復）する運用モデル。構成ドリフトの抑制・完全な監査性・クラスタ認証情報の最小露出・git revertによるロールバックを通じて安全で再現可能なデプロイを実現し、IaC・DevSecOps・プラットフォームエンジニアリングと組み合わさって自律運用の基盤をなす。"
+ },
+ "data-fabric": {
+  "title": "データファブリック（Data Fabric）",
+  "summary": "分散・異種環境のデータを物理的に集約せず、アクティブメタデータ（active metadata）・ナレッジグラフ・AI自動化を活用して、発見・統合・ガバナンス・提供を一つの論理レイヤーに織り上げる技術中心のデータ管理アーキテクチャ。データ仮想化で移動を最小化し系譜ベースのガバナンスを自動執行し、組織中心のデータメッシュと相互補完的に組み合わせたとき効果を発揮する。"
+ },
+ "raid": {
+  "title": "RAID（Redundant Array of Independent Disks）",
+  "summary": "複数のディスクをストライピング・ミラーリング・パリティで束ね、性能と耐障害性を同時に得るストレージ技術。RAID 0/1/5/6/10のレベル別トレードオフと書き込みペナルティ・リビルドリスク、分散RAID・イレイジャーコーディングなどの最新動向を扱い、RAIDはバックアップではないためDRと併用すべきことを述べる。"
+ },
+ "bloom-filter": {
+  "title": "ブルームフィルタ（Bloom Filter）",
+  "summary": "mビットの配列とk個のハッシュ関数のみで集合への所属を判定する確率的データ構造で、「存在しない」は100%正確で「存在する」だけ偽陽性を許容し、ごく少量のメモリで大規模なメンバーシップクエリを安価にふるい落とす。動作原理と偽陽性確率の設計式（m/n·ln2）、LSM DB・セーフブラウジングなどの活用事例、カウンティング・カッコウフィルタとのトレードオフを扱う。"
+ },
+ "webrtc": {
+  "title": "WebRTC（Web Real-Time Communication）",
+  "summary": "プラグインなしにブラウザ標準API（getUserMedia・RTCPeerConnection・RTCDataChannel）のみでオーディオ・ビデオ・データをP2Pで超低遅延伝送するオープン技術。SDP Offer/Answerシグナリングと、ICE（STUN/TURN）ベースのNAT越え、SRTP/DTLSの強制暗号化、Mesh・SFU・MCUの拡張構造、HLS/WebSocketとのトレードオフ、インフラサイジング・セキュリティの考慮事項を扱う。"
+ },
+ "togaf-ea": {
+  "title": "TOGAFとエンタープライズアーキテクチャ（EA）",
+  "summary": "組織のビジネス戦略とITを整合させるため、業務・データ・アプリケーション・技術（BDAT）の階層で全社的な青写真を描き、重複排除と標準化・相互運用性を達成するEA体系と、それを反復手続き（ADM）・参照モデル・ガバナンスで実装するオープン標準TOGAFを扱う。Zachman・FEAFとの比較、ADMの8フェーズと要求管理、EA成熟度、クラウド・MSA時代の軽量ガバナンスの再解釈、文書ではなく意思決定への活用の重要性まで論述形式で整理する。"
+ },
+ "knowledge-distillation": {
+  "title": "知識蒸留（Knowledge Distillation）",
+  "summary": "大きく高性能な教師モデルのソフトターゲット（暗黙知・クラス間類似度）を、温度（Temperature）調整とKLダイバージェンス損失で小さな生徒モデルに転移し、精度を可能な限り保ちながらパラメータ・演算・遅延を削減する代表的なモデル軽量化手法。ソフトターゲットの原理と温度・損失の結合、応答/特徴/関係/自己蒸留の類型、プルーニング・量子化との比較と組み合わせ、教師-生徒の容量ギャップ・データライセンス・バイアス転移など技術士の観点からの考慮事項を論述形式で整理する。"
+ },
+ "sovereign-cloud": {
+  "title": "ソブリンクラウド（Sovereign Cloud）",
+  "summary": "特定国の法・管轄権の内にデータの保存・処理・運用・管理権が完結するよう設計されたクラウドで、データ主権をデータ・運用・技術の三層で保証する。データレジデンシーだけでは不十分で、暗号鍵主権（HYOK/BYOK）・アクセス透明性・オープン標準による可搬性が組み合わさる必要がある理由、CLOUD Act・Schrems IIなど管轄権衝突の背景、3層の主権構造と参照アーキテクチャ、国内リージョン・パートナー運用・専用隔離・国産独立型構築という導入類型の比較、GAIA-X・CSAPなど国内外の動向とトレードオフを論述形式で整理する。"
+ },
+ "diffusion-model": {
+  "title": "拡散モデル（Diffusion Model）",
+  "summary": "データにノイズを段階的に加える前方拡散過程と、それをニューラルネットワーク（U-Net/DiT）で逆にたどる逆拡散過程から構成される生成型ディープラーニングモデル。生成を多段のノイズ除去問題に分解して学習の安定性と品質・多様性を同時に確保する原理、DDPMの前方・逆過程とノイズ・損失構造、条件付き生成（Classifier-Free Guidance）と潜在拡散（LDM/Stable Diffusion）の演算削減の原理、GAN・VAEとの品質・多様性・速度のトレードオフ比較、FIDなどの評価指標、著作権・ディープフェイク・ウォーターマーキングなどのガバナンス考慮事項を論述形式で整理する。"
+ },
+ "siem": {
+  "title": "SIEM（セキュリティ情報・イベント管理）",
+  "summary": "組織全体の異種のログ・イベントをリアルタイムに収集・正規化・相関分析して多段階の脅威を検知し、コンプライアンスの証跡やインシデント調査の根拠を提供する統合セキュリティ監視プラットフォーム。収集→正規化→保存→相関分析→アラートへと続くデータパイプラインと、ルール・統計（UEBA）ベースの検知原理、ログ管理・SOAR・XDRとの関係と違い、アラート疲労・コスト・検知範囲の限界をAI-SIEM・データレイク・クラウドネイティブ・XDR統合で克服する最新動向、収集ポリシー設計・ルールチューニング・アナリスト能力の結合など技術士の観点からの考慮事項を論述形式で整理する。"
+ },
+ "processing-in-memory": {
+  "title": "プロセッシングインメモリ（PIM, Processing-in-Memory）",
+  "summary": "メモリ（DRAM）内部に演算ユニットを集積し、データをプロセッサへ移さずその場で計算することで、ノイマン型アーキテクチャのメモリウォールとデータ移動の電力を緩和するデータ中心の半導体アーキテクチャ。バンクレベルの並列性を活用した動作原理、演算ユニットの配置位置別（バンク・ロジックダイ・PNM）・回路方式別（デジタル・アナログクロスバー）の類型、オフロードの動作フロー、HBM-PIM・GDDR6-AiM・CXL-PNMなどメモリ別の適用事例とGPU・ニューロモルフィックとの比較、選択的オフロード戦略・面積/発熱/精度のトレードオフ・標準（JEDEC・CXL）エコシステムなど技術士の観点からの考慮事項を論述形式で整理する。"
+ },
+ "dlp": {
+  "title": "DLP（Data Loss Prevention、データ漏洩防止）",
+  "summary": "機密・重要データの保存（at rest）・移動（in motion）・使用（in use）の各状態をコンテンツベースで識別・監視・遮断し、意図的な漏洩と不注意による露出をともに防ぐデータ中心のセキュリティ体系である。本論では、データ三状態別の統制（Network・Endpoint・Storage DLP）と全体構造、パターン・辞書・EDM/フィンガープリント・MLなどの検知手法とその組み合わせ・チューニング、リスク度別の段階的対応（ログ・警告・暗号化・遮断）の動作フロー、DRM・CASB・UEBAなど隣接技術との関係、分類・ポリシー設計から監視・執行・継続的改善に至る構築手順、クラウド・在宅・生成AI時代のSASE/SSE拡張やプライバシーと誤検知のトレードオフといった技術士の観点からの考慮事項を論述形式で整理する。"
+ },
+ "xdr": {
+  "title": "拡張検知・対応（XDR、eXtended Detection and Response）",
+  "summary": "エンドポイント・ネットワーク・メール・クラウド・アイデンティティのテレメトリを単一プラットフォームで収集・正規化・相関分析し、分散したアラートを一つの攻撃ストーリー（インシデント）へ自動的に再構成し、検知・調査・対応を一つのフローに統合・自動化する脅威対応体系である。本論では、センサー・コア（データレイク・相関エンジン・ML/UEBA）・対応へと連なる全体構造と、検知→トリアージ→調査→封じ込め→復旧の運用フロー、ATT&CKチェーンに基づくインシデント再構成の原理、NativeとOpen（Hybrid）XDRの類型比較およびSIEM・SOAR・EDRとの境界、生成AIコパイロット・SASE/SSE拡張・MDRのサービス型消費・OCSF標準化などの最新動向、そしてデータ品質・誤検知チューニング・ベンダーロックイン・プライバシー・ゼロトラスト連携・組織成熟度といった技術士の観点からの考慮事項を論述形式で整理する。"
+ },
+ "cyber-kill-chain": {
+  "title": "サイバーキルチェーン（Cyber Kill Chain）",
+  "summary": "標的型サイバー攻撃を偵察→武器化→配送→エクスプロイト→インストール→遠隔操作（C2）→目的の実行という7段階の連鎖に分解し、いずれか一段階を遮断するだけでも侵害を無力化する防御中心（Intelligence-Driven）のフレームワークである。本論では、各段階の攻撃者行為と防御統制、検知・拒否・妨害・低下・欺瞞の対応方針マトリクス（Courses of Action）による多層防御設計と防御の空白（ギャップ）分析、MITRE ATT&CK・ダイヤモンドモデル・統合キルチェーンとの比較および結合戦略、境界偏重・線形前提といった構造的限界とクラウド・内部脅威対応のための進化、SIEM・SOAR・XDR連携と脅威ハンティングへの適用、ゼロトラスト・左方遮断・キャンペーンインテリジェンスといった技術士の観点からの考慮事項を論述形式で整理する。"
+ },
+ "edge-computing": {
+  "title": "エッジコンピューティング（Edge Computing）",
+  "summary": "データが生成される現場近傍の分散コンピューティング資源で演算・保存・分析を行い、遅延・帯域・プライバシーの問題を解消する分散コンピューティングパラダイムである。本論では、デバイス・エッジ（オンデバイス・ニア・ファー）・クラウドへと連なる階層構造とデータ重力の原理、ETSI MEC・5Gローカルブレイクアウトのアーキテクチャ、タスクオフロードの判断と軽量Kubernetes（K3s・KubeEdge）によるオーケストレーション、階層的集約と切断耐性・レジリエンス設計、中央クラウドとの遅延・コスト・一貫性のトレードオフ比較、スマートファクトリー・自動運転・没入型メディア・スマートシティの適用事例、エッジAI・連合学習・6G・エッジサーバーレス・機密コンピューティングなどの最新動向と、選択的なワークロード配置・セキュリティ・運用の複雑さ・導入ロードマップといった技術士の観点からの考慮事項を論述形式で整理する。"
+ },
+ "deadlock": {
+  "title": "デッドロック（Deadlock）",
+  "summary": "デッドロックの定義と、飢餓・ライブロックとの区別、相互排他・保持と待機・非preemption・循環待機という発生の4条件、資源割り当てグラフに基づく判定、予防・回避（銀行家アルゴリズム）・検知・回復の処理手法のトレードオフ、DB・マルチスレッド・分散システムの実務事例と食事する哲学者問題、ロック順序化・タイムアウト・再試行・可観測性といった技術士の観点からの考慮事項を論述形式で整理する。"
+ },
+ "waf": {
+  "title": "WAF（Webアプリケーションファイアウォール）",
+  "summary": "WAFの定義とアプリケーション層（L7）防御の登場背景、正規化→検知→判定へと連なる全体構造と、リバースプロキシ・透過ブリッジ・アウトオブバンド・クラウド型の配置方式、ネガティブ（シグネチャ・OWASP CRS）・ポジティブ（ホワイトリスト）・異常検知/ボット管理という検知モデルのトレードオフ、SQLi・XSSなどOWASP Top 10への防御とLog4Shellの仮想パッチ事例、IPS・RASP・APIゲートウェイとの比較、WAAP・クラウドWAFへの進化、誤検知チューニング・SSL復号・SPOF・規制準拠といった技術士の観点からの考慮事項を論述形式で整理する。"
+ },
+ "data-contract": {
+  "title": "データ契約（Data Contract）とデータ製品の信頼性",
+  "summary": "データの生産者と消費者が、データの意味・スキーマ・品質・鮮度・アクセス・サービスレベルを明示的に合意し自動検証するデータ製品のインターフェースである。スキーマのみを固定する方式の限界を超え、契約の構成要素、ライフサイクル、互換性・バージョン戦略、dbtモデル契約とODCS連携、データメッシュ・DataOps環境の運用上の考慮事項を論述形式で整理する。"
+ },
+ "slsa-software-supply-chain": {
+  "title": "SLSAに基づくソフトウェアサプライチェーンセキュリティとビルド完全性",
+  "summary": "SLSAのBuild・Sourceトラックとprovenanceを中心に、ソフトウェアがソースから配布成果物へと至る経路の完全性を検証する方法を整理する。SBOMとの違い、攻撃シナリオ、CI/CD実装、検証・ポリシー・運用上の考慮事項を技術士の論述形式で説明する。"
+ },
+ "data-warehouse-olap": {
+  "title": "データウェアハウス（Data Warehouse）とOLAP",
+  "summary": "運用系（OLTP）と分離し、主題指向・統合・時間変動・非揮発の原則で履歴を蓄積する分析専用ストアであるデータウェアハウスの構造と、ETL/ELTパイプライン、ディメンションモデリング（スター・スノーフレーク・SCD）、OLAP演算とMOLAP/ROLAP/HOLAPの比較、クラウドDW・レイクハウスへの進化を技術士の論述形式で整理する。"
+ },
+ "rpo-rto-disaster-recovery": {
+  "title": "RPO・RTO・MTTRに基づく災害復旧（Disaster Recovery）戦略",
+  "summary": "業務影響分析（BIA）を基にRPO・RTO・MTTR・MTDを定義し、バックアップ・レプリケーション・マルチリージョン・復旧訓練を組み合わせてサービス停止とデータ損失を制御する災害復旧戦略を整理する。"
+ },
+ "ipv6": {
+  "title": "IPv6とIPv4→IPv6移行技術",
+  "summary": "128ビットアドレス・固定ヘッダ・SLAAC/NDP・IPsec統合により、IPv4枯渇と拡張性・セキュリティの限界を解消した次世代インターネットプロトコルを整理し、デュアルスタック・トンネリング・NAT64などのIPv4→IPv6移行技術と、RAスプーフィングなどIPv6固有のセキュリティ脅威および対策を深掘りの観点から扱う。"
+ },
+ "site-reliability-engineering": {
+  "title": "SRE（Site Reliability Engineering）とサービス信頼性管理",
+  "summary": "ソフトウェアを運用の観点から設計し、SLI・SLO・エラーバジェット・インシデント対応を通じて、サービス信頼性と開発速度のバランスを管理するエンジニアリング体系。"
+ },
+ "secure-coding": {
+  "title": "セキュアコーディング（Secure Coding）とソフトウェア開発セキュリティ",
+  "summary": "SDLCの全段階にセキュリティを統合し、設計・実装段階の脆弱性を事前に除去する開発セキュリティ活動 — 入力検証・出力エンコーディングなどのセキュアコーディング規則、主要な7つの脆弱性類型、脅威モデリングとSAST/DAST/IAST/SCA診断のCI/CDへの内在化、AI・サプライチェーン・DevSecOpsへの拡張までを深掘りで整理する。"
+ },
+ "architecture-tradeoff-analysis-method": {
+  "title": "ATAM（Architecture Tradeoff Analysis Method）に基づくソフトウェアアーキテクチャ評価",
+  "summary": "ビジネスドライバーと品質属性シナリオを基に、アーキテクチャのリスク・感度点・トレードオフを識別し、ステークホルダー合意と意思決定記録へとつなげるATAM評価手法を技術士の論述形式で整理する。"
+ },
+ "bulkhead-pattern": {
+  "title": "バルクヘッド（Bulkhead）パターンと障害分離",
+  "summary": "共有資源を独立したプールに分割し、ある依存先の遅延・枯渇が他の機能へ波及しないようにするバルクヘッドパターンの原理、実装レベル、運用戦略。"
+ },
+ "model-context-protocol": {
+  "title": "MCP（Model Context Protocol）",
+  "summary": "LLMアプリケーションと外部ツール・データ・プロンプトを、Host–Client–Server構造とJSON-RPC 2.0で標準的に接続し、M×Nの統合問題をM+Nへ削減するオープンプロトコルの構造・プリミティブ・トランスポート・セキュリティ脅威と、技術士の観点からの示唆。"
+ },
+ "opentelemetry-observability": {
+  "title": "OpenTelemetryに基づく分散トレーシングと統合可観測性",
+  "summary": "ベンダー中立の計装標準であるOpenTelemetryでtraces・metrics・logsを収集・相関分析し、Collector・OTLP・セマンティック規約を活用して分散システムの可観測性を設計する方法。"
+ },
+ "htap": {
+  "title": "HTAP（Hybrid Transactional/Analytical Processing）",
+  "summary": "インメモリ・行/列ハイブリッド保存とワークロード分離により、OLTPとOLAPを一つのエンジンでETLなしに処理し、運用データに対するリアルタイム分析を提供するアーキテクチャ — 実装類型・中核技術・トレードオフ。"
+ },
+ "feature-store": {
+  "title": "フィーチャーストア（Feature Store）と機械学習データ運用",
+  "summary": "機械学習フィーチャーの定義・変換・検証・系譜を集中管理し、オフライン学習とオンライン推論に一貫して提供するフィーチャーストアの構成要素、時点整合（point-in-time）・データリーク防止、バッチ・ストリーミング運用、品質・セキュリティ・ガバナンス戦略を技術士の論述形式で整理する。"
+ },
+ "pki": {
+  "title": "公開鍵基盤（PKI、Public Key Infrastructure）",
+  "summary": "CAの電子署名により公開鍵と身元をX.509証明書として結合し、階層的な信頼チェーン・失効（CRL/OCSP）・リポジトリで検証可能にするPKIの構成要素と証明書ライフサイクル、信頼モデルの比較、ACME自動化・CT透明性・耐量子計算機暗号（PQC）への移行動向と、技術士の観点からの考慮事項を論述形式で整理する。"
+ },
+ "graphrag": {
+  "title": "GraphRAG（グラフ検索拡張生成）",
+  "summary": "非構造化文書からエンティティ・関係・コミュニティを抽出し、階層的要約とグラフ探索を組み合わせて、一般的なRAGの局所検索の限界を補完するGraphRAGの構造、検索方式、構築手順、評価と運用戦略。"
+ },
+ "quantum-safe-cryptography": {
+  "title": "耐量子計算機暗号（PQC、Post-Quantum Cryptography）と暗号移行戦略",
+  "summary": "Shor・HNDLの脅威に対応してML-KEM・ML-DSA・SLH-DSAを活用し、暗号資産インベントリ・リスク優先順位付け・ハイブリッド試験・暗号アジリティにより、PKIとサプライチェーンを段階的に移行する戦略。"
+ },
+ "bgp": {
+  "title": "BGP（Border Gateway Protocol、境界ゲートウェイプロトコル）",
+  "summary": "AS間でAS_PATHと経路属性（LOCAL_PREF・MED・Community）により、ポリシーベースの到達性を交換するインターネットの根幹プロトコル — eBGP/iBGP、最適経路選択、IGPとの比較、RPKIに基づくセキュリティ。"
+ },
+ "iso-42001-ai-management-system": {
+  "title": "ISO/IEC 42001:2023 人工知能マネジメントシステム（AIMS）",
+  "summary": "AIを責任ある形で開発・提供・使用するための人工知能マネジメントシステム（AIMS）の要求事項、リスク・影響評価、ライフサイクル統制と構築ロードマップを整理する。"
+ },
+ "message-queue-kafka": {
+  "title": "メッセージキュー（Message Queue）とApache Kafka",
+  "summary": "生産者と消費者をバッファで分離し、非同期・疎結合を実現するメッセージキューの通信モデルと、分散コミットログを基盤に大容量イベントの永続保存・再処理・水平拡張を支えるApache Kafkaのアーキテクチャ・配送セマンティクス・トレードオフを深掘りで整理する。"
+ },
+ "technical-debt": {
+  "title": "技術的負債（Technical Debt）の管理と返済戦略",
+  "summary": "迅速な納品のために将来の変更・運用コストを引き受ける技術的負債の原因・類型・測定・管理ライフサイクルと、持続可能な返済戦略。"
+ },
+ "time-series-database": {
+  "title": "時系列データベース（Time Series Database）",
+  "summary": "時間を第一級の軸とし、追記専用（append-only）の大量収集・時間軸圧縮（デルタ/Gorilla）・範囲集計・ダウンサンプリングと保存ポリシーを最適化した時系列データベースのデータモデル、LSMベースのストレージエンジン、製品類型の比較と可観測性・IoTの実務適用を深掘りで整理する。"
+ },
+ "data-lineage-impact-analysis": {
+  "title": "データリネージ（Data Lineage）と影響分析",
+  "summary": "データが源泉から変換・保存・分析・サービスへと至る経路を、Dataset・Job・Runのグラフで追跡し、変更影響・障害原因・個人情報の伝播を分析するデータガバナンス体系を整理する。"
+ },
+ "api-management": {
+  "title": "API管理（API Management）とAPIライフサイクルガバナンス",
+  "summary": "APIを契約・ポータル・ゲートウェイ・セキュリティ・可観測性・変更・廃止までを一つのライフサイクルとして管理し、再利用性と安定性、消費者体験を高めるガバナンス体系。"
+ },
+ "sd-wan": {
+  "title": "SD-WAN（Software-Defined WAN、ソフトウェア定義広域網）",
+  "summary": "SDNの平面分離の思想を広域網に適用し、インターネット・LTE・MPLS回線を暗号化オーバーレイで束ね、アプリケーション認識ポリシーとリアルタイムのリンク品質に応じて経路を中央からソフトウェアで制御するWANアーキテクチャ。"
+ },
+ "ai-sbom": {
+  "title": "AIソフトウェアBOM（AI SBOM）と人工知能サプライチェーンの透明性",
+  "summary": "モデル・データ・コード・パイプライン・インフラ・外部サービスの構成と関係を機械可読な形で管理するAIソフトウェアBOMの概念、標準、収集・検証・運用戦略を技術士の答案形式で整理する。"
+ },
+ "npu": {
+  "title": "NPU（Neural Processing Unit、ニューラルネットワーク処理装置）",
+  "summary": "ニューラルネットワークの積和演算を、シストリックアレイ・低精度演算・データ再利用で特化して加速するAI専用アクセラレータNPUの構造、データフロー、性能指標、CPU・GPUとの比較と最新動向を技術士の答案形式で整理する。"
+ },
+ "llmops": {
+  "title": "LLMOps（大規模言語モデル運用）と生成AIサービスライフサイクル管理",
+  "summary": "大規模言語モデルに基づくアプリケーションを実験から運用へ移行するための、プロンプト・モデル・検索拡張・ツール・評価・可観測性・セキュリティ・コスト管理と継続的改善の体系を技術士の答案形式で整理する。"
+ },
+ "ctem": {
+  "title": "CTEM（継続的脅威露出管理、Continuous Threat Exposure Management）",
+  "summary": "資産・設定不備・権限・攻撃対象領域にわたる露出を、攻撃者の観点から継続的に発見・優先順位付け・検証・是正するCTEMの5段階サイクル、参照アーキテクチャ、従来の脆弱性管理・ペネトレーションテストとの違い、導入ロードマップと技術士の観点からの考慮事項を答案形式で整理する。"
+ },
+ "rpa-intelligent-automation": {
+  "title": "RPA（ロボティックプロセスオートメーション）と知能型業務自動化（IPA）",
+  "summary": "ルールベースのソフトウェアロボットで反復業務を自動化するRPAを、プロセスマイニング・IDP・AIと結合した知能型業務自動化へ拡張する方法を扱う。対象選定、アーキテクチャ、運用ガバナンス、セキュリティと成果測定を論述形式で整理する。"
+ },
+ "microservices-architecture": {
+  "title": "マイクロサービスアーキテクチャ（MSA、Microservices Architecture）",
+  "summary": "ドメイン境界に沿ったサービス分解、API・イベント通信、分散データ一貫性、障害分離と段階的移行戦略を論述形式で整理する。"
+ },
+ "threat-modeling": {
+  "title": "脅威モデリング（Threat Modeling）",
+  "summary": "DFDでシステムを構造化し、STRIDEで脅威を網羅的に導出したうえで、DREAD・CVSSで優先順位付けし、設計段階でリスクを先制的に緩和するShift-Leftのセキュリティ活動を論述形式で整理する。"
+ },
+ "fuzz-testing": {
+  "title": "ファジングテスト（Fuzz Testing）と脆弱性検出戦略",
+  "summary": "異常・境界の入力を自動生成・変異させて、クラッシュ、メモリエラー、状態遷移違反、業務ルールの欠陥を見つけるファジングテストの原理と適用戦略を整理する。"
+ },
+ "load-balancing": {
+  "title": "負荷分散（Load Balancing）とL4/L7トラフィック分配",
+  "summary": "多数のサーバーへ要求を分配し、可用性・拡張性・性能を確保する技術 — IP/ポートベースの高速なL4とコンテンツベースの精緻なL7の違い、分配アルゴリズム・ヘルスチェック・セッション外部化・GSLB・冗長化、そしてクラウド・サービスメッシュへの進化を整理する。"
+ },
+ "differential-privacy": {
+  "title": "差分プライバシー（Differential Privacy）とプライバシー予算",
+  "summary": "隣接データセットの出力確率の差をε・δで制限する差分プライバシーの定義と、感度・ラプラス・ガウシアンメカニズム、合成・プライバシー会計、非識別化・連合学習・準同型暗号との比較、および公的統計・サービス分析・DP学習への適用戦略を整理する。"
+ },
+ "ci-cd-pipeline": {
+  "title": "CI/CDパイプライン（継続的インテグレーション・継続的デプロイ）",
+  "summary": "コミットからデプロイまでのソフトウェア提供プロセスを、ビルド・テスト・品質ゲート・デプロイの自動化連鎖として実装するCI/CDパイプラインの構造と原理 — CI（小さく頻繁な統合・即時検証）と継続的デリバリー/デプロイの違い、無停止デプロイ戦略、品質ゲート・DevSecOps・サプライチェーンセキュリティ、環境昇格の原則、DORA指標に基づく管理と技術士の観点からの適用戦略を整理する。"
+ },
+ "data-observability": {
+  "title": "データ可観測性（Data Observability）とデータ信頼性管理",
+  "summary": "鮮度・完全性・有効性・分布・系譜のシグナルを収集してデータ異常を検知し、影響分析・復旧・事後改善までつなげるデータ信頼性の運用体系。"
+ },
+ "ebpf-kernel-observability": {
+  "title": "eBPFに基づくカーネル可視性・セキュリティ・ネットワーキング",
+  "summary": "検証器とJITを経たカーネルプログラムをフックに接続し、ネットワーク・トレーシング・セキュリティ機能を動的に拡張するeBPFの実行モデル、maps・BTF・CO-RE、XDP・可観測性・セキュリティへの活用、従来方式との比較と安全な導入・運用戦略を整理する。"
+ },
+ "cmmi": {
+  "title": "CMMI（能力成熟度統合モデル）",
+  "summary": "組織のプロセス能力を、成熟度5段階（初期・管理された・定義された・定量的に管理された・最適化している）と能力4段階で診断・改善する成果中心のフレームワーク。表現方式（連続型・段階型）、プラクティス領域とドメイン、評価（Benchmark・Sustainment・Evaluation）の手順、SPICE・ISO 9001との比較とアジャイル・DevOps連携、V3.0（2023、ISACA）拡張までを整理する。"
+ },
+ "cloud-native": {
+  "title": "クラウドネイティブ（Cloud Native）アーキテクチャ",
+  "summary": "コンテナ・マイクロサービス・宣言的API・自動化・可観測性・弾力性を組み合わせ、変化と障害に反復可能に対応するクラウドネイティブの原理、階層構造、セキュリティ・運用、比較事例と段階的移行戦略を整理する。"
+ },
+ "btree-bplus-index": {
+  "title": "データベースインデックス構造（B-Tree・B+Tree）",
+  "summary": "ノード＝ディスクページとしてfan-outを大きくした平衡多分探索木であるB-Treeと、データをリーフのみに置き連結リストでつないで範囲・整列クエリを強化したB+Treeの構造・動作（探索・分割・併合）・比較、クラスタ化/カバリングインデックスとアンチパターン、LSM-Tree・SSD時代の変化までを整理する。"
+ },
+ "itil-4": {
+  "title": "ITIL 4（ITインフラストラクチャライブラリ）とサービス管理",
+  "summary": "サービスバリューシステム（SVS）、4つの側面、7つの指導原則、バリューチェーンと管理プラクティスを通じて、デジタルサービスの運用・改善体系を設計するITIL 4の詳細ノート。"
+ },
+ "mqtt": {
+  "title": "MQTT（Message Queuing Telemetry Transport）",
+  "summary": "パブリッシュ/サブスクライブ型の軽量IoTメッセージングプロトコル — ブローカー・トピック・QoS 0/1/2・LWT・Retain・Keep Aliveから、MQTT 5.0（共有サブスクリプション・User Property）までを整理した詳細ノート。"
+ },
+ "database-replication-high-availability": {
+  "title": "データベースレプリケーションと高可用性設計",
+  "summary": "同期・非同期レプリケーション、単一・複数リーダーのトポロジー、レプリケーション遅延と読み取り一貫性、フェイルオーバー・フェンシング・RPO・RTOを中心に、データベースの高可用性設計と運用戦略を整理する。"
+ },
+ "llm-as-a-judge": {
+  "title": "LLM-as-a-Judge（大規模言語モデルによる評価）",
+  "summary": "LLMを評価者として活用し、正確性・関連性・根拠性・安全性をルーブリックに基づいて測定する手法 — 決定的指標・人手によるメタ評価・バイアス制御・RAG・エージェント評価から運用デプロイのゲートまでを整理する。"
+ },
+ "dns": {
+  "title": "DNS（Domain Name System）とDNSセキュリティ",
+  "summary": "ドメイン名をIPに変換する階層的・分散型の名前解決体系 — 再帰・反復問い合わせとキャッシュの原理、レコード種別、キャッシュポイズニング・増幅DDoSなどの脅威と、DNSSEC（完全性）・DoH/DoT（機密性）による補完策までを整理する。"
+ },
+ "mvcc-snapshot-concurrency-control": {
+  "title": "MVCC（多版型同時実行制御）とスナップショットベースのトランザクション",
+  "summary": "トランザクションごとのスナップショットと複数の行バージョンで読み書きの競合を減らすMVCCの可視性判定、分離レベル、PostgreSQL・InnoDBの実装、バージョンの整理・ロック・直列化リトライと運用設計を整理する。"
+ },
+ "solid-principles": {
+  "title": "SOLIDオブジェクト指向設計原則",
+  "summary": "SRP・OCP・LSP・ISP・DIPの5原則で責務を分割し、依存の方向・大きさを抽象で制御して変更に強い設計を実現するオブジェクト指向設計原則 — クリーンアーキテクチャ・MSAへと拡張する保守性確保の共通言語。"
+ },
+ "data-vault-modeling": {
+  "title": "Data Vault 2.0に基づくデータウェアハウスモデリング",
+  "summary": "ビジネスキー・関係・属性の履歴をHub・Link・Satelliteに分離し、Raw VaultとBusiness Vaultを階層化して変化への弾力性・監査可能性・並列ロードを確保するデータウェアハウスモデリング方法論。スタースキーマ・3NF・レイクハウスとの違い、キー・時点・冪等性・品質・個人情報の設計も併せて整理する。"
+ },
+ "gan": {
+  "title": "敵対的生成ネットワーク（GAN, Generative Adversarial Network）",
+  "summary": "データを生成する生成器と真偽を判定する識別器をミニマックスゲームで競わせ、実際の分布を近似する生成モデル。敵対的学習の原理とDCGAN・cGAN・CycleGAN・StyleGANの変種、FID・IS評価指標、拡散モデルとの比較、モード崩壊・学習不安定への対応、ディープフェイクなど信頼性・ガバナンスの課題を詳細に整理する。"
+ },
+ "ztna": {
+  "title": "ZTNA（Zero Trust Network Access, ゼロトラストネットワークアクセス）",
+  "summary": "ネットワークの位置を信頼せず、ユーザー・端末・コンテキスト・リソースをリクエスト単位で検証し、アプリケーションごとに最小権限アクセスを提供するZTNAの原則、PDP・PEP構成、VPN・SASEとの比較、導入手順とクラウドネイティブへの拡張を整理する。"
+ },
+ "data-catalog-metadata": {
+  "title": "データカタログ（Data Catalog）とメタデータ管理",
+  "summary": "技術・業務・運用・ガバナンスのメタデータをデータ資産・用語集・品質・系譜・ポリシーと結びつけるデータカタログの概念と構造、収集・キュレーション・検索・影響分析のプロセス、ISO/IEC 11179・W3C DCATとの連携、データ製品・AI活用と導入戦略を整理する。"
+ },
+ "common-criteria": {
+  "title": "コモンクライテリア（CC, Common Criteria / ISO/IEC 15408）",
+  "summary": "情報保護製品のセキュリティ機能（SFR）と保証レベル（SAR/EAL）を第三者が標準手順で評価・認証する国際標準 — PP・ST・TOEの概念と評価・認証プロセス、CCRA相互承認・cPP・CC:2022の動向。"
+ },
+ "hexagonal-architecture": {
+  "title": "ヘキサゴナルアーキテクチャ（Hexagonal Architecture, Ports and Adapters）",
+  "summary": "業務の中核をポートとして抽象化し、REST・DB・メッセージ・外部APIをアダプターとして隔離するPorts and Adapters構造 — driving/drivenポート、依存関係逆転、テスト・運用戦略と、レイヤード・クリーンアーキテクチャとの比較。"
+ },
+ "two-phase-commit": {
+  "title": "2相コミット（2PC）と3相コミット（3PC）プロトコル",
+  "summary": "分散トランザクションの原子性を保証する2PC（準備・完了）と、そのブロッキングを緩和した3PC（事前コミット）プロトコル — 調整者・参加者の構造、ログベースの復旧、ブロッキング・分断への脆弱性、XA・Saga・Paxos Commitといった代替との比較。"
+ },
+ "transactional-outbox-pattern": {
+  "title": "トランザクショナルアウトボックスパターン（Transactional Outbox Pattern）",
+  "summary": "業務データの変更とイベント発行の二重書き込み問題を単一のローカルトランザクションにまとめ、アウトボックスとメッセージリレーでブローカーへ伝達するパターン — ポーリングパブリッシャー・CDC方式、重複・順序・再処理・保持ポリシー、2PC・Saga・イベントソーシングとの比較および導入戦略を整理する。"
+ },
+ "lsm-tree": {
+  "title": "LSMツリー（Log-Structured Merge-Tree）",
+  "summary": "ランダム書き込みをMemTableに集めて順次フラッシュし、不変のSSTableをバックグラウンドコンパクションで整理する書き込み最適化ストレージ構造 — WAL・ブルームフィルタ・トゥームストーン・MVCCの動作、レベルド/サイズ階層コンパクションと読み書き・空間の増幅（RUM）トレードオフ、B+ツリーとの比較、RocksDB・Cassandraの適用事例を整理する。"
+ },
+ "distributed-lock": {
+  "title": "分散ロック（Distributed Lock）",
+  "summary": "複数のサーバーが共有リソースを同時に変更しないよう、原子的な取得・リース・所有者トークン・フェンシングトークンで相互排他を実現する分散ロックの構造とプロトコル。データベース・Redis・合意ベースのコーディネーターの比較、TTL期限切れとゾンビクライアントへの対応、条件付き更新・冪等性・運用戦略を整理する。"
+ },
+ "digital-twin": {
+  "title": "デジタルツイン（Digital Twin）アーキテクチャと実装戦略",
+  "summary": "現実の観測可能な対象とデジタル表現を同期させ、観測・予測・シミュレーション・最適化に活用するデジタルツインの概念と参照アーキテクチャ。物理・エッジ・統合・ツインコア・モデル・応用の各層、データ契約・リアルタイム性・相互運用性・セキュリティ、製造・建物・サプライチェーンの事例と、ISO 23247に基づく組み合わせ戦略を整理する。"
+ },
+ "rate-limiting": {
+  "title": "レート制限（Rate Limiting）とトラフィック制御アルゴリズム",
+  "summary": "時間枠内のリクエスト数を上限で制御するトラフィック制御手法 — トークンバケット・リーキーバケット・固定/スライディングウィンドウのアルゴリズムと、ゲートウェイ・Redisベースの分散実装、429・Retry-Afterレスポンスで可用性・公平性・コスト・セキュリティを確保する。"
+ },
+ "data-product": {
+  "title": "データ製品（Data Product）の設計と運用",
+  "summary": "分析・AI・業務の意思決定に独立した価値を提供できるよう、データ・メタデータ・コード・インフラ・運用責任を1つの製品としてまとめるデータ製品の設計と運用戦略 — データメッシュのドメイン所有権、発見可能性・アドレス指定・理解可能性・相互運用性・セキュリティ、品質契約・SLA・バージョン管理・廃棄までのライフサイクルと組織適用の方策を整理する。"
+ },
+ "owasp-top-10": {
+  "title": "OWASP Top 10（Webアプリケーションセキュリティリスク）",
+  "summary": "実際の脆弱性データ（CVE）と専門家アンケートで選定するWebアプリケーションの10大セキュリティリスク認識標準 — 2025年改訂版の項目別原理（A01アクセス制御〜A10例外の不適切な処理）、2021年比の変化（サプライチェーン障害・設定不備の台頭、SSRFの統合）、SDLC/DevSecOpsへの内在化（シフトレフト）対応と、ASVS・SAMM・API/LLM Top 10との連携を詳細に整理する。"
+ },
+ "owasp-api-security-top-10": {
+  "title": "OWASP API Security Top 10（2023）に基づくAPIセキュリティ設計と運用",
+  "summary": "OWASP API Security Top 10（2023）の10大リスクを、オブジェクト・プロパティ・機能の認可、リソース・業務フローの制御の観点から分析し、ゲートウェイ・サービス・データ各層の設計・運用対応を整理する。"
+ },
+ "lambda-kappa-architecture": {
+  "title": "ラムダ（Lambda）アーキテクチャとカッパ（Kappa）アーキテクチャ",
+  "summary": "バッチ・スピード・サービングの3層で正確性とリアルタイム性を統合するラムダと、不変ログの単一ストリームでリアルタイム・再処理を統合するカッパを比較し、整合性の原理・再処理戦略・レイクハウスとの連携を整理する。"
+ },
+ "kubernetes-operator-pattern": {
+  "title": "Kubernetesオペレーターパターン（Kubernetes Operator Pattern）",
+  "summary": "Kubernetes APIをCRDとコントローラーで拡張し、アプリケーションのドメイン知識を宣言的管理と調整ループで自動化するオペレーターパターンの構造・実装・運用戦略を整理する。"
+ },
+ "dora-metrics": {
+  "title": "DORAソフトウェアデリバリー成果指標（DORA Metrics）",
+  "summary": "変更リードタイム・デプロイ頻度・失敗デプロイからの復旧時間・変更失敗率・デプロイ手戻り率を通じて、ソフトウェアのデリバリー量と不安定性を併せて測定・改善する方法を整理する。"
+ },
+ "cnapp": {
+  "title": "CNAPP（クラウドネイティブアプリケーション保護プラットフォーム）",
+  "summary": "CSPM・CWPP・CIEM・KSPM・DSPMなど断片化したクラウドセキュリティ機能を統合・相関分析し、コードからランタイムまで実際に悪用可能な攻撃経路を中心にリスクの優先順位を付けて対応するクラウドネイティブ統合セキュリティプラットフォーム。"
+ },
+ "c4-adr-architecture-documentation": {
+  "title": "C4モデルとADRに基づくソフトウェアアーキテクチャ文書化",
+  "summary": "C4のContext・Container・Component・Codeの各層で構造を読者別に表現し、ADRでアーキテクチャ決定の文脈・代替案・トレードオフを記録する統合文書化戦略。"
+ },
+ "crdt": {
+  "title": "CRDT（競合のない複製データ型）",
+  "summary": "複数の複製が調整なしにそれぞれ更新しても、マージ演算の交換・結合・冪等性により必ず同一状態に収束（SEC）する複製データ型 — 状態/操作ベース、G/PN-Counter・OR-Set・シーケンスCRDTの種別と、合意・OTとの対比、リアルタイム協調・マルチリージョンへの適用戦略。"
+ },
+ "bitmap-index": {
+  "title": "ビットマップインデックス（Bitmap Index）と分析データベース最適化",
+  "summary": "低カーディナリティ・読み取り中心の環境で、値ごとの行集合をビット列で表現し、AND・OR演算で複数条件の分析クエリを高速化するインデックス構造と、B-Tree・ハッシュとの比較、ビットマップ結合・DMLのトレードオフ・データウェアハウス適用戦略。"
+ },
+ "kerberos": {
+  "title": "Kerberos認証プロトコル",
+  "summary": "KDC（AS・TGS）と対称鍵・チケット（TGT）・タイムスタンプにより、パスワードを露出せずに相互認証とSSOを実現する内部網認証プロトコル — 3段階6メッセージの手順、クロスレルム・委任、Golden/Silver Ticket・Kerberoasting攻撃と防御、ハイブリッドSSO連携。"
+ },
+ "smart-contract-security": {
+  "title": "スマートコントラクト（Smart Contract）のセキュリティと監査戦略",
+  "summary": "スマートコントラクトの決定論的実行・資産保管・不変性・ガス制約を踏まえ、ウォレットからオラクル・ブリッジまでの信頼境界をモデル化し、リエントランシー・権限・オラクル・算術・署名・アップグレードの脆弱性の原因と対応、テスト・監査・デプロイ・監視のライフサイクルを整理する。"
+ },
+ "merkle-tree": {
+  "title": "マークルツリー（Merkle Tree）とデータ完全性検証",
+  "summary": "データブロックをハッシュで階層化して1つのルートハッシュに要約し、O(log n)のマークルパスで原本全体を送らずに包含・完全性を検証する構造 — 二分マークルツリーの生成・検証、奇数ノードの処理、プロトコル別の変種、ブロックチェーン・Git・Certificate Transparencyへの適用と運用上の考慮事項。"
+ },
+ "critical-chain-project-management": {
+  "title": "クリティカルチェーンプロジェクトマネジメント（CCPM, Critical Chain Project Management）",
+  "summary": "制約理論（TOC）を日程管理に適用し、作業・資源の制約を併せて考慮したクリティカルチェーンを特定し、個々の安全余裕をプロジェクト・フィーディング・資源バッファに集約・管理（フィーバーチャート）して、学生症候群・パーキンソンの法則・マルチタスクによる損失を減らし、納期遵守とリードタイム短縮を達成する方法論。"
+ },
+ "event-storming": {
+  "title": "EventStorming（イベントストーミング）に基づくドメイン探索と設計",
+  "summary": "ドメインイベントを時間軸に並べ、業務の専門家と開発者が複雑な業務の用語・ルール・例外・責務・境界を共同で探索するワークショップ — Big Picture・Process・Software Designの段階と、DDD・EDA・CQRSとの連携、ホットスポット管理、レガシー近代化およびファシリテーション戦略。"
+ },
+ "numa": {
+  "title": "不均一メモリアクセス（NUMA, Non-Uniform Memory Access）",
+  "summary": "プロセッサごとにローカルメモリを直結して拡張性を得る代わりに、ローカル・リモートアクセスの遅延が異なるccNUMA構造 — ノード・インターコネクト・統合メモリコントローラーの構成、first-touch・affinity・interleaveなどOS・アプリケーション・仮想化（vNUMA）の全層にわたる局所性の整合、フォールスシェアリング・キャッシュ一貫性トラフィック、UMA・分散メモリとの比較と、CXL・階層型メモリへの拡張を詳細に整理する。"
+ },
+ "bpmn-process-modeling": {
+  "title": "BPMN 2.0に基づく業務プロセスモデリングと実行",
+  "summary": "BPMNのプール・レーン・イベント・アクティビティ・ゲートウェイ・メッセージフローと実行意味を中心に、業務プロセスをAs-IsからTo-Be・ワークフロー自動化へつなぐ方法、UML・フローチャート・EventStormingとの比較、例外・運用・ガバナンス戦略を整理する。"
+ },
+ "write-ahead-logging": {
+  "title": "先行書き込みログ（WAL）とデータベース回復技法（ARIES）",
+  "summary": "「データより先にログを」というWALプロトコルで原子性・持続性を保証する原理と、ログ構造（LSN・物理論理ロギング）、チェックポイント、ARIESの分析・再実行・取り消しの3段階とDPT・CLR・履歴の反復をLSNベースのシナリオで説明し、steal/no-forceポリシーのトレードオフと、レプリケーション・CDC・クラウドDBへの拡張を整理する。"
+ },
+ "eap-tls": {
+  "title": "EAP-TLS（Extensible Authentication Protocol-Transport Layer Security）に基づくネットワークアクセス認証",
+  "summary": "X.509証明書とTLSハンドシェイクで端末・認証サーバーを相互認証し、802.1X・RADIUSポリシーとPKIのライフサイクルを組み合わせてネットワークアクセスを制御する方式の原理・手順・比較・運用戦略。"
+ },
+ "database-connection-pooling": {
+  "title": "データベースコネクションプール（Connection Pool）の設計とチューニング",
+  "summary": "データベース接続を再利用して接続確立コストと同時実行の急増を制御するコネクションプールの原理、貸出・返却・検証・タイムアウト、プールサイズの見積もり、アプリケーションプールと外部プーラーの比較、フェイルオーバー・可観測性・セキュリティ設計を整理する。"
+ },
+ "apache-iceberg": {
+  "title": "オープンテーブルフォーマット（Apache Iceberg）",
+  "summary": "オブジェクトストレージ上のファイル群に、スナップショットベースのACID・隠しパーティショニング・スキーマ/パーティション進化・タイムトラベルを付与するエンジン中立のオープンテーブルフォーマットApache Icebergのメタデータ層構造、動作原理、CoW/MoR・コンパクション、Delta・Hudi・Hiveとの比較と標準化動向を詳細に整理する。"
+ },
+ "policy-as-code": {
+  "title": "ポリシーのコード化（Policy as Code）と実行型ガバナンス",
+  "summary": "セキュリティ・コンプライアンス・運用のルールを宣言型コードでバージョン管理し、PDP・PEPを通じてCI/CD・IaC・API・Kubernetesランタイムに繰り返し適用する実行型ガバナンスのアプローチ。"
+ },
+ "secrets-management": {
+  "title": "シークレット管理（Secrets Management）",
+  "summary": "パスワード・APIキー・証明書・暗号鍵などの認証情報をコードから分離し、中央で保管・発行・ローテーション・失効・監査する体系で、静的なシークレットを動的・短命なシークレットとインフラの識別情報に基づく認証へ移行し、漏洩時の影響範囲を最小化する。"
+ },
+ "data-centric-ai": {
+  "title": "データ中心AI（Data-Centric AI）と学習データ品質エンジニアリング",
+  "summary": "モデル構造よりもデータの品質・代表性・ラベル・系譜を体系的に改善して、AIの性能と信頼性を高めるDCAIの概念、品質指標、ライフサイクル、ガバナンスと適用戦略を整理する。"
+ },
+ "convolutional-neural-network": {
+  "title": "畳み込みニューラルネットワーク（CNN, Convolutional Neural Network）",
+  "summary": "畳み込み・プーリングによって画像の局所特徴を階層的に抽出するニューラルネットワーク — 局所受容野・重み共有でパラメータを削減し、平行移動不変性を確保する画像認識の標準アーキテクチャ。"
+ },
+ "digital-thread": {
+  "title": "デジタルスレッド（Digital Thread）に基づく全ライフサイクル情報連携",
+  "summary": "要求・設計・製造・検査・運用・保全のデータを共通識別子・標準的な意味・バージョン・系譜で結ぶデジタルスレッドの概念、参照アーキテクチャ、影響分析、標準化、品質・セキュリティ・ガバナンスと、製造・デジタルツインへの適用戦略を論述形式で整理する。"
+ },
+ "backend-for-frontend": {
+  "title": "BFF（Backend for Frontend）パターンとブラウザOAuthセキュリティ",
+  "summary": "クライアント体験ごとに専用のバックエンドを設け、APIを組み合わせ・変換・保護するBFFパターンを、アーキテクチャ、組織の所有権、APIゲートウェイ・GraphQLとの比較、障害・性能・運用のトレードオフとともに整理し、RFC 10017のブラウザOAuthセキュリティ勧告まで結びつける。"
+ },
+ "prompt-engineering": {
+  "title": "プロンプトエンジニアリング(Prompt Engineering)",
+  "summary": "モデルを再学習させずに入力(役割・文脈・例示・形式)を設計してLLMの出力を制御する低コスト手法 — Zero/Few-shot・CoT・ReActなどの主要技法、RAG・ファインチューニングとの比較、プロンプトインジェクション対策と運用ガバナンス。"
+ },
+ "retrieval-augmented-generation": {
+  "title": "検索拡張生成(RAG, Retrieval-Augmented Generation)",
+  "summary": "外部の文書・データを問い合わせ時点で検索してLLM生成に注入するRAGの参照アーキテクチャ、収集・チャンキング・埋め込み・ハイブリッド検索・再ランキング・引用検証、基本・高度・エージェント型の比較、評価・鮮度維持・権限・プロンプトインジェクション対応と導入戦略を論述形式で整理する。"
+ },
+ "privileged-access-management": {
+  "title": "特権アクセス管理(PAM, Privileged Access Management)",
+  "summary": "特権アカウント・セッションを識別・金庫化・最小権限化・監視・回収するセキュリティ統制体系 — アカウント種別(人・非人間・緊急)、ボールティング・パスワードローテーション・セッション管理(PSM)・PEDM・JIT/ZSP・監査(UEBA)の機能とアーキテクチャ、IAM・IGAとの比較、クラウド・DevOpsへの拡張と導入戦略を論述形式で整理する。"
+ },
+ "white-box-cryptography": {
+  "title": "ホワイトボックス暗号(White-box Cryptography)",
+  "summary": "攻撃者が実行環境を完全に掌握したホワイトボックスモデルでも、鍵をルックアップテーブル・エンコーディングでアルゴリズムに融合・隠蔽するソフトウェア鍵保護技法 — ブラック/グレー/ホワイトボックス攻撃モデル、鍵融合・エンコーディング・マスキングの実装原理、DRM・HCE決済への応用、DCA・DFA攻撃とTEEとのトレードオフ・多層防御を論述形式で整理する。"
+ },
+ "digital-sovereignty": {
+  "title": "デジタル主権(Digital Sovereignty)とクラウド・AI主権",
+  "summary": "データの保存場所にとどまらず、法的管轄権・暗号鍵・AI・技術・運用・サプライチェーンを統制し、必要時に独立して切り替える能力 — 業務リスクに基づく評価、クラウド主権フレームワークと導入・exit戦略。"
+ },
+ "privacy-de-identification": {
+  "title": "個人情報の非識別化措置とプライバシー保護モデル(k-匿名性・l-多様性・t-近接性)",
+  "summary": "識別子・準識別子・機微情報を仮名処理・カテゴリ化などで非識別化した後、k-匿名性(集合サイズ)・l-多様性(値の種類)・t-近接性(値の分布)で再識別リスクを定量検証するプライバシー保護モデルとライフサイクルガバナンス。"
+ },
+ "property-based-testing": {
+  "title": "プロパティベーステスト(Property-Based Testing)と生成ベースの品質検証",
+  "summary": "実行可能なプロパティとドメインジェネレータで広い入力空間を探索し、縮小された最小反例を回帰テストにつなげる生成ベースの品質検証戦略。"
+ },
+ "ai-agent-orchestration": {
+  "title": "AIエージェントオーケストレーションと自律業務実行ガバナンス",
+  "summary": "目標分解・エージェント選択・ツール実行・状態管理・検証を調整するオーケストレーション構造と、自律実行における権限・承認・監査・安全ガバナンスの設計。"
+ },
+ "feature-flag": {
+  "title": "フィーチャーフラグ(Feature Flag)と段階的デプロイ",
+  "summary": "デプロイとリリースを分離し、実行時に機能の露出を制御するフィーチャーフラグの種類・ライフサイクル・評価アーキテクチャと、段階的デプロイ・キルスイッチ・フラグ負債の管理戦略。"
+ },
+ "ai-red-teaming": {
+  "title": "生成AIレッドチームと敵対的セキュリティ検証",
+  "summary": "生成AIのモデルとアプリケーションを攻撃者の視点で検証し、モデル・実装・インフラ・運用行動の脆弱性をリスク管理と改善活動につなげる継続的なセキュリティ検証戦略。"
+ },
+ "green-software": {
+  "title": "グリーンソフトウェア(Green Software)と持続可能なソフトウェア工学",
+  "summary": "エネルギー効率・カーボンアウェアネス・ハードウェア効率の3原則でソフトウェアライフサイクルの炭素排出を削減し、ISO/IEC 21031(SCI)で機能単位あたりの排出量を測定してESG・FinOps・Observabilityと連携する持続可能なソフトウェア工学。"
+ },
+ "data-poisoning": {
+  "title": "AI学習データ汚染攻撃(Data Poisoning)とデータ完全性の防御",
+  "summary": "学習・ファインチューニング・埋め込み・フィードバックデータに悪性コンテンツを挿入または改ざんする汚染攻撃の種類と脅威モデル、出所・バージョン・権限・行動検証・ロールバックに基づく防御戦略を整理する。"
+ },
+ "caching-strategy": {
+  "title": "キャッシュ戦略(Caching Strategy)と分散キャッシュ設計",
+  "summary": "オリジンの遅いデータを高速な階層に複製として置くキャッシュの階層構造と読み書き経路(Cache-Aside・Write-Through/Back)、LRU退避・TTL/イベント無効化、スタンピード・貫通・雪崩など分散キャッシュ障害への対応まで整合性の観点から設計する戦略。"
+ },
+ "nist-csf-2": {
+  "title": "NIST Cybersecurity Framework 2.0に基づくサイバーセキュリティリスク管理",
+  "summary": "NIST CSF 2.0のGOVERN・IDENTIFY・PROTECT・DETECT・RESPOND・RECOVERの6大機能、Core・Organizational Profile・Implementation Tierの構造と現状・目標状態のギャップ分析、クラウド・AI・サプライチェーンへの適用戦略を論述形式で整理する。"
+ },
+ "model-drift-monitoring": {
+  "title": "AIモデルドリフト(Model Drift)とデータドリフト(Data Drift)の管理",
+  "summary": "本番環境における入力・正解・予測の変化と性能劣化をデータ・概念・予測ドリフトに区分し、ベースライン・統計指標・ラベル遅延・再学習・ロールバックで管理するAIの全ライフサイクル戦略。"
+ },
+ "twelve-factor-app": {
+  "title": "Twelve-Factor App(12ファクターアプリ)",
+  "summary": "設定・リソース・実行環境をコードから分離し、プロセスをステートレス・破棄可能に設計して移植性・拡張性・運用自動化を保証するSaaS設計方法論であり、コンテナ・Kubernetes・サーバーレスが継承・拡張する。"
+ },
+ "ml-model-registry": {
+  "title": "機械学習モデルレジストリ(Model Registry)と承認・デプロイガバナンス",
+  "summary": "機械学習モデルのバージョン・学習実行・データ・コード来歴・評価・承認・デプロイポインタを中央管理し、品質ゲート・カナリア・ロールバック・監査・サプライチェーンセキュリティでモデルを信頼できる運用資産として管理する戦略。"
+ },
+ "synthetic-data": {
+  "title": "合成データ(Synthetic Data)",
+  "summary": "元データの統計的特性をルール・シミュレーション・生成モデル(GAN・VAE・Diffusion・LLM)で模倣して人工生成したデータで、プライバシー保護・データ拡張・希少シナリオの補強を可能にしつつ、忠実度・有用性・プライバシーのトレードオフを差分プライバシーと継続的検証で管理する。"
+ },
+ "strangler-fig-pattern": {
+  "title": "Strangler Fig(ストラングラーフィグ)パターンに基づくレガシー近代化",
+  "summary": "ファサード・ルーティング層でレガシーと新機能を共存させ、業務スライス・データ所有権・CDC・段階的トラフィック移行・ロールバック・可観測性で大規模システムを無停止で近代化した後、暫定構造とレガシーを除去する戦略。"
+ },
+ "nfv": {
+  "title": "ネットワーク機能仮想化(NFV, Network Functions Virtualization)",
+  "summary": "専用ハードウェアに閉じ込められたネットワーク機能を汎用サーバー上のソフトウェア(VNF)に分離し、ETSI MANO(NFVO・VNFM・VIM)でライフサイクルを自動化するネットワークのクラウド化技術 — CNF・5G・エッジへ進化。"
+ },
+ "digital-product-passport": {
+  "title": "デジタル製品パスポート(DPP, Digital Product Passport)",
+  "summary": "製品・部品・素材の一意識別子、データキャリア、EU Registry、分散型の詳細データ、権限・証跡・ライフサイクルガバナンスを組み合わせ、持続可能性・循環性・規制順守を支援する製品データアーキテクチャ。"
+ },
+ "graph-database": {
+  "title": "グラフデータベース(Graph Database)とプロパティグラフ・RDFモデル",
+  "summary": "ノード・関係・属性を格納構造の中核とし、経路・パターン・連結性を問い合わせるグラフデータベースの構造とモデリング手順を説明し、プロパティグラフとRDFの選択基準、問い合わせ・分析・不正検知・推薦への適用および品質・セキュリティ・台帳の境界を整理する。"
+ },
+ "tsn": {
+  "title": "タイムセンシティブネットワーキング(TSN, Time-Sensitive Networking)",
+  "summary": "標準イーサネット上に時刻同期(802.1AS)・時間認識スケジューリング(802.1Qbv)・無損失冗長化(802.1CB)・中央構成(802.1Qcc)を加えて上限遅延と低ジッタを保証する決定性イーサネット技術群であり、IT/OT融合・自動運転・スマートファクトリーのリアルタイム通信基盤を整理する。"
+ },
+ "ai-model-card-dataset-datasheet": {
+  "title": "AIモデルカード(Model Card)とデータセットデータシート(Datasheet)に基づくAI透明性",
+  "summary": "AIモデルの目的・性能・限界・リスクを記録するモデルカードと、データセットの出所・構成・品質・権利を説明するデータシートを、データ来歴・モデルレジストリ・評価・モニタリングと連携させ、AI透明性・説明責任・変更管理および運用統制を実現する方法を整理する。"
+ },
+ "recommendation-system": {
+  "title": "推薦システム(Recommendation System)",
+  "summary": "情報過多の中でユーザーが好む項目を予測・順位付けする情報フィルタリングシステム — コンテンツベース・協調フィルタリング・ハイブリッド(ディープラーニング)を候補生成→ランキング→再ランキングの多段階パイプラインで組み合わせる。"
+ },
+ "cobit-2019-governance": {
+  "title": "COBIT 2019に基づく情報技術ガバナンスの設計と実装",
+  "summary": "COBIT 2019のガバナンスと管理の分離、5つのドメイン、構成要素、11の設計要因、目標能力レベルと実装・保証手順を、金融・クラウド・AIの事例とともに整理した学習ノートです。"
+ },
+ "recurrent-neural-network": {
+  "title": "リカレントニューラルネットワーク(RNN)とLSTM・GRU",
+  "summary": "隠れ状態で過去の文脈を再帰的に伝えて可変長シーケンスを処理するRNNと、ゲート・セル状態で勾配消失を克服して長期依存を学習するLSTM・GRUの構造・原理・比較、およびTransformer・状態空間モデルとのトレードオフ。"
+ },
+ "open-ran": {
+  "title": "Open RAN(オープン無線アクセスネットワーク)アーキテクチャとRICベースの高度化",
+  "summary": "RU・DU・CUの機能分離とオープンインターフェース、仮想化、SMO・Non-RT RIC・Near-RT RICに基づくインテリジェント制御を組み合わせたOpen RANの構造・インターフェース・構築・性能・セキュリティ・マルチベンダー運用戦略を整理する。"
+ },
+ "data-space-architecture": {
+  "title": "データスペース(Data Space)とデータ主権に基づく信頼できるデータ共有",
+  "summary": "データ提供者が統制権を保持しながら、信頼サービス・カタログ・意味体系・契約・利用ポリシーを組み合わせて組織間でデータを共有する連合型データアーキテクチャと、ガバナンス・セキュリティ・普及戦略を整理する。"
+ },
+ "mpls": {
+  "title": "MPLS(Multi-Protocol Label Switching)",
+  "summary": "IPパケットに20ビットのラベルを付与し、コアを完全一致スイッチングで通過させるL2.5のコネクション指向技術 — LER/LSP・FEC・ラベルスタック、LDP/RSVP-TE/MP-BGPによる配布、L3/L2 VPN・トラフィックエンジニアリング・FRRとセグメントルーティング(SR-MPLS・SRv6)への進化。"
+ },
+ "microsegmentation": {
+  "title": "マイクロセグメンテーション(Microsegmentation)に基づく東西トラフィック制御とゼロトラストの実装",
+  "summary": "資産・ワークロード・サービス間の東西トラフィックを業務フローとアイデンティティに基づく小さな論理境界に分割し、デフォルト拒否・最小権限・継続的検証を実施して侵害後の横方向移動と被害のブラスト半径を低減するゼロトラスト実装手段。"
+ },
+ "test-driven-development": {
+  "title": "テスト駆動開発(TDD, Test-Driven Development)",
+  "summary": "失敗するテストを先に書き(Red)、最小実装で通過させた後(Green)、構造を改善する(Refactor)短いサイクルを繰り返し、実行可能な仕様・疎結合な設計・回帰安全網を同時に確保する進化的開発技法。FIRST原則・テストダブル・古典派/ロンドン派・BDD/ATDD連携まで深掘り。"
+ },
+ "spiffe-spire-workload-identity": {
+  "title": "SPIFFE/SPIREに基づくワークロードアイデンティティとシークレットレスなサービス認証",
+  "summary": "ノード・ワークロードの証明により動的サービスにSPIFFE IDと短命なSVIDを自動発行し、Workload API・mTLS・信頼ドメイン連合で長期的なシークレットのないサービス認証と最小権限を実現する標準・運用体系。"
+ },
+ "idempotency": {
+  "title": "冪等性(Idempotency)の設計と分散システムの信頼性",
+  "summary": "同一の操作を複数回実行しても最終状態が変わらない冪等性の定義と、安全性・原子性との区別、HTTPメソッドの規約と配信セマンティクス、冪等性キー・自然キー・冪等コンシューマの実装と原子的な先取り、決済・メッセージングの事例およびレジリエンスパターンとの連携を整理する。"
+ },
+ "wifi-7": {
+  "title": "Wi-Fi 7(IEEE 802.11be)に基づく高性能・低遅延無線LANの設計",
+  "summary": "IEEE 802.11be-2024に基づくWi-Fi 7の320MHzチャネル・MLO・4096-QAM・OFDMA・Multi-RUの原理とWi-Fi 6・5G・有線との比較、RF・バックホール・セキュリティ・可観測性・段階的導入戦略を技術士論述形式で整理する。"
+ },
+ "kubernetes-gateway-api": {
+  "title": "Kubernetes Gateway APIに基づくクラウドネイティブなトラフィック管理",
+  "summary": "GatewayClass・Gateway・HTTPRoute・GRPCRouteの役割指向リソースモデルとコントローラ・データプレーンの調整原理、Ingressと比べた標準化・マルチプロトコル・クロスネームスペース信頼、TLS・可観測性・カナリア・段階的移行戦略を技術士論述形式で整理する。"
+ },
+ "web-accessibility": {
+  "title": "ウェブアクセシビリティ(Web Accessibility)とWCAG/KWCAG",
+  "summary": "障害者・高齢者を含むすべての人がウェブ情報を等しく利用できるよう保証する品質特性 — POURの4原則、WCAG 2.2(国際・AA)とKWCAG 2.2(4原則・14ガイドライン・33項目)、アクセシビリティ・バイ・デザインのプロセスと自動・手動・ユーザー評価、WCAG 3.0の動向まで技術士論述形式で整理する。"
+ }
+}
