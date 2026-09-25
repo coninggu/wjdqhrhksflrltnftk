@@ -6697,5 +6697,22 @@
     ],
     "summary": "IEEE 802.11be-2024 기반 Wi-Fi 7의 320MHz 채널·MLO·4096-QAM·OFDMA·Multi-RU 원리와 Wi-Fi 6·5G·유선 비교, RF·백홀·보안·관측성·점진 도입 전략을 기술사 논술형으로 정리한다.",
     "updated": "2026-09-25"
+  },
+  {
+    "id": "kubernetes-gateway-api",
+    "title": "Kubernetes Gateway API 기반 클라우드 네이티브 트래픽 관리",
+    "category": "인프라·클라우드",
+    "tags": [
+      "Kubernetes",
+      "Gateway API",
+      "GatewayClass",
+      "Gateway",
+      "HTTPRoute",
+      "GRPCRoute",
+      "Ingress",
+      "클라우드네이티브"
+    ],
+    "summary": "GatewayClass·Gateway·HTTPRoute·GRPCRoute의 역할 지향 리소스 모델과 컨트롤러·데이터 플레인 조정 원리, Ingress 대비 표준화·다중 프로토콜·교차 네임스페이스 신뢰, TLS·관측성·카나리·점진 전환 전략을 기술사 논술형으로 정리한다.",
+    "updated": "2026-09-25"
   }
 ]
