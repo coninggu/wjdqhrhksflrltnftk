@@ -6714,5 +6714,20 @@
     ],
     "summary": "GatewayClass·Gateway·HTTPRoute·GRPCRoute의 역할 지향 리소스 모델과 컨트롤러·데이터 플레인 조정 원리, Ingress 대비 표준화·다중 프로토콜·교차 네임스페이스 신뢰, TLS·관측성·카나리·점진 전환 전략을 기술사 논술형으로 정리한다.",
     "updated": "2026-09-25"
+  },
+  {
+    "id": "web-accessibility",
+    "title": "웹 접근성(Web Accessibility)과 WCAG/KWCAG",
+    "category": "SW공학·관리",
+    "tags": [
+      "웹접근성",
+      "WCAG",
+      "KWCAG",
+      "POUR",
+      "품질인증",
+      "ARIA"
+    ],
+    "summary": "장애인·고령자를 포함한 모두가 웹 정보를 동등하게 이용하도록 보장하는 품질 속성 — POUR 4원칙, WCAG 2.2(국제·AA)와 KWCAG 2.2(4원칙·14지침·33항목), 접근성 by Design 프로세스와 자동·수동·사용자 평가, WCAG 3.0 동향까지 기술사 논술형으로 정리한다.",
+    "updated": "2026-09-25"
   }
 ]
