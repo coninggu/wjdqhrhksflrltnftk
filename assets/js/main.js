@@ -404,6 +404,9 @@
     .then((data) => {
       // 최신 업데이트 순 정렬 (updated 내림차순, 없으면 뒤로)
       topics = data.slice().sort((a, b) => (b.updated || '').localeCompare(a.updated || ''));
+      return window.IMN.localizeTopics(topics); // 비한국어면 제목·요약 번역 오버레이 적용
+    })
+    .then(() => {
       setSearchPlaceholder();
       renderToday();
       refreshViewedUI();

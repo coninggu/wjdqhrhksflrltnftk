@@ -414,6 +414,9 @@
     .then((res) => (res.ok ? res.json() : []))
     .then((topics) => {
       allTopics = Array.isArray(topics) ? topics : [];
+      return window.IMN.localizeTopics(allTopics); // 제목·요약 번역 오버레이(비한국어)
+    })
+    .then(() => {
       currentTopic = allTopics.find((t) => t.id === id) || null;
       renderMeta(currentTopic);
       renderNav(allTopics);
