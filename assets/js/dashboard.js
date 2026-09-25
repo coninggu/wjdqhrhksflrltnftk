@@ -6,6 +6,8 @@
   var isViewed = window.IMN.isViewed;
   var isBookmarked = window.IMN.isBookmarked;
   var isDone = window.IMN.isDone;
+  var tr = (window.I18N && window.I18N.t) ? window.I18N.t : function (k) { return k; };
+  var catLabel = (window.I18N && window.I18N.category) ? window.I18N.category : function (c) { return c || '기타'; };
   var pct = function (n, d) { return d > 0 ? Math.round(n / d * 100) : 0; };
 
   function bar(p) {
@@ -13,7 +15,7 @@
   }
   function cardLink(t) {
     return '<li><a class="db-item" href="topic.html?id=' + encodeURIComponent(t.id) + '">' +
-      '<span class="db-item-cat">' + escapeHtml(t.category || '기타') + '</span>' +
+      '<span class="db-item-cat">' + escapeHtml(catLabel(t.category)) + '</span>' +
       '<span class="db-item-title">' + escapeHtml(t.title) + '</span></a></li>';
   }
 
@@ -28,10 +30,10 @@
     if (doneCount === 0 && bmList.length === 0 && viewedCount === 0) {
       root.innerHTML =
         '<div class="db-empty">' +
-          '<div class="db-empty-big">아직 학습 기록이 없어요</div>' +
-          '<p>주제를 열어 읽고, ★ 즐겨찾기·✓ 학습완료를 표시하면 여기에 진도가 쌓입니다.</p>' +
-          '<div class="db-empty-cta"><a class="fc-entry" href="index.html">주제 둘러보기 →</a>' +
-          '<a class="fc-entry" href="flashcards.html">🃏 플래시카드</a></div>' +
+          '<div class="db-empty-big">' + escapeHtml(tr('db.emptyBig')) + '</div>' +
+          '<p>' + escapeHtml(tr('db.emptyDesc')) + '</p>' +
+          '<div class="db-empty-cta"><a class="fc-entry" href="index.html">' + escapeHtml(tr('db.browse')) + '</a>' +
+          '<a class="fc-entry" href="flashcards.html">' + escapeHtml(tr('db.flashcards')) + '</a></div>' +
         '</div>';
       return;
     }
@@ -58,28 +60,28 @@
 
     // ── 요약 통계 ──
     html += '<div class="db-stats">' +
-      '<div class="db-stat"><div class="db-stat-num">' + doneCount + '<span>/' + total + '</span></div><div class="db-stat-label">학습완료</div></div>' +
-      '<div class="db-stat"><div class="db-stat-num db-accent-star">' + bmList.length + '</div><div class="db-stat-label">★ 즐겨찾기</div></div>' +
-      '<div class="db-stat"><div class="db-stat-num">' + viewedCount + '</div><div class="db-stat-label">열람</div></div>' +
+      '<div class="db-stat"><div class="db-stat-num">' + doneCount + '<span>/' + total + '</span></div><div class="db-stat-label">' + escapeHtml(tr('db.statDone')) + '</div></div>' +
+      '<div class="db-stat"><div class="db-stat-num db-accent-star">' + bmList.length + '</div><div class="db-stat-label">' + escapeHtml(tr('db.statBookmark')) + '</div></div>' +
+      '<div class="db-stat"><div class="db-stat-num">' + viewedCount + '</div><div class="db-stat-label">' + escapeHtml(tr('db.statViewed')) + '</div></div>' +
     '</div>';
 
     // ── 전체 진도 ──
-    html += '<section class="db-section"><div class="db-section-head"><h2>전체 진도</h2>' +
+    html += '<section class="db-section"><div class="db-section-head"><h2>' + escapeHtml(tr('db.secProgress')) + '</h2>' +
       '<span class="db-pct">' + pct(doneCount, total) + '%</span></div>' + bar(pct(doneCount, total)) + '</section>';
 
     // ── 이어서 학습 ──
     if (cont.length) {
-      html += '<section class="db-section"><div class="db-section-head"><h2>이어서 학습</h2></div>' +
+      html += '<section class="db-section"><div class="db-section-head"><h2>' + escapeHtml(tr('db.secContinue')) + '</h2></div>' +
         '<ul class="db-list">' + cont.map(cardLink).join('') + '</ul></section>';
     }
 
     // ── 카테고리별 진도 ──
-    html += '<section class="db-section"><div class="db-section-head"><h2>카테고리별 진도</h2></div>' +
+    html += '<section class="db-section"><div class="db-section-head"><h2>' + escapeHtml(tr('db.secByCat')) + '</h2></div>' +
       '<ul class="db-cats">' +
       cats.map(function (c) {
         var d = byCat[c];
         return '<li class="db-cat">' +
-          '<div class="db-cat-top"><span class="db-cat-name">' + escapeHtml(c) + '</span>' +
+          '<div class="db-cat-top"><span class="db-cat-name">' + escapeHtml(catLabel(c)) + '</span>' +
           '<span class="db-cat-num">' + d.done + '/' + d.total + '</span></div>' +
           bar(pct(d.done, d.total)) + '</li>';
       }).join('') +
@@ -87,8 +89,8 @@
 
     // ── 즐겨찾기 목록 ──
     if (bmList.length) {
-      html += '<section class="db-section"><div class="db-section-head"><h2>★ 즐겨찾기</h2>' +
-        '<span class="db-pct">' + bmList.length + '개</span></div>' +
+      html += '<section class="db-section"><div class="db-section-head"><h2>' + escapeHtml(tr('db.secBookmark')) + '</h2>' +
+        '<span class="db-pct">' + escapeHtml(tr('db.count', { n: bmList.length })) + '</span></div>' +
         '<ul class="db-list">' + bmList.map(cardLink).join('') + '</ul></section>';
     }
 
@@ -98,5 +100,5 @@
   fetch('data/topics.json')
     .then(function (res) { if (!res.ok) throw new Error('로드 실패'); return res.json(); })
     .then(function (data) { render(Array.isArray(data) ? data : []); })
-    .catch(function () { root.innerHTML = '<div class="db-empty">주제를 불러오지 못했습니다.</div>'; });
+    .catch(function () { root.innerHTML = '<div class="db-empty">' + escapeHtml(tr('db.loadError')) + '</div>'; });
 })();

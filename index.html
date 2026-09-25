@@ -41,9 +41,9 @@
   <meta property="og:url" content="https://www.xn--zb0bow85w7idd5f0pc46q.com/" />
   <meta property="og:locale" content="ko_KR" />
   <meta name="twitter:card" content="summary" />
-  <link rel="stylesheet" href="assets/css/style.css?v=19" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20" />
 </head>
-<body>
+<body data-i18n-title="title.index">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK8HCHKC"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -52,13 +52,13 @@
     <div class="wrap header-inner">
       <div class="header-left">
         <a href="index.html" class="brand">
-          <span class="brand-text">정보관리기술사 <b>학습 노트</b></span>
+          <span class="brand-text" data-i18n-html="brand.html">정보관리기술사 <b>학습 노트</b></span>
         </a>
-        <p class="tagline">주제별 답안형 요약을 하나씩 쌓아가는 공부 아카이브</p>
+        <p class="tagline" data-i18n="tagline">주제별 답안형 요약을 하나씩 쌓아가는 공부 아카이브</p>
       </div>
       <div class="header-right">
         <div id="dday-banner" class="dday-banner" hidden></div>
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드로 전환">🌙</button>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드로 전환" data-i18n-attr="aria-label:theme.toDark">🌙</button>
       </div>
     </div>
   </header>
@@ -73,11 +73,12 @@
           placeholder="주제·태그·카테고리 검색  (예: MSA, 옵저버빌리티, 제로트러스트, 정규화)"
           autocomplete="off"
           aria-label="주제 검색"
+          data-i18n-attr="aria-label:search.aria"
         />
       </div>
       <div class="search-extra">
-        <a class="fc-entry" href="dashboard.html">📊 내 학습 현황</a>
-        <a class="fc-entry" href="flashcards.html">🃏 플래시카드 · 퀴즈</a>
+        <a class="fc-entry" href="dashboard.html" data-i18n="nav.dashboard">📊 내 학습 현황</a>
+        <a class="fc-entry" href="flashcards.html" data-i18n="nav.flashcards">🃏 플래시카드 · 퀴즈</a>
       </div>
       <div class="list-toolbar">
         <div class="toolbar-left">
@@ -88,15 +89,15 @@
         <div class="filter-group">
           <label class="filter-chip" id="filter-bookmark-label">
             <input type="checkbox" id="filter-bookmark" />
-            <span>★ 즐겨찾기</span>
+            <span data-i18n="filter.bookmark">★ 즐겨찾기</span>
           </label>
           <label class="filter-chip" id="filter-undone-label">
             <input type="checkbox" id="filter-undone" />
-            <span>학습 전만</span>
+            <span data-i18n="filter.undone">학습 전만</span>
           </label>
           <label class="filter-chip" id="filter-unviewed-label" hidden>
             <input type="checkbox" id="filter-unviewed" />
-            <span>안 본 주제만</span>
+            <span data-i18n="filter.unviewed">안 본 주제만</span>
           </label>
         </div>
       </div>
@@ -104,36 +105,37 @@
 
     <section class="today-section" id="today-section" hidden>
       <div class="today-head">
-        <h2 class="today-label">🎯 오늘의 주제</h2>
-        <button type="button" class="today-random" id="today-random">🎲 랜덤 주제</button>
+        <h2 class="today-label" data-i18n="today.label">🎯 오늘의 주제</h2>
+        <button type="button" class="today-random" id="today-random" data-i18n="today.random">🎲 랜덤 주제</button>
       </div>
       <a class="today-card" id="today-card" href="#"></a>
     </section>
 
     <section class="recent-section" id="recent-section" hidden>
       <div class="recent-head">
-        <h2 class="recent-title">최근 본 주제</h2>
-        <button type="button" class="clear-viewed" id="clear-viewed">열람 기록 지우기</button>
+        <h2 class="recent-title" data-i18n="recent.title">최근 본 주제</h2>
+        <button type="button" class="clear-viewed" id="clear-viewed" data-i18n="recent.clear">열람 기록 지우기</button>
       </div>
       <ul class="recent-list" id="recent-list"></ul>
     </section>
 
     <section class="topic-section">
       <ul class="topic-list" id="topic-list"></ul>
-      <p class="empty-state" id="empty-state" hidden>검색 결과가 없습니다.</p>
+      <p class="empty-state" id="empty-state" data-i18n="empty.search" hidden>검색 결과가 없습니다.</p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <a class="feedback-link" href="mailto:woo880110-@naver.com?subject=%5B%EC%A0%95%EB%B3%B4%EA%B4%80%EB%A6%AC%EA%B8%B0%EC%88%A0%EC%82%AC%20%ED%95%99%EC%8A%B5%20%EB%85%B8%ED%8A%B8%5D%20%EC%9D%98%EA%B2%AC">의견 보내기</a>
+      <a class="feedback-link" href="mailto:woo880110-@naver.com?subject=%5B%EC%A0%95%EB%B3%B4%EA%B4%80%EB%A6%AC%EA%B8%B0%EC%88%A0%EC%82%AC%20%ED%95%99%EC%8A%B5%20%EB%85%B8%ED%8A%B8%5D%20%EC%9D%98%EA%B2%AC" data-i18n="feedback">의견 보내기</a>
     </div>
   </footer>
 
+  <script src="assets/js/i18n.js?v=1"></script>
   <script src="assets/js/theme.js?v=1"></script>
   <script src="assets/js/viewed.js?v=1"></script>
   <script src="assets/js/study.js?v=1"></script>
   <script src="assets/js/util.js?v=1"></script>
-  <script src="assets/js/main.js?v=16"></script>
+  <script src="assets/js/main.js?v=17"></script>
 </body>
 </html>
