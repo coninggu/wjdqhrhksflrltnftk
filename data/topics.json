@@ -6649,5 +6649,22 @@
     ],
     "summary": "실패하는 테스트를 먼저 작성하고(Red) 최소 구현으로 통과시킨 뒤(Green) 구조를 개선하는(Refactor) 짧은 사이클을 반복해, 실행 가능한 명세·느슨한 설계·회귀 안전망을 동시에 확보하는 진화적 개발 기법. FIRST 원칙·테스트 더블·고전파/런던파·BDD/ATDD 연계까지 심화.",
     "updated": "2026-09-25"
+  },
+  {
+    "id": "spiffe-spire-workload-identity",
+    "title": "SPIFFE/SPIRE 기반 워크로드 아이덴티티와 비밀 없는 서비스 인증",
+    "category": "보안·개인정보",
+    "tags": [
+      "SPIFFE",
+      "SPIRE",
+      "워크로드 아이덴티티",
+      "SVID",
+      "Workload API",
+      "mTLS",
+      "제로트러스트",
+      "비밀 없는 인증"
+    ],
+    "summary": "노드·워크로드 증명으로 동적 서비스에 SPIFFE ID와 단기 SVID를 자동 발급하고, Workload API·mTLS·신뢰 도메인 연합으로 장기 비밀 없는 서비스 인증과 최소권한을 구현하는 표준·운영 체계.",
+    "updated": "2026-09-25"
   }
 ]
