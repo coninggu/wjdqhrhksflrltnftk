@@ -14,7 +14,7 @@ LLMs have fundamental limitations: **hallucination**, i.e., generating plausible
 
 ```mermaid
 flowchart LR
-  subgraph 사전준비[Pre-indexing · Indexing]
+  subgraph PreIndex[Pre-indexing · Indexing]
     D[(Document repository)] --> CH[Chunking] --> EM[Embedding] --> V[(Vector DB)]
   end
   Q[User query] --> QE[Query embedding]
