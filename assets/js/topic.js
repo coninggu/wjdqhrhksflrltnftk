@@ -279,10 +279,25 @@
       linkHtml(next, tr('nav.next'), 'next');
   }
 
+  // CommonMark 강조 규칙은 공백 없는 언어(한국어 조사·일본어)에서 `**…(X)**은`처럼
+  // 닫는 **가 문장부호 뒤·글자 앞에 오면 굵게로 인식하지 못해 **가 그대로 노출된다.
+  // 코드 블록·인라인 코드를 제외한 한 줄 안의 **…**를 <strong>으로 미리 바꿔 보정한다.
+  function fixCjkEmphasis(md) {
+    var parts = md.split(/(^```[\s\S]*?^```[^\n]*$)/m);
+    for (var i = 0; i < parts.length; i += 2) {
+      // 인라인 코드는 자리표시자로 보호(굵게 안에 코드가 있어도 한 덩어리로 처리)
+      var codes = [];
+      var seg = parts[i].replace(/`[^`\n]*`/g, function (c) { codes.push(c); return '\u0000' + (codes.length - 1) + '\u0000'; });
+      seg = seg.replace(/\*\*(?=[^\s*])([^*\n]*?[^\s*])\*\*/g, '<strong>$1</strong>');
+      parts[i] = seg.replace(/\u0000(\d+)\u0000/g, function (m, n) { return codes[+n]; });
+    }
+    return parts.join('');
+  }
+
   function renderMarkdown(md) {
     if (window.marked && typeof window.marked.parse === 'function') {
       window.marked.setOptions({ gfm: true, breaks: false });
-      var html = window.marked.parse(md);
+      var html = window.marked.parse(fixCjkEmphasis(md));
       // XSS 방어: 파싱된 HTML을 DOMPurify로 정화한 뒤 삽입 (다층 방어)
       if (window.DOMPurify && typeof window.DOMPurify.sanitize === 'function') {
         html = window.DOMPurify.sanitize(html, {
