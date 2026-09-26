@@ -218,7 +218,7 @@ body {
   letter-spacing: .5px;
 }
 .brand-text { font-size: 19px; font-weight: 500; }
-.brand-text b { font-weight: 800; }
+.brand-text b { font-weight: 800; white-space: nowrap; } /* 일본어 등에서 "学習ノー/ト"처럼 끊기지 않게 */
 
 .tagline {
   margin: 12px 0 0;
@@ -565,6 +565,8 @@ body {
 
 /* Markdown */
 .markdown-body { font-size: 15.5px; }
+/* 공백 없는 긴 문자열(인라인 코드 URL·긴 약어 풀이)이 본문 폭을 넘지 않게 */
+.markdown-body p, .markdown-body li, .markdown-body blockquote { overflow-wrap: anywhere; }
 .markdown-body h1 { font-size: 26px; font-weight: 800; margin: 22px 0 14px; line-height: 1.35; }
 .markdown-body h2 {
   font-size: 20px; font-weight: 700; margin: 32px 0 12px;
@@ -575,11 +577,17 @@ body {
 .markdown-body ul, .markdown-body ol { padding-left: 22px; margin: 10px 0; }
 .markdown-body li { margin: 5px 0; }
 .markdown-body strong { color: var(--strong); }
-.markdown-body a { color: var(--primary); }
+.markdown-body a { color: var(--primary); overflow-wrap: anywhere; } /* 참고자료의 긴 URL이 모바일에서 가로 넘침 방지 */
 .markdown-body code {
   background: var(--soft-bg); padding: 2px 6px; border-radius: 5px;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em;
 }
+/* 코드블록: 긴 줄은 블록 안에서만 가로 스크롤(모바일에서 페이지 전체가 밀리지 않게) */
+.markdown-body pre {
+  overflow-x: auto; max-width: 100%;
+  background: var(--soft-bg); padding: 12px 14px; border-radius: 8px;
+}
+.markdown-body pre code { padding: 0; background: none; }
 .markdown-body blockquote {
   margin: 14px 0; padding: 8px 16px; border-left: 4px solid var(--accent);
   background: var(--quote-bg); color: var(--text-soft); border-radius: 0 8px 8px 0;
