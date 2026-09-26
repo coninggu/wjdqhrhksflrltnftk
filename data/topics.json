@@ -6776,5 +6776,20 @@
     ],
     "summary": "SBOM이 발견한 취약점 후보를 제품·버전·실행 맥락에 대입해 NOT AFFECTED·AFFECTED·FIXED·UNDER INVESTIGATION 상태와 근거로 전달하는 VEX의 데이터 모델·최소 요소·OpenVEX·CycloneDX·SPDX·CSAF 상호운용성, 자동화 파이프라인·공급자/소비자 책임·SaaS·금융·임베디드 적용과 기술사 관점의 위험 기반 운영 전략을 논술형으로 정리한다.",
     "updated": "2026-09-26"
+  },
+  {
+    "id": "email-authentication-spf-dkim-dmarc",
+    "title": "이메일 인증 체계(SPF·DKIM·DMARC)",
+    "category": "보안·개인정보",
+    "tags": [
+      "SPF",
+      "DKIM",
+      "DMARC",
+      "이메일보안",
+      "BEC",
+      "BIMI"
+    ],
+    "summary": "SMTP의 발신자 미검증 한계를 보완하기 위한 SPF(발신 IP 인가)·DKIM(전자서명 무결성)·DMARC(헤더 From 정렬·정책·리포트)의 원리와 상호 보완 관계, 정규화·정렬·ARC 등 세부 메커니즘, p=none에서 reject로의 단계적 도입 전략, 2024 대량 발송자 인증 의무화·BIMI 최신 동향과 흔한 오구성, 기술사 관점의 운영 시사점을 논술형으로 정리한다.",
+    "updated": "2026-09-26"
   }
 ]
