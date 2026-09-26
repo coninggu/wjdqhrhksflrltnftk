@@ -101,6 +101,7 @@
   function injectJsonLd(topic) {
     if (!topic) return;
     var url = SITE_BASE + '/topic.html?id=' + encodeURIComponent(topic.id || id);
+    if (window.I18N && window.I18N.explicit && LANG !== 'ko') url += '&lang=' + LANG;
     var article = {
       '@context': 'https://schema.org',
       '@type': 'Article',
@@ -127,6 +128,8 @@
   // 주제별 SEO 메타 태그 갱신 (title/description/canonical/OG)
   function updateSeoMeta(topic) {
     var url = SITE_BASE + '/topic.html?id=' + encodeURIComponent(topic.id || id);
+    // 번역본(?lang=en/ja)은 canonical이 자기 언어 URL을 가리켜야 색인이 분리된다
+    if (window.I18N && window.I18N.explicit && LANG !== 'ko') url += '&lang=' + LANG;
     var desc = topic.summary || '정보관리기술사 시험 대비 주제별 답안형 요약 노트';
     var set = function (elId, attr, value) {
       var el = document.getElementById(elId);

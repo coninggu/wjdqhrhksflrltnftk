@@ -374,17 +374,21 @@
     }
   };
 
+  // SEO: 쿼리 없는 URL은 항상 한국어(기본)로 렌더링해 크롤러(구글봇은 en-US로 렌더링)가
+  // 원문을 색인하게 한다. 브라우저 언어로 자동 전환하지 않고, 대신 번역본 안내 배너만 띄운다.
+  var explicit = false;   // URL에 ?lang= 이 명시됐는가
+  var suggest = null;     // 안내 배너로 권할 언어(브라우저 언어가 en/ja인 첫 방문자)
   function resolveLang() {
     var q;
     try {
       var p = new URLSearchParams(window.location.search).get('lang');
       if (p && SUPPORTED.indexOf(p) !== -1) q = p;
     } catch (e) {}
-    if (q) { try { localStorage.setItem(KEY, q); } catch (e) {} return q; }
+    if (q) { explicit = true; try { localStorage.setItem(KEY, q); } catch (e) {} return q; }
     try { var s = localStorage.getItem(KEY); if (s && SUPPORTED.indexOf(s) !== -1) return s; } catch (e) {}
     try {
       var nav = (navigator.language || '').slice(0, 2).toLowerCase();
-      if (SUPPORTED.indexOf(nav) !== -1) return nav;
+      if (nav !== DEFAULT && SUPPORTED.indexOf(nav) !== -1) suggest = nav;
     } catch (e) {}
     return DEFAULT;
   }
@@ -482,7 +486,58 @@
     });
   }
 
-  window.I18N = { lang: lang, t: t, category: category, apply: apply, supported: SUPPORTED, DEFAULT: DEFAULT };
+  // 언어 명시 페이지(?lang=en/ja)는 canonical이 자기 자신을 가리키도록 lang을 붙인다
+  // (안 그러면 검색엔진이 번역본을 한국어 URL로 통합해 버림). og:locale도 맞춘다.
+  function localizeSeoTags() {
+    var ogLocale = { ko: 'ko_KR', en: 'en_US', ja: 'ja_JP' }[lang];
+    var og = document.querySelector('meta[property="og:locale"]');
+    if (og && ogLocale) og.setAttribute('content', ogLocale);
+    if (!explicit || lang === DEFAULT) return;
+    var c = document.querySelector('link[rel="canonical"]');
+    if (!c) return;
+    try {
+      var u = new URL(c.getAttribute('href'), window.location.href);
+      u.searchParams.set('lang', lang);
+      c.setAttribute('href', u.toString());
+    } catch (e) {}
+  }
+
+  // 첫 방문자의 브라우저 언어가 en/ja면 해당 언어로 "번역본 보기" 배너를 띄운다
+  var SUGGEST = {
+    en: { msg: 'This page is also available in English.', go: 'View in English', no: 'Keep Korean' },
+    ja: { msg: 'このページは日本語でもご覧いただけます。', go: '日本語で見る', no: '韓国語のまま' }
+  };
+  function injectSuggestBanner() {
+    if (!suggest || !SUGGEST[suggest] || !document.body) return;
+    var s = SUGGEST[suggest];
+    var bar = document.createElement('div');
+    bar.className = 'lang-suggest';
+    bar.setAttribute('lang', suggest);
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', s.msg);
+    var msg = document.createElement('span');
+    msg.textContent = s.msg;
+    var go = document.createElement('a');
+    go.className = 'lang-suggest-go';
+    go.setAttribute('href', urlForLang(suggest));
+    go.setAttribute('hreflang', suggest);
+    go.textContent = s.go;
+    go.addEventListener('click', function () { try { localStorage.setItem(KEY, suggest); } catch (e) {} });
+    var no = document.createElement('button');
+    no.type = 'button';
+    no.className = 'lang-suggest-no';
+    no.textContent = s.no;
+    no.addEventListener('click', function () {
+      try { localStorage.setItem(KEY, DEFAULT); } catch (e) {}
+      bar.remove();
+    });
+    bar.appendChild(msg);
+    bar.appendChild(go);
+    bar.appendChild(no);
+    document.body.insertBefore(bar, document.body.firstChild);
+  }
+
+  window.I18N = { lang: lang, explicit: explicit, t: t, category: category, apply: apply, supported: SUPPORTED, DEFAULT: DEFAULT };
 
   document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : lang);
 
@@ -493,6 +548,8 @@
     if (titleKey) document.title = t(titleKey);
     injectSwitcher();
     injectHreflang();
+    localizeSeoTags();
+    injectSuggestBanner();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
