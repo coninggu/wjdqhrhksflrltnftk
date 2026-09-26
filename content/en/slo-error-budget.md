@@ -364,8 +364,6 @@ Eighth, the level of instrumentation is adjusted so that observability costs do 
 High-cardinality labels and long-term raw retention can inflate costs, so core SLO calculation data and detailed investigation data are divided into retention tiers.
 Representative sampling and error/latency-first retention policies are validated so that cost reduction does not impair error analysis capability.
 
-## 9. Summary in One Line
-
 ---
 
 > **In one line**: The core of data-driven service operations is to measure user-centric reliability with SLIs, set targets with SLOs, and then adjust deployment, stabilization, and investment according to the burn rate of the error budget.
