@@ -125,7 +125,7 @@ flowchart TB
 5. **コスト・性能・主権(Sovereignty)のバランス**: クラウド統合防御は強力であるが、トラフィックコスト・ロックイン(Lock-in)・データ主権の問題を伴う。公共・金融のようにデータの国外移転に敏感な領域では国内の浄化センターとリバースプロキシの組み合わせを、グローバルサービスではCDNエッジ防御を選択するなど、サービスの性格に適したアーキテクチャ戦略が求められる。
 
 ## 参考資料
-- KISA 보호나라, DDoSサイバー待避所サービス案内: https://www.boho.or.kr/
+- KISA（韓国インターネット振興院）ボホナラ, DDoSサイバー待避所サービス案内: https://www.boho.or.kr/
 - Cloudflare Learning Center, "What is a reverse proxy?": https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/
 - Cloudflare, HTTP/2 Rapid Reset (CVE-2023-44487) の分析: https://blog.cloudflare.com/technical-breakdown-http2-rapid-reset-ddos-attack/
 - OWASP ModSecurity Core Rule Set(CRS): https://coreruleset.org/
