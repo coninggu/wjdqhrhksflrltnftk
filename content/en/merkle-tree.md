@@ -114,7 +114,7 @@ For example, when verifying the third of four leaves, one needs the hash of the 
 
 The verifier must also check whether the index in the proof is within range, whether the path length matches the expected height, and whether the hash algorithm and domain tag match the root metadata. Without length verification, abnormally long proofs or memory-exhausting inputs can lead to denial of service.
 
-Verification cost is proportional to the number of hash computations and the proof size. In a balanced binary tree with n records, the path length is approximately \(\lceil log_2 n ceil\), and proof data is on the order of O(log n) compared with the total data size O(n).
+Verification cost is proportional to the number of hash computations and the proof size. In a balanced binary tree with n records, the path length is approximately \(\lceil \log_2 n \rceil\), and proof data is on the order of O(log n) compared with the total data size O(n).
 
 ### C. Non-existence Proofs and Range Proofs
 
