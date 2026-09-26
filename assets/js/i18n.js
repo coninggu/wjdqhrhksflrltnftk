@@ -14,6 +14,9 @@
       'title.flashcards': '플래시카드 · 정보관리기술사 학습 노트',
       'brand.html': '정보관리기술사 <b>학습 노트</b>',
       'tagline': '주제별 답안형 요약을 하나씩 쌓아가는 공부 아카이브',
+      'desc.index': '정보관리기술사 시험 대비 주제별 답안형 요약 노트',
+      'desc.dashboard': '정보관리기술사 학습 노트의 내 학습 진도·즐겨찾기·이어서 학습 대시보드',
+      'desc.flashcards': '정보관리기술사 주제를 플래시카드와 4지선다 퀴즈로 암기·복습',
       'lang.label': '언어 선택',
       'theme.toDark': '다크 모드로 전환',
       'theme.toLight': '라이트 모드로 전환',
@@ -139,6 +142,9 @@
       'title.flashcards': 'Flashcards · IM Engineer Study Notes',
       'brand.html': 'IM Engineer <b>Study Notes</b>',
       'tagline': 'A study archive building up exam-style answer notes, one topic at a time',
+      'desc.index': 'Essay-style study notes for the Korean Professional Engineer (Information Management) exam — 450+ IT topics from AI and cloud to security, databases and project management.',
+      'desc.dashboard': 'Your study progress, bookmarks and topics to continue in IM Engineer Study Notes.',
+      'desc.flashcards': 'Review IT exam topics with flashcards and 4-choice quizzes.',
       'lang.label': 'Select language',
       'theme.toDark': 'Switch to dark mode',
       'theme.toLight': 'Switch to light mode',
@@ -259,6 +265,9 @@
       'title.flashcards': 'フラッシュカード · 情報管理技術士 学習ノート',
       'brand.html': '情報管理技術士 <b>学習ノート</b>',
       'tagline': 'テーマ別の論述式まとめを一つずつ積み上げる学習アーカイブ',
+      'desc.index': '韓国の情報管理技術士試験に向けた論述式学習ノート。AI・クラウド・セキュリティ・データベース・プロジェクト管理など450以上のITテーマを収録。',
+      'desc.dashboard': '情報管理技術士 学習ノートの学習進捗・お気に入り・続きから学習できるダッシュボード。',
+      'desc.flashcards': 'ITテーマをフラッシュカードと4択クイズで暗記・復習。',
       'lang.label': '言語を選択',
       'theme.toDark': 'ダークモードに切替',
       'theme.toLight': 'ライトモードに切替',
@@ -499,6 +508,8 @@
       var u = new URL(c.getAttribute('href'), window.location.href);
       u.searchParams.set('lang', lang);
       c.setAttribute('href', u.toString());
+      var ou = document.querySelector('meta[property="og:url"]');
+      if (ou) ou.setAttribute('content', u.toString());
     } catch (e) {}
   }
 
@@ -541,11 +552,24 @@
 
   document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : lang);
 
+  function setMeta(sel, val) {
+    var m = document.querySelector(sel);
+    if (m && val) m.setAttribute('content', val);
+  }
+
   function init() {
     apply(document);
     // 정적 페이지의 <title> 로케일화 (topic.js는 자체적으로 제목 설정하므로 제외)
     var titleKey = document.body && document.body.getAttribute('data-i18n-title');
     if (titleKey) document.title = t(titleKey);
+    // 정적 페이지의 meta description·og 태그도 언어에 맞춘다(검색 결과 스니펫용)
+    if (titleKey && lang !== DEFAULT) {
+      var descKey = titleKey.replace(/^title\./, 'desc.');
+      setMeta('meta[name="description"]', t(descKey));
+      setMeta('meta[property="og:description"]', t(descKey));
+      setMeta('meta[property="og:title"]', document.title);
+      setMeta('meta[property="og:site_name"]', t('site.name'));
+    }
     injectSwitcher();
     injectHreflang();
     localizeSeoTags();
