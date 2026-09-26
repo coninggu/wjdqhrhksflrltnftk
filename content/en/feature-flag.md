@@ -140,7 +140,7 @@ For example, with 10 independent flags there are theoretically 2^10 = 1024 combi
 
 The biggest practical risk of feature flags is not the feature but **the accumulation of flags that were not removed**.
 A release toggle should originally be removed within a few weeks, but if left "just in case," dead branches pile up throughout the code.
-The 2017 Knight Capital incident is cited as a case where a reused old flag revived a retired code path and produced a loss of about USD 440 million in 45 minutes, showing how fatal a neglected flag can be.
+The 2012 Knight Capital incident is cited as a case where a reused old flag revived a retired code path and produced a loss of about USD 440 million in 45 minutes, showing how fatal a neglected flag can be.
 Therefore mature organizations assign an expiration date to each flag, continuously track expired flags with static analysis·dashboards, and incorporate cleanup work as a regular sprint activity.
 
 From a governance perspective, one must recognize that a flag is a "configuration change" that alters production behavior.
