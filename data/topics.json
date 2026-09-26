@@ -6759,5 +6759,22 @@
     ],
     "summary": "원본을 k개 데이터+m개 패리티(총 n=k+m) 조각으로 부호화해 임의의 k개만으로 복원하는 MDS 오류정정 기법인 소거 코딩의 원리(생성행렬·GF연산)·아키텍처·(k,m) 파라미터 트레이드오프·복제와의 비교·재구축 비용과 LRC/재생부호·무결성 스크러빙, f4·S3·Ceph·HDFS-EC 적용 사례와 기술사 관점의 스토리지 보호 정책 설계를 논술형으로 정리한다.",
     "updated": "2026-09-26"
+  },
+  {
+    "id": "vex-vulnerability-exploitability-exchange",
+    "title": "VEX 기반 SBOM 취약점 영향분석과 소프트웨어 공급망 대응",
+    "category": "보안·개인정보",
+    "tags": [
+      "VEX",
+      "VulnerabilityExploitabilityExchange",
+      "SBOM",
+      "SCA",
+      "소프트웨어공급망",
+      "취약점관리",
+      "OpenVEX",
+      "CSAF"
+    ],
+    "summary": "SBOM이 발견한 취약점 후보를 제품·버전·실행 맥락에 대입해 NOT AFFECTED·AFFECTED·FIXED·UNDER INVESTIGATION 상태와 근거로 전달하는 VEX의 데이터 모델·최소 요소·OpenVEX·CycloneDX·SPDX·CSAF 상호운용성, 자동화 파이프라인·공급자/소비자 책임·SaaS·금융·임베디드 적용과 기술사 관점의 위험 기반 운영 전략을 논술형으로 정리한다.",
+    "updated": "2026-09-26"
   }
 ]
