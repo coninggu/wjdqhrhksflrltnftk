@@ -46,13 +46,13 @@ For a Tor client to build a circuit, it must first know "which relays exist and 
 
 Nodes are divided by role. The **Entry (Guard)** node is in the sensitive position of directly seeing the sender's real IP, so it is not changed randomly every time but fixed for a certain period (guard rotation) to lower the probability of accidentally landing on a malicious entry. The **Exit** node communicates directly with destinations, so it is easily exposed to abuse and legal liability controversies, and relatively few volunteers operate them. This role-specific risk asymmetry directly affects the performance and availability of the Tor network.
 
-### C. The Reality of Performance and Usability
+### B. The Reality of Performance and Usability
 
 Tor is slow as an inevitable price of its anonymity design. Data physically passes through at least three nodes to reach its destination, and the computation of peeling off encryption layers at each hop is added. Because nodes are scattered around the world, geographic round-trip time (RTT) grows, and volunteer relays' bandwidths vary, creating bottlenecks. In particular, when exit nodes are scarce and traffic concentrates on a few nodes, overall perceived speed drops.
 
 This performance characteristic also affects usability. Some websites require CAPTCHAs for connections from Tor exit IPs or block them outright to prevent abuse, and Tor is unsuitable for streaming and large transfers. So it is realistic to use Tor not as "all traffic through Tor all the time" but **selectively for activities that truly need anonymity**. Conversely, VPN, being single-hop with dedicated infrastructure, has low latency and is suitable for everyday continuous use — this performance gap itself is the practical factor that separates the uses of the two technologies.
 
-### B. Onion Services (Dark Web)
+### C. Onion Services (Dark Web)
 
 Tor provides not only client anonymity but also **server anonymity**. **Onion Services (formerly hidden services)**, accessed via `.onion` addresses, do not expose the server's real IP; the client and server each build a Tor circuit and then meet at a rendezvous point to communicate. Thanks to this structure, news tip channels that are hard to censor or block (e.g., SecureDrop at major news organizations) and privacy services are operated, while the same anonymity is also abused for so-called "dark web" crime such as illegal marketplaces. Technology is neutral, and its benefits and harms come from the same root.
 
