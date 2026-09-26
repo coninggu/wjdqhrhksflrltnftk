@@ -45,8 +45,22 @@
 3. `id` 중복 금지, `content/<id>.md`와 1:1 정합 유지
 4. 기출 주제는 태그에 회차(예: `133회`) 포함
 
+## 다국어(i18n) — 한국어 원본 + en/ja 번역
+- 한국어가 원본이다. 번역본: `content/en/<id>.md`, `content/ja/<id>.md`, 제목·요약은 `data/i18n/topics.{en,ja}.json`
+  (`{"<id>": {"title", "summary", "sourceUpdated"}}`, 들여쓰기 1칸, 파일 끝 개행 없음)
+- **한국어 주제를 추가하거나 보강(updated 변경)하면 en·ja 번역도 같은 커밋에서 새로 만든다.**
+  번역 누락·구식 여부는 `node scripts/i18n-status.js`로 확인한다(문제 있으면 exit 1).
+- 번역 규칙:
+  - 마크다운 구조(제목·표·목록·인용·코드펜스 수)와 줄 수를 원본과 최대한 같게 유지, `[[slug]]`·URL·수치·수식은 그대로
+  - mermaid는 문법·노드 ID는 두고 라벨만 번역(한글 노드 ID는 ASCII로 바꾸고 모든 참조를 함께 수정). chart JSON은 문자열 값만 번역
+  - 코드 밖에 한글이 남지 않게 한다. 소항목 가/나/다/라 → A/B/C/D
+  - en: 마지막 줄 `> **In one line**: ...` / ja: である調, 기술사 → 技術士, 마지막 줄 `> **一言まとめ**: ...`(ASCII 콜론)
+- 번역을 끝내면 `node scripts/i18n-status.js --stamp <id>`로 완료 표시(sourceUpdated 기록) 후 `node scripts/gen-sitemap.js`
+- `sitemap.xml`은 언어별 URL을 담는다: 언어마다 `주제 수 + 2`(홈·플래시카드), 번역본이 없는 주제는 해당 언어 URL 제외
+
 ## 검증
-- JSON 유효성 + `content/<id>.md` 정합성 확인
+- JSON 유효성 + `content/<id>.md` 정합성 확인 (`content/en`·`content/ja` 하위 폴더는 고아 검사 대상 아님)
+- `node scripts/i18n-status.js` 통과
 - 로컬 서버(`python3 -m http.server`)로 렌더 확인(표·mermaid·이전/다음 네비)
 
 ## 카테고리(예)
