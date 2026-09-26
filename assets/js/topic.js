@@ -4,6 +4,9 @@
   const bodyEl = document.getElementById('markdown-body');
 
   const escapeHtml = window.IMN.escapeHtml;
+  const tr = (window.I18N && window.I18N.t) ? window.I18N.t : (k) => k;
+  const catLabel = (window.I18N && window.I18N.category) ? window.I18N.category : (c) => (c || '기타');
+  const LANG = (window.I18N && window.I18N.lang) || 'ko';
 
   function showError(msg) {
     bodyEl.innerHTML = `<div class="error-box">${escapeHtml(msg)}</div>`;
@@ -16,7 +19,7 @@
 
   if (!id || !/^[a-z0-9][a-z0-9-]*$/i.test(id)) {
     metaEl.innerHTML = '';
-    showError('유효한 주제 id가 없습니다. 목록에서 주제를 선택해 주세요.');
+    showError(tr('error.invalidId'));
     return;
   }
 
@@ -81,7 +84,7 @@
     if (!rel.length) { sec.hidden = true; return; }
     list.innerHTML = rel.map((t) =>
       '<li><a class="related-card" href="topic.html?id=' + encodeURIComponent(t.id) + '">' +
-        '<span class="related-cat">' + escapeHtml(t.category || '기타') + '</span>' +
+        '<span class="related-cat">' + escapeHtml(catLabel(t.category)) + '</span>' +
         '<span class="related-title">' + escapeHtml(t.title) + '</span>' +
       '</a></li>'
     ).join('');
@@ -98,15 +101,16 @@
   function injectJsonLd(topic) {
     if (!topic) return;
     var url = SITE_BASE + '/topic.html?id=' + encodeURIComponent(topic.id || id);
+    if (window.I18N && window.I18N.explicit && LANG !== 'ko') url += '&lang=' + LANG;
     var article = {
       '@context': 'https://schema.org',
       '@type': 'Article',
       headline: topic.title || '',
       description: topic.summary || '',
-      inLanguage: 'ko-KR',
+      inLanguage: { ko: 'ko-KR', en: 'en', ja: 'ja' }[LANG] || 'ko-KR',
       mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-      author: { '@type': 'Organization', name: '정보관리기술사 학습 노트' },
-      publisher: { '@type': 'Organization', name: '정보관리기술사 학습 노트' },
+      author: { '@type': 'Organization', name: tr('site.name') },
+      publisher: { '@type': 'Organization', name: tr('site.name') },
       url: url
     };
     if (topic.updated) { article.datePublished = topic.updated; article.dateModified = topic.updated; }
@@ -124,6 +128,8 @@
   // 주제별 SEO 메타 태그 갱신 (title/description/canonical/OG)
   function updateSeoMeta(topic) {
     var url = SITE_BASE + '/topic.html?id=' + encodeURIComponent(topic.id || id);
+    // 번역본(?lang=en/ja)은 canonical이 자기 언어 URL을 가리켜야 색인이 분리된다
+    if (window.I18N && window.I18N.explicit && LANG !== 'ko') url += '&lang=' + LANG;
     var desc = topic.summary || '정보관리기술사 시험 대비 주제별 답안형 요약 노트';
     var set = function (elId, attr, value) {
       var el = document.getElementById(elId);
@@ -149,14 +155,14 @@
         btnBm.classList.toggle('is-on', on);
         btnBm.setAttribute('aria-pressed', String(on));
         const lbl = btnBm.querySelector('.study-label');
-        if (lbl) lbl.textContent = on ? '즐겨찾기됨' : '즐겨찾기';
+        if (lbl) lbl.textContent = on ? tr('topic.bookmarked') : tr('topic.bookmark');
       }
       if (btnDn) {
         const on = window.StudyStore.isDone(id);
         btnDn.classList.toggle('is-on', on);
         btnDn.setAttribute('aria-pressed', String(on));
         const lbl = btnDn.querySelector('.study-label');
-        if (lbl) lbl.textContent = on ? '학습완료됨' : '학습완료';
+        if (lbl) lbl.textContent = on ? tr('topic.doned') : tr('topic.done');
       }
     };
 
@@ -243,15 +249,15 @@
 
   function renderMeta(topic) {
     if (!topic) return;
-    document.title = `${topic.title} · 정보관리기술사 학습 노트`;
+    document.title = `${topic.title} · ${tr('site.name')}`;
     updateSeoMeta(topic);
     const tags = (topic.tags || [])
       .map((tag) => `<span class="tag">#${escapeHtml(tag)}</span>`)
       .join('');
     metaEl.innerHTML = `
-      <span class="card-category">${escapeHtml(topic.category || '기타')}</span>
+      <span class="card-category">${escapeHtml(catLabel(topic.category))}</span>
       <div class="meta-tags">${tags}</div>
-      ${topic.updated ? `<div class="meta-updated">최종 업데이트 · ${escapeHtml(topic.updated)}</div>` : ''}
+      ${topic.updated ? `<div class="meta-updated">${escapeHtml(tr('meta.updated', { date: topic.updated }))}</div>` : ''}
     `;
   }
 
@@ -272,14 +278,29 @@
         '<span class="nav-title">' + escapeHtml(topic.title) + '</span></a>';
     };
     navEl.innerHTML =
-      linkHtml(prev, '← 이전 주제', 'prev') +
-      linkHtml(next, '다음 주제 →', 'next');
+      linkHtml(prev, tr('nav.prev'), 'prev') +
+      linkHtml(next, tr('nav.next'), 'next');
+  }
+
+  // CommonMark 강조 규칙은 공백 없는 언어(한국어 조사·일본어)에서 `**…(X)**은`처럼
+  // 닫는 **가 문장부호 뒤·글자 앞에 오면 굵게로 인식하지 못해 **가 그대로 노출된다.
+  // 코드 블록·인라인 코드를 제외한 한 줄 안의 **…**를 <strong>으로 미리 바꿔 보정한다.
+  function fixCjkEmphasis(md) {
+    var parts = md.split(/(^```[\s\S]*?^```[^\n]*$)/m);
+    for (var i = 0; i < parts.length; i += 2) {
+      // 인라인 코드는 자리표시자로 보호(굵게 안에 코드가 있어도 한 덩어리로 처리)
+      var codes = [];
+      var seg = parts[i].replace(/`[^`\n]*`/g, function (c) { codes.push(c); return '\u0000' + (codes.length - 1) + '\u0000'; });
+      seg = seg.replace(/\*\*(?=[^\s*])([^*\n]*?[^\s*])\*\*/g, '<strong>$1</strong>');
+      parts[i] = seg.replace(/\u0000(\d+)\u0000/g, function (m, n) { return codes[+n]; });
+    }
+    return parts.join('');
   }
 
   function renderMarkdown(md) {
     if (window.marked && typeof window.marked.parse === 'function') {
       window.marked.setOptions({ gfm: true, breaks: false });
-      var html = window.marked.parse(md);
+      var html = window.marked.parse(fixCjkEmphasis(md));
       // XSS 방어: 파싱된 HTML을 DOMPurify로 정화한 뒤 삽입 (다층 방어)
       if (window.DOMPurify && typeof window.DOMPurify.sanitize === 'function') {
         html = window.DOMPurify.sanitize(html, {
@@ -332,7 +353,7 @@
       } catch (e) {
         const err = document.createElement('div');
         err.className = 'error-box';
-        err.textContent = '차트 데이터(JSON) 형식 오류: ' + e.message;
+        err.textContent = tr('error.chartJson', { msg: e.message });
         pre.replaceWith(err);
         return;
       }
@@ -366,7 +387,7 @@
     const pill = document.createElement('div');
     pill.className = 'read-pill';
     pill.setAttribute('aria-live', 'off');
-    pill.textContent = '0% 읽음';
+    pill.textContent = tr('read.pill', { pct: 0 });
 
     document.body.appendChild(bar);
     document.body.appendChild(pill);
@@ -385,7 +406,7 @@
     function update() {
       const pct = calc();
       fill.style.width = pct + '%';
-      pill.textContent = pct + '% 읽음';
+      pill.textContent = tr('read.pill', { pct: pct });
       pill.classList.toggle('is-done', pct >= 100);
       ticking = false;
     }
@@ -411,6 +432,9 @@
     .then((res) => (res.ok ? res.json() : []))
     .then((topics) => {
       allTopics = Array.isArray(topics) ? topics : [];
+      return window.IMN.localizeTopics(allTopics); // 제목·요약 번역 오버레이(비한국어)
+    })
+    .then(() => {
       currentTopic = allTopics.find((t) => t.id === id) || null;
       renderMeta(currentTopic);
       renderNav(allTopics);
@@ -421,21 +445,41 @@
       // 제목이 확정된 뒤(메타 성공 시 실제 주제 제목) page_view 1회 전송.
       // 메타 실패해도 폴백으로 최소 1회는 집계되도록 여기서 호출.
       sendPageView();
-      fetch(`content/${id}.md`)
-        .then((res) => {
-          if (!res.ok) throw new Error('해당 주제 내용을 찾을 수 없습니다 (' + res.status + ')');
-          return res.text();
-        })
-        .then((md) => {
-          renderMarkdown(md);
+      loadLocalizedContent()
+        .then((r) => {
+          renderMarkdown(r.md);
+          if (r.fallback) prependFallbackNotice(); // 번역본 없음 → 한국어 원문 안내
           applyFs(getFsLevel()); // 렌더 후 저장된 글자 크기 재적용
           buildToc();            // 본문 헤딩으로 목차 생성
           // 본문이 정상 렌더된 주제만 열람 기록에 남긴다 (로드 실패는 제외)
           if (window.ViewedStore) window.ViewedStore.markViewed(id);
           setupReadingProgress();
           // 관련 주제 추천 (본문의 [[링크]] + 카테고리·태그 기반)
-          renderRelated(md);
+          renderRelated(r.md);
         })
         .catch((err) => showError(err.message));
     });
+
+  // 로케일 본문 로드: 비한국어면 content/<lang>/<id>.md 시도, 없으면 한국어로 폴백.
+  function loadLocalizedContent() {
+    const koUrl = `content/${id}.md`;
+    const readOk = (res) => {
+      if (!res.ok) throw new Error(tr('error.notFound', { status: res.status }));
+      return res.text();
+    };
+    if (LANG === 'ko') {
+      return fetch(koUrl).then(readOk).then((md) => ({ md: md, fallback: false }));
+    }
+    return fetch(`content/${LANG}/${id}.md`).then((res) => {
+      if (res.ok) return res.text().then((md) => ({ md: md, fallback: false }));
+      return fetch(koUrl).then(readOk).then((md) => ({ md: md, fallback: true }));
+    });
+  }
+
+  function prependFallbackNotice() {
+    const note = document.createElement('div');
+    note.className = 'lang-fallback-note';
+    note.textContent = tr('notice.fallbackLang');
+    bodyEl.insertBefore(note, bodyEl.firstChild);
+  }
 })();

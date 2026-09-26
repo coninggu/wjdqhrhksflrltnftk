@@ -19,6 +19,13 @@
 
   let topics = [];
 
+  // i18n 헬퍼 (i18n.js 미로드 시에도 안전하게 원문 키 반환). 지역 변수 t(주제)와
+  // 충돌하지 않도록 tr로 둔다.
+  const tr = (window.I18N && window.I18N.t) ? window.I18N.t : (k) => k;
+  const catLabel = (window.I18N && window.I18N.category) ? window.I18N.category : (c) => (c || '기타');
+  const LANG = (window.I18N && window.I18N.lang) || 'ko';
+  const LOCALE_TAG = { ko: 'ko-KR', en: 'en-US', ja: 'ja-JP' }[LANG] || 'ko-KR';
+
   // 2026 정보관리기술사 정기 일정 (원서접수: 첫날 10:00 ~ 마지막날 18:00)
   const EXAM_SCHEDULE = [
     { round: 138, regOpen: '2026-01-06T10:00:00', regClose: '2026-01-09T18:00:00', written: '2026-02-07' },
@@ -26,19 +33,23 @@
     { round: 140, regOpen: '2026-07-13T10:00:00', regClose: '2026-07-16T18:00:00', written: '2026-08-22' }
   ];
 
-  const WD = ['일', '월', '화', '수', '목', '금', '토'];
   const DAY = 86400000;
   const pad2 = (n) => ('0' + n).slice(-2);
-  const fmtDate = (d) => (d.getMonth() + 1) + '.' + d.getDate() + '(' + WD[d.getDay()] + ')';
+  const wdShort = (d) => {
+    try { return new Intl.DateTimeFormat(LOCALE_TAG, { weekday: 'short' }).format(d); }
+    catch (e) { return ['일', '월', '화', '수', '목', '금', '토'][d.getDay()]; }
+  };
+  const fmtDate = (d) => (d.getMonth() + 1) + '.' + d.getDate() + '(' + wdShort(d) + ')';
   const fmtDateTime = (d) => fmtDate(d) + ' ' + pad2(d.getHours()) + ':' + pad2(d.getMinutes());
   const ddayNum = (ms) => Math.ceil(ms / DAY);
+  const dayUnit = { ko: '일 ', en: 'd ', ja: '日 ' }[LANG] || 'd ';
   function remStr(ms) {
     if (ms <= 0) return '00:00:00';
     const days = Math.floor(ms / DAY);
     const hh = Math.floor((ms % DAY) / 3600000);
     const mm = Math.floor((ms % 3600000) / 60000);
     const ss = Math.floor((ms % 60000) / 1000);
-    return (days > 0 ? days + '일 ' : '') + pad2(hh) + ':' + pad2(mm) + ':' + pad2(ss);
+    return (days > 0 ? days + dayUnit : '') + pad2(hh) + ':' + pad2(mm) + ':' + pad2(ss);
   }
   function rowHtml(badge, badgeCls, label, sub, timer) {
     return '<span class="dday-badge ' + (badgeCls || '') + '">' + badge + '</span>' +
@@ -56,7 +67,7 @@
       if (new Date(e.written + 'T00:00:00') >= today) { next = e; break; }
     }
     if (!next) {
-      banner.innerHTML = '<div class="dday-inner"><span class="dday-text">다음 정기 필기시험 일정이 공개되면 표시됩니다</span></div>';
+      banner.innerHTML = '<div class="dday-inner"><span class="dday-text">' + tr('dday.none') + '</span></div>';
       banner.hidden = false;
       return;
     }
@@ -74,28 +85,31 @@
     const short = (d) => (d.getMonth() + 1) + '.' + d.getDate();
     const regRange = short(regOpen) + '~' + short(regClose);
 
+    const roundLbl = tr('dday.round', { round: next.round });
+    const regLbl = '<b>' + tr('dday.reg') + '</b>';
+    const examLbl = '<b>' + tr('dday.exam') + '</b>';
     function tick() {
-      const t = Date.now();
+      const now = Date.now();
       // 필기 원서접수
-      if (t < regOpen.getTime()) {
-        const ms = regOpen.getTime() - t;
+      if (now < regOpen.getTime()) {
+        const ms = regOpen.getTime() - now;
         regEl.className = 'dday-row';
-        regEl.innerHTML = rowHtml('D-' + ddayNum(ms), '', '제' + next.round + '회 <b>원서접수</b>', regRange, remStr(ms));
-      } else if (t <= regClose.getTime()) {
-        const ms = regClose.getTime() - t;
+        regEl.innerHTML = rowHtml('D-' + ddayNum(ms), '', roundLbl + ' ' + regLbl, regRange, remStr(ms));
+      } else if (now <= regClose.getTime()) {
+        const ms = regClose.getTime() - now;
         regEl.className = 'dday-row';
-        regEl.innerHTML = rowHtml('접수중', 'badge-live', '제' + next.round + '회 <b>원서접수</b> 마감', '~' + short(regClose) + ' 18:00', remStr(ms));
+        regEl.innerHTML = rowHtml(tr('dday.live'), 'badge-live', roundLbl + ' ' + regLbl + ' ' + tr('dday.regClose'), '~' + short(regClose) + ' 18:00', remStr(ms));
       } else {
         regEl.className = 'dday-row is-muted';
-        regEl.innerHTML = rowHtml('마감', 'badge-muted', '제' + next.round + '회 <b>원서접수</b> 종료', regRange, null);
+        regEl.innerHTML = rowHtml(tr('dday.closed'), 'badge-muted', roundLbl + ' ' + regLbl + ' ' + tr('dday.regEnd'), regRange, null);
       }
       // 필기시험
-      const ems = exam.getTime() - t;
-      const examSub = short(exam) + '(' + WD[exam.getDay()] + ')';
+      const ems = exam.getTime() - now;
+      const examSub = short(exam) + '(' + wdShort(exam) + ')';
       if (ems <= 0) {
-        examEl.innerHTML = rowHtml('D-DAY', '', '제' + next.round + '회 <b>필기시험</b>', examSub, '00:00:00');
+        examEl.innerHTML = rowHtml(tr('dday.dday'), '', roundLbl + ' ' + examLbl, examSub, '00:00:00');
       } else {
-        examEl.innerHTML = rowHtml('D-' + ddayNum(ems), '', '제' + next.round + '회 <b>필기시험</b>', examSub, remStr(ems));
+        examEl.innerHTML = rowHtml('D-' + ddayNum(ems), '', roundLbl + ' ' + examLbl, examSub, remStr(ems));
       }
     }
     tick();
@@ -107,30 +121,32 @@
   const isBookmarked = window.IMN.isBookmarked;
   const isDone = window.IMN.isDone;
 
-  function cardHtml(t) {
-    const tags = (t.tags || [])
+  function cardHtml(topic) {
+    const tags = (topic.tags || [])
       .map((tag) => `<span class="tag">#${escapeHtml(tag)}</span>`)
       .join('');
-    const viewed = isViewed(t.id);
-    const bookmarked = isBookmarked(t.id);
-    const done = isDone(t.id);
-    const badge = viewed ? '<span class="viewed-badge">✓ 읽음</span>' : '';
-    const id = encodeURIComponent(t.id);
+    const viewed = isViewed(topic.id);
+    const bookmarked = isBookmarked(topic.id);
+    const done = isDone(topic.id);
+    const badge = viewed ? `<span class="viewed-badge">${tr('card.viewed')}</span>` : '';
+    const id = encodeURIComponent(topic.id);
+    const bmLabel = tr('card.bookmark');
+    const dnLabel = tr('card.done');
     const cls = ['topic-card', viewed ? 'is-viewed' : '', done ? 'is-done' : '', bookmarked ? 'is-bookmarked' : '']
       .filter(Boolean).join(' ');
     return `
       <li class="topic-item">
         <div class="card-actions">
-          <button type="button" class="card-act act-bookmark${bookmarked ? ' is-on' : ''}" data-act="bookmark" data-id="${id}" aria-pressed="${bookmarked}" title="즐겨찾기" aria-label="즐겨찾기">★</button>
-          <button type="button" class="card-act act-done${done ? ' is-on' : ''}" data-act="done" data-id="${id}" aria-pressed="${done}" title="학습완료" aria-label="학습완료">✓</button>
+          <button type="button" class="card-act act-bookmark${bookmarked ? ' is-on' : ''}" data-act="bookmark" data-id="${id}" aria-pressed="${bookmarked}" title="${bmLabel}" aria-label="${bmLabel}">★</button>
+          <button type="button" class="card-act act-done${done ? ' is-on' : ''}" data-act="done" data-id="${id}" aria-pressed="${done}" title="${dnLabel}" aria-label="${dnLabel}">✓</button>
         </div>
         <a class="${cls}" href="topic.html?id=${id}">
           <div class="card-top">
-            <span class="card-category">${escapeHtml(t.category || '기타')}</span>
+            <span class="card-category">${escapeHtml(catLabel(topic.category))}</span>
             ${badge}
           </div>
-          <h2>${escapeHtml(t.title)}</h2>
-          <p class="card-summary">${escapeHtml(t.summary || '')}</p>
+          <h2>${escapeHtml(topic.title)}</h2>
+          <p class="card-summary">${escapeHtml(topic.summary || '')}</p>
           <div class="card-tags">${tags}</div>
         </a>
       </li>`;
@@ -142,15 +158,15 @@
     emptyEl.hidden = hasItems;
     listEl.hidden = !hasItems;
     if (searchEl.value.trim()) {
-      countEl.textContent = `검색 결과 ${items.length}개`;
+      countEl.textContent = tr('count.search', { n: items.length });
     } else if (filterBookmark && filterBookmark.checked) {
-      countEl.textContent = `★ 즐겨찾기 ${items.length}개`;
+      countEl.textContent = tr('count.bookmark', { n: items.length });
     } else if (filterUndone && filterUndone.checked) {
-      countEl.textContent = `학습 전 ${items.length}개`;
+      countEl.textContent = tr('count.undone', { n: items.length });
     } else if (filterInput && filterInput.checked) {
-      countEl.textContent = `안 본 주제 ${items.length}개`;
+      countEl.textContent = tr('count.unviewed', { n: items.length });
     } else {
-      countEl.textContent = `전체 ${items.length}개 주제`;
+      countEl.textContent = tr('count.all', { n: items.length });
     }
   }
 
@@ -163,7 +179,7 @@
     if (statEl) {
       if (viewedCount > 0 && total > 0) {
         const pct = Math.round((viewedCount / total) * 100);
-        statEl.textContent = `열람 ${viewedCount}/${total} · ${pct}%`;
+        statEl.textContent = tr('stat.viewed', { n: viewedCount, total: total, pct: pct });
         statEl.hidden = false;
       } else {
         statEl.textContent = '';
@@ -206,9 +222,9 @@
     if (studyStatEl) {
       const parts = [];
       if (doneCount > 0 && total > 0) {
-        parts.push(`학습완료 ${doneCount}/${total} · ${Math.round((doneCount / total) * 100)}%`);
+        parts.push(tr('stat.done', { n: doneCount, total: total, pct: Math.round((doneCount / total) * 100) }));
       }
-      if (bmCount > 0) parts.push(`★ ${bmCount}`);
+      if (bmCount > 0) parts.push(tr('stat.bookmark', { n: bmCount }));
       if (parts.length) {
         studyStatEl.textContent = parts.join('  ·  ');
         studyStatEl.hidden = false;
@@ -252,7 +268,10 @@
       if (!CAD.test(tag) && tag.length <= 12) freq[tag] = (freq[tag] || 0) + 1;
     }));
     let tags = Object.keys(freq);
-    if (tags.length < 3) return; // 후보 부족 시 정적 예시 유지
+    if (tags.length < 3) { // 후보 부족 시 예시 없이 로케일 기본 문구
+      searchEl.setAttribute('placeholder', tr('search.placeholder', { ex: 'MSA, RAG, TCP' }));
+      return;
+    }
     // 빈도 desc·동률 사전순으로 정렬 → 캐시·주제 추가에 흔들리지 않는 안정적 순서.
     // 상위 빈출 태그만 후보로 써서 예시가 대표성 있고 하루 단위로만 회전하게 한다.
     tags.sort((a, b) => (freq[b] - freq[a]) || (a < b ? -1 : a > b ? 1 : 0));
@@ -261,7 +280,7 @@
     const rand = () => { s = (Math.imul(s, 1664525) + 1013904223) >>> 0; return s / 4294967296; };
     const a = pool.slice();
     for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; }
-    searchEl.setAttribute('placeholder', '주제·태그·카테고리 검색  (예: ' + a.slice(0, 3).join(', ') + ')');
+    searchEl.setAttribute('placeholder', tr('search.placeholder', { ex: a.slice(0, 3).join(', ') }));
   }
 
   // 오늘의 주제: 날짜를 시드로 해시 → 모두에게 하루 동안 같은 주제(자정에 자동 변경)
@@ -280,7 +299,7 @@
     const t = topics[todayIndex(topics.length)];
     todayCard.href = 'topic.html?id=' + encodeURIComponent(t.id);
     todayCard.innerHTML =
-      '<span class="today-cat">' + escapeHtml(t.category || '기타') + '</span>' +
+      '<span class="today-cat">' + escapeHtml(catLabel(t.category)) + '</span>' +
       '<span class="today-title">' + escapeHtml(t.title) + '</span>' +
       '<span class="today-summary">' + escapeHtml(t.summary || '') + '</span>';
     todaySection.hidden = false;
@@ -359,7 +378,7 @@
   if (clearBtn) {
     clearBtn.addEventListener('click', () => {
       if (!window.ViewedStore) return;
-      if (!window.confirm('열람 기록을 모두 지울까요? 이 브라우저에 저장된 기록만 삭제됩니다.')) return;
+      if (!window.confirm(tr('confirm.clearViewed'))) return;
       window.ViewedStore.clear();
       refreshViewedUI();
       applyFilter();
@@ -385,6 +404,9 @@
     .then((data) => {
       // 최신 업데이트 순 정렬 (updated 내림차순, 없으면 뒤로)
       topics = data.slice().sort((a, b) => (b.updated || '').localeCompare(a.updated || ''));
+      return window.IMN.localizeTopics(topics); // 비한국어면 제목·요약 번역 오버레이 적용
+    })
+    .then(() => {
       setSearchPlaceholder();
       renderToday();
       refreshViewedUI();
@@ -394,6 +416,6 @@
     .catch((err) => {
       listEl.hidden = true;
       emptyEl.hidden = false;
-      emptyEl.textContent = '주제 목록을 불러오지 못했습니다: ' + err.message;
+      emptyEl.textContent = tr('error.topicsLoad', { msg: err.message });
     });
 })();

@@ -20,11 +20,36 @@
     return a;
   }
 
+  // 주제 메타 로케일화: 비한국어면 data/i18n/topics.<lang>.json 오버레이를 받아
+  // title/summary를 덮어쓴다(번역 없으면 한국어 유지). 항상 topics를 resolve.
+  function localizeTopics(topics) {
+    var lang = (window.I18N && window.I18N.lang) || 'ko';
+    if (lang === 'ko' || !Array.isArray(topics) || !topics.length) {
+      return Promise.resolve(topics);
+    }
+    return fetch('data/i18n/topics.' + lang + '.json')
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .catch(function () { return {}; })
+      .then(function (ov) {
+        if (ov && typeof ov === 'object') {
+          topics.forEach(function (t) {
+            var o = ov[t.id];
+            if (o) {
+              if (o.title) t.title = o.title;
+              if (o.summary) t.summary = o.summary;
+            }
+          });
+        }
+        return topics;
+      });
+  }
+
   window.IMN = {
     escapeHtml: escapeHtml,
     isViewed: isViewed,
     isBookmarked: isBookmarked,
     isDone: isDone,
-    shuffle: shuffle
+    shuffle: shuffle,
+    localizeTopics: localizeTopics
   };
 })();

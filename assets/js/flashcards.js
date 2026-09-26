@@ -20,6 +20,8 @@
   var shuffle = window.IMN.shuffle;
   var isBookmarked = window.IMN.isBookmarked;
   var isDone = window.IMN.isDone;
+  var tr = (window.I18N && window.I18N.t) ? window.I18N.t : function (k) { return k; };
+  var catLabel = (window.I18N && window.I18N.category) ? window.I18N.category : function (c) { return c || '기타'; };
 
   function pool() {
     var cat = catSel.value, scope = scopeSel.value;
@@ -40,30 +42,30 @@
   }
   function renderFlash() {
     if (!fQueue.length) {
-      stage.innerHTML = '<div class="fc-empty">해당 조건의 주제가 없습니다. 필터를 넓혀보세요.</div>';
+      stage.innerHTML = '<div class="fc-empty">' + escapeHtml(tr('fc.emptyPool')) + '</div>';
       statusEl.textContent = ''; return;
     }
     if (fIdx >= fQueue.length) {
-      stage.innerHTML = '<div class="fc-done"><div class="fc-done-big">완료! 🎉</div>' +
-        '<p class="fc-done-sub">' + fQueue.length + '장 학습 · 알아요 ' + fKnown + ' · 다시 ' + fAgain + '</p>' +
-        '<button type="button" class="fc-primary" id="fc-again">다시 시작</button></div>';
+      stage.innerHTML = '<div class="fc-done"><div class="fc-done-big">' + escapeHtml(tr('fc.doneBig')) + '</div>' +
+        '<p class="fc-done-sub">' + escapeHtml(tr('fc.doneSub', { n: fQueue.length, known: fKnown, again: fAgain })) + '</p>' +
+        '<button type="button" class="fc-primary" id="fc-again">' + escapeHtml(tr('fc.restartBtn')) + '</button></div>';
       document.getElementById('fc-again').onclick = startFlash;
       statusEl.textContent = ''; return;
     }
     var t = fQueue[fIdx];
-    statusEl.textContent = '플래시카드 ' + (fIdx + 1) + ' / ' + fQueue.length + '  ·  알아요 ' + fKnown;
+    statusEl.textContent = tr('fc.flashStatus', { i: fIdx + 1, n: fQueue.length, known: fKnown });
     var back = fRevealed
-      ? '<div class="fc-a">' + escapeHtml(t.summary || '(요약 없음)') + '</div>' +
+      ? '<div class="fc-a">' + escapeHtml(t.summary || tr('fc.noSummary')) + '</div>' +
         '<div class="fc-grade">' +
-          '<button type="button" class="fc-again-btn" data-act="again">다시 ↻</button>' +
-          '<button type="button" class="fc-know-btn" data-act="know">알아요 ✓</button>' +
+          '<button type="button" class="fc-again-btn" data-act="again">' + escapeHtml(tr('fc.again')) + '</button>' +
+          '<button type="button" class="fc-know-btn" data-act="know">' + escapeHtml(tr('fc.know')) + '</button>' +
         '</div>' +
-        '<a class="fc-open" href="topic.html?id=' + encodeURIComponent(t.id) + '">전체 내용 보기 →</a>'
-      : '<button type="button" class="fc-reveal" data-act="reveal">정답 보기</button>' +
-        '<p class="fc-hint">머릿속으로 설명해 본 뒤 확인하세요</p>';
+        '<a class="fc-open" href="topic.html?id=' + encodeURIComponent(t.id) + '">' + escapeHtml(tr('fc.openFull')) + '</a>'
+      : '<button type="button" class="fc-reveal" data-act="reveal">' + escapeHtml(tr('fc.reveal')) + '</button>' +
+        '<p class="fc-hint">' + escapeHtml(tr('fc.hint')) + '</p>';
     stage.innerHTML =
       '<div class="fc-card">' +
-        '<span class="fc-cat">' + escapeHtml(t.category || '기타') + '</span>' +
+        '<span class="fc-cat">' + escapeHtml(catLabel(t.category)) + '</span>' +
         '<div class="fc-q">' + escapeHtml(t.title) + '</div>' +
         back +
       '</div>';
@@ -73,7 +75,7 @@
   function startQuiz() {
     var p = pool();
     if (p.length < 4) {
-      stage.innerHTML = '<div class="fc-empty">퀴즈는 최소 4개 주제가 필요합니다 (현재 ' + p.length + '개). 조건을 넓혀주세요.</div>';
+      stage.innerHTML = '<div class="fc-empty">' + escapeHtml(tr('fc.quizNeed4', { n: p.length })) + '</div>';
       statusEl.textContent = ''; qList = []; return;
     }
     var picked = shuffle(p.slice()).slice(0, Math.min(10, p.length));
@@ -88,16 +90,16 @@
     if (!qList.length) return;
     if (qIdx >= qList.length) {
       var pct = Math.round(qScore / qList.length * 100);
-      stage.innerHTML = '<div class="fc-done"><div class="fc-done-big">' + qScore + ' / ' + qList.length + ' 정답 (' + pct + '%)</div>' +
-        '<button type="button" class="fc-primary" id="fc-again">새 퀴즈</button></div>';
+      stage.innerHTML = '<div class="fc-done"><div class="fc-done-big">' + escapeHtml(tr('fc.quizResult', { score: qScore, n: qList.length, pct: pct })) + '</div>' +
+        '<button type="button" class="fc-primary" id="fc-again">' + escapeHtml(tr('fc.newQuiz')) + '</button></div>';
       document.getElementById('fc-again').onclick = startQuiz;
       statusEl.textContent = ''; return;
     }
     var q = qList[qIdx];
-    statusEl.textContent = '퀴즈 ' + (qIdx + 1) + ' / ' + qList.length + '  ·  점수 ' + qScore;
+    statusEl.textContent = tr('fc.quizStatus', { i: qIdx + 1, n: qList.length, score: qScore });
     stage.innerHTML =
       '<div class="fc-card fc-quiz">' +
-        '<p class="fc-qlabel">다음 설명에 해당하는 주제는?</p>' +
+        '<p class="fc-qlabel">' + escapeHtml(tr('fc.quizLabel')) + '</p>' +
         '<div class="fc-desc">' + escapeHtml(q.topic.summary || q.topic.title) + '</div>' +
         '<div class="fc-options">' +
           q.options.map(function (o) {
@@ -105,8 +107,8 @@
           }).join('') +
         '</div>' +
         '<div class="fc-next-wrap" hidden>' +
-          '<a class="fc-open" href="topic.html?id=' + encodeURIComponent(q.topic.id) + '">전체 내용 보기 →</a>' +
-          '<button type="button" class="fc-primary" data-act="qnext">다음 →</button>' +
+          '<a class="fc-open" href="topic.html?id=' + encodeURIComponent(q.topic.id) + '">' + escapeHtml(tr('fc.openFull')) + '</a>' +
+          '<button type="button" class="fc-primary" data-act="qnext">' + escapeHtml(tr('fc.next')) + '</button>' +
         '</div>' +
       '</div>';
     qAnswered = false;
@@ -124,7 +126,7 @@
     });
     var nw = stage.querySelector('.fc-next-wrap');
     if (nw) nw.hidden = false;
-    statusEl.textContent = '퀴즈 ' + (qIdx + 1) + ' / ' + qList.length + '  ·  점수 ' + qScore;
+    statusEl.textContent = tr('fc.quizStatus', { i: qIdx + 1, n: qList.length, score: qScore });
   }
 
   // ── 이벤트 ──
@@ -160,11 +162,11 @@
     .then(function (data) {
       topics = Array.isArray(data) ? data : [];
       var cats = Array.from(new Set(topics.map(function (t) { return t.category; }).filter(Boolean))).sort();
-      catSel.innerHTML = '<option value="">전체</option>' +
-        cats.map(function (c) { return '<option value="' + escapeHtml(c) + '">' + escapeHtml(c) + '</option>'; }).join('');
+      catSel.innerHTML = '<option value="">' + escapeHtml(tr('fc.all')) + '</option>' +
+        cats.map(function (c) { return '<option value="' + escapeHtml(c) + '">' + escapeHtml(catLabel(c)) + '</option>'; }).join('');
       start();
     })
     .catch(function () {
-      stage.innerHTML = '<div class="fc-empty">주제를 불러오지 못했습니다.</div>';
+      stage.innerHTML = '<div class="fc-empty">' + escapeHtml(tr('fc.loadError')) + '</div>';
     });
 })();

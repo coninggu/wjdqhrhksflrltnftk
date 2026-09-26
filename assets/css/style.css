@@ -85,6 +85,82 @@
    [hidden]의 display:none을 덮어쓰는 문제 방지) */
 [hidden] { display: none !important; }
 
+/* 언어 스위처(KO/EN/JA) — 헤더 테마 토글 옆 */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px;
+  background: var(--surface);
+  flex: 0 0 auto;
+}
+.lang-switch .lang-opt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background .15s, color .15s;
+}
+.lang-switch .lang-opt:hover { color: var(--text); }
+.lang-switch .lang-opt.is-active {
+  background: var(--primary);
+  color: #fff;
+}
+@media (max-width: 560px) {
+  .lang-switch .lang-opt { min-width: 26px; padding: 4px 6px; font-size: 11px; }
+}
+
+/* 브라우저 언어가 en/ja인 첫 방문자에게 번역본 안내 */
+.lang-suggest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 9px 16px;
+  font-size: 13.5px;
+  color: var(--text);
+  background: var(--primary-soft);
+  border-bottom: 1px solid var(--border);
+}
+.lang-suggest-go {
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+  padding: 4px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.lang-suggest-no {
+  font: inherit;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* 미번역 본문일 때 한국어 원문 표시 안내 */
+.lang-fallback-note {
+  margin: 0 0 18px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  color: var(--text-soft);
+  background: var(--primary-soft);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
 html { -webkit-text-size-adjust: 100%; }
 
 body {
