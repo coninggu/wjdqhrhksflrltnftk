@@ -20,7 +20,7 @@ The nature of voice data mining can be summarized as follows.
 - **Unstructured → structured conversion:** Turns sequential, unstructured voice into structured data that can be searched and aggregated.
 - **Handling of biometric information:** Deals with sensitive information such as voiceprints and private conversations, making personal information and ethical controls essential.
 
-### B. Purpose
+### C. Purpose
 The main purposes are **Voice of Customer (VOC) analysis, consultation quality assurance (QA), financial risk and compliance monitoring, and service automation**. The aim is to quantify the unstructured information scattered throughout calls and use it as the basis for decision-making and business improvement. For example, if the frequency of expressions like "why is my bill so high" surges right after the launch of a particular rate plan, this serves as an **early signal** pointing to a flaw in the product design or the guidance process.
 
 ## 2. Key Technologies and Pipeline Structure
